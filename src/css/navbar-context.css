@@ -1,0 +1,46 @@
+/* Context-aware navbar styles */
+
+/* Hide all navbar items by default for specific sections */
+.navbar__items--left .navbar__item {
+  display: none;
+}
+
+/* Always show the logo and home link */
+.navbar__brand,
+.navbar__item[href="/"],
+.navbar__item[href="https://vantagecompute.ai"] {
+  display: flex !important;
+}
+
+/* Platform section - show platform-related items */
+body[data-section="platform"] .navbar__item[href^="/platform/"] {
+  display: flex;
+}
+
+/* CLI section - show CLI-related items */
+body[data-section="cli"] .navbar__item[href^="/cli"] {
+  display: flex;
+}
+
+/* API section - show API-related items */
+body[data-section="api"] .navbar__item[href^="/api"] {
+  display: flex;
+}
+
+/* SDK section - show SDK-related items */
+body[data-section="sdk"] .navbar__item[href^="/sdk"] {
+  display: flex;
+}
+
+/* Default/home section - show main navigation */
+body[data-section="default"] .navbar__item[href="/platform/jobs"],
+body[data-section="default"] .navbar__item[href="/cli"],
+body[data-section="default"] .navbar__item[href="/api"],
+body[data-section="default"] .navbar__item[href="/sdk"] {
+  display: flex;
+}
+
+/* Always show right-side items */
+.navbar__items--right .navbar__item {
+  display: flex !important;
+}

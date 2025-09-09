@@ -1,0 +1,454 @@
+openapi: 3.0.3
+info:
+  title: Vantage API
+  description: |
+    The Vantage API provides programmatic access to manage high-performance computing resources,
+    submit and monitor jobs, manage files, and control clusters.
+    
+    ## Authentication
+    
+    The API uses Bearer token authentication. Include your API key in the Authorization header:
+    
+    ```
+    Authorization: Bearer YOUR_API_KEY
+    ```
+    
+    ## Rate Limits
+    
+    - API Keys: 1000 requests per hour
+    - OAuth Tokens: 5000 requests per hour
+    - Burst: Up to 100 requests per minute
+    
+  version: 1.0.0
+  contact:
+    name: Vantage API Support
+    email: api-support@omnivector.solutions
+    url: https://vantage.omnivector.solutions/support
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://api.vantage.omnivector.solutions/v1
+    description: Production server
+  - url: https://api-staging.vantage.omnivector.solutions/v1
+    description: Staging server
+
+security:
+  - bearerAuth: []
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: API key or OAuth token
+
+  schemas:
+    Job:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique job identifier
+          example: job_123abc
+        name:
+          type: string
+          description: Human-readable job name
+          example: simulation-run-1
+        status:
+          type: string
+          enum: [pending, running, completed, failed, cancelled]
+          description: Current job status
+        cluster_id:
+          type: string
+          description: ID of the cluster where the job runs
+          example: cluster_456def
+        user_id:
+          type: string
+          description: ID of the user who created the job
+          example: user_789ghi
+        command:
+          type: string
+          description: Command to execute
+          example: python simulate.py --input data.csv
+        resources:
+          $ref: '#/components/schemas/Resources'
+        environment:
+          type: object
+          additionalProperties:
+            type: string
+          description: Environment variables
+        working_directory:
+          type: string
+          description: Working directory for job execution
+          example: /home/user/project
+        output_path:
+          type: string
+          description: Path where output files will be stored
+          example: /outputs/simulation-1/
+        created_at:
+          type: string
+          format: date-time
+          description: Job creation timestamp
+        started_at:
+          type: string
+          format: date-time
+          nullable: true
+          description: Job start timestamp
+        completed_at:
+          type: string
+          format: date-time
+          nullable: true
+          description: Job completion timestamp
+
+    Resources:
+      type: object
+      properties:
+        cpus:
+          type: integer
+          minimum: 1
+          description: Number of CPU cores
+          example: 4
+        memory:
+          type: string
+          description: Memory allocation
+          example: 8GB
+        gpus:
+          type: integer
+          minimum: 0
+          description: Number of GPU devices
+          example: 1
+        disk:
+          type: string
+          description: Disk space allocation
+          example: 100GB
+
+    Cluster:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique cluster identifier
+          example: cluster_123abc
+        name:
+          type: string
+          description: Human-readable cluster name
+          example: hpc-cluster-west
+        status:
+          type: string
+          enum: [active, inactive, maintenance, error]
+          description: Current cluster status
+        provider:
+          type: string
+          description: Cloud provider or infrastructure type
+          example: aws
+        region:
+          type: string
+          description: Geographic region
+          example: us-west-2
+        node_count:
+          type: integer
+          description: Number of compute nodes
+          example: 10
+        cpu_total:
+          type: integer
+          description: Total CPU cores across all nodes
+          example: 480
+        memory_total:
+          type: string
+          description: Total memory across all nodes
+          example: 1920GB
+        created_at:
+          type: string
+          format: date-time
+          description: Cluster creation timestamp
+
+    File:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique file identifier
+          example: file_123abc
+        name:
+          type: string
+          description: File name
+          example: dataset.csv
+        path:
+          type: string
+          description: Full file path
+          example: /data/datasets/dataset.csv
+        size:
+          type: integer
+          description: File size in bytes
+          example: 1048576
+        content_type:
+          type: string
+          description: MIME type
+          example: text/csv
+        created_at:
+          type: string
+          format: date-time
+          description: File upload timestamp
+        modified_at:
+          type: string
+          format: date-time
+          description: Last modification timestamp
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error code
+          example: validation_error
+        message:
+          type: string
+          description: Human-readable error message
+          example: Missing required field
+        details:
+          type: object
+          description: Additional error details
+        request_id:
+          type: string
+          description: Unique request identifier
+          example: req_123456789
+
+paths:
+  /auth/test:
+    get:
+      summary: Test authentication
+      description: Verify that your API key or token is valid
+      responses:
+        '200':
+          description: Authentication successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  authenticated:
+                    type: boolean
+                    example: true
+                  user_id:
+                    type: string
+                    example: user_123
+                  scopes:
+                    type: array
+                    items:
+                      type: string
+                    example: ["jobs:read", "clusters:read"]
+        '401':
+          description: Authentication failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /jobs:
+    get:
+      summary: List jobs
+      description: Retrieve a list of jobs with optional filtering and pagination
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 50
+          description: Number of jobs to return
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            minimum: 0
+            default: 0
+          description: Number of jobs to skip
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [pending, running, completed, failed, cancelled]
+          description: Filter by job status
+        - name: cluster_id
+          in: query
+          schema:
+            type: string
+          description: Filter by cluster ID
+      responses:
+        '200':
+          description: List of jobs
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  jobs:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Job'
+                  total:
+                    type: integer
+                    description: Total number of jobs
+                  page:
+                    type: integer
+                    description: Current page number
+                  per_page:
+                    type: integer
+                    description: Number of jobs per page
+
+    post:
+      summary: Create job
+      description: Submit a new job for execution
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - cluster_id
+                - command
+                - resources
+              properties:
+                name:
+                  type: string
+                  description: Job name
+                cluster_id:
+                  type: string
+                  description: Target cluster ID
+                command:
+                  type: string
+                  description: Command to execute
+                resources:
+                  $ref: '#/components/schemas/Resources'
+                environment:
+                  type: object
+                  additionalProperties:
+                    type: string
+                  description: Environment variables
+                working_directory:
+                  type: string
+                  description: Working directory
+                output_path:
+                  type: string
+                  description: Output file path
+      responses:
+        '201':
+          description: Job created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /jobs/{job_id}:
+    get:
+      summary: Get job
+      description: Retrieve details of a specific job
+      parameters:
+        - name: job_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Job ID
+      responses:
+        '200':
+          description: Job details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /clusters:
+    get:
+      summary: List clusters
+      description: Retrieve a list of available compute clusters
+      responses:
+        '200':
+          description: List of clusters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  clusters:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Cluster'
+
+  /storage/files:
+    get:
+      summary: List files
+      description: Retrieve a list of stored files
+      responses:
+        '200':
+          description: List of files
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  files:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/File'
+
+    post:
+      summary: Upload file
+      description: Upload a file to storage
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: File to upload
+                path:
+                  type: string
+                  description: Destination path
+                overwrite:
+                  type: boolean
+                  default: false
+                  description: Whether to overwrite existing files
+      responses:
+        '201':
+          description: File uploaded successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/File'
+
+tags:
+  - name: Authentication
+    description: Authentication and authorization
+  - name: Jobs
+    description: Job management
+  - name: Clusters
+    description: Cluster management
+  - name: Storage
+    description: File storage
+  - name: Teams
+    description: Team management
+  - name: Users
+    description: User management

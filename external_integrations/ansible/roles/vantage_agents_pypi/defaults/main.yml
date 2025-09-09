@@ -1,0 +1,7 @@
+---
+# defaults/main.yml
+# Default variables for vantage_agents_pypi role
+
+oidc_client_id: ""
+oidc_client_secret: ""
+cluster_name: ""
