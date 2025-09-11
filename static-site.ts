@@ -17,12 +17,12 @@ export class StaticSite extends Construct {
     super(parent, name)
 
     const zone = route53.HostedZone.fromLookup(this, 'Zone', {
-      domainName: 'vantagehpc.io',
+      domainName: 'vantagecompute.ai',
     })
     const siteDomain =
       environment === 'prod'
-        ? 'docs.vantagehpc.io'
-        : 'docs.staging.vantagehpc.io'
+        ? 'docs.vantageecompute.ai'
+        : 'docs.staging.vantagecompute.ai'
     const cloudfrontOAI = new cloudfront.OriginAccessIdentity(
       this,
       'cloudfront-OAI',

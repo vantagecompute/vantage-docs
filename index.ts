@@ -19,14 +19,14 @@ const app = new cdk.App()
 
 new DocsWebite(app, 'VantageDocsWebsite', 'prod', {
   env: {
-    account: '212021838531',
+    account: '266735843730',
     region: 'us-east-1',
   },
 })
 
 new DocsWebite(app, 'VantageStagingDocsWebsite', 'staging', {
   env: {
-    account: '212021838531',
+    account: '266735843730',
     region: 'us-east-1',
   },
 })
