@@ -1,0 +1,28 @@
+name: Deploy to staging
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Deploy tag
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Setup AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
+          aws-region: us-east-1
+
+      - name: Build and deploy
+        run: |
+          yarn install
+          yarn build
+          npx cdk deploy --ci --require-approval never VantageStagingDocsWebsite
