@@ -1,0 +1,35 @@
+# These are allowed words
+
+Vantage
+Vantage Compute
+slurm-facotry
+vantage-cli
+vantage-jupyterhub
+jupyterhub
+Slurm
+Armasec
+ovpn
+easyrsa
+Apptainer
+ParaView
+SBATCH
+tcsh
+ntasks
+venv
+sinfo
+scontrol
+slurmctld
+slurmd
+jobbergate
+Entra
+
+srun
+sbatch
+sinfo
+scontrol
+sacct
+sacctmgr
+juju
+slurm-juju-localhost
+slurm-multipass-localhost
+slurm-microk8s-localhost

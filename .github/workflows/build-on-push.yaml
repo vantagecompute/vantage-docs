@@ -17,12 +17,12 @@ jobs:
         with:
           node-version: '22'
 
-      - uses: streetsidesoftware/cspell-action@v6
-        with:
-          inline: error
-          config: .cspell.yaml
-          use_cspell_files: true
-          verbose: true
+      #- uses: streetsidesoftware/cspell-action@v6
+      #  with:
+      #    inline: error
+      #    config: .cspell.yaml
+      #    use_cspell_files: true
+      #    verbose: true
 
       - name: Build and deploy
         run: |

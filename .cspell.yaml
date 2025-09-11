@@ -1,0 +1,12 @@
+version: "9.2.1"
+language: en
+dictionaries:
+  - Vantage
+dictionaryDefinitions:
+  - name: Vantage
+    path: .cspell/vantage-dictionary.txt
+    addWords: true
+ignoreRegExpList:
+  - "/^```(?:.|\\s)+?^```/mig"  # Ignore code fences
+files:
+  - "docs/**/*.md"
