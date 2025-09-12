@@ -174,6 +174,73 @@ module.exports = async function createConfigAsync() {
           sidebarPath: './docs-sdk/sidebar.js',
         },
       ],
+      [ 
+      'docusaurus-plugin-llms',
+        {
+          // Options here
+          generateLLMsTxt: true,
+          generateLLMsFullTxt: true,
+          docsDir: 'docs',
+          ignoreFiles: ['advanced/*', 'private/*'],
+          title: 'Vantage Compute Documentation',
+          description: 'Complete reference documentation for Vantage Compute platform, CLI, API, and SDK.',
+          includeBlog: false,
+          // Content cleaning options
+          excludeImports: true,
+          removeDuplicateHeadings: true,
+          // Generate individual markdown files following llmstxt.org specification
+          generateMarkdownFiles: true,
+          // Control documentation order
+          includeOrder: [
+            'platform-overview/**',
+            'platform/jobs/**',
+            'platform/clusters/**',
+            'platform/storage/**',
+            'platform/compute-providers/**',
+            'platform/notebooks/**',
+            'platform/remote-desktops/**',
+          ],
+          includeUnmatchedLast: true,
+          // Path transformation options
+          pathTransformation: {
+            // Paths to ignore when constructing URLs (will be removed if found)
+            ignorePaths: ['docs'],
+            // Paths to add when constructing URLs (will be prepended if not already present)
+            // addPaths: ['api'],
+          },
+          // Custom LLM files for specific documentation sections
+          customLLMFiles: [
+            {
+              filename: 'llms-vantage-api.txt',
+              includePatterns: ['docs-api/*.md'],
+              fullContent: true,
+              title: 'Vantage API Documentation',
+              description: 'Complete reference for Vantage API'
+            },
+            {
+              filename: 'llms-vantage-cli.txt',
+              includePatterns: ['docs-cli/*.md'],
+              fullContent: false,
+              title: 'Vantage CLI Documentation',
+              description: 'All Vantage CLI commands in a single file'
+            },
+            {
+              filename: 'llms-vantage-sdk.txt',
+              includePatterns: ['docs-sdk/*.md'],
+              fullContent: false,
+              title: 'Vantage SDK Documentation',
+              description: 'All Vantage SDK references in a single file'
+            },
+            {
+              filename: 'llms-vantage-platform.txt',
+              includePatterns: ['docs-platform/*.md'],
+              fullContent: false,
+              title: 'Vantage Platform Documentation',
+              description: 'All Vantage Platform references in a single file'
+            },
+          ],
+        },
+      ],
     ],
 
     themes: [searchLocalPlugin],

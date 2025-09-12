@@ -4256,6 +4256,14 @@ dns-packet@^5.2.2:
   dependencies:
     "@leichtgewicht/ip-codec" "^2.0.1"
 
+docusaurus-plugin-llms@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-llms/-/docusaurus-plugin-llms-0.2.0.tgz#1295a35e8a51a46b5f32514d5aa6f6fee851467d"
+  integrity sha512-7z6pMWMcI+lQi8gjaXl3+aGSWCPcg29hJ0x7OABF43stN88McQQTVCpcqNVVZF2fTxg7gE1LEFoTQxcy8F5yvQ==
+  dependencies:
+    gray-matter "^4.0.3"
+    minimatch "^9.0.3"
+
 docusaurus-plugin-openapi-docs@^4.5.1:
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/docusaurus-plugin-openapi-docs/-/docusaurus-plugin-openapi-docs-4.5.1.tgz#b1133b0e03e284a6ade47fa2c3fcf5eab8ec6911"
@@ -6856,6 +6864,13 @@ minimatch@^5.0.1:
   version "5.1.6"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-5.1.6.tgz#1cfcb8cf5522ea69952cd2af95ae09477f122a96"
   integrity sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==
+  dependencies:
+    brace-expansion "^2.0.1"
+
+minimatch@^9.0.3:
+  version "9.0.5"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-9.0.5.tgz#d74f9dd6b57d83d8e98cfb82133b03978bc929e5"
+  integrity sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==
   dependencies:
     brace-expansion "^2.0.1"
 
