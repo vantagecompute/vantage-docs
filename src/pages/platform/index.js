@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import { useLocation } from '@docusaurus/router';
@@ -65,12 +65,11 @@ function DocumentationDropdown() {
 }
 
 // Simple sidebar component
-function PlatformSidebar({ collapsed, onToggle }) {
+function PlatformSidebar({ onToggle }) {
   return (
     <aside 
       className="theme-doc-sidebar-container docSidebarContainer_YfHR"
-      data-collapsed={collapsed.toString()}
-      onClick={collapsed ? onToggle : undefined}
+      data-collapsed="false"
     >
       <div className="sidebarViewport_aRkj">
         <div className="sidebar_njMd">
@@ -114,8 +113,8 @@ function PlatformSidebar({ collapsed, onToggle }) {
           </nav>
           <button 
             type="button" 
-            title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-            aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+            title="Collapse sidebar"
+            aria-label="Collapse sidebar"
             className="button button--secondary button--outline collapseSidebarButton_PEFL"
             onClick={onToggle}
           >
@@ -133,10 +132,17 @@ function PlatformSidebar({ collapsed, onToggle }) {
 }
 
 function PlatformHome() {
-  const [collapsed, setCollapsed] = useState(false);
-
   const toggleSidebar = () => {
-    setCollapsed(!collapsed);
+    const sidebar = document.querySelector('.theme-doc-sidebar-container');
+    if (sidebar) {
+      const isCollapsed = sidebar.getAttribute('data-collapsed') === 'true';
+      sidebar.setAttribute('data-collapsed', isCollapsed ? 'false' : 'true');
+      
+      // Trigger the same event that the navbar expects
+      window.dispatchEvent(new CustomEvent('sidebarStateChange', {
+        detail: { collapsed: !isCollapsed }
+      }));
+    }
   };
 
   return (
@@ -147,8 +153,8 @@ function PlatformHome() {
       <div className="docsWrapper_bSxm">
         <button aria-label="Scroll back to top" className="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button>
         <div className="docRoot_cWv0">
-          <PlatformSidebar collapsed={collapsed} onToggle={toggleSidebar} />
-          <main className={`docMainContainer_TBSr ${collapsed ? 'docMainContainer_TBSr--sidebar-hidden' : ''}`}>
+          <PlatformSidebar onToggle={toggleSidebar} />
+          <main className="docMainContainer_TBSr">
               <div className="container padding-top--md padding-bottom--lg">
                 <div className="row">
                   <div className="col docItemCol_VOVn">

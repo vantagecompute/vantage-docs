@@ -25,7 +25,9 @@ const config = {
 
   scripts: [
     // Error suppression for browser extensions
-    '/js/error-suppression.js'
+    '/js/error-suppression.js',
+    // Sidebar expand functionality
+    '/js/sidebar-expand.js'
   ],
 
   headTags: [
@@ -285,11 +287,9 @@ const config = {
       },
       items: [
         {
-          href: 'https://github.com/vantagecompute',
-          label: 'GitHub',
+          type: 'search',
           position: 'right',
-          className: 'github-button'
-        }
+        },
       ],
       hideOnScroll: false
     },
@@ -347,6 +347,20 @@ const config = {
             },
           ],
         },
+        {
+          title: 'Connect',
+          items: [
+            {
+              html: '<a href="https://youtube.com/@vantagecompute" class="footer__link-item footer__link-social" aria-label="YouTube"><img src="https://cdn-icons-png.flaticon.com/32/1384/1384060.png" alt="YouTube" /></a>',
+            },
+            {
+              html: '<a href="https://linkedin.com/company/vantage-compute" class="footer__link-item footer__link-social" aria-label="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/32/1384/1384014.png" alt="LinkedIn" /></a>',
+            },
+            {
+              html: '<a href="https://github.com/vantagecompute" class="footer__link-item footer__link-social" aria-label="GitHub"><img src="https://cdn-icons-png.flaticon.com/32/2111/2111432.png" alt="GitHub" /></a>',
+            },
+          ],
+        },
       ],
       copyright: `Copyright &copy; ${new Date().getFullYear()} Vantage Compute Corporation.`,
     },
@@ -369,6 +383,11 @@ const config = {
         hideable: true,
         autoCollapseCategories: false,
       },
+    },
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },
   },
 };

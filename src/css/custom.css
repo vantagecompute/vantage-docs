@@ -33,6 +33,21 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* Dark mode h1 and h2 styling */
+[data-theme='dark'] h1,
+[data-theme='dark'] .markdown h1,
+[data-theme='dark'] article h1,
+[data-theme='dark'] .theme-doc-markdown h1 {
+    color: white !important;
+}
+
+[data-theme='dark'] h2,
+[data-theme='dark'] .markdown h2,
+[data-theme='dark'] article h2,
+[data-theme='dark'] .theme-doc-markdown h2 {
+    color: white !important;
+}
+
 /* Navbar styling - Vantage purple background */
 .navbar {
   background-color: var(--vantage-purple) !important;
@@ -52,6 +67,17 @@
   transform: translateX(-50%) !important;
   text-align: center !important;
   font-size: 1.3rem !important;
+}
+
+/* Position theme toggle (light/dark mode) to the right of the navbar title */
+.navbar [class*="colorModeToggle"],
+.navbar button[aria-label*="Switch"],
+.navbar .navbar__items--right .navbar__item:first-child {
+  position: absolute !important;
+  left: calc(50% + 150px) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 100 !important;
 }
 
 /* Scale down the navbar logo and center it above sidebar */
@@ -294,6 +320,55 @@ details summary[onclick]:hover {
     background-color: rgba(255, 255, 255, 0.2) !important;
 }
 
+/* Remove any footer logo sizing */
+.footer__logo {
+  height: auto !important;
+  width: auto !important;
+  max-height: 60px;
+}
+
+/* Social media icons styling */
+.footer__link-social {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin: 0 8px 8px 0 !important;
+  padding: 8px !important;
+  border-radius: 8px !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+}
+
+.footer__link-social:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px) !important;
+  text-decoration: none !important;
+}
+
+.footer__link-social img {
+  width: 24px !important;
+  height: 24px !important;
+  filter: brightness(0) invert(1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.footer__link-social:hover img {
+  filter: brightness(0) invert(1) !important;
+  transform: scale(1.1) !important;
+}
+
+/* Dark mode adjustments for social icons */
+[data-theme='dark'] .footer__link-social img {
+  filter: brightness(0) invert(1) !important;
+}
+
+[data-theme='light'] .footer__link-social img {
+  filter: brightness(0) invert(0.8) !important;
+}
+
 /* Root variables for Vantage brand colors */
 :root {
   --vantage-purple: #6b46c1;
@@ -367,11 +442,36 @@ details summary[onclick]:hover {
 
 .theme-doc-sidebar-container[data-collapsed="true"] {
   width: 0 !important;
+  min-width: 0 !important;
   overflow: hidden !important;
+  opacity: 0 !important;
+  transform: translateX(-100%) !important;
+  transition: width 0.3s ease, opacity 0.3s ease, transform 0.3s ease !important;
 }
 
 .theme-doc-sidebar-container[data-collapsed="false"] {
   width: var(--doc-sidebar-width) !important;
+  min-width: var(--doc-sidebar-width) !important;
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+  transition: width 0.3s ease, opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+/* Sidebar collapsed state styling */
+.theme-doc-sidebar-container[data-collapsed="true"]:hover {
+  cursor: pointer !important;
+  background-color: rgba(107, 70, 193, 0.1) !important;
+}
+
+.theme-doc-sidebar-container[data-collapsed="true"]::after {
+  content: "→" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 8px !important;
+  transform: translateY(-50%) !important;
+  font-size: 20px !important;
+  color: var(--vantage-purple) !important;
+  z-index: 100 !important;
 }
 
 /* Ensure docRoot has proper flexbox layout */
@@ -391,4 +491,10 @@ details summary[onclick]:hover {
   overflow-y: auto !important;
   z-index: 10 !important;
   background-color: var(--ifm-background-surface-color) !important;
+}
+
+/* Ensure main content adjusts when sidebar collapses */
+.docMainContainer_TBSr {
+  flex: 1 !important;
+  transition: margin-left 0.3s ease !important;
 }
