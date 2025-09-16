@@ -7,9 +7,16 @@ const config = {
   title: 'Vantage Compute Documentation',
   tagline: 'High Performance Computing, Evolved',
   favicon: 'img/favicon.ico',
-  url: 'https://vantagecompute.github.io/vantage-docs/',
+
+  url: 'https://vantagecompute.github.io',
   baseUrl: '/vantage-docs/',
-  onBrokenLinks: 'warn',
+
+  organizationName: 'vantagecompute',
+  projectName: 'vantage-cli',
+  deploymentBranch: 'main',
+  trailingSlash: false,
+
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
     defaultLocale: 'en',
