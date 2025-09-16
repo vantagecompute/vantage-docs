@@ -1,759 +1,227 @@
-/* font imports */
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/static/fonts/Satoshi-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/static/fonts/Satoshi-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/static/fonts/Satoshi-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/static/fonts/Satoshi-Black.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/static/fonts/Satoshi-MediumItalic.woff') format('woff');
-  font-weight: 500;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/static/fonts/Satoshi-BoldItalic.woff') format('woff');
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/static/fonts/Satoshi-BlackItalic.woff') format('woff');
-  font-weight: 900;
-  font-style: italic;
-}
-
-/* Context-aware navbar styles */
-
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Vantage CLI Documentation Custom Styles
  */
 
-/* You can override the default Infima variables here. */
-:root {
-  min-width: 300px;
-  /* keep font-family as first css entry */
-  font-family: 'Satoshi';
-  --ifm-font-family-base: 'Satoshi';
-  --ifm-font-family-monospace: 'Satoshi';
-  --ifm-menu-link-sublist-icon: url('/static/img/icons/bxs-chevron-up.svg');
-  --ifm-navbar-search-input-icon: url('/static/img/icons/bx-search.svg');
-  --ifm-navbar-search-input-icon-dark: url('/static/img/icons/bx-search-dark.svg');
+@import './commands.css';
 
-  /* light theme */
-  --ifm-color-primary: #5642d6;
+/* Root variables for Vantage brand colors */
+:root {
+  --vantage-purple: #6b46c1;
+  --vantage-purple-dark: #4c1d95;
+  --vantage-button: #AB9DFF;
+  --ifm-color-primary: #6b46c1;
+  --ifm-color-primary-dark: #4c1d95;
+  --ifm-color-primary-darker: #4c1d95;
+  --ifm-color-primary-darkest: #4c1d95;
+  --ifm-color-primary-light: #7c3aed;
+  --ifm-color-primary-lighter: #8b5cf6;
+  --ifm-color-primary-lightest: #a78bfa;
+  --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-background-color: #ffffff;
-  --ifm-breadcrumb-item-background-active: #eeecfb;
-  --ifm-color-content: #000000 !important;
-  --ifm-color-primary-dark: #0e0831;
-  --ifm-color-primary-darker: #000000;
-  --ifm-color-primary-darkest: #eeecfb;
-  --ifm-color-primary-light: #f7fafc;
-  --ifm-color-primary-lighter: #cbd5e0;
-  --ifm-color-primary-lightest: #718096;
-  --ifm-footer-background-color: #ffffff;
-  --ifm-menu-color-active: #5642d6;
-  --ifm-menu-color-background-active: #eeecfb;
-  --ifm-menu-color: #718096;
-  --ifm-navbar-background-color: #ffffff;
-  --vantage-search-bar-background: var(--ifm-background-color)
-    var(--ifm-navbar-search-input-icon) no-repeat 0.75rem center / 1rem 1rem;
-  --vantage-search-bar-shortcut-border: 1px solid #e2e8f0;
-  --search-local-modal-background: #ffffff;
 }
 
-/* dark theme */
+/* Dark mode variables */
 [data-theme='dark'] {
-  --ifm-color-primary: #7868dd;
+  --vantage-purple: #6b46c1;
+  --vantage-purple-dark: #4c1d95;
+  --vantage-button: #AB9DFF;
+  --ifm-color-primary: #AB9DFF;
+  --ifm-color-primary-dark: #9084ff;
+  --ifm-color-primary-darker: #8b5cf6;
+  --ifm-color-primary-darkest: #7c3aed;
+  --ifm-color-primary-light: #c4b5fd;
+  --ifm-color-primary-lighter: #ddd6fe;
+  --ifm-color-primary-lightest: #ede9fe;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-background-color: #04020e !important;
-  --ifm-breadcrumb-color-active: #cdc6f1;
-  --ifm-breadcrumb-item-background-active: #2b216b;
-  --ifm-color-content: #ffffff !important;
-  --ifm-color-primary-dark: #ffffff;
-  --ifm-color-primary-darker: #ffffff;
-  --ifm-color-primary-darkest: #2b216b;
-  --ifm-color-primary-light: #070418;
-  --ifm-color-primary-lighter: #3e395a;
-  --ifm-color-primary-lightest: #cbd5e0;
-  --ifm-footer-background-color: #04020e;
-  --ifm-menu-color-active: #cdc6f1;
-  --ifm-menu-color-background-active: #2b216b;
-  --ifm-menu-color: #cbd5e0;
-  --ifm-navbar-background-color: #04020e !important;
-  --ifm-card-background-color: #070418;
-  --vantage-search-bar-background: var(--ifm-background-color)
-    var(--ifm-navbar-search-input-icon-dark) no-repeat 0.75rem center / 1rem
-    1rem;
-  --vantage-search-bar-shortcut-border: 1px solid #6e6b83;
-  --search-local-modal-background: #04020e;
 }
 
-/* CSS modifiers */
-@media (min-width: 996px) {
-  .hero {
-    background-image: url('/static/img/banner-right.png'),
-      url('/static/img/banner-left.png');
-    background-position: right -50px top 130px, 0px 90px;
-    background-repeat: no-repeat, no-repeat;
-    background-size: 445px 617px, 445px;
-    background-attachment: fixed, fixed;
-  }
-}
-.hero {
-  height: 300px !important;
-  background-color: #020821;
-}
-[data-theme='dark'] .card {
-  border-color: var(--ifm-color-primary-lighter) !important;
-}
-[data-theme='dark'] .card:hover {
-  border-color: var(--ifm-color-primary) !important;
+/* Navbar styling - Vantage purple background */
+.navbar {
+  background-color: var(--vantage-purple) !important;
+  border-bottom: 1px solid var(--vantage-purple-dark);
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
 }
 
-/* unset custom font for code blocks */
-[class^='codeBlockLines'] {
-  font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
-    'Liberation Mono', 'Courier New', monospace !important;
-}
-
-/* enforces the usage of 14px for md content */
-div.theme-doc-markdown.markdown {
-  font-size: 0.875rem;
-}
-
-/* breadcrumbs */
-.breadcrumbs__link {
-  color: var(--ifm-color-content);
-}
-
-/* footer */
-.footer {
-  border-top: 1px solid var(--ifm-color-primary-lighter);
-  color: var(--ifm-color-primary-lightest);
-  font-size: 0.75rem;
-  height: 40px;
-  padding: 12px 0;
-}
-
-/* sidebar mobile */
-.navbar-sidebar__close > svg {
-  height: 16px;
-  width: 16px;
-}
-
-.navbar-sidebar
-  > .navbar-sidebar__brand
-  > .toggle_src-theme-ColorModeToggle-styles-module {
-  margin-right: 0.5rem !important;
-}
-
-/* Use native Docusaurus sidebar styling - remove all custom menu overrides */
-
-.theme-doc-sidebar-container,
-.theme-doc-sidebar-container > div,
-.theme-doc-sidebar-container > div > div {
-  background-color: var(--ifm-color-primary-light);
-  width: 270px !important;
-}
-
-#docusaurus_skipToContent_fallback > div > aside > div > div > nav {
-  padding-left: 12px;
-  padding-right: 12px;
-  border-right: 1px solid var(--ifm-color-primary-lighter);
-}
-
-/* navbar */
-.navbar.navbar--fixed-top {
-  border-bottom: 1px solid var(--ifm-color-primary-lighter);
-  box-shadow: none;
-  height: 80px;
-  padding: 18px 24px 22px 24px;
-}
-
-/* pagination controls at the end of the page */
-.pagination-nav__label {
-  font-size: 14px;
-}
+/* Navbar inner container */
 .navbar__inner {
-  padding-bottom: 1px;
-}
-.pagination-nav__link {
-  border: 1px solid #cbd5e0;
-}
-.pagination-nav__sublabel {
-  color: var(--ifm-color-content);
-  font-size: 13px;
-}
-
-/* header */
-.navbar__brand {
-  margin-right: 3.2rem;
-}
-
-.header-internal-link {
-  color: var(--ifm-color-primary-dark);
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-@media (max-width: 996px) {
-  .navbar__items > .header-vantage-link {
-    display: none !important;
-  }
-}
-.header-vantage-link {
-  color: var(--ifm-color-primary);
-  display: flex;
-  align-items: center;
-}
-.header-vantage-link:after {
-  background-color: var(--ifm-color-primary);
-  content: '';
-  display: flex;
-  height: 16px;
-  mask: url('/static/img/icons/bx-link-external.svg') no-repeat;
-  mask-size: cover;
-  width: 16px;
-  margin-left: 4px;
-}
-
-.navbar__search-input {
-  background: var(--vantage-search-bar-background);
-  border: 1px solid var(--ifm-color-primary-lighter);
-  border-radius: 8px;
-  height: 38px;
-}
-
-.navbar__search-input:focus-visible {
-  outline: 1px solid var(--ifm-color-primary-lightest);
-}
-.navbar__search-input::placeholder {
-  font-size: 13px;
-  color: var(--ifm-color-primary-lightest);
-}
-
-/* searchbar */
-[class^='searchHintContainer'] {
-  border: var(--vantage-search-bar-shortcut-border);
-  height: fit-content !important;
-  margin-top: 8px;
-  padding: 2px 4px;
-  border-radius: 4px;
-}
-[class^='searchHintContainer'] > kbd {
-  padding: 0 !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  font-size: 13px !important;
-  line-height: 18px !important;
-  color: #718096 !important;
-}
-
-[class^='searchClearButton'] {
-  cursor: pointer;
-}
-
-/* Reduce H1 size and increase body text size for docs content */
-.theme-doc-markdown.markdown h1 {
-  font-size: 2rem !important;   /* Adjust as needed, e.g., 2rem = 32px */
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-.theme-doc-markdown.markdown {
-  font-size: 1rem !important;   /* 1rem = 16px, increase if needed */
-  line-height: 1.7;
-}
-
-/* Make images in docs content smaller and responsive */
-.theme-doc-markdown.markdown img {
-  max-width: 60%;      /* Shrink images to 60% of container width */
-  height: auto;
-  display: block;
-  margin: 1.5rem auto; /* Center images with vertical spacing */
-  border-radius: 8px;  /* Optional: rounded corners for a modern look */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* Optional: subtle shadow */
-}
-
-/* Make images in mount-storage-locally larger */
-.theme-doc-markdown.markdown[data-doc-id*="mount-storage-locally"] img {
-  max-width: 90% !important;
-}
-
-/* Universal sidebar collapse functionality */
-:root {
-  --doc-sidebar-width: 300px;
-  --doc-sidebar-hidden-width: 30px;
-}
-
-/* Base transition for smooth animations */
-[class*="docSidebarContainer"] {
-  transition: width 0.3s ease;
-}
-
-/* Platform page specific styles to match native Docusaurus behavior */
-.docMainContainer_TBSLg--enhanced,
-/* Platform page layout styles */
-.main-wrapper {
-  display: flex;
-  flex: 1 0 auto;
-}
-
-.docsWrapper {
-  display: flex;
-  flex: 1 0 auto;
-}
-
-.docRoot {
-  display: flex;
-  width: 100%;
-}
-
-.docMainContainer {
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.docMainContainer--enhanced {
-  max-width: calc(
-    var(--ifm-container-width) + var(--doc-sidebar-width) - var(--doc-sidebar-hidden-width)
-  ) !important;
-}
-
-.docItemCol {
-  flex: 1 0 auto;
-}
-
-.docItemContainer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
   max-width: none !important;
+  padding: 0 1rem !important;
+  position: relative !important;
 }
 
-/* Sidebar item descriptions */
-.sidebar-item-description {
-  display: block;
-  font-size: 0.875rem;
-  color: var(--ifm-color-emphasis-600);
-  margin-top: 0.25rem;
+/* Ensure brand stays on left */
+.navbar__inner .navbar__brand {
+  order: 1 !important;
+  justify-self: flex-start !important;
 }
 
-/* Enhanced breadcrumb styling */
-.breadcrumbHomeIcon {
-  height: 1.1rem;
-  width: 1.1rem;
-  vertical-align: middle;
+/* Ensure items stay on right */
+.navbar__inner .navbar__items {
+  order: 3 !important;
+  justify-self: flex-end !important;
 }
 
-/* Collapsed sidebar styling - matches built Docusaurus behavior */
-.theme-doc-sidebar-container[data-collapsed=true],
-[class*=docSidebarContainer][data-collapsed=true],
-aside[class*=sidebar][data-collapsed=true] {
-  cursor: pointer;
-  overflow: hidden !important;
-  position: relative;
-  width: var(--doc-sidebar-hidden-width) !important;
-  background-color: var(--ifm-background-surface-color) !important;
-  border-right: 1px solid var(--ifm-color-emphasis-200) !important;
+/* Logo and brand container - left side */
+.navbar__brand {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
-/* Hide all inner content when collapsed */
-.theme-doc-sidebar-container[data-collapsed=true] > div,
-[class*=docSidebarContainer][data-collapsed=true] > div,
-aside[class*=sidebar][data-collapsed=true] > div {
+/* Navbar logo - properly sized for navbar */
+.navbar__logo {
+  height: 34px !important;
+  width: auto !important;
+  margin-right: 0.5rem !important;
+  display: block !important;
+  position: relative !important;
+}
+
+/* Hide the title that's generated within navbar__brand */
+.navbar__brand .navbar__title,
+.navbar__brand b.navbar__title,
+.navbar__brand .text--truncate {
   display: none !important;
 }
 
-.theme-doc-sidebar-container[data-collapsed=true]:before,
-[class*=docSidebarContainer][data-collapsed=true]:before,
-aside[class*=sidebar][data-collapsed=true]:before {
-  content: "▶";
+/* Create centered title using pseudo-element */
+.navbar__inner::after {
+  content: "Vantage Compute Documentation";
   position: absolute;
-  top: var(--mouse-y, 50%);
-  left: var(--mouse-x, 50%);
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
-  background: var(--ifm-background-color);
-  color: var(--ifm-color-emphasis-800);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  font-size: 18px;
-  font-weight: bold;
-  transition: all 0.15s ease-out;
-  z-index: 1000;
-  pointer-events: none;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.theme-doc-sidebar-container[data-collapsed=true]:hover:before,
-[class*=docSidebarContainer][data-collapsed=true]:hover:before,
-aside[class*=sidebar][data-collapsed=true]:hover:before {
-  color: var(--ifm-color-primary);
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
-/* Smaller dropdown arrows for all sidebars - catch all possible arrows */
-.menu::after,
-.menu *::after,
-.menu *::before {
-  zoom: 0.75 !important;
-}
-
-/* More specific targeting for sidebar arrows */
-aside .menu *::after {
-  zoom: 0.75 !important;
-}
-
-/* Platform sidebar collapsible menu styling */
-.menu__list-item-collapsible:not(.menu__list-item-collapsible--active) + ul.menu__list {
-  display: none;
-}
-
-.menu__list-item-collapsible--active + ul.menu__list {
-  display: block;
-}
-
-/* Ensure submenu transitions smoothly */
-ul.menu__list {
-  transition: display 0.2s ease;
-}
-
-/* Platform component dropdown styling */
-.platform-component-dropdown {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-}
-
-.platform-component-dropdown .navbar__link {
-  font-weight: 500;
-  color: var(--ifm-navbar-link-color);
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 6px;
-  background: var(--ifm-navbar-background-color);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-height: 2rem;
-}
-
-.platform-component-dropdown .navbar__link::after {
-  content: '⏷';
-  font-size: 0.9rem;
-  opacity: 0.6;
-  transition: opacity 0.2s ease;
-  margin-left: 0.5rem;
-}
-
-.platform-component-dropdown .navbar__link:hover {
-  color: var(--ifm-navbar-link-hover-color);
-  text-decoration: none;
-  border-color: var(--ifm-color-primary);
-  background-color: var(--ifm-color-emphasis-100);
-}
-
-.platform-component-dropdown .navbar__link:hover::after {
-  opacity: 0.8;
-}
-
-.platform-component-dropdown .dropdown__menu {
-  background: var(--ifm-navbar-background-color);
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 6px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  min-width: 180px;
-  padding: 0.5rem 0;
-  margin-top: 0.25rem;
-  display: none;
-}
-
-/* Show platform dropdown on hover */
-.platform-component-dropdown:hover .dropdown__menu {
-  display: block;
-}
-
-.platform-component-dropdown .dropdown__link {
-  padding: 0.75rem 1rem;
-  color: var(--ifm-font-color-base);
-  display: block;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-  border: none;
-}
-
-.platform-component-dropdown .dropdown__link:hover {
-  background-color: var(--ifm-menu-color-background-hover);
-  color: var(--ifm-font-color-base);
-  text-decoration: none;
-}
-
-.platform-component-dropdown .dropdown__link--active {
-  background-color: var(--ifm-menu-color-background-active);
-  color: var(--ifm-menu-color-active);
+  color: white;
   font-weight: 600;
-}
-
-/* Ensure proper spacing for all navbar dropdowns */
-.navbar__item.dropdown {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-/* Hide default Docusaurus dropdown arrow */
-.navbar__item.dropdown .navbar__link[aria-haspopup="true"]::after {
-  content: none !important;
-}
-
-.navbar__item.dropdown .navbar__link {
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 6px;
-  background: var(--ifm-navbar-background-color);
-  padding: 0.5rem 1rem;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-height: 2rem;
-}
-
-/* Add our custom arrow */
-.navbar__item.dropdown .navbar__link::before {
-  content: '⏷';
-  font-size: 0.8rem;
-  opacity: 0.6;
-  transition: opacity 0.2s ease;
-  order: 1;
-  margin-left: 0.5rem;
-}
-
-.navbar__item.dropdown .navbar__link:hover {
-  border-color: var(--ifm-color-primary);
-  background-color: var(--ifm-color-emphasis-100);
-  text-decoration: none;
-}
-
-.navbar__item.dropdown .navbar__link:hover::before {
-  opacity: 0.8;
-}
-
-/* Apply consistent dropdown menu styling to all navbar dropdowns */
-.navbar__item.dropdown .dropdown__menu {
-  background: var(--ifm-navbar-background-color);
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 6px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  min-width: 180px;
-  padding: 0.5rem 0;
-  margin-top: 0.25rem;
-  display: none;
-}
-
-/* Show dropdown on hover */
-.navbar__item.dropdown:hover .dropdown__menu {
-  display: block;
-}
-
-.navbar__item.dropdown .dropdown__link {
-  padding: 0.75rem 1rem;
-  color: var(--ifm-font-color-base);
-  display: block;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-  border: none;
-}
-
-.navbar__item.dropdown .dropdown__link:hover {
-  background-color: var(--ifm-menu-color-background-hover);
-  color: var(--ifm-font-color-base);
-  text-decoration: none;
-}
-
-.navbar__item.dropdown .dropdown__link--active {
-  background-color: var(--ifm-menu-color-background-active);
-  color: var(--ifm-menu-color-active);
-  font-weight: 600;
-}
-
-/* Better navbar spacing */
-.navbar__items {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.navbar__items--left {
-  margin-left: 1rem;
-}
-
-.navbar__items--right {
-  margin-right: 1rem;
-}
-
-/* Dark mode adjustments */
-[data-theme='dark'] .platform-component-dropdown .navbar__link,
-[data-theme='dark'] .navbar__item.dropdown .navbar__link {
-  border-color: var(--ifm-color-emphasis-600);
-}
-
-[data-theme='dark'] .platform-component-dropdown .navbar__link:hover,
-[data-theme='dark'] .navbar__item.dropdown .navbar__link:hover {
-  border-color: var(--ifm-color-primary);
-}
-
-[data-theme='dark'] .platform-component-dropdown .dropdown__menu,
-[data-theme='dark'] .navbar__item.dropdown .dropdown__menu {
-  border-color: var(--ifm-color-emphasis-600);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-}
-
-/* Enhanced dropdown hover behavior */
-.navbar__item.dropdown .dropdown__menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  display: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
-  background: var(--ifm-navbar-background-color);
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 6px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  min-width: 180px;
-  padding: 0.5rem 0;
-  margin-top: 0.25rem;
-}
-
-/* Show dropdown when dropdown--show class is applied */
-.navbar__item.dropdown.dropdown--show .dropdown__menu {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* Ensure dropdown menu items are properly styled */
-.navbar__item.dropdown .dropdown__link {
-  padding: 0.75rem 1rem;
-  color: var(--ifm-font-color-base);
-  display: block;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-  border: none;
+  font-size: 1.2rem;
+  z-index: 1;
   white-space: nowrap;
 }
 
-.navbar__item.dropdown .dropdown__link:hover {
-  background-color: var(--ifm-menu-color-background-hover);
-  color: var(--ifm-font-color-base);
-  text-decoration: none;
+/* Navbar items container - right side */
+.navbar__items {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-left: auto !important;
 }
 
-.navbar__item.dropdown .dropdown__link--active {
-  background-color: var(--ifm-menu-color-background-active);
-  color: var(--ifm-menu-color-active);
-  font-weight: 600;
+/* Navbar items styling */
+.navbar__item {
+  color: white !important;
 }
 
-/* Add dropdown arrow to all dropdown triggers */
-.navbar__item.dropdown .navbar__link[aria-haspopup="true"] {
-  position: relative;
-  padding-right: 2rem !important;
+.navbar__link {
+  color: white !important;
 }
 
-.navbar__item.dropdown .navbar__link[aria-haspopup="true"]::after {
-  content: '⏷';
-  position: absolute;
-  right: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.9rem;
-  opacity: 0.6;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+.navbar__link:hover {
+  color: #e5e7eb !important;
 }
 
-.navbar__item.dropdown .navbar__link[aria-haspopup="true"]:hover::after {
-  opacity: 0.8;
+/* PyPI and GitHub buttons */
+.pypi-button,
+.github-button {
+  background-color: var(--vantage-button) !important;
+  color: white !important;
+  border-radius: 6px !important;
+  padding: 8px 16px !important;
+  margin: 0 4px !important;
+  border: none !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
 }
 
-.navbar__item.dropdown.dropdown--show .navbar__link[aria-haspopup="true"]::after {
-  transform: translateY(-50%) rotate(180deg);
+.pypi-button:hover,
+.github-button:hover {
+  background-color: #9084ff !important;
+  color: white !important;
+  text-decoration: none !important;
 }
 
-/* Ensure proper positioning for dropdown container */
-.navbar__item.dropdown {
-  position: relative;
+/* Dark mode toggle spacing */
+.toggle-spacer {
+  width: 8px;
 }
 
-/* Dark mode adjustments for enhanced dropdowns */
-[data-theme='dark'] .navbar__item.dropdown .dropdown__menu {
-  background: var(--ifm-navbar-background-color);
-  border-color: var(--ifm-color-emphasis-600);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+/* Table of Contents (page navigation) links */
+.table-of-contents .table-of-contents__link:hover {
+  color: var(--vantage-button) !important;
 }
 
-[data-theme='dark'] .navbar__item.dropdown .dropdown__link {
-  color: var(--ifm-font-color-base);
+.table-of-contents .table-of-contents__link--active {
+  color: var(--vantage-button) !important;
+  font-weight: 600 !important;
 }
 
-[data-theme='dark'] .navbar__item.dropdown .dropdown__link:hover {
-  background-color: var(--ifm-menu-color-background-hover);
-  color: var(--ifm-font-color-base);
+/* Pagination navigation */
+.pagination-nav__link:hover {
+  border-color: var(--vantage-button) !important;
 }
 
-/* Ensure dropdowns work well on mobile */
-@media (max-width: 996px) {
-  .navbar__item.dropdown .dropdown__menu {
-    position: static;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    box-shadow: none;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-    padding: 0;
-    margin-top: 0;
-    margin-left: 1rem;
-  }
+.pagination-nav__link:hover .pagination-nav__label,
+.pagination-nav__link:hover .pagination-nav__sublabel {
+  color: var(--vantage-button) !important;
+}
+
+/* Breadcrumb links */
+.breadcrumbs__link:hover {
+  color: var(--vantage-button) !important;
+}
+
+/* Footer styling */
+.footer--dark {
+  background-color: var(--vantage-purple-dark) !important;
+}
+
+.footer__link-item:hover {
+  color: var(--vantage-button) !important;
+}
+
+/* Remove any footer logo sizing */
+.footer__logo {
+  height: auto !important;
+  width: auto !important;
+  max-height: 60px;
+}
+
+/* Search bar improvements - add padding from the right edge */
+.navbar__search {
+  margin-right: 2rem !important;
+}
+
+/* ===== DOCUSEARCH CSS VARIABLES CUSTOMIZATION ===== */
+/* Following the official DocSearch styling approach */
+/* Documentation: https://docsearch.algolia.com/docs/styling/ */
+
+:root {
+  /* DocSearch Brand Colors - Vantage Purple Theme */
+  --docsearch-primary-color: #6b46c1;
+  --docsearch-text-color: #1c1e21;
+  --docsearch-spacing: 12px;
+  --docsearch-icon-stroke-width: 1.4;
+  --docsearch-highlight-color: #6b46c1;
+  --docsearch-muted-color: #969faf;
+  --docsearch-container-background: rgba(107, 70, 193, 0.1);
+  --docsearch-modal-background: #f5f6f7;
   
-  .navbar__item.dropdown.dropdown--show .dropdown__menu {
-    display: block;
-  }
+  /* Keep all other DocSearch variables as defaults */
+  /* The official @docsearch/css will provide the rest */
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] {
+  --docsearch-text-color: #f5f6f7;
+  --docsearch-container-background: rgba(107, 70, 193, 0.2);
+  --docsearch-modal-background: #15172a;
+  --docsearch-highlight-color: #8b5cf6;
+  --docsearch-primary-color: #8b5cf6;
 }

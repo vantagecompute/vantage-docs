@@ -1,624 +1,1558 @@
----
-id: command-reference
-title: Command Reference
-description: Complete reference for all Vantage CLI commands
----
+# CLI Command Reference
 
-Complete reference documentation for all Vantage CLI commands and options.
+This document provides a comprehensive reference for all available CLI commands and their options.
 
-## Global Options
-
-Available for all commands:
 
 ```text
---profile string      Configuration profile to use
---output string       Output format: table, json, yaml, csv (default "table")
---color string        Enable colored output: auto, always, never (default "auto")
---debug               Enable debug logging
---quiet               Suppress non-essential output
---help                Show help for command
---version             Show version information
+                                                                                                       
+ Usage: vantage [OPTIONS] COMMAND [ARGS]...                                         
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────╮
+│ version   Show version and exit.                                                                    │
+│ login     Authenticate against the Vantage CLI by obtaining an authentication token.                │
+│ logout    Log out of the vantage-cli and clear saved user credentials.                              │
+│ whoami    Display information about the currently authenticated user.                               │
+│ cloud     Manage cloud provider configurations and integrations for your Vantage infrastructure.    │
+│ cluster   Manage Vantage compute clusters for high-performance computing workloads.                 │
+│ config    Manage Vantage CLI configuration and settings.                                            │
+│ license   Manage software licenses, license servers, and licensing configurations.                  │
+│ network   Manage virtual networks, subnets, and network configurations for cloud infrastructure.    │
+│ profile   Manage Vantage CLI profiles to work with different environments and configurations.       │
+│ storage   Manage storage volumes, disks, and storage configurations for cloud infrastructure.       │
+│ app       Deploy and manage applications on Vantage compute clusters.                               │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
 ```
 
 ## Authentication Commands
 
-### `vantage login`
+### Login
 
-Authenticate with Vantage platform.
+```text
+                                                                                                       
+ Usage: vantage login [OPTIONS]                                                     
+                                                                                                       
+ Authenticate against the Vantage CLI by obtaining an authentication token.                            
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --json     -j            Output in JSON format                                                      │
+│ --verbose  -v            Enable verbose terminal output                                             │
+│ --profile  -p      TEXT  Profile name to use [default: default]                                     │
+│ --help                   Show this message and exit.                                                │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-```bash
-vantage login [flags]
+
 ```
 
-**Flags:**
-- `--no-browser` - Don't open browser for authentication
-- `--service-account string` - Service account key file path
-- `--service-account-env` - Use service account from environment variable
+### Logout
 
-**Examples:**
-```bash
-vantage login
-vantage login --no-browser
-vantage login --service-account /path/to/key.json
+```text
+                                                                                                       
+ Usage: vantage logout [OPTIONS]                                                    
+                                                                                                       
+ Log out of the vantage-cli and clear saved user credentials.                                          
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --json     -j            Output in JSON format                                                      │
+│ --verbose  -v            Enable verbose terminal output                                             │
+│ --profile  -p      TEXT  Profile name to use [default: default]                                     │
+│ --help                   Show this message and exit.                                                │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
 ```
 
-### `vantage logout`
+### Whoami
 
-Remove stored authentication credentials.
+```text
+                                                                                                       
+ Usage: vantage whoami [OPTIONS]                                                    
+                                                                                                       
+ Display information about the currently authenticated user.                                           
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --json     -j            Output in JSON format                                                      │
+│ --verbose  -v            Enable verbose terminal output                                             │
+│ --profile  -p      TEXT  Profile name to use [default: default]                                     │
+│ --help                   Show this message and exit.                                                │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-```bash
-vantage logout
+
 ```
 
-### `vantage auth`
+## Version Information
 
-Manage authentication and view auth status.
+```text
+                                                                                                       
+ Usage: vantage version [OPTIONS]                                                   
+                                                                                                       
+ Show version and exit.                                                                                
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --json     -j            Output in JSON format                                                      │
+│ --verbose  -v            Enable verbose terminal output                                             │
+│ --profile  -p      TEXT  Profile name to use [default: default]                                     │
+│ --help                   Show this message and exit.                                                │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-**Subcommands:**
-- `status` - Show authentication status
-- `whoami` - Show current user information
-- `refresh` - Refresh authentication token
-- `permissions` - Show user permissions
 
-```bash
-vantage auth status
-vantage auth whoami
-vantage auth refresh
 ```
 
-## Configuration Commands
+## Cloud Management
 
-### `vantage config`
+```text
+                                                                                                       
+ Usage: vantage cloud [OPTIONS] COMMAND [ARGS]...                                   
+                                                                                                       
+ Manage cloud provider configurations and integrations for your Vantage infrastructure.                
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────╮
+│ add      Add a new cloud configuration.                                                             │
+│ delete   Delete a cloud configuration.                                                              │
+│ get      Get details of a specific cloud configuration.                                             │
+│ list     List all configured cloud providers.                                                       │
+│ update   Update an existing cloud configuration.                                                    │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-Manage CLI configuration and profiles.
 
-**Subcommands:**
-
-#### `vantage config get <key>`
-
-Get configuration value.
-
-```bash
-vantage config get organization
-vantage config get --profile prod api-url
 ```
 
-#### `vantage config set <key> <value>`
-
-Set configuration value.
-
-```bash
-vantage config set organization "my-org"
-vantage config set --profile staging api-url "https://staging.api.example.com"
-```
-
-#### `vantage config show`
-
-Show all configuration values.
+<details markdown="1" id="cloud-add">
+<summary onclick="window.location.hash='cloud-add'">Show cloud add details</summary>
 
 ```bash
-vantage config show
-vantage config show --profile production
+vantage cloud add [OPTIONS] CLOUD_NAME
 ```
 
-#### `vantage config create-profile <name>`
+**Arguments:**
 
-Create new configuration profile.
+- `*` - cloud_name      TEXT  Name of the cloud to add [required]                                      │
+
+**Options:**
+
+- `--region` - -r      TEXT  Default region for the cloud                                   │
+- `--config-file               FILE` - Path to cloud configuration file                               │
+- `--credentials-file          FILE` - Path to credentials file                                       │
+- `--json` - -j            Output in JSON format                                          │
+- `--verbose` - -v            Enable verbose terminal output                                 │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                         │
+- `--help                            Show` - this message and exit.                                    │
+
+</details>
+
+<details markdown="1" id="cloud-delete">
+<summary onclick="window.location.hash='cloud-delete'">Show cloud delete details</summary>
 
 ```bash
-vantage config create-profile staging
+vantage cloud delete [OPTIONS] CLOUD_NAME
 ```
 
-#### `vantage config use-profile <name>`
+**Arguments:**
 
-Switch to configuration profile.
+- `*` - cloud_name      TEXT  Name of the cloud to delete [required]                                   │
+
+**Options:**
+
+- `--force                             Force` - deletion without confirmation                             │
+- `--remove-credentials                Also` - remove stored credentials                                  │
+- `--json` - -j            Output in JSON format                                           │
+- `--verbose` - -v            Enable verbose terminal output                                  │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                          │
+- `--help                              Show` - this message and exit.                                     │
+
+</details>
+
+<details markdown="1" id="cloud-get">
+<summary onclick="window.location.hash='cloud-get'">Show cloud get details</summary>
 
 ```bash
-vantage config use-profile production
+vantage cloud get [OPTIONS] NAME
 ```
 
-#### `vantage config list-profiles`
+**Arguments:**
 
-List all configuration profiles.
+- `*` - name      TEXT  Name of the cloud configuration to retrieve [required]                         │
+
+**Options:**
+
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="cloud-list">
+<summary onclick="window.location.hash='cloud-list'">Show cloud list details</summary>
 
 ```bash
-vantage config list-profiles
+vantage cloud list [OPTIONS]
 ```
 
-## Job Commands
+**Options:**
 
-### `vantage jobs`
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
 
-Manage computational jobs.
+</details>
 
-**Subcommands:**
-
-#### `vantage jobs list`
-
-List jobs with optional filtering.
+<details markdown="1" id="cloud-update">
+<summary onclick="window.location.hash='cloud-update'">Show cloud update details</summary>
 
 ```bash
-vantage jobs list [flags]
+vantage cloud update [OPTIONS] CLOUD_NAME
 ```
 
-**Flags:**
-- `--status string` - Filter by job status (pending, running, completed, failed)
-- `--cluster string` - Filter by cluster name
-- `--user string` - Filter by user
-- `--limit int` - Limit number of results (default 20)
-- `--all` - Show all jobs (no pagination)
+**Arguments:**
 
-**Examples:**
-```bash
-vantage jobs list
-vantage jobs list --status running
-vantage jobs list --cluster gpu-cluster --limit 50
+- `*` - cloud_name      TEXT  Name of the cloud to update [required]                                   │
+
+**Options:**
+
+- `--provider` - -p      TEXT  Update cloud provider                                             │
+- `--region` - -r      TEXT  Update default region                                             │
+- `--config-file               FILE` - Path to updated configuration file                                │
+- `--credentials-file          FILE` - Path to updated credentials file                                  │
+- `--description               TEXT` - Update cloud description                                          │
+- `--json` - -j            Output in JSON format                                             │
+- `--verbose` - -v            Enable verbose terminal output                                    │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                            │
+- `--help                            Show` - this message and exit.                                       │
+
+</details>
+
+## Cluster Management
+
+```text
+                                                                                                       
+ Usage: vantage cluster [OPTIONS] COMMAND [ARGS]...                                 
+                                                                                                       
+ Manage Vantage compute clusters for high-performance computing workloads.                             
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────╮
+│ create       Create a new Vantage cluster.                                                          │
+│ delete       Delete a Vantage cluster.                                                              │
+│ get          Get details of a specific Vantage cluster.                                             │
+│ list         List all Vantage clusters.                                                             │
+│ federation   Manage Vantage compute federations for distributed workloads.                          │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
 ```
 
-#### `vantage jobs submit <template>`
-
-Submit a new job from template.
-
-```bash
-vantage jobs submit <template> [flags]
-```
-
-**Flags:**
-- `--cluster string` - Target cluster
-- `--cpu string` - CPU resources (e.g., "2", "500m")
-- `--memory string` - Memory resources (e.g., "4Gi", "1024Mi")
-- `--gpu int` - Number of GPUs
-- `--priority int` - Job priority (1-100)
-- `--timeout duration` - Job timeout (e.g., "1h30m", "3600s")
-- `--env stringArray` - Environment variables (KEY=VALUE)
-- `--mount stringArray` - Volume mounts (src:dest)
-- `--name string` - Override job name
-- `--wait` - Wait for job completion
-- `--no-validate` - Skip template validation
-
-**Examples:**
-```bash
-vantage jobs submit ml-training.yaml
-vantage jobs submit job.yaml --cluster gpu-cluster --cpu 4 --memory 8Gi
-vantage jobs submit job.yaml --env MODEL_TYPE=bert --env EPOCHS=10
-vantage jobs submit job.yaml --wait
-```
-
-#### `vantage jobs get <job-id>`
-
-Get detailed job information.
+<details markdown="1" id="cluster-create">
+<summary onclick="window.location.hash='cluster-create'">Show cluster create details</summary>
 
 ```bash
-vantage jobs get <job-id>
+vantage cluster create [OPTIONS] CLUSTER_NAME
 ```
 
-#### `vantage jobs status <job-id>`
+**Arguments:**
 
-Get job status and basic information.
+- `*` - cluster_name      TEXT  Name of the cluster to create [required]                               │
+
+**Options:**
+
+- `--config-file          FILE` - Path to configuration file for       │
+- `--deploy` - [slurm-juju-localhost|slurm-microk8  Deploy an application after cluster  │
+- `--json` - -j                                           Output in JSON format                │
+- `--verbose` - -v                                           Enable verbose terminal output       │
+- `--profile` - -p      TEXT                                 Profile name to use                  │
+- `--help                                                      Show` - this message and exit.          │
+
+</details>
+
+<details markdown="1" id="cluster-delete">
+<summary onclick="window.location.hash='cluster-delete'">Show cluster delete details</summary>
 
 ```bash
-vantage jobs status <job-id>
+vantage cluster delete [OPTIONS] CLUSTER_NAME
 ```
 
-#### `vantage jobs logs <job-id>`
+**Arguments:**
 
-Get job logs.
+- `*` - cluster_name      TEXT  Name of the cluster to delete [required]                               │
+
+**Options:**
+
+- `--force` - -f            Skip confirmation prompt                                                   │
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="cluster-get">
+<summary onclick="window.location.hash='cluster-get'">Show cluster get details</summary>
 
 ```bash
-vantage jobs logs <job-id> [flags]
+vantage cluster get [OPTIONS] CLUSTER_NAME
 ```
 
-**Flags:**
-- `--follow, -f` - Follow log output
-- `--tail int` - Number of lines from end (default 100)
-- `--since duration` - Show logs since time (e.g., "1h", "30m")
-- `--timestamps` - Include timestamps
+**Arguments:**
 
-**Examples:**
-```bash
-vantage jobs logs job-12345
-vantage jobs logs job-12345 --follow
-vantage jobs logs job-12345 --tail 500 --timestamps
-```
+- `*` - cluster_name      TEXT  Name of the cluster to get details for [required]                      │
 
-#### `vantage jobs cancel <job-id>`
+**Options:**
 
-Cancel a running job.
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
 
-```bash
-vantage jobs cancel <job-id>
-```
+</details>
 
-#### `vantage jobs outputs <job-id>`
-
-Manage job output files.
+<details markdown="1" id="cluster-list">
+<summary onclick="window.location.hash='cluster-list'">Show cluster list details</summary>
 
 ```bash
-vantage jobs outputs <job-id> [flags]
+vantage cluster list [OPTIONS]
 ```
 
-**Flags:**
-- `--download string` - Download outputs to directory
-- `--list` - List available outputs
+**Options:**
 
-**Examples:**
-```bash
-vantage jobs outputs job-12345 --list
-vantage jobs outputs job-12345 --download ./results/
-```
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
 
-#### `vantage jobs wait <job-id>`
+</details>
 
-Wait for job completion.
+<details markdown="1" id="cluster-federation">
+<summary onclick="window.location.hash='cluster-federation'">Show cluster federation help</summary>
 
 ```bash
-vantage jobs wait <job-id> [flags]
+vantage cluster federation --help
 ```
 
-**Flags:**
-- `--timeout duration` - Maximum wait time
-- `--interval duration` - Status check interval (default 5s)
+```text
+                                                                                                       
+ Usage: vantage cluster federation [OPTIONS] COMMAND                                
+                                                      [ARGS]...                                        
+                                                                                                       
+ Manage Vantage compute federations for distributed workloads.                                         
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────╮
+│ create   Create a new Vantage federation.                                                           │
+│ delete   Delete a Vantage federation.                                                               │
+│ get      Get details of a specific Vantage federation.                                              │
+│ list     List all Vantage federations.                                                              │
+│ update   Update a Vantage federation.                                                               │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-## Cluster Commands
 
-### `vantage clusters`
+```
 
-Manage compute clusters.
+</details>
 
-**Subcommands:**
-
-#### `vantage clusters list`
-
-List available clusters.
+<details markdown="1" id="cluster-federation-create">
+<summary onclick="window.location.hash='cluster-federation-create'">Show cluster federation create details</summary>
 
 ```bash
-vantage clusters list [flags]
+vantage cluster federation create
 ```
 
-**Flags:**
-- `--status string` - Filter by cluster status
-- `--provider string` - Filter by cloud provider
-- `--region string` - Filter by region
+**Arguments:**
 
-#### `vantage clusters get <cluster-name>`
+- `*` - name      TEXT  Name of the federation to create [required]                                    │
 
-Get detailed cluster information.
+**Options:**
+
+- `--description` - -d      TEXT  Description of the federation                                          │
+- `--json` - -j            Output in JSON format                                                  │
+- `--verbose` - -v            Enable verbose terminal output                                         │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                 │
+- `--help                       Show` - this message and exit.                                            │
+
+</details>
+
+<details markdown="1" id="cluster-federation-delete">
+<summary onclick="window.location.hash='cluster-federation-delete'">Show cluster federation delete details</summary>
 
 ```bash
-vantage clusters get <cluster-name>
+vantage cluster federation delete
 ```
 
-#### `vantage clusters status <cluster-name>`
+**Arguments:**
 
-Get cluster status and metrics.
+- `*` - name      TEXT  Name of the federation to delete [required]                                    │
+
+**Options:**
+
+- `--force` - -f            Force deletion without confirmation                                        │
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="cluster-federation-get">
+<summary onclick="window.location.hash='cluster-federation-get'">Show cluster federation get details</summary>
 
 ```bash
-vantage clusters status <cluster-name> [flags]
+vantage cluster federation get [OPTIONS] NAME
 ```
 
-**Flags:**
-- `--watch, -w` - Watch for status changes
+**Arguments:**
 
-#### `vantage clusters scale <cluster-name>`
+- `*` - name      TEXT  Name of the federation to retrieve [required]                                  │
 
-Scale cluster resources.
+**Options:**
+
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="cluster-federation-list">
+<summary onclick="window.location.hash='cluster-federation-list'">Show cluster federation list details</summary>
 
 ```bash
-vantage clusters scale <cluster-name> [flags]
+vantage cluster federation list [OPTIONS]
 ```
 
-**Flags:**
-- `--nodes int` - Set number of nodes
-- `--min-nodes int` - Set minimum nodes for autoscaling
-- `--max-nodes int` - Set maximum nodes for autoscaling
+**Options:**
 
-**Examples:**
-```bash
-vantage clusters scale my-cluster --nodes 10
-vantage clusters scale my-cluster --min-nodes 2 --max-nodes 20
-```
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
 
-#### `vantage clusters events <cluster-name>`
+</details>
 
-Show cluster events and history.
+<details markdown="1" id="cluster-federation-update">
+<summary onclick="window.location.hash='cluster-federation-update'">Show cluster federation update details</summary>
 
 ```bash
-vantage clusters events <cluster-name> [flags]
+vantage cluster federation update
 ```
 
-**Flags:**
-- `--since duration` - Show events since time
-- `--follow, -f` - Follow new events
+**Arguments:**
 
-## Storage Commands
+- `*` - name      TEXT  Name of the federation to update [required]                                    │
 
-### `vantage storage`
+**Options:**
 
-Manage data and file operations.
+- `--description` - -d      TEXT  New description for the federation                                  │
+- `--add-cluster             TEXT` - Add a cluster to the federation                                     │
+- `--remove-cluster          TEXT` - Remove a cluster from the federation                                │
+- `--json` - -j            Output in JSON format                                               │
+- `--verbose` - -v            Enable verbose terminal output                                      │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                              │
+- `--help                          Show` - this message and exit.                                         │
 
-**Subcommands:**
+</details>
 
-#### `vantage storage list <path>`
+## License Management
 
-List files and directories.
+```text
+                                                                                                       
+ Usage: vantage license [OPTIONS] COMMAND [ARGS]...                                 
+                                                                                                       
+ Manage software licenses, license servers, and licensing configurations.                              
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────╮
+│ server          Manage license servers for software licensing and compliance.                       │
+│ product         Manage license products and software licensing definitions.                         │
+│ configuration   Manage license configurations and policy settings.                                  │
+│ deployment      Manage license deployments for software distribution and activation.                │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+```
+
+<details markdown="1" id="license-server">
+<summary onclick="window.location.hash='license-server'">Show license server help</summary>
 
 ```bash
-vantage storage list <path> [flags]
+vantage license server --help
 ```
 
-**Flags:**
-- `--recursive, -r` - List recursively
-- `--long, -l` - Show detailed information
-- `--human-readable, -h` - Human-readable file sizes
+```text
+                                                                                                       
+ Usage: vantage license server [OPTIONS] COMMAND [ARGS]...                          
+                                                                                                       
+ Manage license servers for software licensing and compliance.                                         
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────╮
+│ create   Create a new license server.                                                               │
+│ delete   Delete a license server.                                                                   │
+│ get      Get details of a specific license server.                                                  │
+│ list     List all license servers.                                                                  │
+│ update   Update an existing license server.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-**Examples:**
-```bash
-vantage storage list /datasets/
-vantage storage list /datasets/ --recursive --long
+
 ```
 
-#### `vantage storage upload <local-path> <remote-path>`
+</details>
 
-Upload files or directories.
-
-```bash
-vantage storage upload <local-path> <remote-path> [flags]
-```
-
-**Flags:**
-- `--recursive, -r` - Upload directories recursively
-- `--progress` - Show upload progress
-- `--resume` - Resume interrupted uploads
-- `--exclude string` - Exclude pattern
-- `--parallel int` - Number of parallel transfers (default 4)
-
-**Examples:**
-```bash
-vantage storage upload file.txt /datasets/
-vantage storage upload ./data/ /datasets/project/ --recursive --progress
-vantage storage upload large-file.tar.gz /datasets/ --resume
-```
-
-#### `vantage storage download <remote-path> <local-path>`
-
-Download files or directories.
+<details markdown="1" id="license-server-create">
+<summary onclick="window.location.hash='license-server-create'">Show license server create details</summary>
 
 ```bash
-vantage storage download <remote-path> <local-path> [flags]
+vantage license server create [OPTIONS] NAME
 ```
 
-**Flags:**
-- `--recursive, -r` - Download directories recursively
-- `--progress` - Show download progress
-- `--resume` - Resume interrupted downloads
-- `--parallel int` - Number of parallel transfers
+**Arguments:**
 
-**Examples:**
-```bash
-vantage storage download /datasets/results.csv ./
-vantage storage download /datasets/outputs/ ./results/ --recursive
-```
+- `*` - name      TEXT  Name of the license server to create [required]                                │
 
-#### `vantage storage sync <source> <destination>`
+**Options:**
 
-Synchronize directories.
+- `--port` - -p      INTEGER  License server port [default: 27000]                             │
+- `--description` - -d      TEXT     Description of the license server                                │
+- `--json` - -j               Output in JSON format                                            │
+- `--verbose` - -v               Enable verbose terminal output                                   │
+- `--profile` - -p      TEXT     Profile name to use [default: default]                           │
+- `--help                          Show` - this message and exit.                                      │
 
-```bash
-vantage storage sync <source> <destination> [flags]
-```
+</details>
 
-**Flags:**
-- `--delete` - Delete files in destination not in source
-- `--dry-run` - Show what would be transferred
-- `--exclude string` - Exclude pattern
-
-**Examples:**
-```bash
-vantage storage sync ./local-data/ /datasets/project/
-vantage storage sync /datasets/backup/ ./backup/ --delete
-```
-
-#### `vantage storage delete <path>`
-
-Delete files or directories.
+<details markdown="1" id="license-server-delete">
+<summary onclick="window.location.hash='license-server-delete'">Show license server delete details</summary>
 
 ```bash
-vantage storage delete <path> [flags]
+vantage license server delete [OPTIONS] SERVER_ID
 ```
 
-**Flags:**
-- `--recursive, -r` - Delete directories recursively
-- `--force, -f` - Don't prompt for confirmation
+**Arguments:**
 
-#### `vantage storage info <path>`
+- `*` - server_id      TEXT  ID of the license server to delete [required]                             │
 
-Get file or directory information.
+**Options:**
+
+- `--force` - -f            Force delete without confirmation                                          │
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="license-server-get">
+<summary onclick="window.location.hash='license-server-get'">Show license server get details</summary>
 
 ```bash
-vantage storage info <path>
+vantage license server get [OPTIONS] SERVER_ID
 ```
 
-## Organization Commands
+**Arguments:**
 
-### `vantage orgs`
+- `*` - server_id      TEXT  ID of the license server to get [required]                                │
 
-Manage organizations.
+**Options:**
 
-**Subcommands:**
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
 
-#### `vantage orgs list`
+</details>
 
-List accessible organizations.
+<details markdown="1" id="license-server-list">
+<summary onclick="window.location.hash='license-server-list'">Show license server list details</summary>
 
 ```bash
-vantage orgs list
+vantage license server list [OPTIONS]
 ```
 
-#### `vantage orgs current`
+**Options:**
 
-Show current organization.
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="license-server-update">
+<summary onclick="window.location.hash='license-server-update'">Show license server update details</summary>
 
 ```bash
-vantage orgs current
+vantage license server update [OPTIONS] SERVER_ID
 ```
 
-#### `vantage orgs switch <org-id>`
+**Arguments:**
 
-Switch to different organization.
+- `*` - server_id      TEXT  ID of the license server to update [required]                             │
+
+**Options:**
+
+- `--name` - -n      TEXT     New name for the license server                                     │
+- `--host` - -h      TEXT     New hostname or IP address                                          │
+- `--port` - -p      INTEGER  New port number                                                     │
+- `--description` - -d      TEXT     New description                                                     │
+- `--json` - -j               Output in JSON format                                               │
+- `--verbose` - -v               Enable verbose terminal output                                      │
+- `--profile` - -p      TEXT     Profile name to use [default: default]                              │
+- `--help                          Show` - this message and exit.                                         │
+
+</details>
+
+<details markdown="1" id="license-product">
+<summary onclick="window.location.hash='license-product'">Show license product help</summary>
 
 ```bash
-vantage orgs switch my-other-org
+vantage license product --help
 ```
 
-## Team Commands
+```text
+                                                                                                       
+ Usage: vantage license product [OPTIONS] COMMAND [ARGS]...                         
+                                                                                                       
+ Manage license products and software licensing definitions.                                           
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────╮
+│ create   Create a new license product.                                                              │
+│ delete   Delete a license product.                                                                  │
+│ get      Get details of a specific license product.                                                 │
+│ list     List all license products.                                                                 │
+│ update   Update an existing license product.                                                        │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-### `vantage teams`
 
-Manage team collaboration.
+```
 
-**Subcommands:**
+</details>
 
-#### `vantage teams members list`
-
-List team members.
+<details markdown="1" id="license-product-create">
+<summary onclick="window.location.hash='license-product-create'">Show license product create details</summary>
 
 ```bash
-vantage teams members list
+vantage license product create [OPTIONS] NAME
 ```
 
-#### `vantage teams members invite <email>`
+**Arguments:**
 
-Invite team member.
+- `*` - name      TEXT  Name of the license product to create [required]                               │
+
+**Options:**
+
+- `--description` - -d      TEXT  Description of the license product                                  │
+- `--type` - -t      TEXT  Type of license (concurrent, node-locked, etc.)                     │
+- `--json` - -j            Output in JSON format                                               │
+- `--verbose` - -v            Enable verbose terminal output                                      │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                              │
+- `--help                       Show` - this message and exit.                                         │
+
+</details>
+
+<details markdown="1" id="license-product-delete">
+<summary onclick="window.location.hash='license-product-delete'">Show license product delete details</summary>
 
 ```bash
-vantage teams members invite user@example.com [flags]
+vantage license product delete [OPTIONS] PRODUCT_ID
 ```
 
-**Flags:**
-- `--role string` - Member role (viewer, developer, admin)
-- `--team string` - Specific team to invite to
+**Arguments:**
 
-#### `vantage teams members update <email>`
+- `*` - product_id      TEXT  ID of the license product to delete [required]                           │
 
-Update team member.
+**Options:**
+
+- `--force` - -f            Force delete without confirmation                                          │
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="license-product-get">
+<summary onclick="window.location.hash='license-product-get'">Show license product get details</summary>
 
 ```bash
-vantage teams members update user@example.com [flags]
+vantage license product get [OPTIONS] PRODUCT_ID
 ```
 
-**Flags:**
-- `--role string` - New member role
+**Arguments:**
 
-## Resource Commands
+- `*` - product_id      TEXT  ID of the license product to get [required]                              │
 
-### `vantage resources`
+**Options:**
 
-View and manage resources.
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
 
-**Subcommands:**
+</details>
 
-#### `vantage resources list`
-
-List available resources.
+<details markdown="1" id="license-product-list">
+<summary onclick="window.location.hash='license-product-list'">Show license product list details</summary>
 
 ```bash
-vantage resources list [flags]
+vantage license product list [OPTIONS]
 ```
 
-**Flags:**
-- `--type string` - Resource type filter
-- `--cluster string` - Cluster filter
+**Options:**
 
-#### `vantage resources usage`
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
 
-Show resource usage statistics.
+</details>
+
+<details markdown="1" id="license-product-update">
+<summary onclick="window.location.hash='license-product-update'">Show license product update details</summary>
 
 ```bash
-vantage resources usage [flags]
+vantage license product update [OPTIONS] PRODUCT_ID
 ```
 
-**Flags:**
-- `--cluster string` - Specific cluster
-- `--since duration` - Usage since time period
+**Arguments:**
 
-## Template Commands
+- `*` - product_id      TEXT  ID of the license product to update [required]                           │
 
-### `vantage templates`
+**Options:**
 
-Manage job templates.
+- `--name` - -n      TEXT  New name for the license product                                       │
+- `--version` - -v      TEXT  New version                                                            │
+- `--description` - -d      TEXT  New description                                                        │
+- `--type` - -t      TEXT  New license type                                                       │
+- `--json` - -j            Output in JSON format                                                  │
+- `--verbose` - -v            Enable verbose terminal output                                         │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                 │
+- `--help                       Show` - this message and exit.                                            │
 
-**Subcommands:**
+</details>
 
-#### `vantage templates list`
-
-List available job templates.
+<details markdown="1" id="license-configuration">
+<summary onclick="window.location.hash='license-configuration'">Show license configuration help</summary>
 
 ```bash
-vantage templates list
+vantage license configuration --help
 ```
 
-#### `vantage templates get <template-name>`
+```text
+                                                                                                       
+ Usage: vantage license configuration [OPTIONS] COMMAND                             
+                                                         [ARGS]...                                     
+                                                                                                       
+ Manage license configurations and policy settings.                                                    
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────╮
+│ create   Create a new license configuration.                                                        │
+│ delete   Delete a license configuration.                                                            │
+│ get      Get details of a specific license configuration.                                           │
+│ list     List all license configurations.                                                           │
+│ update   Update an existing license configuration.                                                  │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-Get template definition.
+
+```
+
+</details>
+
+<details markdown="1" id="license-configuration-create">
+<summary onclick="window.location.hash='license-configuration-create'">Show license configuration create details</summary>
 
 ```bash
-vantage templates get <template-name>
+vantage license configuration create
 ```
 
-#### `vantage templates validate <template-file>`
+**Arguments:**
 
-Validate template syntax.
+- `*` - name      TEXT  Name of the license configuration to create [required]                         │
+
+**Options:**
+
+- `--max-users` - -m      INTEGER  Maximum number of users                                          │
+- `--description` - -d      TEXT     Description of the license configuration                         │
+- `--json` - -j               Output in JSON format                                            │
+- `--verbose` - -v               Enable verbose terminal output                                   │
+- `--profile` - -p      TEXT     Profile name to use [default: default]                           │
+- `--help                          Show` - this message and exit.                                      │
+
+</details>
+
+<details markdown="1" id="license-configuration-delete">
+<summary onclick="window.location.hash='license-configuration-delete'">Show license configuration delete details</summary>
 
 ```bash
-vantage templates validate job-template.yaml
+vantage license configuration delete
 ```
 
-## Examples and Common Patterns
+**Arguments:**
 
-### Job Workflow
+- `*` - config_id      TEXT  ID of the license configuration to delete [required]                      │
+
+**Options:**
+
+- `--force` - -f            Force delete without confirmation                                          │
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="license-configuration-get">
+<summary onclick="window.location.hash='license-configuration-get'">Show license configuration get details</summary>
 
 ```bash
-# Submit and monitor a job
-JOB_ID=$(vantage jobs submit ml-training.yaml --output json | jq -r '.id')
-vantage jobs wait $JOB_ID
-vantage jobs outputs $JOB_ID --download ./results/
+vantage license configuration get
 ```
 
-### Batch Operations
+**Arguments:**
+
+- `*` - config_id      TEXT  ID of the license configuration to get [required]                         │
+
+**Options:**
+
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="license-configuration-list">
+<summary onclick="window.location.hash='license-configuration-list'">Show license configuration list details</summary>
 
 ```bash
-# Submit multiple jobs
-for template in templates/*.yaml; do
-    vantage jobs submit "$template"
-done
-
-# Cancel all running jobs
-vantage jobs list --status running --output json | \
-    jq -r '.[] | .id' | \
-    xargs -I {} vantage jobs cancel {}
+vantage license configuration list
 ```
 
-### Data Management
+**Options:**
+
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="license-configuration-update">
+<summary onclick="window.location.hash='license-configuration-update'">Show license configuration update details</summary>
 
 ```bash
-# Upload data with progress
-vantage storage upload ./dataset/ /datasets/project/ --recursive --progress
-
-# Download results from completed jobs
-vantage jobs list --status completed --output json | \
-    jq -r '.[] | .id' | \
-    xargs -I {} vantage jobs outputs {} --download ./all-results/{}
+vantage license configuration update
 ```
 
-### Configuration Management
+**Arguments:**
+
+- `*` - config_id      TEXT  ID of the license configuration to update [required]                      │
+
+**Options:**
+
+- `--name` - -n      TEXT     New name for the license configuration                              │
+- `--type` - -t      TEXT     New license type                                                    │
+- `--max-users` - -m      INTEGER  New maximum number of users                                         │
+- `--description` - -d      TEXT     New description                                                     │
+- `--json` - -j               Output in JSON format                                               │
+- `--verbose` - -v               Enable verbose terminal output                                      │
+- `--profile` - -p      TEXT     Profile name to use [default: default]                              │
+- `--help                          Show` - this message and exit.                                         │
+
+</details>
+
+<details markdown="1" id="license-deployment">
+<summary onclick="window.location.hash='license-deployment'">Show license deployment help</summary>
 
 ```bash
-# Set up development environment
-vantage config create-profile dev
-vantage config set --profile dev api-url "https://dev-api.example.com"
-vantage config set --profile dev output-format json
-
-# Switch between environments
-vantage config use-profile dev    # Development
-vantage config use-profile prod   # Production
+vantage license deployment --help
 ```
+
+```text
+                                                                                                       
+ Usage: vantage license deployment [OPTIONS] COMMAND                                
+                                                      [ARGS]...                                        
+                                                                                                       
+ Manage license deployments for software distribution and activation.                                  
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────╮
+│ create   Create a new license deployment.                                                           │
+│ delete   Delete a license deployment.                                                               │
+│ get      Get details of a specific license deployment.                                              │
+│ list     List all license deployments.                                                              │
+│ update   Update a license deployment.                                                               │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+```
+
+</details>
+
+<details markdown="1" id="license-deployment-create">
+<summary onclick="window.location.hash='license-deployment-create'">Show license deployment create details</summary>
+
+```bash
+vantage license deployment create
+```
+
+**Arguments:**
+
+- `*` - name      TEXT  Name of the license deployment to create [required]                            │
+
+**Options:**
+
+- `--environment` - -e      TEXT     Deployment environment (dev, test, prod) [default: dev]          │
+- `--nodes` - -n      INTEGER  Number of nodes in the deployment [default: 1]                   │
+- `--description` - -d      TEXT     Description of the license deployment                            │
+- `--json` - -j               Output in JSON format                                            │
+- `--verbose` - -v               Enable verbose terminal output                                   │
+- `--profile` - -p      TEXT     Profile name to use [default: default]                           │
+- `--help                          Show` - this message and exit.                                      │
+
+</details>
+
+<details markdown="1" id="license-deployment-delete">
+<summary onclick="window.location.hash='license-deployment-delete'">Show license deployment delete details</summary>
+
+```bash
+vantage license deployment delete
+```
+
+**Arguments:**
+
+- `*` - deployment_id      TEXT  ID of the license deployment to delete [required]                     │
+
+**Options:**
+
+- `--force` - -f            Skip confirmation prompt                                                   │
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="license-deployment-get">
+<summary onclick="window.location.hash='license-deployment-get'">Show license deployment get details</summary>
+
+```bash
+vantage license deployment get [OPTIONS]
+```
+
+**Arguments:**
+
+- `*` - deployment_id      TEXT  ID of the license deployment to retrieve [required]                   │
+
+**Options:**
+
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="license-deployment-list">
+<summary onclick="window.location.hash='license-deployment-list'">Show license deployment list details</summary>
+
+```bash
+vantage license deployment list [OPTIONS]
+```
+
+**Options:**
+
+- `--environment` - -e      TEXT     Filter by environment                                               │
+- `--status` - -s      TEXT     Filter by status                                                    │
+- `--limit` - -l      INTEGER  Maximum number of deployments to return [default: 10]               │
+- `--json` - -j               Output in JSON format                                               │
+- `--verbose` - -v               Enable verbose terminal output                                      │
+- `--profile` - -p      TEXT     Profile name to use [default: default]                              │
+- `--help                          Show` - this message and exit.                                         │
+
+</details>
+
+<details markdown="1" id="license-deployment-update">
+<summary onclick="window.location.hash='license-deployment-update'">Show license deployment update details</summary>
+
+```bash
+vantage license deployment update
+```
+
+**Arguments:**
+
+- `*` - deployment_id      TEXT  ID of the license deployment to update [required]                     │
+
+**Options:**
+
+- `--name` - -n      TEXT     New name for the deployment                                         │
+- `--environment` - -e      TEXT     New environment for the deployment                                  │
+- `--nodes                INTEGER` - New number of nodes                                                 │
+- `--description` - -d      TEXT     New description                                                     │
+- `--status` - -s      TEXT     New status (active, inactive, suspended)                            │
+- `--json` - -j               Output in JSON format                                               │
+- `--verbose` - -v               Enable verbose terminal output                                      │
+- `--profile` - -p      TEXT     Profile name to use [default: default]                              │
+- `--help                          Show` - this message and exit.                                         │
+
+</details>
+
+## Network Management
+
+```text
+                                                                                                       
+ Usage: vantage network [OPTIONS] COMMAND [ARGS]...                                 
+                                                                                                       
+ Manage virtual networks, subnets, and network configurations for cloud infrastructure.                
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────╮
+│ attach   Attach a network interface to an instance.                                                 │
+│ create   Create a new virtual network.                                                              │
+│ delete   Delete a virtual network.                                                                  │
+│ detach   Detach a network interface from an instance.                                               │
+│ get      Get details of a specific virtual network.                                                 │
+│ list     List all virtual networks.                                                                 │
+│ update   Update a virtual network configuration.                                                    │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+```
+
+<details markdown="1" id="network-attach">
+<summary onclick="window.location.hash='network-attach'">Show network attach details</summary>
+
+```bash
+vantage network attach [OPTIONS] NETWORK_ID
+```
+
+**Arguments:**
+
+- `*` - network_id       TEXT  ID of the network to attach [required]                                  │
+- `*` - instance_id      TEXT  ID of the instance to attach network to [required]                      │
+
+**Options:**
+
+- `--subnet-id` - -s      TEXT  Specific subnet ID to attach                                      │
+- `--assign-public-ip                Assign` - a public IP address                                        │
+- `--json` - -j            Output in JSON format                                             │
+- `--verbose` - -v            Enable verbose terminal output                                    │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                            │
+- `--help                            Show` - this message and exit.                                       │
+
+</details>
+
+<details markdown="1" id="network-create">
+<summary onclick="window.location.hash='network-create'">Show network create details</summary>
+
+```bash
+vantage network create [OPTIONS] NAME
+```
+
+**Arguments:**
+
+- `*` - name      TEXT  Name of the network to create [required]                                       │
+
+**Options:**
+
+- `--cidr` - -c      TEXT  CIDR block for the network [default: 10.0.0.0/16]                      │
+- `--region` - -r      TEXT  Region for the network                                                 │
+- `--enable-dns                 Enable` - DNS resolution [default: True]                                  │
+- `--description` - -d      TEXT  Description of the network                                             │
+- `--json` - -j            Output in JSON format                                                  │
+- `--verbose` - -v            Enable verbose terminal output                                         │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                 │
+- `--help                       Show` - this message and exit.                                            │
+
+</details>
+
+<details markdown="1" id="network-delete">
+<summary onclick="window.location.hash='network-delete'">Show network delete details</summary>
+
+```bash
+vantage network delete [OPTIONS] NETWORK_ID
+```
+
+**Arguments:**
+
+- `*` - network_id      TEXT  ID of the network to delete [required]                                   │
+
+**Options:**
+
+- `--force` - -f            Skip confirmation prompt                                                   │
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="network-detach">
+<summary onclick="window.location.hash='network-detach'">Show network detach details</summary>
+
+```bash
+vantage network detach [OPTIONS] NETWORK_ID
+```
+
+**Arguments:**
+
+- `*` - network_id       TEXT  ID of the network to detach [required]                                  │
+- `*` - instance_id      TEXT  ID of the instance to detach network from [required]                    │
+
+**Options:**
+
+- `--force` - -f            Force detachment without graceful shutdown                                 │
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="network-get">
+<summary onclick="window.location.hash='network-get'">Show network get details</summary>
+
+```bash
+vantage network get [OPTIONS] NETWORK_ID
+```
+
+**Arguments:**
+
+- `*` - network_id      TEXT  ID of the network to retrieve [required]                                 │
+
+**Options:**
+
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="network-list">
+<summary onclick="window.location.hash='network-list'">Show network list details</summary>
+
+```bash
+vantage network list [OPTIONS]
+```
+
+**Options:**
+
+- `--region` - -r      TEXT     Filter by region                                                        │
+- `--status` - -s      TEXT     Filter by status                                                        │
+- `--limit` - -l      INTEGER  Maximum number of networks to return [default: 10]                      │
+- `--json` - -j               Output in JSON format                                                   │
+- `--verbose` - -v               Enable verbose terminal output                                          │
+- `--profile` - -p      TEXT     Profile name to use [default: default]                                  │
+- `--help                      Show` - this message and exit.                                             │
+
+</details>
+
+<details markdown="1" id="network-update">
+<summary onclick="window.location.hash='network-update'">Show network update details</summary>
+
+```bash
+vantage network update [OPTIONS] NETWORK_ID
+```
+
+**Arguments:**
+
+- `*` - network_id      TEXT  ID of the network to update [required]                                   │
+
+**Options:**
+
+- `--name` - -n                   TEXT  New name for the network                                  │
+- `--description` - -d                   TEXT  New description                                           │
+- `--enable-dns` - --disable-dns          Enable or disable DNS resolution                          │
+- `--json` - -j                         Output in JSON format                                     │
+- `--verbose` - -v                         Enable verbose terminal output                            │
+- `--profile` - -p                   TEXT  Profile name to use [default: default]                    │
+- `--help                                    Show` - this message and exit.                               │
+
+</details>
+
+## Profile Management
+
+```text
+                                                                                                       
+ Usage: vantage profile [OPTIONS] COMMAND [ARGS]...                                 
+                                                                                                       
+ Manage Vantage CLI profiles to work with different environments and configurations.                   
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────╮
+│ create   Create a new Vantage CLI profile.                                                          │
+│ delete   Delete a Vantage CLI profile.                                                              │
+│ get      Get details of a specific Vantage CLI profile.                                             │
+│ list     List all Vantage CLI profiles.                                                             │
+│ use      Activate a profile for use in the current session.                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+```
+
+<details markdown="1" id="profile-create">
+<summary onclick="window.location.hash='profile-create'">Show profile create details</summary>
+
+```bash
+vantage profile create [OPTIONS] PROFILE_NAME
+```
+
+**Arguments:**
+
+- `*` - profile_name      TEXT  Name of the profile to create [required]                               │
+
+**Options:**
+
+- `--api-url                TEXT` - API base URL [default: https://apis.vantagecompute.ai]            │
+- `--tunnel-url             TEXT` - Tunnel API URL [default: https://tunnel.vantagecompute.ai]        │
+- `--oidc-url               TEXT` - OIDC base URL [default: https://auth.vantagecompute.ai]           │
+- `--client-id              TEXT` - OIDC client ID [default: default]                                 │
+- `--max-poll-time          INTEGER` - OIDC max poll time in seconds [default: 300]                      │
+- `--force` - -f               Overwrite existing profile                                        │
+- `--activate                        Activate` - this profile after creation                              │
+- `--help                            Show` - this message and exit.                                       │
+
+</details>
+
+<details markdown="1" id="profile-delete">
+<summary onclick="window.location.hash='profile-delete'">Show profile delete details</summary>
+
+```bash
+vantage profile delete [OPTIONS] PROFILE_NAME
+```
+
+**Arguments:**
+
+- `*` - profile_name      TEXT  Name of the profile to delete [required]                               │
+
+**Options:**
+
+- `--force` - -f        Skip confirmation prompt                                                         │
+- `--help             Show` - this message and exit.                                                      │
+
+</details>
+
+<details markdown="1" id="profile-get">
+<summary onclick="window.location.hash='profile-get'">Show profile get details</summary>
+
+```bash
+vantage profile get [OPTIONS] PROFILE_NAME
+```
+
+**Arguments:**
+
+- `*` - profile_name      TEXT  Name of the profile to get details for [required]                      │
+
+**Options:**
+
+- `--help          Show` - this message and exit.                                                         │
+
+</details>
+
+<details markdown="1" id="profile-list">
+<summary onclick="window.location.hash='profile-list'">Show profile list details</summary>
+
+```bash
+vantage profile list [OPTIONS]
+```
+
+**Options:**
+
+- `--help          Show` - this message and exit.                                                         │
+
+</details>
+
+<details markdown="1" id="profile-use">
+<summary onclick="window.location.hash='profile-use'">Show profile use details</summary>
+
+```bash
+vantage profile use [OPTIONS] PROFILE_NAME
+```
+
+**Arguments:**
+
+- `*` - profile_name      TEXT  Name of the profile to activate [required]                             │
+
+**Options:**
+
+- `--help          Show` - this message and exit.                                                         │
+
+</details>
+
+## Storage Management
+
+```text
+                                                                                                       
+ Usage: vantage storage [OPTIONS] COMMAND [ARGS]...                                 
+                                                                                                       
+ Manage storage volumes, disks, and storage configurations for cloud infrastructure.                   
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────╮
+│ attach   Attach a storage volume to an instance.                                                    │
+│ create   Create a new storage volume.                                                               │
+│ delete   Delete a storage volume.                                                                   │
+│ detach   Detach a storage volume from an instance.                                                  │
+│ get      Get details of a specific storage volume.                                                  │
+│ list     List all storage volumes.                                                                  │
+│ update   Update a storage volume configuration.                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+```
+
+<details markdown="1" id="storage-attach">
+<summary onclick="window.location.hash='storage-attach'">Show storage attach details</summary>
+
+```bash
+vantage storage attach [OPTIONS] STORAGE_ID
+```
+
+**Arguments:**
+
+- `*` - storage_id       TEXT  ID of the storage volume to attach [required]                           │
+- `*` - instance_id      TEXT  ID of the instance to attach storage to [required]                      │
+
+**Options:**
+
+- `--mount-point` - -m      TEXT  Mount point for the storage [default: /data]                           │
+- `--read-only` - -r            Attach storage in read-only mode                                       │
+- `--json` - -j            Output in JSON format                                                  │
+- `--verbose` - -v            Enable verbose terminal output                                         │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                 │
+- `--help                       Show` - this message and exit.                                            │
+
+</details>
+
+<details markdown="1" id="storage-create">
+<summary onclick="window.location.hash='storage-create'">Show storage create details</summary>
+
+```bash
+vantage storage create [OPTIONS] NAME
+```
+
+**Arguments:**
+
+- `*` - name      TEXT  Name of the storage volume to create [required]                                │
+
+**Options:**
+
+- `--size` - -s      INTEGER  Size of the storage volume in GB [default: 10]                      │
+- `--type` - -t      TEXT     Storage type (ssd, hdd, nvme) [default: ssd]                        │
+- `--zone` - -z      TEXT     Availability zone for the storage                                   │
+- `--description` - -d      TEXT     Description of the storage volume                                   │
+- `--json` - -j               Output in JSON format                                               │
+- `--verbose` - -v               Enable verbose terminal output                                      │
+- `--profile` - -p      TEXT     Profile name to use [default: default]                              │
+- `--help                          Show` - this message and exit.                                         │
+
+</details>
+
+<details markdown="1" id="storage-delete">
+<summary onclick="window.location.hash='storage-delete'">Show storage delete details</summary>
+
+```bash
+vantage storage delete [OPTIONS] STORAGE_ID
+```
+
+**Arguments:**
+
+- `*` - storage_id      TEXT  ID of the storage volume to delete [required]                            │
+
+**Options:**
+
+- `--force` - -f            Skip confirmation prompt                                                   │
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="storage-detach">
+<summary onclick="window.location.hash='storage-detach'">Show storage detach details</summary>
+
+```bash
+vantage storage detach [OPTIONS] STORAGE_ID
+```
+
+**Arguments:**
+
+- `*` - storage_id      TEXT  ID of the storage volume to detach [required]                            │
+
+**Options:**
+
+- `--force` - -f            Force detachment without graceful unmounting                               │
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="storage-get">
+<summary onclick="window.location.hash='storage-get'">Show storage get details</summary>
+
+```bash
+vantage storage get [OPTIONS] STORAGE_ID
+```
+
+**Arguments:**
+
+- `*` - storage_id      TEXT  ID of the storage volume to retrieve [required]                          │
+
+**Options:**
+
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="storage-list">
+<summary onclick="window.location.hash='storage-list'">Show storage list details</summary>
+
+```bash
+vantage storage list [OPTIONS]
+```
+
+**Options:**
+
+- `--zone` - -z      TEXT     Filter by availability zone                                             │
+- `--type` - -t      TEXT     Filter by storage type                                                  │
+- `--status` - -s      TEXT     Filter by status                                                        │
+- `--limit` - -l      INTEGER  Maximum number of storage volumes to return [default: 10]               │
+- `--json` - -j               Output in JSON format                                                   │
+- `--verbose` - -v               Enable verbose terminal output                                          │
+- `--profile` - -p      TEXT     Profile name to use [default: default]                                  │
+- `--help                      Show` - this message and exit.                                             │
+
+</details>
+
+<details markdown="1" id="storage-update">
+<summary onclick="window.location.hash='storage-update'">Show storage update details</summary>
+
+```bash
+vantage storage update [OPTIONS] STORAGE_ID
+```
+
+**Arguments:**
+
+- `*` - storage_id      TEXT  ID of the storage volume to update [required]                            │
+
+**Options:**
+
+- `--name` - -n      TEXT     New name for the storage volume                                     │
+- `--size` - -s      INTEGER  New size in GB (expansion only)                                     │
+- `--description` - -d      TEXT     New description                                                     │
+- `--iops                 INTEGER` - New IOPS setting                                                    │
+- `--json` - -j               Output in JSON format                                               │
+- `--verbose` - -v               Enable verbose terminal output                                      │
+- `--profile` - -p      TEXT     Profile name to use [default: default]                              │
+- `--help                          Show` - this message and exit.                                         │
+
+</details>
+
+## Application Management
+
+```text
+                                                                                                       
+ Usage: vantage app [OPTIONS] COMMAND [ARGS]...                                     
+                                                                                                       
+ Deploy and manage applications on Vantage compute clusters.                                           
+                                                                                                       
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────╮
+│ list     List all available applications for deployment.                                            │
+│ deploy   Deploy a slurm cluster and link it to a cluster entity in Vantage.                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+```
+
+<details markdown="1" id="app-list">
+<summary onclick="window.location.hash='app-list'">Show app list details</summary>
+
+```bash
+vantage app list [OPTIONS]
+```
+
+**Options:**
+
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+<details markdown="1" id="app-deploy">
+<summary onclick="window.location.hash='app-deploy'">Show app deploy details</summary>
+
+```bash
+vantage app deploy [OPTIONS] APP_NAME CLUSTER_NAME
+```
+
+**Arguments:**
+
+- `*` - app_name          TEXT  Name of the cluster infrastructure application to deploy [required]    │
+- `*` - cluster_name      TEXT  Name of the cluster in Vantage you would like to link to [required]    │
+
+**Options:**
+
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>
+
+## Configuration Management
+
+<details markdown="1" id="config-clear">
+<summary onclick="window.location.hash='config-clear'">Show config clear details</summary>
+
+```bash
+vantage config clear [OPTIONS]
+```
+
+**Options:**
+
+- `--force` - -f            Skip confirmation prompt                                                   │
+- `--json` - -j            Output in JSON format                                                      │
+- `--verbose` - -v            Enable verbose terminal output                                             │
+- `--profile` - -p      TEXT  Profile name to use [default: default]                                     │
+- `--help                   Show` - this message and exit.                                                │
+
+</details>

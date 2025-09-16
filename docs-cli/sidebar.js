@@ -34,7 +34,7 @@ module.exports = {
     },
     {
       type: 'doc',
-      id: 'command-reference/command-reference',
+      id: 'command-reference/index',
       label: 'Command Reference',
     },
   ],
