@@ -1,5 +1,5 @@
 ---
-id: lmx-vantage-managed-server-setup
+id: vantage-managed-server-setup
 title: Vantage-Managed LMX Server Setup
 sidebar_position: 1
 description: Deploy and configure LMX license servers using Vantage's fully managed service.

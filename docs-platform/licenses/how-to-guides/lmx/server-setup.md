@@ -1,5 +1,5 @@
 ---
-id: lmx-server-setup
+id: server-setup
 title: Server Setup
 sidebar_position: 2
 description: Install and configure LMX license server with Vantage integration.
@@ -628,9 +628,9 @@ sudo ntpdate -s time.nist.gov
 
 ## Next Steps
 
-- **[High Availability Setup](lmx-high-availability)**: Configure redundant LMX servers
-- **[Monitoring & Analytics](lmx-monitoring)**: Set up comprehensive usage tracking
-- **[Troubleshooting Guide](lmx-troubleshooting)**: Diagnose and resolve common issues
+- **[High Availability Setup](/platform/licenses/how-to-guides/lmx/high-availability)**: Configure redundant LMX servers
+- **[Monitoring & Analytics](/platform/licenses/how-to-guides/lmx/monitoring)**: Set up comprehensive usage tracking
+- **[Troubleshooting Guide](/platform/licenses/how-to-guides/lmx/troubleshooting)**: Diagnose and resolve common issues
 
 ---
 

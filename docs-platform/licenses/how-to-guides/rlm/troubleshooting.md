@@ -1,5 +1,5 @@
 ---
-id: rlm-troubleshooting
+id: troubleshooting
 title: Troubleshooting
 sidebar_position: 5
 description: Diagnose and resolve common RLM issues in Vantage environments.
@@ -836,8 +836,8 @@ vantage licenses monitor backup-rlm-server --alert-threshold 90
 ## Next Steps
 
 - **[RLM Introduction](./)**: Return to main RLM overview
-- **[High Availability Setup](rlm-high-availability)**: Prevent single points of failure
-- **[Monitoring & Analytics](rlm-monitoring)**: Proactive monitoring setup
+- **[High Availability Setup](/platform/licenses/how-to-guides/rlm/high-availability)**: Prevent single points of failure
+- **[Monitoring & Analytics](/platform/licenses/how-to-guides/rlm/monitoring)**: Proactive monitoring setup
 
 ---
 

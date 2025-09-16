@@ -8,9 +8,9 @@ Vantage provides powerful job management capabilities for High Performance Compu
 
 ## Getting Started
 
-- **[Job Templates](tutorials/templates)** - Reusable job configurations
-- **[Job Scripts](tutorials/scripts)** - Custom job execution scripts  
-- **[Job Submissions](tutorials/submissions)** - Submit and manage job runs
+- **[Job Templates](/platform/jobs/tutorials/templates)** - Reusable job configurations
+- **[Job Scripts](/platform/jobs/tutorials/scripts)** - Custom job execution scripts  
+- **[Job Submissions](/platform/jobs/tutorials/submissions)** - Submit and manage job runs
 
 ## Key Features
 

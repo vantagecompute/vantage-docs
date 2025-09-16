@@ -1,5 +1,5 @@
 ---
-id: flexlm-introduction
+id: introduction
 title: FlexLM Introduction
 sidebar_position: 1
 description: Comprehensive FlexLM license management with Vantage License Manager integration.
@@ -251,28 +251,28 @@ Vantage provides comprehensive reporting:
 
 This documentation is organized into specialized sections:
 
-### [Server Setup](flexlm-server-setup)
+### [Server Setup](/platform/licenses/how-to-guides/flexlm/server-setup)
 Complete guide to installing and configuring FlexLM servers, including:
 - Installation procedures for different operating systems
 - License file configuration and management
 - Network configuration and security setup
 - Integration with Vantage License Manager
 
-### [High Availability](flexlm-high-availability)
+### [High Availability](/platform/licenses/how-to-guides/flexlm/high-availability)
 Configure redundant FlexLM servers for continuous operation:
 - Three-server redundancy setup
 - Load balancing and failover procedures
 - Backup and disaster recovery
 - Performance optimization for HA environments
 
-### [Monitoring & Analytics](flexlm-monitoring)
+### [Monitoring & Analytics](/platform/licenses/how-to-guides/flexlm/monitoring)
 Leverage Vantage's monitoring capabilities for comprehensive license oversight:
 - Real-time usage dashboards
 - User and team analytics
 - Cost optimization insights
 - Historical trend analysis and reporting
 
-### [Troubleshooting](flexlm-troubleshooting)
+### [Troubleshooting](/platform/licenses/how-to-guides/flexlm/troubleshooting)
 Diagnose and resolve common FlexLM issues:
 - Server connectivity problems
 - License checkout failures
@@ -305,7 +305,7 @@ For critical license server failures:
 
 ---
 
-> **Next Steps**: Choose the appropriate section based on your needs - start with [Server Setup](flexlm-server-setup) for new installations, [High Availability](flexlm-high-availability) for redundancy, or [Monitoring](flexlm-monitoring) to optimize existing deployments.
+> **Next Steps**: Choose the appropriate section based on your needs - start with [Server Setup](/platform/licenses/how-to-guides/flexlm/server-setup) for new installations, [High Availability](/platform/licenses/how-to-guides/flexlm/high-availability) for redundancy, or [Monitoring](/platform/licenses/how-to-guides/flexlm/monitoring) to optimize existing deployments.
    Vendor: ansys
    Server: license-server.vantage.com
    Port: 27000
@@ -427,10 +427,10 @@ Once configured, the Vantage License Manager provides:
 
 After adding your FlexLM server to Vantage License Manager, explore these advanced configuration options:
 
-- **[Server Configuration](flexlm-server-setup)**: Detailed FlexLM server installation and configuration
-- **[High Availability](flexlm-high-availability)**: Setting up redundant license servers
-- **[Monitoring & Analytics](flexlm-monitoring)**: Advanced usage tracking and reporting
-- **[Troubleshooting](flexlm-troubleshooting)**: Common issues and diagnostic tools
+- **[Server Configuration](/platform/licenses/how-to-guides/flexlm/server-setup)**: Detailed FlexLM server installation and configuration
+- **[High Availability](/platform/licenses/how-to-guides/flexlm/high-availability)**: Setting up redundant license servers
+- **[Monitoring & Analytics](/platform/licenses/how-to-guides/flexlm/monitoring)**: Advanced usage tracking and reporting
+- **[Troubleshooting](/platform/licenses/how-to-guides/flexlm/troubleshooting)**: Common issues and diagnostic tools
 
 ---
 

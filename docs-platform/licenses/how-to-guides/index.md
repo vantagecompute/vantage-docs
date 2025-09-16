@@ -9,12 +9,12 @@ Vantage provides comprehensive license management capabilities for engineering a
 
 ## Supported License Server Technologies
 
-- **[FlexLM](./flexlm/)**: FLEXnet Publisher floating license management
-- **[RLM](./rlm/)**: Reprise License Manager with modern web interface
-- **[LMX](./lmx/)**: License Manager X for cloud-ready applications
-- **[OLicense](./olicense/)**: Enterprise license management with advanced analytics
-- **[LS-DYNA](./ls-dyna/)**: LSTC license servers for explicit dynamics simulation
-- **[DSLS](./dsls/)**: Dassault Systèmes license servers
+- **[FlexLM](/platform/licenses/how-to-guides/flexlm/)**: FLEXnet Publisher floating license management
+- **[RLM](/platform/licenses/how-to-guides/rlm/)**: Reprise License Manager with modern web interface
+- **[LMX](/platform/licenses/how-to-guides/lmx/)**: License Manager X for cloud-ready applications
+- **[OLicense](/platform/licenses/how-to-guides/olicense/)**: Enterprise license management with advanced analytics
+- **[LS-DYNA](/platform/licenses/how-to-guides/ls-dyna/)**: LSTC license servers for explicit dynamics simulation
+- **[DSLS](/platform/licenses/how-to-guides/dsls/)**: Dassault Systèmes license servers
 
 ## License Server Categories
 

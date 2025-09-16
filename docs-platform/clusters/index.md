@@ -9,7 +9,7 @@ Vantage enables you to manage High Performance Computing clusters across multipl
 ## Getting Started
 
 - **[Cluster Tutorials](/platform/clusters/tutorials/)** - Step-by-step cluster setup guides
-- **[How-to Guides](how-to-guides/charmed-hpc-integration)** - Specific implementation guides
+- **[How-to Guides](/platform/clusters/how-to-guides/charmed-hpc-integration)** - Specific implementation guides
 
 
 ## Deployment Options
@@ -53,7 +53,7 @@ Learn how to create and manage clusters:
 - Public cloud cluster setup
 - Partner network integration
 
-### [How-to Guides](how-to-guides/charmed-hpc-integration)
+### [How-to Guides](/platform/clusters/how-to-guides/charmed-hpc-integration)
 
 Specific implementation guidance:
 

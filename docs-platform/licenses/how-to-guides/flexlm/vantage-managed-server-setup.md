@@ -1,5 +1,5 @@
 ---
-id: flexlm-vantage-managed-server-setup
+id: vantage-managed-server-setup
 title: Vantage-Managed FlexLM Server Setup
 sidebar_position: 3
 description: Configure FlexLM license servers managed entirely by Vantage with zero maintenance overhead.

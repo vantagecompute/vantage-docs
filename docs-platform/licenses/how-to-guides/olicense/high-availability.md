@@ -1,5 +1,5 @@
 ---
-id: olicense-high-availability
+id: high-availability
 title: High Availability
 sidebar_position: 4
 description: High availability, redundancy, and disaster recovery configuration for OLicense servers.
@@ -867,7 +867,7 @@ echo "$(date): HA testing completed" >> $TEST_LOG
 
 With OLicense high availability configured, proceed to:
 
-- **[Troubleshooting](olicense-troubleshooting)**: Resolve HA and performance issues
+- **[Troubleshooting](/platform/licenses/how-to-guides/olicense/troubleshooting)**: Resolve HA and performance issues
 
 ---
 

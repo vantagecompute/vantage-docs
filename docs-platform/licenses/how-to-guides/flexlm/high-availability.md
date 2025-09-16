@@ -1,5 +1,5 @@
 ---
-id: flexlm-high-availability
+id: high-availability
 title: High Availability
 sidebar_position: 4
 description: Configure FlexLM for high availability in Vantage environments.
@@ -481,8 +481,8 @@ echo "Rolling update completed"
 
 ## Next Steps
 
-- **[Monitoring & Analytics](flexlm-monitoring)**: Set up comprehensive monitoring
-- **[Troubleshooting](flexlm-troubleshooting)**: Handle HA-specific issues
+- **[Monitoring & Analytics](monitoring)**: Set up comprehensive monitoring
+- **[Troubleshooting](troubleshooting)**: Handle HA-specific issues
 - **[FlexLM Introduction](./)**: Return to main FlexLM overview
 
 ---
@@ -570,8 +570,8 @@ export MLM_LICENSE_FILE="27000@secondary-license.vantage.com:27000@primary-licen
 
 ## Next Steps
 
-- **[Monitoring & Analytics](flexlm-monitoring)**: Set up comprehensive cluster monitoring
-- **[Troubleshooting](flexlm-troubleshooting)**: Diagnose HA-specific issues
+- **[Monitoring & Analytics](monitoring)**: Set up comprehensive cluster monitoring
+- **[Troubleshooting](troubleshooting)**: Diagnose HA-specific issues
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-id: dsls-vantage-managed-server-setup
+id: vantage-managed-server-setup
 title: Vantage-Managed DSLS Server Setup
 sidebar_position: 1
 description: Deploy and configure DSLS license servers using Vantage's fully managed service.

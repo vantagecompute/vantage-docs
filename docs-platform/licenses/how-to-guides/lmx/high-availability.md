@@ -1,5 +1,5 @@
 ---
-id: lmx-high-availability
+id: high-availability
 title: High Availability
 sidebar_position: 4
 description: Configure redundant LMX license servers for enterprise reliability and failover.
@@ -876,8 +876,8 @@ vantage licenses schedule-dr-drills lmx-production \
 ## Next Steps
 
 - **[LMX Introduction](./)**: Return to main LMX overview
-- **[Monitoring & Analytics](lmx-monitoring)**: Configure HA monitoring
-- **[Troubleshooting](lmx-troubleshooting)**: Resolve HA issues
+- **[Monitoring & Analytics](/platform/licenses/how-to-guides/lmx/monitoring)**: Configure HA monitoring
+- **[Troubleshooting](/platform/licenses/how-to-guides/lmx/troubleshooting)**: Resolve HA issues
 
 ---
 

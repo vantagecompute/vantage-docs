@@ -1,5 +1,5 @@
 ---
-id: rlm-monitoring
+id: monitoring
 title: Monitoring & Analytics
 sidebar_position: 3
 description: Comprehensive RLM monitoring using Vantage License Manager dashboard analytics.
@@ -824,8 +824,8 @@ vantage api reports generate \
 
 ## Next Steps
 
-- **[High Availability](rlm-high-availability)**: Configure redundant RLM servers
-- **[Troubleshooting](rlm-troubleshooting)**: Diagnose and resolve RLM issues
+- **[High Availability](/platform/licenses/how-to-guides/rlm/high-availability)**: Configure redundant RLM servers
+- **[Troubleshooting](/platform/licenses/how-to-guides/rlm/troubleshooting)**: Diagnose and resolve RLM issues
 - **[RLM Introduction](./)**: Return to main RLM overview
 
 ---

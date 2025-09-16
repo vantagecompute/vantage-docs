@@ -1,5 +1,5 @@
 ---
-id: dsls-troubleshooting
+id: troubleshooting
 title: Troubleshooting
 sidebar_position: 5
 description: Comprehensive troubleshooting guide for DSLS license servers, token management, and Vantage integration.

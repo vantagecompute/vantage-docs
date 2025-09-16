@@ -1,5 +1,5 @@
 ---
-id: olicense-server-setup
+id: server-setup
 title: Server Setup
 sidebar_position: 2
 description: Deploy and configure OLicense servers with enterprise database integration and high availability.
@@ -1093,9 +1093,9 @@ print("Performance benchmark script ready")
 
 With OLicense server successfully installed and configured, proceed to:
 
-- **[Monitoring & Analytics](olicense-monitoring)**: Set up comprehensive monitoring
-- **[High Availability](olicense-high-availability)**: Configure clustering and disaster recovery
-- **[Troubleshooting](olicense-troubleshooting)**: Learn to resolve common issues
+- **[Monitoring & Analytics](/platform/licenses/how-to-guides/olicense/monitoring)**: Set up comprehensive monitoring
+- **[High Availability](/platform/licenses/how-to-guides/olicense/high-availability)**: Configure clustering and disaster recovery
+- **[Troubleshooting](/platform/licenses/how-to-guides/olicense/troubleshooting)**: Learn to resolve common issues
 
 ---
 

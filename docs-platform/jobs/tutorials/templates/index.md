@@ -68,6 +68,6 @@ To begin working with job templates:
 
 ## Next Steps
 
-- [Create a Job Template](create-template) - Learn how to create your own templates
-- [Share Job Templates](share-template) - Collaborate with team members
-- [Delete Job Templates](delete-template) - Manage your template library
+- [Create a Job Template](/platform/jobs/tutorials/templates/create-template) - Learn how to create your own templates
+- [Share Job Templates](/platform/jobs/tutorials/templates/share-template) - Collaborate with team members
+- [Delete Job Templates](/platform/jobs/tutorials/templates/delete-template) - Manage your template library

@@ -1,5 +1,5 @@
 ---
-id: flexlm-monitoring
+id: monitoring
 title: Monitoring & Analytics
 sidebar_position: 4
 description: Use Vantage's license usage dashboard to monitor FlexLM utilization across users, teams, departments, and clusters.
@@ -478,8 +478,8 @@ Monthly License Review Process:
 
 ## Next Steps
 
-- **[High Availability Setup](flexlm-high-availability)**: Ensure continuous license availability
-- **[Troubleshooting Guide](flexlm-troubleshooting)**: Resolve monitoring and connectivity issues
+- **[High Availability Setup](high-availability)**: Ensure continuous license availability
+- **[Troubleshooting Guide](troubleshooting)**: Resolve monitoring and connectivity issues
 - **[FlexLM Introduction](./)**: Return to main FlexLM overview
 
 ---

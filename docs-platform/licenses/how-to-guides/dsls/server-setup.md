@@ -1,5 +1,5 @@
 ---
-id: dsls-server-setup
+id: server-setup
 title: Server Setup
 sidebar_position: 2
 description: Installation and configuration of DSLS license servers with Vantage integration.
@@ -462,9 +462,9 @@ sudo /opt/dsls/bin/DSLicSrv -test-config /opt/dsls/config/DSLicSrv.opt
 
 With DSLS server successfully installed and configured, proceed to:
 
-- **[Monitoring & Analytics](dsls-monitoring)**: Set up comprehensive monitoring
-- **[High Availability](dsls-high-availability)**: Configure redundancy and failover
-- **[Troubleshooting](dsls-troubleshooting)**: Resolve common issues
+- **[Monitoring & Analytics](/platform/licenses/how-to-guides/dsls/monitoring)**: Set up comprehensive monitoring
+- **[High Availability](/platform/licenses/how-to-guides/dsls/high-availability)**: Configure redundancy and failover
+- **[Troubleshooting](/platform/licenses/how-to-guides/dsls/troubleshooting)**: Resolve common issues
 
 ---
 

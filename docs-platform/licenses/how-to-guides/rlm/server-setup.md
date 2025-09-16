@@ -1,5 +1,5 @@
 ---
-id: rlm-server-setup
+id: server-setup
 title: Server Setup
 sidebar_position: 2
 description: RLM license server installation and configuration for Vantage integration.
@@ -575,9 +575,9 @@ EOF
 
 ## Next Steps
 
-- **[High Availability Setup](rlm-high-availability)**: Configure redundant RLM servers
-- **[Monitoring & Analytics](rlm-monitoring)**: Set up comprehensive monitoring
-- **[Troubleshooting](rlm-troubleshooting)**: Diagnose and resolve common issues
+- **[High Availability Setup](/platform/licenses/how-to-guides/rlm/high-availability)**: Configure redundant RLM servers
+- **[Monitoring & Analytics](/platform/licenses/how-to-guides/rlm/monitoring)**: Set up comprehensive monitoring
+- **[Troubleshooting](/platform/licenses/how-to-guides/rlm/troubleshooting)**: Diagnose and resolve common issues
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-id: rlm-ls-dyna-user-managed-server-setup
+id: user-managed-server-setup
 title: User-Managed RLM Server Setup
 sidebar_position: 2
 description: Set up and configure your own RLM license server for integration with Vantage License Manager.

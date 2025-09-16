@@ -1,5 +1,5 @@
 ---
-id: dsls-introduction
+id: introduction
 title: Introduction
 sidebar_position: 1
 description: Comprehensive DSLS license management with Vantage License Manager integration.
@@ -337,10 +337,10 @@ sudo /opt/dsls/bin/DSLicSrv -backup-check
 
 This introduction provides the foundation for understanding DSLS integration with Vantage. For detailed implementation guidance, explore the following sections:
 
-- **[Server Setup](dsls-server-setup)**: Deploy and configure DSLS servers
-- **[Monitoring & Analytics](dsls-monitoring)**: Set up comprehensive monitoring
-- **[High Availability](dsls-high-availability)**: Configure redundancy and failover
-- **[Troubleshooting](dsls-troubleshooting)**: Resolve common issues
+- **[Server Setup](/platform/licenses/how-to-guides/dsls/server-setup)**: Deploy and configure DSLS servers
+- **[Monitoring & Analytics](/platform/licenses/how-to-guides/dsls/monitoring)**: Set up comprehensive monitoring
+- **[High Availability](/platform/licenses/how-to-guides/dsls/high-availability)**: Configure redundancy and failover
+- **[Troubleshooting](/platform/licenses/how-to-guides/dsls/troubleshooting)**: Resolve common issues
 
 ---
 

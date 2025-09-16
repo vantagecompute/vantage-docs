@@ -1,5 +1,5 @@
 ---
-id: flexlm-server-setup
+id: server-setup
 title: Server Setup
 sidebar_position: 2
 description: FlexLM license server installation and configuration for Vantage integration.
@@ -338,9 +338,9 @@ echo "FlexLM Version: $(/opt/flexlm/bin/lmgrd -version 2>&1 | head -1)" >> /opt/
 
 ## Next Steps
 
-- **[High Availability Setup](flexlm-high-availability)**: Configure redundant license servers
-- **[Monitoring & Analytics](flexlm-monitoring)**: Set up comprehensive monitoring
-- **[Troubleshooting](flexlm-troubleshooting)**: Diagnose and resolve common issues
+- **[High Availability Setup](high-availability)**: Configure redundant license servers
+- **[Monitoring & Analytics](monitoring)**: Set up comprehensive monitoring
+- **[Troubleshooting](troubleshooting)**: Diagnose and resolve common issues
 
 ---
 

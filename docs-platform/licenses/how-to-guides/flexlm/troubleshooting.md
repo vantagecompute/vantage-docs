@@ -1,5 +1,5 @@
 ---
-id: flexlm-troubleshooting
+id: troubleshooting
 title: Troubleshooting
 sidebar_position: 5
 description: Diagnose and resolve common FlexLM issues in Vantage environments.
@@ -802,8 +802,8 @@ vantage licenses monitor backup-server --alert-threshold 90
 ## Next Steps
 
 - **[FlexLM Introduction](./)**: Return to main FlexLM overview
-- **[High Availability Setup](flexlm-high-availability)**: Prevent single points of failure
-- **[Monitoring & Analytics](flexlm-monitoring)**: Proactive monitoring setup
+- **[High Availability Setup](high-availability)**: Prevent single points of failure
+- **[Monitoring & Analytics](monitoring)**: Proactive monitoring setup
 
 ---
 

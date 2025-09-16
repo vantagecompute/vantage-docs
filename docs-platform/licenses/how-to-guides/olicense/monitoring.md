@@ -1,5 +1,5 @@
 ---
-id: olicense-monitoring
+id: monitoring
 title: Monitoring & Analytics
 sidebar_position: 3
 description: Monitor OLicense servers and analyze license usage with Vantage dashboards and advanced analytics.
@@ -1257,8 +1257,8 @@ print("Advanced cost analytics configuration ready")
 
 With comprehensive OLicense monitoring and analytics configured, you can:
 
-- **[High Availability](olicense-high-availability)**: Configure clustering and disaster recovery
-- **[Troubleshooting](olicense-troubleshooting)**: Learn to resolve monitoring and performance issues
+- **[High Availability](/platform/licenses/how-to-guides/olicense/high-availability)**: Configure clustering and disaster recovery
+- **[Troubleshooting](/platform/licenses/how-to-guides/olicense/troubleshooting)**: Learn to resolve monitoring and performance issues
 - **[OLicense Introduction](./)**: Return to overview
 
 ---

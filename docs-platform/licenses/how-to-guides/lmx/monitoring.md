@@ -1,5 +1,5 @@
 ---
-id: lmx-monitoring
+id: monitoring
 title: Monitoring & Analytics
 sidebar_position: 3
 description: Comprehensive LMX license usage monitoring and analytics through Vantage dashboard.
@@ -459,8 +459,8 @@ vantage licenses calibrate-analytics lmx-server \
 ## Next Steps
 
 - **[LMX Introduction](./)**: Return to main LMX overview
-- **[High Availability Setup](lmx-high-availability)**: Configure redundant monitoring
-- **[Troubleshooting](lmx-troubleshooting)**: Resolve monitoring issues
+- **[High Availability Setup](/platform/licenses/how-to-guides/lmx/high-availability)**: Configure redundant monitoring
+- **[Troubleshooting](/platform/licenses/how-to-guides/lmx/troubleshooting)**: Resolve monitoring issues
 
 ---
 

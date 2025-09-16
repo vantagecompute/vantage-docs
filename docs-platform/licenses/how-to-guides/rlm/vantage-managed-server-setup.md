@@ -1,5 +1,5 @@
 ---
-id: rlm-vantage-managed-server-setup
+id: vantage-managed-server-setup
 title: Vantage-Managed RLM Server Setup
 sidebar_position: 3
 description: Configure RLM license servers managed entirely by Vantage with zero maintenance overhead.

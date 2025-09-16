@@ -1,5 +1,5 @@
 ---
-id: ls-dyna-high-availability
+id: high-availability
 title: High Availability
 sidebar_position: 4
 description: Configure redundant LSTC license servers for enterprise LS-DYNA reliability.
@@ -934,8 +934,8 @@ echo "0 3 * * 0 /opt/lstc/bin/ha-testing.sh" | sudo -u lstc crontab -
 ## Next Steps
 
 - **[LS-DYNA Introduction](./)**: Return to main LS-DYNA overview
-- **[Monitoring & Analytics](ls-dyna-monitoring)**: Configure HA monitoring
-- **[Troubleshooting](ls-dyna-troubleshooting)**: Resolve HA issues
+- **[Monitoring & Analytics](/platform/licenses/how-to-guides/ls-dyna/monitoring)**: Configure HA monitoring
+- **[Troubleshooting](/platform/licenses/how-to-guides/ls-dyna/troubleshooting)**: Resolve HA issues
 
 ---
 

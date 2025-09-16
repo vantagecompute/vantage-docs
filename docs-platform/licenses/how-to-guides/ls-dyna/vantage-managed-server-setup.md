@@ -1,5 +1,5 @@
 ---
-id: ls-dyna-vantage-managed-server-setup
+id: vantage-managed-server-setup
 title: Vantage-Managed LS-DYNA Server Setup
 sidebar_position: 1
 description: Deploy and configure LS-DYNA license servers using Vantage's fully managed service.

@@ -1,5 +1,5 @@
 ---
-id: dsls-high-availability
+id: high-availability
 title: High Availability
 sidebar_position: 4
 description: High availability, redundancy, and disaster recovery configuration for DSLS license servers.
@@ -696,7 +696,7 @@ echo "HA testing completed"
 
 With DSLS high availability configured, proceed to:
 
-- **[Troubleshooting](dsls-troubleshooting)**: Resolve HA and performance issues
+- **[Troubleshooting](/platform/licenses/how-to-guides/dsls/troubleshooting)**: Resolve HA and performance issues
 
 ---
 

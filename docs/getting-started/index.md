@@ -10,8 +10,8 @@ Welcome to Vantage! This guide will help you get up and running with the platfor
 
 ## Quick Setup Steps
 
-1. **[Sign Up](getting-started-sign-up)** - Create your account
-2. **[Add Users](getting-started-manage-users)** - Invite your team
+1. **[Sign Up](/vantage-docs/getting-started/getting-started-sign-up)** - Create your account
+2. **[Add Users](/getting-started/getting-started-manage-users)** - Invite your team
 3. **[Connect Infrastructure](/platform/clusters/)** - Add your compute resources
 
 ## What You Can Do

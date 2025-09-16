@@ -1,5 +1,5 @@
 ---
-id: dsls-monitoring
+id: monitoring
 title: Monitoring & Analytics
 sidebar_position: 3
 description: Comprehensive monitoring, analytics, and optimization for DSLS license servers through Vantage integration.
@@ -579,8 +579,8 @@ vantage-agent schedule dsls --seasonal-optimization
 
 With comprehensive DSLS monitoring configured, proceed to:
 
-- **[High Availability](dsls-high-availability)**: Configure redundancy and failover
-- **[Troubleshooting](dsls-troubleshooting)**: Resolve monitoring and performance issues
+- **[High Availability](/platform/licenses/how-to-guides/dsls/high-availability)**: Configure redundancy and failover
+- **[Troubleshooting](/platform/licenses/how-to-guides/dsls/troubleshooting)**: Resolve monitoring and performance issues
 
 ---
 

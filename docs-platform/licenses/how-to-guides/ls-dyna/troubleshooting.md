@@ -1,5 +1,5 @@
 ---
-id: ls-dyna-troubleshooting
+id: troubleshooting
 title: Troubleshooting
 sidebar_position: 5
 description: Resolve common LS-DYNA license issues, solver problems, and parallel token failures.
@@ -1480,9 +1480,9 @@ sudo chmod +x /opt/lstc/bin/emergency-restore.sh
 ## Next Steps
 
 - **[LS-DYNA Introduction](./)**: Return to main LS-DYNA overview
-- **[Server Setup](ls-dyna-user-managed-server-setup)**: Review server configuration
-- **[High Availability](ls-dyna-high-availability)**: Configure redundancy
-- **[Monitoring & Analytics](ls-dyna-monitoring)**: Set up monitoring
+- **[Server Setup](/platform/licenses/how-to-guides/ls-dyna/user-managed-server-setup)**: Review server configuration
+- **[High Availability](/platform/licenses/how-to-guides/ls-dyna/high-availability)**: Configure redundancy
+- **[Monitoring & Analytics](/platform/licenses/how-to-guides/ls-dyna/monitoring)**: Set up monitoring
 
 ---
 

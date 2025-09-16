@@ -1,5 +1,5 @@
 ---
-id: olicense-introduction
+id: introduction
 title: Introduction
 sidebar_position: 1
 description: Overview of OLicense management integration with Vantage for enterprise software licensing.
@@ -227,10 +227,10 @@ graph TB
 
 This introduction provides the foundation for understanding OLicense integration with Vantage. For detailed implementation guidance, explore the following sections:
 
-- **[Server Setup](olicense-server-setup)**: Deploy and configure OLicense servers
-- **[Monitoring & Analytics](olicense-monitoring)**: Set up comprehensive monitoring
-- **[High Availability](olicense-high-availability)**: Configure clustering and disaster recovery
-- **[Troubleshooting](olicense-troubleshooting)**: Resolve common issues and performance problems
+- **[Server Setup](/platform/licenses/how-to-guides/olicense/server-setup)**: Deploy and configure OLicense servers
+- **[Monitoring & Analytics](/platform/licenses/how-to-guides/olicense/monitoring)**: Set up comprehensive monitoring
+- **[High Availability](/platform/licenses/how-to-guides/olicense/high-availability)**: Configure clustering and disaster recovery
+- **[Troubleshooting](/platform/licenses/how-to-guides/olicense/troubleshooting)**: Resolve common issues and performance problems
 
 ---
 

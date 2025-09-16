@@ -1,5 +1,5 @@
 ---
-id: lmx-troubleshooting
+id: troubleshooting
 title: Troubleshooting
 sidebar_position: 5
 description: Diagnose and resolve common LMX license server issues in Vantage environments.
@@ -1005,8 +1005,8 @@ vantage licenses monitor lmx-secondary --alert-threshold 90
 ## Next Steps
 
 - **[LMX Introduction](./)**: Return to main LMX overview
-- **[High Availability Setup](lmx-high-availability)**: Prevent issues with redundancy
-- **[Monitoring & Analytics](lmx-monitoring)**: Proactive issue detection
+- **[High Availability Setup](/platform/licenses/how-to-guides/lmx/high-availability)**: Prevent issues with redundancy
+- **[Monitoring & Analytics](/platform/licenses/how-to-guides/lmx/monitoring)**: Proactive issue detection
 
 ---
 

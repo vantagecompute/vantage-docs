@@ -1,5 +1,5 @@
 ---
-id: rlm-introduction
+id: introduction
 title: RLM Introduction
 sidebar_position: 1
 description: Comprehensive RLM license management with Vantage License Manager integration.
@@ -253,28 +253,28 @@ Vantage provides comprehensive reporting:
 
 This documentation is organized into specialized sections:
 
-### [Server Setup](rlm-server-setup)
+### [Server Setup](/platform/licenses/how-to-guides/rlm/server-setup)
 Complete guide to installing and configuring RLM servers, including:
 - Installation procedures for different operating systems
 - License file configuration and web interface setup
 - Network configuration and security hardening
 - Integration with Vantage License Manager
 
-### [High Availability](rlm-high-availability)
+### [High Availability](/platform/licenses/how-to-guides/rlm/high-availability)
 Configure redundant RLM servers for continuous operation:
 - Multi-server redundancy setup and configuration
 - Load balancing and automated failover procedures
 - Backup strategies and disaster recovery planning
 - Performance optimization for HA environments
 
-### [Monitoring & Analytics](rlm-monitoring)
+### [Monitoring & Analytics](/platform/licenses/how-to-guides/rlm/monitoring)
 Leverage Vantage's monitoring capabilities for comprehensive license oversight:
 - Real-time usage dashboards and analytics
 - User and team analytics with behavioral insights
 - Cost optimization strategies and recommendations
 - Historical trend analysis and predictive planning
 
-### [Troubleshooting](rlm-troubleshooting)
+### [Troubleshooting](/platform/licenses/how-to-guides/rlm/troubleshooting)
 Diagnose and resolve common RLM issues:
 - Server connectivity and communication problems
 - License checkout failures and client issues
@@ -307,4 +307,4 @@ For critical license server failures:
 
 ---
 
-> **Next Steps**: Choose the appropriate section based on your needs - start with [Server Setup](rlm-server-setup) for new installations, [High Availability](rlm-high-availability) for redundancy, or [Monitoring](rlm-monitoring) to optimize existing deployments.
+> **Next Steps**: Choose the appropriate section based on your needs - start with [Server Setup](/platform/licenses/how-to-guides/rlm/server-setup) for new installations, [High Availability](/platform/licenses/how-to-guides/rlm/high-availability) for redundancy, or [Monitoring](/platform/licenses/how-to-guides/rlm/monitoring) to optimize existing deployments.

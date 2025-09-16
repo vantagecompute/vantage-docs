@@ -1,5 +1,5 @@
 ---
-id: ls-dyna-monitoring
+id: monitoring
 title: Monitoring & Analytics
 sidebar_position: 3
 description: Comprehensive LS-DYNA license monitoring using Vantage License Manager dashboard analytics.
@@ -968,8 +968,8 @@ class LSDynaWorkflowOptimizer:
 
 ## Next Steps
 
-- **[High Availability](ls-dyna-high-availability)**: Configure redundant LSTC servers
-- **[Troubleshooting](ls-dyna-troubleshooting)**: Diagnose and resolve LS-DYNA issues
+- **[High Availability](/platform/licenses/how-to-guides/ls-dyna/high-availability)**: Configure redundant LSTC servers
+- **[Troubleshooting](/platform/licenses/how-to-guides/ls-dyna/troubleshooting)**: Diagnose and resolve LS-DYNA issues
 - **[LS-DYNA Introduction](./)**: Return to main LS-DYNA overview
 
 ---

@@ -1,5 +1,5 @@
 ---
-id: olicense-troubleshooting
+id: troubleshooting
 title: Troubleshooting
 sidebar_position: 5
 description: Comprehensive troubleshooting guide for OLicense servers, enterprise features, and Vantage integration.

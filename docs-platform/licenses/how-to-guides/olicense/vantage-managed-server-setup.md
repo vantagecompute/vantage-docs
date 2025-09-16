@@ -1,5 +1,5 @@
 ---
-id: olicense-vantage-managed-server-setup
+id: vantage-managed-server-setup
 title: Vantage-Managed OLicense Server Setup
 sidebar_position: 1
 description: Deploy and configure OLicense servers using Vantage's fully managed service.

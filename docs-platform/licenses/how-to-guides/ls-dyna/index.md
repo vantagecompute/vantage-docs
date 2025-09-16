@@ -1,5 +1,5 @@
 ---
-id: ls-dyna-introduction
+id: introduction
 title: LS-DYNA License Manager
 sidebar_position: 4
 description: LS-DYNA LSTC license management integration with Vantage platform.
@@ -151,10 +151,10 @@ graph TB
 
 ### Quick Setup
 
-1. **[Server Configuration](ls-dyna-user-managed-server-setup)**: Install and configure LSTC license server with Vantage integration
-2. **[High Availability](ls-dyna-high-availability)**: Set up redundant license servers for production reliability
-3. **[Monitoring Setup](ls-dyna-monitoring)**: Configure Vantage dashboard for comprehensive license analytics
-4. **[Troubleshooting](ls-dyna-troubleshooting)**: Diagnose and resolve common integration issues
+1. **[Server Configuration](/platform/licenses/how-to-guides/ls-dyna/user-managed-server-setup)**: Install and configure LSTC license server with Vantage integration
+2. **[High Availability](/platform/licenses/how-to-guides/ls-dyna/high-availability)**: Set up redundant license servers for production reliability
+3. **[Monitoring Setup](/platform/licenses/how-to-guides/ls-dyna/monitoring)**: Configure Vantage dashboard for comprehensive license analytics
+4. **[Troubleshooting](/platform/licenses/how-to-guides/ls-dyna/troubleshooting)**: Diagnose and resolve common integration issues
 
 ### Integration Workflow
 
@@ -318,10 +318,10 @@ qsub -l lsdyna_implicit=1,mpp_tokens=16 lsdyna_job.pbs
 
 Choose your area of focus:
 
-- **[Server Setup](ls-dyna-user-managed-server-setup)**: Detailed installation and configuration guide
-- **[High Availability](ls-dyna-high-availability)**: Redundancy and failover configuration
-- **[Monitoring & Analytics](ls-dyna-monitoring)**: Advanced usage tracking and optimization
-- **[Troubleshooting](ls-dyna-troubleshooting)**: Common issues and diagnostic procedures
+- **[Server Setup](/platform/licenses/how-to-guides/ls-dyna/user-managed-server-setup)**: Detailed installation and configuration guide
+- **[High Availability](/platform/licenses/how-to-guides/ls-dyna/high-availability)**: Redundancy and failover configuration
+- **[Monitoring & Analytics](/platform/licenses/how-to-guides/ls-dyna/monitoring)**: Advanced usage tracking and optimization
+- **[Troubleshooting](/platform/licenses/how-to-guides/ls-dyna/troubleshooting)**: Common issues and diagnostic procedures
 
 ---
 
