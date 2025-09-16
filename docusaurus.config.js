@@ -1,322 +1,357 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-const {themes} = require('prism-react-renderer');
-const lightCodeTheme = themes.github;
-const darkCodeTheme = themes.dracula;
-
-/** @type {import('@docusaurus/types').PluginConfig} */
-const searchLocalPlugin = [
-  require.resolve('@easyops-cn/docusaurus-search-local'),
-  /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
-  {
-    hashed: true,
-  },
-]
+const {themes: prismThemes} = require('prism-react-renderer');
 
 /** @type {import('@docusaurus/types').Config} */
-module.exports = async function createConfigAsync() {
-  return {
-    title: 'Vantage Compute Documentation',
-    tagline: 'High Performance Computing, Evolved',
-    favicon: 'img/favicon.ico',
-    url: 'https://docs.vantagecompute.ai',
-    baseUrl: '/',
-    onBrokenLinks: 'warn',
-    onBrokenMarkdownLinks: 'warn',
-    i18n: {
-      defaultLocale: 'en',
-      locales: ['en'],
-    },
+const config = {
+  title: 'Vantage Compute Documentation',
+  tagline: 'High Performance Computing, Evolved',
+  favicon: 'img/favicon.ico',
+  url: 'https://docs.vantagecompute.ai',
+  baseUrl: '/',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
+  },
 
-    scripts: [
-      '/js/sidebar-expand.js',
-      '/js/platform-sidebar.js',
-      '/js/platform-navbar.js',
-      '/js/navbar-dropdown-hover.js'
-    ],
+  scripts: [
+    '/js/platform-navbar.js',
+    '/js/navbar-dropdown-hover.js'
+  ],
 
-    markdown: {
-      format: 'detect',
-      mermaid: true,
-      mdx1Compat: {
-        comments: true,
-        admonitions: true,
-        headingIds: true,
+  headTags: [
+    // Preconnect to Algolia for performance optimization
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://MPYYYNENH9-dsn.algolia.net',
+        crossorigin: 'anonymous',
       },
     },
+  ],
 
-    presets: [
-      [
-        'classic',
-        /** @type {import('@docusaurus/preset-classic').Options} */
-        ({
-          docs: {
-            sidebarPath: require.resolve('./sidebars-main.js'),
-            rehypePlugins: [
-              [require('rehype-external-links').default, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
-            ],
-            routeBasePath: '/', // Make docs the root
-          },
-          blog: false,
-          theme: {
-            customCss: require.resolve('./src/css/custom.css'),
-          },
-        }),
-      ],
-    ],
-    
-    plugins: [
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'platform',
-          path: 'docs-platform-overview',
-          routeBasePath: 'platform-overview',
-          sidebarPath: './docs-platform-overview/sidebar.js',
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'platform-jobs',
-          path: 'docs-platform/jobs',
-          routeBasePath: 'platform/jobs',
-          sidebarPath: './docs-platform/jobs/sidebar.js',
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'platform-clusters',
-          path: 'docs-platform/clusters',
-          routeBasePath: 'platform/clusters',
-          sidebarPath: './docs-platform/clusters/sidebar.js',
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'platform-storage',
-          path: 'docs-platform/storage',
-          routeBasePath: 'platform/storage',
-          sidebarPath: './docs-platform/storage/sidebar.js',
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'platform-compute-providers',
-          path: 'docs-platform/compute-providers',
-          routeBasePath: 'platform/compute-providers',
-          sidebarPath: './docs-platform/compute-providers/sidebar.js',
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'platform-notebooks',
-          path: 'docs-platform/notebooks',
-          routeBasePath: 'platform/notebooks',
-          sidebarPath: './docs-platform/notebooks/sidebar.js',
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'platform-remote-desktops',
-          path: 'docs-platform/remote-desktops',
-          routeBasePath: 'platform/remote-desktops',
-          sidebarPath: './docs-platform/remote-desktops/sidebar.js',
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'platform-teams',
-          path: 'docs-platform/teams',
-          routeBasePath: 'platform/teams',
-          sidebarPath: './docs-platform/teams/sidebar.js',
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'platform-licenses',
-          path: 'docs-platform/licenses',
-          routeBasePath: 'platform/licenses',
-          sidebarPath: './docs-platform/licenses/sidebar.js',
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'cli',
-          path: 'docs-cli',
-          routeBasePath: 'cli',
-          sidebarPath: './docs-cli/sidebar.js',
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'api',
-          path: 'docs-api',
-          routeBasePath: 'api',
-          sidebarPath: './docs-api/sidebar.js',
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'sdk',
-          path: 'docs-sdk',
-          routeBasePath: 'sdk',
-          sidebarPath: './docs-sdk/sidebar.js',
-        },
-      ],
-      [ 
-      'docusaurus-plugin-llms',
-        {
-          // Options here
-          generateLLMsTxt: true,
-          generateLLMsFullTxt: true,
-          docsDir: 'docs',
-          ignoreFiles: ['advanced/*', 'private/*'],
-          title: 'Vantage Compute Documentation',
-          description: 'Complete reference documentation for Vantage Compute platform, CLI, API, and SDK.',
-          includeBlog: false,
-          // Content cleaning options
-          excludeImports: true,
-          removeDuplicateHeadings: true,
-          // Generate individual markdown files following llmstxt.org specification
-          generateMarkdownFiles: true,
-          // Control documentation order
-          includeOrder: [
-            'platform-overview/**',
-            'platform/jobs/**',
-            'platform/clusters/**',
-            'platform/storage/**',
-            'platform/compute-providers/**',
-            'platform/notebooks/**',
-            'platform/remote-desktops/**',
-          ],
-          includeUnmatchedLast: true,
-          // Path transformation options
-          pathTransformation: {
-            // Paths to ignore when constructing URLs (will be removed if found)
-            ignorePaths: ['docs'],
-            // Paths to add when constructing URLs (will be prepended if not already present)
-            // addPaths: ['api'],
-          },
-          // Custom LLM files for specific documentation sections
-          customLLMFiles: [
-            {
-              filename: 'llms-vantage-api.txt',
-              includePatterns: ['docs-api/*.md'],
-              fullContent: true,
-              title: 'Vantage API Documentation',
-              description: 'Complete reference for Vantage API'
-            },
-            {
-              filename: 'llms-vantage-cli.txt',
-              includePatterns: ['docs-cli/*.md'],
-              fullContent: false,
-              title: 'Vantage CLI Documentation',
-              description: 'All Vantage CLI commands in a single file'
-            },
-            {
-              filename: 'llms-vantage-sdk.txt',
-              includePatterns: ['docs-sdk/*.md'],
-              fullContent: false,
-              title: 'Vantage SDK Documentation',
-              description: 'All Vantage SDK references in a single file'
-            },
-            {
-              filename: 'llms-vantage-platform.txt',
-              includePatterns: ['docs-platform/*.md'],
-              fullContent: false,
-              title: 'Vantage Platform Documentation',
-              description: 'All Vantage Platform references in a single file'
-            },
-          ],
-        },
-      ],
-    ],
+  markdown: {
+    format: 'detect',
+    mermaid: true,
+    mdx1Compat: {
+      comments: true,
+      admonitions: true,
+      headingIds: true,
+    },
+  },
 
-    themes: [searchLocalPlugin],
+  themes: ['@docusaurus/theme-mermaid'],
 
-    themeConfig:
-      /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  presets: [
+    [
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        image: 'img/vantage-docs-social-card.jpg',
-        navbar: {
-          logo: {
-        alt: 'Vantage docs',
-        src: 'img/navbar-logo-light.png',
-        srcDark: 'img/navbar-logo-dark.png',
-          },
-          items: [
-        {
-          to: '/',
-          label: 'Home',
-          position: 'left',
-        },
-        {
-          type: 'dropdown',
-          label: 'Documentation',
-          position: 'left',
-          items: [
-            {
-              to: '/platform',
-              label: 'Platform',
-            },
-            {
-              to: '/api',
-              label: 'API',
-            },
-            {
-              to: '/cli',
-              label: 'CLI',
-            },
-            {
-              to: '/sdk',
-              label: 'SDK',
-            },
-          ],
-        },
-        {
-          to: 'https://vantagecompute.ai',
-          label: 'Vantage Home',
-          position: 'right',
-          className: 'header-vantage-link',
-          'aria-label': 'Vantage Compute Home',
-        },
-        {
-          type: 'search',
-          position: 'right',
-        },
-          ],
-        },
-        footer: {
-          style: 'light',
-          copyright: `© ${new Date().getFullYear()} Vantage Compute Corporation - All Rights Reserved.`,
-        },
-        metadata: [
-          {
-        name: 'vantage-docs-version',
-        content: process.env.REACT_APP_VERSION,
-          },
-        ],
         docs: {
-          sidebar: {
-            hideable: true,
-            autoCollapseCategories: false,
-          },
+          sidebarPath: require.resolve('./sidebars-main.js'),
+          rehypePlugins: [
+            [require('rehype-external-links').default, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+          ],
+          routeBasePath: '/', // Make docs the root
         },
-        prism: {
-          theme: lightCodeTheme,
-          darkTheme: darkCodeTheme,
+        blog: false,
+        theme: {
+          customCss: require.resolve('./src/css/custom.css'),
         },
       }),
-  }
-}
+    ],
+  ],
+
+  plugins: [
+    [ 
+      'docusaurus-plugin-llms',
+      {
+        // Options here
+        generateLLMsTxt: true,
+        generateLLMsFullTxt: true,
+        docsDir: '.',
+        ignoreFiles: ['node_modules/**', 'build/**', '.git/**'],
+        title: 'Vantage Compute Documentation',
+        description: 'Complete reference documentation for Vantage Compute platform, CLI, API, and SDK.',
+        includeBlog: false,
+        // Content cleaning options
+        excludeImports: true,
+        removeDuplicateHeadings: true,
+        // Generate individual markdown files following llmstxt.org specification
+        generateMarkdownFiles: true,
+        // Control documentation order
+        includeOrder: [
+          'docs/**',
+        ],
+        includeUnmatchedLast: true,
+        // Path transformation options
+        pathTransformation: {
+          // Paths to ignore when constructing URLs (will be removed if found)
+          ignorePaths: ['docs'],
+          // Paths to add when constructing URLs (will be prepended if not already present)
+          // addPaths: ['api'],
+        },
+        // Custom LLM files for specific documentation sections
+        customLLMFiles: [
+          {
+            filename: 'llms-vantage-api.txt',
+            includePatterns: ['docs-api/*.md', 'docs-api/**/*.md'],
+            fullContent: true,
+            title: 'Vantage API Documentation',
+            description: 'Complete reference for Vantage API'
+          },
+          {
+            filename: 'llms-vantage-cli.txt',
+            includePatterns: ['docs-cli/*.md', 'docs-cli/**/*.md'],
+            fullContent: false,
+            title: 'Vantage CLI Documentation',
+            description: 'All Vantage CLI commands in a single file'
+          },
+          {
+            filename: 'llms-vantage-sdk.txt',
+            includePatterns: ['docs-sdk/*.md', 'docs-sdk/**/*.md'],
+            fullContent: false,
+            title: 'Vantage SDK Documentation',
+            description: 'All Vantage SDK references in a single file'
+          },
+          {
+            filename: 'llms-vantage-platform.txt',
+            includePatterns: ['docs-platform/*.md', 'docs-platform/**/*.md', 'docs-platform-overview/*.md', 'docs-platform-overview/**/*.md'],
+            fullContent: false,
+            title: 'Vantage Platform Documentation',
+            description: 'All Vantage Platform references in a single file'
+          },
+        ],
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'platform',
+        path: 'docs-platform-overview',
+        routeBasePath: 'platform-overview',
+        sidebarPath: './docs-platform-overview/sidebar.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'platform-jobs',
+        path: 'docs-platform/jobs',
+        routeBasePath: 'platform/jobs',
+        sidebarPath: './docs-platform/jobs/sidebar.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'platform-clusters',
+        path: 'docs-platform/clusters',
+        routeBasePath: 'platform/clusters',
+        sidebarPath: './docs-platform/clusters/sidebar.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'platform-storage',
+        path: 'docs-platform/storage',
+        routeBasePath: 'platform/storage',
+        sidebarPath: './docs-platform/storage/sidebar.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'platform-compute-providers',
+        path: 'docs-platform/compute-providers',
+        routeBasePath: 'platform/compute-providers',
+        sidebarPath: './docs-platform/compute-providers/sidebar.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'platform-notebooks',
+        path: 'docs-platform/notebooks',
+        routeBasePath: 'platform/notebooks',
+        sidebarPath: './docs-platform/notebooks/sidebar.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'platform-remote-desktops',
+        path: 'docs-platform/remote-desktops',
+        routeBasePath: 'platform/remote-desktops',
+        sidebarPath: './docs-platform/remote-desktops/sidebar.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'platform-teams',
+        path: 'docs-platform/teams',
+        routeBasePath: 'platform/teams',
+        sidebarPath: './docs-platform/teams/sidebar.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'platform-licenses',
+        path: 'docs-platform/licenses',
+        routeBasePath: 'platform/licenses',
+        sidebarPath: './docs-platform/licenses/sidebar.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'cli',
+        path: 'docs-cli',
+        routeBasePath: 'cli',
+        sidebarPath: './docs-cli/sidebar.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'api',
+        path: 'docs-api',
+        routeBasePath: 'api',
+        sidebarPath: './docs-api/sidebar.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'sdk',
+        path: 'docs-sdk',
+        routeBasePath: 'sdk',
+        sidebarPath: './docs-sdk/sidebar.js',
+      },
+    ],
+  ],
+
+  themeConfig: {
+    image: 'img/vantage-docs-social-card.jpg',
+    
+    // Algolia DocSearch Configuration - Styled like Algolia's own docs
+    algolia: {
+      // Temporary demo configuration - replace with your actual index
+      appId: 'MPYYYNENH9',
+      apiKey: '4eea2544feea2cf558be1ce57ff44db4',
+      indexName: 'Vantage Compute Documentation Website Crawler',
+      
+      // Optional: see doc section below
+      contextualSearch: true,
+      
+      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl
+      replaceSearchResultPathname: {
+        from: '/docs/', // or as RegExp: /\/docs\//
+        to: '/',
+      },
+      
+      // Optional: Algolia search parameters
+      searchParameters: {},
+      
+      // Optional: path for search page that enabled by default (`false` to disable it)
+      searchPagePath: 'search',
+      
+      // Limit search hotkeys to only Cmd+K (Mac) and Ctrl+K (Windows/Linux)
+      searchHotkeys: ['cmd+k', 'ctrl+k'],
+    },
+    
+    navbar: {
+      logo: {
+        alt: 'Vantage docs',
+        src: 'https://vantage-compute-public-assets.s3.us-east-1.amazonaws.com/branding/vantage-logo-text-white-horz.png',
+        srcDark: 'https://vantage-compute-public-assets.s3.us-east-1.amazonaws.com/branding/vantage-logo-text-white-horz.png',
+      },
+      items: [],
+    },
+    footer: {
+      style: 'dark',
+      logo: {
+        alt: 'Vantage Compute Logo',
+        src: 'https://vantage-compute-public-assets.s3.us-east-1.amazonaws.com/branding/vantage-logo-text-white-horz.png',
+        href: 'https://vantagecompute.ai',
+      },
+      links: [
+        {
+          title: 'Documentation',
+          items: [
+            {
+              label: 'Platform',
+              to: '/platform',
+            },
+            {
+              label: 'Vantage CLI',
+              to: '/cli',
+            },
+            {
+              label: 'Vantage SDK',
+              to: '/sdk',
+            },
+            { label: 'Vantage API',
+              to: '/api',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Slack Channel',
+              href: 'https://vantage.slack.com',
+            },
+            {
+              label: 'Support',
+              href: 'https://vantagecompute.ai/support',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/vantagecompute',
+            },
+            {
+              label: 'Vantage Compute',
+              href: 'https://vantagecompute.ai',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright &copy; ${new Date().getFullYear()} Vantage Compute Corporation.`,
+    },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 5,
+    },
+    metadata: [
+      {
+        name: 'vantage-docs-version',
+        content: process.env.REACT_APP_VERSION,
+      },
+    ],
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: false,
+      },
+    },
+  },
+};
+
+module.exports = config;

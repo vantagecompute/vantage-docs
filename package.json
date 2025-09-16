@@ -1,11 +1,11 @@
 {
   "name": "vantage-docs",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start --host 0.0.0.0",
-    "build": "REACT_APP_VERSION=$npm_package_version GENERATE_SOURCEMAP=false docusaurus build",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -14,42 +14,27 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@algolia/client-search": "^5.20.0",
     "@docusaurus/core": "^3.8.1",
     "@docusaurus/preset-classic": "^3.8.1",
-    "@easyops-cn/docusaurus-search-local": "^0.52.1",
-    "@mdx-js/react": "^3.1.0",
-    "@tippyjs/react": "^4.2.6",
-    "clsx": "^2.1.1",
-    "docusaurus-plugin-openapi-docs": "^4.5.1",
-    "prism-react-renderer": "^2.4.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "rehype-external-links": "^3.0.0",
+    "@docusaurus/theme-common": "^3.8.1",
+    "@docusaurus/theme-search-algolia": "^3.8.1",
+    "@docusaurus/theme-mermaid": "^3.8.1",
+    "@docusaurus/plugin-content-docs": "^3.8.1",
+    "@mdx-js/react": "^3.0.0",
+    "@algolia/client-search": "^5.0.0",
     "search-insights": "^2.0.0",
-    "yarn": "^1.22.22"
+    "react-loadable": "^5.5.0",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "rehype-external-links": "^3.0.0",
+    "docusaurus-plugin-llms": "^0.2.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.8.1",
-    "@docusaurus/plugin-content-docs": "^3.8.1",
-    "@docusaurus/theme-common": "^3.8.1",
-    "@docusaurus/utils": "^3.8.1",
-    "@docusaurus/utils-validation": "^3.8.1",
-    "@types/node": "^24.2.0",
-    "@types/react": "^19.1.9",
-    "acorn": "^8.0.0",
-    "aws-cdk": "^2.146.0",
-    "aws-cdk-lib": "^2.146.0",
-    "constructs": "^10.3.0",
-    "docusaurus-plugin-llms": "^0.2.0",
-    "react-loadable": "^5.5.0",
-    "typescript": "^5.4.5"
-  },
-  "resolutions": {
-    "rimraf": "^6.0.1",
-    "glob": "^11.0.3",
-    "memfs": "^4.0.0",
-    "@faker-js/faker": "^9.9.0"
+    "@docusaurus/types": "^3.8.1",
+    "@types/react": "^18.0.0"
   },
   "browserslist": {
     "production": [
@@ -58,12 +43,12 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
     ]
   },
   "engines": {
-    "node": ">=16.14"
+    "node": ">=22.0"
   }
 }
