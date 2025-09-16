@@ -7,8 +7,8 @@ const config = {
   title: 'Vantage Compute Documentation',
   tagline: 'High Performance Computing, Evolved',
   favicon: 'img/favicon.ico',
-  url: 'https://docs.vantagecompute.ai',
-  baseUrl: '/',
+  url: 'https://vantagecompute.github.io/vantage-docs/',
+  baseUrl: '/vantage-docs/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
