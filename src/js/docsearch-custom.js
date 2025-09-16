@@ -5,8 +5,8 @@ import '@docsearch/css';
 docsearch({
   container: '#docsearch',
   appId: 'MPYYYNENH9',
-  indexName: 'YOUR_INDEX_NAME', // TODO: Replace with your actual DocSearch index name
   apiKey: '4eea2544feea2cf558be1ce57ff44db4',
+  indexName: 'Vantage Compute Documentation Website Crawler',
   
   // Optional: Additional configuration options
   searchParameters: {

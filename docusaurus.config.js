@@ -134,15 +134,16 @@ const config = {
         ],
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'platform',
-        path: 'docs-platform-overview',
-        routeBasePath: 'platform-overview',
-        sidebarPath: './docs-platform-overview/sidebar.js',
-      },
-    ],
+    // Platform overview is now handled by custom page at /src/pages/platform/index.js
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'platform',
+    //     path: 'docs-platform-overview',
+    //     routeBasePath: 'platform-overview',
+    //     sidebarPath: './docs-platform-overview/sidebar.js',
+    //   },
+    // ],
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -279,7 +280,7 @@ const config = {
         alt: 'Vantage Compute Logo',
         src: 'https://vantage-compute-public-assets.s3.us-east-1.amazonaws.com/branding/vantage-logo-text-white-horz.png',
         srcDark: 'https://vantage-compute-public-assets.s3.us-east-1.amazonaws.com/branding/vantage-logo-text-white-horz.png',
-        href: 'https://vantagecompute.ai',
+        href: 'https://docs.vantagecompute.ai',
         target: '_self'
       },
       items: [

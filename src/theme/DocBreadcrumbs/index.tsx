@@ -19,7 +19,7 @@ function DocumentationDropdown() {
   const location = useLocation();
   
   const sections = [
-    { label: 'Platform', path: '/platform-overview' },
+    { label: 'Platform', path: '/platform' },
     { label: 'CLI', path: '/cli' },
     { label: 'SDK', path: '/sdk' },
     { label: 'API', path: '/api' }
@@ -63,7 +63,7 @@ function DocumentationDropdown() {
                 className={clsx('dropdown__link', {
                   'dropdown__link--active': currentSection === section.label
                 })}
-                href={`/vantage-docs${section.path}`}
+                href={section.path}
               >
                 {section.label}
               </a>
