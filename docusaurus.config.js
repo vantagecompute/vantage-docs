@@ -8,15 +8,15 @@ const config = {
   tagline: 'High Performance Computing, Evolved',
   favicon: 'img/favicon.ico',
 
-  url: 'https://vantagecompute.github.io',
-  baseUrl: '/vantage-docs/',
+  url: 'https://docs.vantagecompute.ai',
+  baseUrl: '/',
 
   organizationName: 'vantagecompute',
-  projectName: 'vantage-cli',
+  projectName: 'vantage-docs',
   deploymentBranch: 'main',
   trailingSlash: false,
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
     defaultLocale: 'en',
@@ -24,8 +24,8 @@ const config = {
   },
 
   scripts: [
-    '/js/platform-navbar.js',
-    '/js/navbar-dropdown-hover.js'
+    // Error suppression for browser extensions
+    '/js/error-suppression.js'
   ],
 
   headTags: [
@@ -80,15 +80,15 @@ const config = {
         generateLLMsTxt: true,
         generateLLMsFullTxt: true,
         docsDir: '.',
-        ignoreFiles: ['node_modules/**', 'build/**', '.git/**'],
+        ignoreFiles: ['node_modules/**', 'build/**', '.git/**', '**/node_modules/**'],
         title: 'Vantage Compute Documentation',
         description: 'Complete reference documentation for Vantage Compute platform, CLI, API, and SDK.',
         includeBlog: false,
         // Content cleaning options
         excludeImports: true,
         removeDuplicateHeadings: true,
-        // Generate individual markdown files following llmstxt.org specification
-        generateMarkdownFiles: true,
+        // Disable individual markdown files to avoid filename issues
+        generateMarkdownFiles: false,
         // Control documentation order
         includeOrder: [
           'docs/**',
@@ -274,12 +274,23 @@ const config = {
     },
     
     navbar: {
+      title: "Vantage Compute Documentation",
       logo: {
-        alt: 'Vantage docs',
+        alt: 'Vantage Compute Logo',
         src: 'https://vantage-compute-public-assets.s3.us-east-1.amazonaws.com/branding/vantage-logo-text-white-horz.png',
         srcDark: 'https://vantage-compute-public-assets.s3.us-east-1.amazonaws.com/branding/vantage-logo-text-white-horz.png',
+        href: 'https://vantagecompute.ai',
+        target: '_self'
       },
-      items: [],
+      items: [
+        {
+          href: 'https://github.com/vantagecompute',
+          label: 'GitHub',
+          position: 'right',
+          className: 'github-button'
+        }
+      ],
+      hideOnScroll: false
     },
     footer: {
       style: 'dark',

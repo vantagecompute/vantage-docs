@@ -1,197 +1,8 @@
 /**
- * Vantage Documentation Custom Styles
+ * Vantage CLI Documentation Custom Styles
  */
 
-/* Center H1 and H2 headers and apply custom colors */
-h1 {
-    text-align: center !important;
-    color: #262572 !important;
-}
-
-h2 {
-    text-align: center !important;
-    color: #0A0618 !important;
-}
-
-/* Ensure the colors apply to all H1 and H2 elements */
-.markdown h1,
-article h1,
-.theme-doc-markdown h1 {
-    text-align: center !important;
-    color: #262572 !important;
-}
-
-.markdown h2,
-article h2,
-.theme-doc-markdown h2 {
-    text-align: center !important;
-    color: #0A0618 !important;
-}
-
-.menu__link--active,
-.menu__link:hover,
-.table-of-contents__link--active,
-.table-of-contents__link:hover,
-.theme-doc-sidebar-item-link-level-1.theme-doc-sidebar-item-link--active,
-.theme-doc-sidebar-item-link-level-2.theme-doc-sidebar-item-link--active,
-.theme-doc-sidebar-item-link-level-3.theme-doc-sidebar-item-link--active,
-.theme-doc-sidebar-item-link:hover {
-    color: #6145FF !important;
-    background-color: rgba(97, 69, 255, 0.1) !important;
-}
-
-/* Active breadcrumb styling */
-.breadcrumbs__link--active,
-.breadcrumbs__link:hover {
-    color: #6145FF !important;
-}
-
-/* Pagination navigation */
-.pagination-nav__link:hover .pagination-nav__label,
-.pagination-nav__link--active .pagination-nav__label {
-    color: #6145FF !important;
-}
-
-/* Make summary elements more clickable and add hover effects */
-details summary {
-    cursor: pointer !important;
-    transition: background-color 0.2s ease !important;
-}
-
-details summary:hover {
-    background-color: rgba(97, 69, 255, 0.05) !important;
-}
-
-/* Style for clickable summary elements with anchors */
-details summary[onclick] {
-    color: #6145FF !important;
-    font-weight: 600 !important;
-}
-
-details summary[onclick]:hover {
-    background-color: rgba(97, 69, 255, 0.1) !important;
-    text-decoration: underline !important;
-}
-
-/* Center footer navigation links */
-.footer__links {
-    justify-content: center !important;
-}
-
-.footer__col {
-    text-align: center !important;
-}
-
-/* Root variables for Vantage brand colors */
-:root {
-  --vantage-purple: #6b46c1;
-  --vantage-purple-dark: #4c1d95;
-  --vantage-button: #AB9DFF;
-  --ifm-color-primary: #6b46c1;
-  --ifm-color-primary-dark: #4c1d95;
-  --ifm-color-primary-darker: #4c1d95;
-  --ifm-color-primary-darkest: #4c1d95;
-  --ifm-color-primary-light: #7c3aed;
-  --ifm-color-primary-lighter: #8b5cf6;
-  --ifm-color-primary-lightest: #a78bfa;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}
-
-/* Dark mode variables */
-[data-theme='dark'] {
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}
-
-/* ===== DOCUSEARCH CSS VARIABLES CUSTOMIZATION ===== */
-/* Following the official DocSearch styling approach */
-/* Documentation: https://docsearch.algolia.com/docs/styling/ */
-
-:root {
-  /* DocSearch Brand Colors - Vantage Purple Theme */
-  --docsearch-primary-color: #6b46c1;
-  --docsearch-text-color: #1c1e21;
-  --docsearch-spacing: 12px;
-  --docsearch-icon-stroke-width: 1.4;
-  --docsearch-highlight-color: #6b46c1;
-  --docsearch-muted-color: #969faf;
-  --docsearch-container-background: rgba(107, 70, 193, 0.1);
-  --docsearch-modal-background: #f5f6f7;
-  
-  /* Keep all other DocSearch variables as defaults */
-  /* The official @docsearch/css will provide the rest */
-}
-
-/* Dark theme adjustments */
-[data-theme='dark'] {
-  --docsearch-text-color: #f5f6f7;
-  --docsearch-container-background: rgba(107, 70, 193, 0.2);
-  --docsearch-modal-background: #15172a;
-  --docsearch-highlight-color: #8b5cf6;
-  --docsearch-primary-color: #8b5cf6;
-}
-
-/* Mobile responsive adjustments */
-/* Hide navbar logo on iPhone and smaller screens */
-@media screen and (max-width: 480px) {
-  .navbar__logo {
-    display: none !important;
-  }
-}
-
-.menu__link--active,
-.menu__link:hover,
-.table-of-contents__link--active,
-.table-of-contents__link:hover,
-.theme-doc-sidebar-item-link-level-1.theme-doc-sidebar-item-link--active,
-.theme-doc-sidebar-item-link-level-2.theme-doc-sidebar-item-link--active,
-.theme-doc-sidebar-item-link-level-3.theme-doc-sidebar-item-link--active,
-.theme-doc-sidebar-item-link:hover {
-    color: #6145FF !important;
-    background-color: rgba(97, 69, 255, 0.1) !important;
-}
-
-/* Active breadcrumb styling */
-.breadcrumbs__link--active,
-.breadcrumbs__link:hover {
-    color: #6145FF !important;
-}
-
-/* Pagination navigation */
-.pagination-nav__link:hover .pagination-nav__label,
-.pagination-nav__link--active .pagination-nav__label {
-    color: #6145FF !important;
-}
-
-/* Make summary elements more clickable and add hover effects */
-details summary {
-    cursor: pointer !important;
-    transition: background-color 0.2s ease !important;
-}
-
-details summary:hover {
-    background-color: rgba(97, 69, 255, 0.05) !important;
-}
-
-/* Style for clickable summary elements with anchors */
-details summary[onclick] {
-    color: #6145FF !important;
-    font-weight: 600 !important;
-}
-
-details summary[onclick]:hover {
-    background-color: rgba(97, 69, 255, 0.1) !important;
-    text-decoration: underline !important;
-}
-
-/* Center footer navigation links */
-.footer__links {
-    justify-content: center !important;
-}
-
-.footer__col {
-    text-align: center !important;
-}
+@import './commands.css';
 
 /* Root variables for Vantage brand colors */
 :root {
@@ -548,7 +359,27 @@ div[style*="position: fixed"][style*="color: red"],
 /* Mobile responsive adjustments */
 /* Hide navbar logo on iPhone and smaller screens */
 @media screen and (max-width: 480px) {
-  .navbar__logo {
+  .navbar__logo,
+  .navbar__brand .navbar__logo,
+  div.navbar__logo,
+  .navbar__brand div.navbar__logo {
     display: none !important;
+  }
+  
+  /* Also hide the logo images directly */
+  .navbar__logo img,
+  .navbar__brand .navbar__logo img,
+  .navbar__brand img {
+    display: none !important;
+  }
+  
+  /* Hide any themed components that might contain the logo */
+  .navbar__brand .themedComponent_mlkZ {
+    display: none !important;
+  }
+  
+  /* Adjust brand container for mobile */
+  .navbar__brand {
+    min-width: auto !important;
   }
 }

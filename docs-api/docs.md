@@ -171,7 +171,7 @@ Monitor API status and incidents:
 
 ### Support Channels
 - **Email**: [api-support@omnivector.solutions](mailto:api-support@omnivector.solutions)
-- **Documentation Issues**: [GitHub Issues](https://github.com/omnivector/vantage-docs/issues)
+- **Documentation Issues**: [GitHub Issues](https://github.com/vantagecompute/vantage-docs/issues)
 - **Feature Requests**: [Feature Portal](https://vantage.canny.io)
 
 ### Response Times

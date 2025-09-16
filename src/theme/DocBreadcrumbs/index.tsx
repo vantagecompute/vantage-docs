@@ -14,8 +14,69 @@ import HomeBreadcrumbItem from '@theme/DocBreadcrumbs/Items/Home';
 import DocBreadcrumbsStructuredData from '@theme/DocBreadcrumbs/StructuredData';
 import styles from './styles.module.css';
 
+// Documentation section dropdown component
+function DocumentationDropdown() {
+  const location = useLocation();
+  
+  const sections = [
+    { label: 'Platform', path: '/platform-overview' },
+    { label: 'CLI', path: '/cli' },
+    { label: 'SDK', path: '/sdk' },
+    { label: 'API', path: '/api' }
+  ];
+  
+  const getCurrentSection = () => {
+    const path = location.pathname;
+    
+    if (path.startsWith('/platform') || path.includes('/platform')) {
+      return 'Platform';
+    } else if (path.startsWith('/cli') || path.includes('/cli')) {
+      return 'CLI';
+    } else if (path.startsWith('/sdk') || path.includes('/sdk')) {
+      return 'SDK';
+    } else if (path.startsWith('/api') || path.includes('/api')) {
+      return 'API';
+    }
+    
+    return 'Documentation';
+  };
+  
+  const currentSection = getCurrentSection();
+  
+  return (
+    <li className="breadcrumbs__item breadcrumb-dropdown">
+      <div className="dropdown dropdown--hoverable breadcrumb-nav-dropdown">
+        <button 
+          className="dropdown__toggle breadcrumb-dropdown-toggle" 
+          aria-haspopup="true" 
+          aria-expanded="false"
+        >
+          {currentSection}
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" style={{marginLeft: '4px'}}>
+            <path d="M6 8L3 5h6z"/>
+          </svg>
+        </button>
+        <ul className="dropdown__menu">
+          {sections.map(section => (
+            <li key={section.label}>
+              <a 
+                className={clsx('dropdown__link', {
+                  'dropdown__link--active': currentSection === section.label
+                })}
+                href={`/vantage-docs${section.path}`}
+              >
+                {section.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </li>
+  );
+}
+
 // TODO move to design system folder
-function BreadcrumbsItemLink({children, href, isLast}) {
+function BreadcrumbsItemLink({children, href, isLast}: {children: React.ReactNode, href?: string, isLast: boolean}) {
   const className = 'breadcrumbs__link';
   if (isLast) {
     return <span className={className}>{children}</span>;
@@ -30,7 +91,7 @@ function BreadcrumbsItemLink({children, href, isLast}) {
 }
 
 // TODO move to design system folder
-function BreadcrumbsItem({children, active}) {
+function BreadcrumbsItem({children, active}: {children: React.ReactNode, active: boolean}) {
   return (
     <li
       className={clsx('breadcrumbs__item', {
@@ -159,6 +220,7 @@ export default function DocBreadcrumbs() {
               </BreadcrumbsItem>
             );
           })}
+          <DocumentationDropdown />
         </ul>
       </nav>
     </>

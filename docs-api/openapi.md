@@ -10,8 +10,8 @@ Download the complete OpenAPI 3.0 specification for the Vantage API in YAML form
 
 ## Download Links
 
-- **[Download openapi.yaml](https://raw.githubusercontent.com/omnivector-solutions/vantage-docs/main/static/api/openapi.yaml)** - Direct download
-- **[View on GitHub](https://github.com/omnivector-solutions/vantage-docs/blob/main/static/api/openapi.yaml)** - Browse the file
+- **[Download openapi.yaml](https://raw.githubusercontent.com/vantagecompute/vantage-docs/main/static/api/openapi.yaml)** - Direct download
+- **[View on GitHub](https://github.com/vantagecompute/vantage-docs/blob/main/static/api/openapi.yaml)** - Browse the file
 - **[Swagger UI](https://api.vantage.omnivector.solutions/docs)** - Interactive documentation
 
 ## What is OpenAPI?
@@ -33,7 +33,7 @@ You can import our OpenAPI specification into various API development tools:
 **Postman**
 1. Open Postman
 2. Click **Import**
-3. Select **Link** and paste: `https://raw.githubusercontent.com/omnivector-solutions/vantage-docs/main/static/api/openapi.yaml`
+3. Select **Link** and paste: `https://raw.githubusercontent.com/vantagecompute/vantage-docs/main/static/api/openapi.yaml`
 
 **Insomnia**
 1. Open Insomnia
@@ -55,13 +55,13 @@ npm install @openapitools/openapi-generator-cli -g
 
 # Generate Python client
 openapi-generator-cli generate \
-  -i https://raw.githubusercontent.com/omnivector-solutions/vantage-docs/main/static/api/openapi.yaml \
+  -i https://raw.githubusercontent.com/vantagecompute/vantage-docs/main/static/api/openapi.yaml \
   -g python \
   -o ./vantage-python-client
 
 # Generate JavaScript client
 openapi-generator-cli generate \
-  -i https://raw.githubusercontent.com/omnivector-solutions/vantage-docs/main/static/api/openapi.yaml \
+  -i https://raw.githubusercontent.com/vantagecompute/vantage-docs/main/static/api/openapi.yaml \
   -g javascript \
   -o ./vantage-js-client
 ```
@@ -76,7 +76,7 @@ import yaml
 import requests
 
 # Load the specification
-spec_url = "https://raw.githubusercontent.com/omnivector-solutions/vantage-docs/main/static/api/openapi.yaml"
+spec_url = "https://raw.githubusercontent.com/vantagecompute/vantage-docs/main/static/api/openapi.yaml"
 spec_content = requests.get(spec_url).text
 spec = yaml.safe_load(spec_content)
 
@@ -114,7 +114,7 @@ The OpenAPI specification is updated with each API release:
 - **Minor updates** (1.x.0) - New endpoints, optional parameters
 - **Major updates** (x.0.0) - Breaking changes, new versions
 
-Subscribe to our [GitHub releases](https://github.com/omnivector-solutions/vantage-docs/releases) to be notified of specification updates.
+Subscribe to our [GitHub releases](https://github.com/vantagecompute/vantage-docs/releases) to be notified of specification updates.
 
 ## Related Resources
 
