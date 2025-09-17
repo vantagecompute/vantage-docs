@@ -1,6 +1,77 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import DocSidebar from '@theme/DocSidebar';
 import { useLocation } from '@docusaurus/router';
+
+// Platform sidebar configuration
+const platformSidebar = [
+  {
+    type: 'category',
+    label: 'Platform Overview',
+    collapsed: false,
+    items: [
+      {
+        type: 'link',
+        label: 'Introduction',
+        href: '/platform/',
+      },
+    ],
+  },
+  {
+    type: 'category',
+    label: 'Core Components',
+    collapsed: false,
+    items: [
+      {
+        type: 'link',
+        label: 'Jobs',
+        href: '/platform/jobs/',
+      },
+      {
+        type: 'link',
+        label: 'Clusters',
+        href: '/platform/clusters/',
+      },
+      {
+        type: 'link',
+        label: 'Storage',
+        href: '/platform/storage/',
+      },
+      {
+        type: 'link',
+        label: 'Remote Desktops',
+        href: '/platform/remote-desktops/',
+      },
+      {
+        type: 'link',
+        label: 'Notebooks',
+        href: '/platform/notebooks/',
+      },
+    ],
+  },
+  {
+    type: 'category',
+    label: 'Management',
+    collapsed: false,
+    items: [
+      {
+        type: 'link',
+        label: 'Compute Providers',
+        href: '/platform/compute-providers/',
+      },
+      {
+        type: 'link',
+        label: 'Licenses',
+        href: '/platform/licenses/',
+      },
+      {
+        type: 'link',
+        label: 'Teams',
+        href: '/platform/teams/',
+      },
+    ],
+  },
+];
 
 // Documentation section dropdown component (same as in DocBreadcrumbs)
 function DocumentationDropdown() {
@@ -64,136 +135,154 @@ export default function PlatformHome() {
       title="Vantage Platform"
       description="High Performance Computing platform for modern workloads"
     >
-      <div className="container margin-vert--lg">
-        <div className="row">
-          <div className="col col--8 col--offset-2">
-            <nav className="theme-doc-breadcrumbs breadcrumbsContainer_Alpn" aria-label="Breadcrumbs">
-              <ul className="breadcrumbs">
-                <li className="breadcrumbs__item">
-                  <a aria-label="Home page" className="breadcrumbs__link" href="/">
-                    <svg viewBox="0 0 24 24" className="breadcrumbHomeIcon_YNFT">
-                      <path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-                <li className="breadcrumbs__item breadcrumbs__item--active">
-                  <span className="breadcrumbs__link">Platform</span>
-                </li>
-                <DocumentationDropdown />
-              </ul>
-            </nav>
-            
-            <header>
-              <h1 className="hero__title">Vantage Platform</h1>
-              <p className="hero__subtitle">
-                High Performance Computing platform for modern workloads
-              </p>
-            </header>
+      <div className="docsWrapper_hBAB">
+        <div className="docRoot_UBD9">
+          <DocSidebar
+            sidebar={platformSidebar}
+            path="/platform/"
+            onCollapse={() => {}}
+            isHidden={false}
+          />
+          <main className="docMainContainer_TBSr">
+            <div className="container padding-top--md padding-bottom--lg">
+              <div className="row">
+                <div className="col docItemCol_VOVn">
+                  <div className="docItemContainer_Djhp">
+                    <article>
+                      <nav className="theme-doc-breadcrumbs breadcrumbsContainer_Alpn" aria-label="Breadcrumbs">
+                        <ul className="breadcrumbs">
+                          <li className="breadcrumbs__item">
+                            <a aria-label="Home page" className="breadcrumbs__link" href="/">
+                              <svg viewBox="0 0 24 24" className="breadcrumbHomeIcon_YNFT">
+                                <path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path>
+                              </svg>
+                            </a>
+                          </li>
+                          <li className="breadcrumbs__item breadcrumbs__item--active">
+                            <span className="breadcrumbs__link">Platform</span>
+                          </li>
+                          <DocumentationDropdown />
+                        </ul>
+                      </nav>
+                      
+                      <div className="theme-doc-markdown markdown">
+                        <header>
+                          <h1 className="margin-bottom--md">Vantage Platform</h1>
+                          <p className="lead">
+                            High Performance Computing platform for modern workloads
+                          </p>
+                        </header>
 
-            <main>
-              <section className="margin-vert--lg">
-                <h2>Platform Components</h2>
-                
-                <div className="row">
-                  <div className="col col--6 margin-bottom--lg">
-                    <div className="card">
-                      <div className="card__header">
-                        <h3>Jobs</h3>
+                        <main>
+                          <section className="margin-vert--lg">
+                            <h2>Platform Components</h2>
+                            
+                            <div className="row">
+                              <div className="col col--6 margin-bottom--lg">
+                                <div className="card">
+                                  <div className="card__header">
+                                    <h3>Jobs</h3>
+                                  </div>
+                                  <div className="card__body">
+                                    <p>Manage and monitor computational jobs across your clusters.</p>
+                                    <a href="/platform/jobs/" className="button button--primary">Learn More</a>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div className="col col--6 margin-bottom--lg">
+                                <div className="card">
+                                  <div className="card__header">
+                                    <h3>Clusters</h3>
+                                  </div>
+                                  <div className="card__body">
+                                    <p>Deploy and manage HPC clusters with ease.</p>
+                                    <a href="/platform/clusters/" className="button button--primary">Learn More</a>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div className="col col--6 margin-bottom--lg">
+                                <div className="card">
+                                  <div className="card__header">
+                                    <h3>Storage</h3>
+                                  </div>
+                                  <div className="card__body">
+                                    <p>Scalable storage solutions for your data.</p>
+                                    <a href="/platform/storage/" className="button button--primary">Learn More</a>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div className="col col--6 margin-bottom--lg">
+                                <div className="card">
+                                  <div className="card__header">
+                                    <h3>Remote Desktops</h3>
+                                  </div>
+                                  <div className="card__body">
+                                    <p>Access remote desktop environments for your workflows.</p>
+                                    <a href="/platform/remote-desktops/" className="button button--primary">Learn More</a>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div className="col col--6 margin-bottom--lg">
+                                <div className="card">
+                                  <div className="card__header">
+                                    <h3>Notebooks</h3>
+                                  </div>
+                                  <div className="card__body">
+                                    <p>Interactive Jupyter notebooks for data science and research.</p>
+                                    <a href="/platform/notebooks/" className="button button--primary">Learn More</a>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div className="col col--6 margin-bottom--lg">
+                                <div className="card">
+                                  <div className="card__header">
+                                    <h3>Compute Providers</h3>
+                                  </div>
+                                  <div className="card__body">
+                                    <p>Integrate with various compute providers and resources.</p>
+                                    <a href="/platform/compute-providers/" className="button button--primary">Learn More</a>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div className="col col--6 margin-bottom--lg">
+                                <div className="card">
+                                  <div className="card__header">
+                                    <h3>Licenses</h3>
+                                  </div>
+                                  <div className="card__body">
+                                    <p>Manage software licenses and compliance.</p>
+                                    <a href="/platform/licenses/" className="button button--primary">Learn More</a>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div className="col col--6 margin-bottom--lg">
+                                <div className="card">
+                                  <div className="card__header">
+                                    <h3>Teams</h3>
+                                  </div>
+                                  <div className="card__body">
+                                    <p>Collaborate with team members and manage permissions.</p>
+                                    <a href="/platform/teams/" className="button button--primary">Learn More</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </main>
                       </div>
-                      <div className="card__body">
-                        <p>Manage and monitor computational jobs across your clusters.</p>
-                        <a href="/platform/jobs/" className="button button--primary">Learn More</a>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="col col--6 margin-bottom--lg">
-                    <div className="card">
-                      <div className="card__header">
-                        <h3>Clusters</h3>
-                      </div>
-                      <div className="card__body">
-                        <p>Deploy and manage HPC clusters with ease.</p>
-                        <a href="/platform/clusters/" className="button button--primary">Learn More</a>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="col col--6 margin-bottom--lg">
-                    <div className="card">
-                      <div className="card__header">
-                        <h3>Storage</h3>
-                      </div>
-                      <div className="card__body">
-                        <p>Scalable storage solutions for your data.</p>
-                        <a href="/platform/storage/" className="button button--primary">Learn More</a>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="col col--6 margin-bottom--lg">
-                    <div className="card">
-                      <div className="card__header">
-                        <h3>Remote Desktops</h3>
-                      </div>
-                      <div className="card__body">
-                        <p>Access remote desktop environments for your workflows.</p>
-                        <a href="/platform/remote-desktops/" className="button button--primary">Learn More</a>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="col col--6 margin-bottom--lg">
-                    <div className="card">
-                      <div className="card__header">
-                        <h3>Notebooks</h3>
-                      </div>
-                      <div className="card__body">
-                        <p>Interactive Jupyter notebooks for data science and research.</p>
-                        <a href="/platform/notebooks/" className="button button--primary">Learn More</a>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="col col--6 margin-bottom--lg">
-                    <div className="card">
-                      <div className="card__header">
-                        <h3>Compute Providers</h3>
-                      </div>
-                      <div className="card__body">
-                        <p>Integrate with various compute providers and resources.</p>
-                        <a href="/platform/compute-providers/" className="button button--primary">Learn More</a>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="col col--6 margin-bottom--lg">
-                    <div className="card">
-                      <div className="card__header">
-                        <h3>Licenses</h3>
-                      </div>
-                      <div className="card__body">
-                        <p>Manage software licenses and compliance.</p>
-                        <a href="/platform/licenses/" className="button button--primary">Learn More</a>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="col col--6 margin-bottom--lg">
-                    <div className="card">
-                      <div className="card__header">
-                        <h3>Teams</h3>
-                      </div>
-                      <div className="card__body">
-                        <p>Collaborate with team members and manage permissions.</p>
-                        <a href="/platform/teams/" className="button button--primary">Learn More</a>
-                      </div>
-                    </div>
+                    </article>
                   </div>
                 </div>
-              </section>
-            </main>
-          </div>
+              </div>
+            </div>
+          </main>
         </div>
       </div>
     </Layout>
