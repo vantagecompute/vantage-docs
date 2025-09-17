@@ -137,85 +137,88 @@ const config = {
     // Platform overview is now handled by custom page at /src/pages/platform/index.js
     // [
     //   '@docusaurus/plugin-content-docs',
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'platform',
+        path: 'docs-platform',
+        routeBasePath: 'platform',
+        // Let Docusaurus auto-generate the sidebar
+      },
+    ],
+    // Platform components are now handled by the main platform plugin above
+    // [
+    //   '@docusaurus/plugin-content-docs',
     //   {
-    //     id: 'platform',
-    //     path: 'docs-platform-overview',
-    //     routeBasePath: 'platform-overview',
-    //     sidebarPath: './docs-platform-overview/sidebar.js',
+    //     id: 'platform-jobs',
+    //     path: 'docs-platform/jobs',
+    //     routeBasePath: 'platform/jobs',
+    //     sidebarPath: './docs-platform/jobs/sidebar.js',
     //   },
     // ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'platform-jobs',
-        path: 'docs-platform/jobs',
-        routeBasePath: 'platform/jobs',
-        sidebarPath: './docs-platform/jobs/sidebar.js',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'platform-clusters',
-        path: 'docs-platform/clusters',
-        routeBasePath: 'platform/clusters',
-        sidebarPath: './docs-platform/clusters/sidebar.js',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'platform-storage',
-        path: 'docs-platform/storage',
-        routeBasePath: 'platform/storage',
-        sidebarPath: './docs-platform/storage/sidebar.js',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'platform-compute-providers',
-        path: 'docs-platform/compute-providers',
-        routeBasePath: 'platform/compute-providers',
-        sidebarPath: './docs-platform/compute-providers/sidebar.js',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'platform-notebooks',
-        path: 'docs-platform/notebooks',
-        routeBasePath: 'platform/notebooks',
-        sidebarPath: './docs-platform/notebooks/sidebar.js',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'platform-remote-desktops',
-        path: 'docs-platform/remote-desktops',
-        routeBasePath: 'platform/remote-desktops',
-        sidebarPath: './docs-platform/remote-desktops/sidebar.js',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'platform-teams',
-        path: 'docs-platform/teams',
-        routeBasePath: 'platform/teams',
-        sidebarPath: './docs-platform/teams/sidebar.js',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'platform-licenses',
-        path: 'docs-platform/licenses',
-        routeBasePath: 'platform/licenses',
-        sidebarPath: './docs-platform/licenses/sidebar.js',
-      },
-    ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'platform-clusters',
+    //     path: 'docs-platform/clusters',
+    //     routeBasePath: 'platform/clusters',
+    //     sidebarPath: './docs-platform/clusters/sidebar.js',
+    //   },
+    // ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'platform-storage',
+    //     path: 'docs-platform/storage',
+    //     routeBasePath: 'platform/storage',
+    //     sidebarPath: './docs-platform/storage/sidebar.js',
+    //   },
+    // ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'platform-compute-providers',
+    //     path: 'docs-platform/compute-providers',
+    //     routeBasePath: 'platform/compute-providers',
+    //     sidebarPath: './docs-platform/compute-providers/sidebar.js',
+    //   },
+    // ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'platform-notebooks',
+    //     path: 'docs-platform/notebooks',
+    //     routeBasePath: 'platform/notebooks',
+    //     sidebarPath: './docs-platform/notebooks/sidebar.js',
+    //   },
+    // ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'platform-remote-desktops',
+    //     path: 'docs-platform/remote-desktops',
+    //     routeBasePath: 'platform/remote-desktops',
+    //     sidebarPath: './docs-platform/remote-desktops/sidebar.js',
+    //   },
+    // ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'platform-teams',
+    //     path: 'docs-platform/teams',
+    //     routeBasePath: 'platform/teams',
+    //     sidebarPath: './docs-platform/teams/sidebar.js',
+    //   },
+    // ],
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'platform-licenses',
+    //     path: 'docs-platform/licenses',
+    //     routeBasePath: 'platform/licenses',
+    //     sidebarPath: './docs-platform/licenses/sidebar.js',
+    //   },
+    // ],
     [
       '@docusaurus/plugin-content-docs',
       {
