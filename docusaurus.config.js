@@ -349,13 +349,13 @@ const config = {
           title: 'Connect',
           items: [
             {
-              html: '<a href="https://youtube.com/@vantagecompute" class="footer__link-item footer__link-social" aria-label="YouTube"><img src="https://cdn-icons-png.flaticon.com/32/3670/3670147.png" alt="YouTube" /></a>',
+              html: '<a href="https://youtube.com/@vantagecompute" class="footer__link-item footer__link-social" aria-label="YouTube"><img src="https://cdn-icons-png.flaticon.com/32/174/174883.png" alt="YouTube" /></a>',
             },
             {
-              html: '<a href="https://linkedin.com/company/vantage-compute" class="footer__link-item footer__link-social" aria-label="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/32/3536/3536569.png" alt="LinkedIn" /></a>',
+              html: '<a href="https://linkedin.com/company/vantage-compute" class="footer__link-item footer__link-social" aria-label="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/32/174/174857.png" alt="LinkedIn" /></a>',
             },
             {
-              html: '<a href="https://github.com/vantagecompute" class="footer__link-item footer__link-social" aria-label="GitHub"><img src="https://cdn-icons-png.flaticon.com/32/919/919847.png" alt="GitHub" /></a>',
+              html: '<a href="https://github.com/vantagecompute" class="footer__link-item footer__link-social" aria-label="GitHub"><img src="https://cdn-icons-png.flaticon.com/32/25/25231.png" alt="GitHub" /></a>',
             },
           ],
         },
