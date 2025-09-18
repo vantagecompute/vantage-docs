@@ -1,0 +1,90 @@
+# Issue Templates for Vantage Documentation
+
+name: 🐛 Bug Report
+description: Report a bug or issue with the documentation site
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the information below to help us resolve the issue quickly.
+
+  - type: dropdown
+    id: bug-type
+    attributes:
+      label: Bug Type
+      description: What type of issue are you experiencing?
+      options:
+        - Documentation content error
+        - Site functionality issue
+        - Build/deployment problem
+        - Navigation or linking issue
+        - Search functionality
+        - Mobile responsiveness
+        - Performance issue
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear and concise description of the bug
+      placeholder: Describe what happened and what you expected to happen
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this issue?
+      placeholder: |
+        1. Go to page...
+        2. Click on...
+        3. Scroll down to...
+        4. See error
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: Which browser are you using?
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device Type
+      description: What type of device are you using?
+      options:
+        - Desktop
+        - Mobile
+        - Tablet
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+      description: Which page is affected?
+      placeholder: https://docs.vantagecompute.ai/platform/...
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any additional information that might help
+      placeholder: Screenshots, console errors, etc.

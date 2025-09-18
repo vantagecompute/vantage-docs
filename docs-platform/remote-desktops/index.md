@@ -1,11 +1,6 @@
 ---
-id: index
-title: Remote Desktops
-description: Remote desktop environments for High Performance Computing with Vantage
----: index
 title: Remote Desktops
 description: Remote desktop solutions for High Performance Computing with Vantage
-slug: /
 ---
 
 Vantage provides secure remote desktop access to your HPC resources. Connect to your computational environments from anywhere with high-performance virtual desktops.

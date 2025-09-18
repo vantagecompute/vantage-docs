@@ -14,6 +14,7 @@ default:
 [group("docusaurus")]
 install:
     @echo "📦 Installing Docusaurus dependencies..."
+    git submodule update --remote --init --recursive --merge
     yarn install
 
 # Start Docusaurus development server
@@ -32,6 +33,7 @@ dev-port port="3000": install
 [group("docusaurus")]
 build: install
     @echo "🏗️ Building Docusaurus for production..."
+    node scripts/transform-cli-links.js /cli/
     yarn build
 
 # Serve built Docusaurus site locally

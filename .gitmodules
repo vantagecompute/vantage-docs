@@ -1,0 +1,4 @@
+[submodule "external/vantage-cli"]
+	path = external/vantage-cli
+	url = https://github.com/vantagecompute/vantage-cli
+	branch = main

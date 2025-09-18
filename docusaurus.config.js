@@ -18,6 +18,7 @@ const config = {
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'warn',
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -43,11 +44,6 @@ const config = {
   markdown: {
     format: 'detect',
     mermaid: true,
-    mdx1Compat: {
-      comments: true,
-      admonitions: true,
-      headingIds: true,
-    },
   },
 
   themes: ['@docusaurus/theme-mermaid'],
@@ -60,7 +56,8 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars-main.js'),
           rehypePlugins: [
-            [require('rehype-external-links').default, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+            require('./src/rehypeTabsTransform.js'),
+            // [require('rehype-external-links').default, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
           ],
           routeBasePath: '/', // Make docs the root
         },
@@ -223,9 +220,17 @@ const config = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'cli',
-        path: 'docs-cli',
+        path: 'external/vantage-cli/docusaurus/docs',
         routeBasePath: 'cli',
-        sidebarPath: './docs-cli/sidebar.js',
+        sidebarPath: require.resolve('./external/vantage-cli/docusaurus/sidebars.ts'),
+        editUrl: 'https://github.com/vantagecompute/vantage-cli/edit/main/', // upstream!
+        rehypePlugins: [
+          require('./src/rehypeTabsTransform.js'),
+          // [require('rehype-external-links').default, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+        ],
+        beforeDefaultRemarkPlugins: [
+          require('./src/remarkThemeImports.js'),
+        ],
       },
     ],
     [
