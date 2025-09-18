@@ -1,0 +1,69 @@
+# .github/workflows/deploy.yml
+name: Build & Deploy (repository_dispatch)
+
+on:
+  push:
+    branches: ["main"]
+
+  # Triggered by the CLI repo: dispatch event_type: "cli-docs-updated"
+  repository_dispatch:
+    types: [cli-docs-updated]
+
+  # Optional: allow manual runs
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (with submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      # Remove this step if you want the platform site to use a pinned submodule commit.
+      - name: Update submodules to latest default branch
+        run: |
+          git submodule update --remote --init --recursive
+          git status
+
+      - name: Setup Node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+          cache-dependency-path: yarn.lock
+
+      - name: Install just
+        run: sudo snap install just --classic
+
+      - name: Build website
+        run: just build
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: [build]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,8 +1,6 @@
 ---
-id: index
 title: Vantage API
 description: REST API for integrating with Vantage HPC platform
-slug: /
 ---
 
 The Vantage REST API provides comprehensive programmatic access to all platform features. Build custom integrations, automate workflows, and develop applications that leverage High Performance Computing resources.

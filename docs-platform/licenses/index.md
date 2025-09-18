@@ -8,8 +8,8 @@ Vantage provides comprehensive license management capabilities for commercial so
 
 ## Supported License Delivery Models
 
-- **[Vantage Hosted](/platform/licenses/vantage-hosted)**: Vantage managed license servers.
-- **[User Hosted](/platform/licenses/user-hosted)**: User managed license servers.
+- **[Vantage Hosted](vantage-hosted)**: Vantage managed license servers.
+- **[User Hosted](user-hosted)**: User managed license servers.
 
 ## Getting Started
 

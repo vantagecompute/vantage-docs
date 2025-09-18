@@ -1,0 +1,97 @@
+# Documentation Issue Template for Vantage Documentation
+
+name: 📝 Documentation Issue
+description: Report an issue with documentation content
+title: "[Docs]: "
+labels: ["documentation", "content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Found an issue with our documentation content? Help us improve by providing details below.
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What kind of documentation issue is this?
+      options:
+        - Content is outdated
+        - Content is incorrect/inaccurate
+        - Content is unclear/confusing
+        - Missing information
+        - Broken links
+        - Code examples don't work
+        - Formatting issues
+        - Typos/grammar
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      description: Link to the page with the issue
+      placeholder: https://docs.vantagecompute.ai/...
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-content
+    attributes:
+      label: Current Content
+      description: Quote the problematic text or describe the current state
+      placeholder: Copy/paste the relevant section or describe what's currently shown
+
+  - type: textarea
+    id: suggested-improvement
+    attributes:
+      label: Suggested Improvement
+      description: How should this be improved?
+      placeholder: Provide specific suggestions for improvement
+    validations:
+      required: true
+
+  - type: dropdown
+    id: content-section
+    attributes:
+      label: Documentation Section
+      description: Which section of the docs is affected?
+      options:
+        - Platform Overview
+        - Platform Documentation
+        - API Documentation
+        - CLI Documentation
+        - SDK Documentation
+        - Getting Started
+        - General Content
+    validations:
+      required: true
+
+  - type: dropdown
+    id: user-type
+    attributes:
+      label: User Experience Level
+      description: What's your experience level with Vantage?
+      options:
+        - New user/beginner
+        - Intermediate user
+        - Advanced user
+        - Developer/integrator
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact Description
+      description: How does this issue affect you or other users?
+      placeholder: Describe the impact on user experience or understanding
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+      placeholder: Related pages, external resources, etc.

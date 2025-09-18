@@ -76,8 +76,8 @@ Each compute provider reference includes:
 
 Choose the appropriate reference documentation based on your compute requirements:
 
-- **[On-Premises Providers](/platform/compute-providers/self-hosted)** - For integrating existing infrastructure
-- **[Public Cloud Providers](/platform/compute-providers/public-clouds)** - For cloud-based deployments
+- **[On-Premises Providers](self-hosted)** - For integrating existing infrastructure
+- **[Public Cloud Providers](public-clouds)** - For cloud-based deployments
 - **[Vantage Partner Providers](/platform/compute-providers/vantage-partners/atnorth)** - For managed HPC services
 
 For implementation guides and step-by-step instructions, see the [Compute Providers section](/platform/compute-providers/) of the documentation.

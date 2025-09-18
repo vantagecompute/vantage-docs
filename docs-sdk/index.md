@@ -1,8 +1,6 @@
 ---
-id: index
 title: Vantage SDK
 description: Software Development Kit for integrating with Vantage HPC platform
-slug: /
 ---
 
 The Vantage Software Development Kit (SDK) provides comprehensive tools and libraries for developers to integrate their applications with the Vantage High Performance Computing platform programmatically.
