@@ -35,7 +35,6 @@ jobs:
           git submodule update --remote --init --recursive
           git status
 
-      - name: Setup Node
       - uses: actions/setup-node@v4
         with:
           node-version: 22
