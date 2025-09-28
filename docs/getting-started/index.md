@@ -1,18 +1,18 @@
 ---
-id: getting-started-index
 title: Getting Started with Vantage
 description: Quick start guide for Vantage HPC platform
 ---
-
-# Getting Started with Vantage
 
 Welcome to Vantage! This guide will help you get up and running with the platform quickly.
 
 ## Quick Setup Steps
 
-1. **[Sign Up](/getting-started/getting-started-sign-up)** - Create your account
-2. **[Add Users](/getting-started/getting-started-manage-users)** - Invite your team
-3. **[Connect Infrastructure](/platform/clusters/)** - Add your compute resources
+1. **[Sign Up](./sign-up.md)** - Sign up, sign, in, create a Vantage Organization
+2. **[Invite team members](./invite-intro.md)** - Invite your colleagues
+3. **[Connect a Cluster](./create-cluster-intro.md)** - Add compute resources
+4. **[Launch a Notebook](./notebook-intro.md)** - Access Jupyter Notebooks in Vantage
+5. **[Create a Job Script](./create-job-script-intro.md)** - Create a Job Script
+6. **[Submit Your First Job](./create-job-submission-intro.md)** - Run computational workloads
 
 ## What You Can Do
 

@@ -1,7 +1,6 @@
 ---
-id: introduction
 title: Job Scripts Introduction
-sidebar_label: Introduction
+sidebar_label: Scripts
 ---
 
 Job scripts in Vantage are executable programs that define the computational work to be performed on cluster resources. They serve as the core component of job submission, containing the instructions, commands, and logic needed to complete specific tasks.

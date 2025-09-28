@@ -24,7 +24,7 @@ Azure offers enterprise-ready cloud services with strong integration into Micros
 - **Azure Virtual Machines**: Scalable virtual machines with HPC-optimized instance types
 - **Azure Batch**: Cloud-based job scheduling and compute management service
 - **Azure Container Instances**: Serverless containers for containerized workloads
-- **Azure Kubernetes Service (AKS)**: Managed Kubernetes for orchestrating containerized applications
+- **Azure Kubernetes Service (ASK)**: Managed Kubernetes for orchestrating containerized applications
 
 ### Storage Services
 - **Azure Blob Storage**: Massively scalable object storage for data lakes and archives

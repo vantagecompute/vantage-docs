@@ -1,7 +1,6 @@
 ---
-id: introduction
 title: Job Templates Introduction
-sidebar_label: Introduction
+sidebar_label: Templates 
 ---
 
 Job templates in Vantage provide a powerful way to standardize and streamline job submission processes. By creating reusable templates, you can ensure consistency across your organization while reducing the complexity of job configuration.

@@ -1,46 +1,59 @@
 ---
-id: index
 title: Welcome to Vantage Compute Documentation
 description: High Performance Computing platform for modern workloads
-slug: /
 ---
-
-# Welcome to Vantage Compute Documentation
 
 Vantage is a comprehensive High Performance Computing platform that simplifies the deployment, management, and scaling of computational workloads across diverse infrastructure environments.
 
 ## Quick Start
 
+The goal of the quick start documentation is to guide a new user into the platform and help familiarize with a few of the core
+primitives of the Vantage platform.
+
+These guides
+
+Deploy a slurm cluster, launch a notebook, and submit a job in < 5 minutes using [`multipass`](https://canonical.com/multipass)
+
 Get started with Vantage in minutes:
 
-1. **[Sign Up](/getting-started/getting-started-sign-up)** - Create your Vantage account
-2. **[Connect a Cluster](/platform/clusters/)** - Add your compute resources
-3. **[Submit Your First Job](/platform/jobs)** - Run computational workloads
+1. **[Sign Up](./getting-started/sign-up.md)** - Sign up, sign, in, create a Vantage organization
+2. **[Invite team members](./getting-started/invite-intro.md)** - Invite your colleagues
+3. **[Connect a Cluster](./getting-started/create-cluster-intro.md)** - Create a singlenode slurm cluster
+4. **[Launch a Notebook](./getting-started/notebook-intro.md)** - Access Jupyter notebooks in Vantage
+5. **[Submit Your First Job](./getting-started/create-job-submission-intro.md)** - Run computational workloads
 
 ## Platform Overview
 
 ### [Jobs](/platform/jobs)
+
 Manage computational workloads with templates, scripts, and submissions. Create reusable job configurations and track execution across your infrastructure.
 
 ### [Clusters](/platform/clusters)
+
 Deploy and manage HPC clusters across on-premises, cloud, and partner environments. Scale resources dynamically based on workload demands.
 
 ### [Storage](/platform/storage)
+
 Integrate with various storage solutions including cloud storage, on-premises systems, and distributed file systems for your computational data.
 
 ### [Remote Desktops](/platform/remote-desktops)
+
 Access your computational environments through secure remote desktop connections with full GUI support.
 
 ### [Notebooks](/platform/notebooks)
+
 Interactive development environments including Jupyter notebooks and VS Code integration for data science and research workflows.
 
 ### [Compute Providers](/platform/compute-providers)
+
 Connect to diverse compute resources including AWS, Azure, GCP, and specialized HPC partners for optimal cost and performance.
 
 ### [Teams](/platform/teams)
+
 Collaborate with team members through shared resources, role-based access control, and project management capabilities.
 
 ### [Licenses](/platform/licenses)
+
 Manage commercial software licenses across your HPC infrastructure with support for FlexLM, RLM, LMX, and other license servers.
 
 ## Developer Tools
@@ -69,7 +82,7 @@ Software Development Kits for Python, JavaScript, and Go. Build powerful integra
 
 - **[Migration Guide](/platform/compute-providers/)** - Bring your own infrastructure
 - **[Integration Options](/platform/clusters/)** - Connect existing systems
-- **[User Management](/getting-started/getting-started-manage-users)** - Team setup and permissions
+- **[User Management](./getting-started/invite-intro.md)** - Team setup and permissions
 
 ## Popular Use Cases
 

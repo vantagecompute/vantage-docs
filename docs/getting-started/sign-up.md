@@ -1,22 +1,40 @@
 ---
-id: getting-started-sign-up
-title: Sign Up for Vantage
+title: Sign Up
+description: Sign Up
 ---
 
-# Sign Up for Vantage
-
-Get started with Vantage by creating your account.
+##### Getting started with Vantage is free and easy
 
 ## Account Creation
 
-1. Visit the Vantage signup page
-2. Provide your email and organization details
-3. Verify your email address
-4. Complete your profile setup
+Follow along with the steps to create an account and sign in to the Vantage UI!
+
+### 1. Sign Up
+
+Click the "Sign Up" button on the [Vantage Homepage](https://vantagecompute.ai) to get started!
+
+![sign-up-00](./img/sign-up-00.png)
+
+### 2. Authenticate
+
+The "Sign Up" button will direct you to authenticate with your choice of SSO providers.
+
+![sign-up-01](./img/sign-up-01.png)
+
+### 3. Initialize your Organization
+
+Following successful authentication you will be presented with the organization creation form where you will
+be prompted to provide an organization name and optionally a logo.
+
+![sign-up-02](./img/sign-up-02.png)
+
+### 4. Happy Computing
+
+After creating your organization you will land in the Vantage platform home and are ready to begin!
+
+![sign-up-03](./img/sign-up-03.png)
 
 ## Next Steps
 
-After signing up:
-- Invite team members
-- Connect your first cluster
-- Submit your first job
+- [Invite team members](./invite-intro.md)
+- [Connect your first cluster](./create-cluster-intro.md)

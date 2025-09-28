@@ -1,11 +1,10 @@
 ---
-id: index
-title: Jobs - Workload Management
-sidebar_label: Jobs
-description: Complete guide to job submission, monitoring, and optimization with Vantage Compute.
+title: Jobs - Tutorials
+sidebar_label: Tutorials
+description: Job Script, Job Template, and Job Submission Tutorials
 ---
 
-Vantage Compute provides a unified platform for managing high-performance computing (HPC) workloads, also known as "jobs." Master job submission, monitoring, and optimization with practical examples and workflows.
+The Vantage platform provites lifecycle and collaboration for job-scripts, job-templates, and job-submissions.
 
 ## Access Methods
 

@@ -1,7 +1,6 @@
 ---
-id: introduction
 title: Cluster Tutorials  
-sidebar_label: Clusters
+sidebar_label: Tutorials
 description: Step-by-step guides for setting up and configuring compute clusters using Vantage.
 ---
 

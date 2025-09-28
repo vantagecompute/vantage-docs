@@ -1,12 +1,20 @@
 ---
-id: delete-script
 title: Delete Job Script
 sidebar_label: Delete Script
 ---
 
-# Delete Job Script
+Deleting job scripts in Vantage removes scripts from the system permanently. This guide covers safe deletion practices and considerations for script management, ensuring data integrity and preventing accidental loss of valuable computational work.
 
-This guide covers safe deletion practices and script retirement strategies for job scripts.
+## Overview
+
+Script deletion is a critical operation that requires careful consideration of:
+
+- **Data Permanence**: Understanding that deletion is typically irreversible
+- **Dependency Impact**: Assessing how deletion affects related jobs, workflows, and team members
+- **Backup Strategies**: Ensuring important scripts are preserved before deletion
+- **Access Control**: Verifying permissions and authorization for deletion operations
+- **Compliance Requirements**: Meeting organizational policies for data retention and deletion
+- **Cleanup Benefits**: Reducing clutter and improving workspace organization
 
 ## When to Delete Scripts
 
