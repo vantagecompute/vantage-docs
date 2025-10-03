@@ -1,0 +1,14 @@
+[project]
+name = "vantage-docs"
+version = "0.1.0"
+description = "Vantage documentation site"
+requires-python = ">=3.8"
+
+[project.optional-dependencies]
+dev = [
+    "codespell",
+]
+
+[tool.codespell]
+skip = "*.js,*.json,*.lock,yarn.lock,package-lock.json,node_modules,build,.docusaurus,.git"
+ignore-words-list = "jupyter,namd,checkin"

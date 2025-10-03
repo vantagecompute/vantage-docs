@@ -1,7 +1,6 @@
 ---
-id: introduction
-title: Job Submissions Introduction
-sidebar_label: Introduction
+title: Job Submissions Tutorials
+sidebar_label: Submissions
 ---
 
 Job submissions in Vantage represent the process of requesting computational resources and executing workloads on cluster infrastructure. Understanding job submission workflows is essential for effectively utilizing cluster resources and managing computational tasks.
@@ -409,5 +408,5 @@ To begin submitting jobs effectively:
 ## Next Steps
 
 - [Create Job Submissions](/platform/jobs/tutorials/submissions/create-submission) - Learn to submit jobs effectively
-- [Share Job Submissions](/platform/jobs/tutorials/submissions/share-submission) - Collaborate on job workflows
+<!-- - [Share Job Submissions](/platform/jobs/tutorials/submissions/share-submission) - Collaborate on job workflows -->
 - [Delete Job Submissions](/platform/jobs/tutorials/submissions/delete-submission) - Manage job lifecycle and cleanup

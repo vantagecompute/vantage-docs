@@ -1,0 +1,11 @@
+{
+  "language": "en",
+  "words": [
+    "slurm",
+    "vantagecompute"
+  ],
+  "files": [
+    "package.json",
+    "docs/"
+  ]
+}

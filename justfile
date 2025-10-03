@@ -14,6 +14,7 @@ default:
 [group("docusaurus")]
 install:
     @echo "📦 Installing Docusaurus dependencies..."
+    git submodule update --force
     git submodule update --remote --init --recursive --merge
     yarn install
 

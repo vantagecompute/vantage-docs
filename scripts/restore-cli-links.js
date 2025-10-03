@@ -2,7 +2,7 @@
 // Restore original CLI docs links
 const { execSync } = require('child_process');
 
-console.log('🔄 Restoring original CLI docs links...');
+console.log('�� Restoring original CLI docs links...');
 try {
   execSync('cd external/vantage-cli && git checkout -- docusaurus/docs/', { stdio: 'inherit' });
   console.log('✅ CLI docs restored to original state');

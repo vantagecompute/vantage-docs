@@ -105,7 +105,7 @@ The Vantage License Manager transforms OLicense data into actionable business in
 - Version management with backward compatibility tracking
 
 **Electronic Design Automation**:
-- Cadence, Synopsys, Mentor Graphics license pooling
+- Cadence, Synopsis, Mentor Graphics license pooling
 - Design flow optimization with license-aware scheduling
 - Multi-vendor tool integration with unified license management
 - Performance correlation analysis between license availability and design productivity

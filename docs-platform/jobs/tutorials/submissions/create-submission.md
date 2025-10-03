@@ -777,7 +777,7 @@ submit_with_retry "analysis_script.sh"
 
 After mastering job submission:
 
-- [Share Job Submissions](./share-submission) - Collaborate with team members
+<!-- - [Share Job Submissions](./share-submission) - Collaborate with team members -->
 - [Delete Job Submissions](./delete-submission) - Manage job lifecycle
 - Explore advanced workflow management tools
 - Optimize submission strategies based on usage patterns

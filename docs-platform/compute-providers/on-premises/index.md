@@ -6,13 +6,12 @@ description: Introduction to self-hosting Vantage Compute in your own environmen
 slug: /self-hosted
 ---
 
-# Self Hosted Introduction
-
 Deploy and manage your own instance of Vantage Compute in your environment for complete control, customization, and data sovereignty.
 
 ## Overview
 
 Self-hosting Vantage Compute provides:
+
 - **Complete Control**: Full control over the platform configuration and data
 - **Data Sovereignty**: Keep all data within your infrastructure boundaries
 - **Custom Integration**: Deep integration with existing enterprise systems
@@ -22,21 +21,27 @@ Self-hosting Vantage Compute provides:
 ## Deployment Options
 
 ### Single Instance Deployment
+
 Deploy Vantage Compute as a single instance for smaller organizations:
+
 - **All-in-One**: Database, API, and web interface on a single server
 - **Quick Setup**: Fastest way to get started with self-hosting
 - **Resource Efficiency**: Minimal infrastructure requirements
 - **Development/Testing**: Ideal for development and testing environments
 
 ### High Availability Deployment
+
 Deploy Vantage Compute with redundancy for production environments:
+
 - **Load Balancing**: Multiple API and web servers behind load balancers
 - **Database Clustering**: Redundant database servers with failover
 - **Container Orchestration**: Kubernetes or Docker Swarm deployment
 - **Geographic Distribution**: Multi-region deployment for disaster recovery
 
 ### Microservices Architecture
+
 Deploy individual Vantage components separately:
+
 - **Scalable Components**: Scale individual services based on demand
 - **Technology Flexibility**: Use different technologies for different components
 - **Independent Updates**: Update components independently
@@ -45,18 +50,21 @@ Deploy individual Vantage components separately:
 ## Prerequisites
 
 ### Infrastructure Requirements
+
 - **Compute Resources**: Sufficient CPU, memory, and storage for your workload
 - **Network Infrastructure**: Reliable networking with appropriate bandwidth
 - **Storage Systems**: Persistent storage for databases and file systems
 - **Load Balancers**: For high availability deployments
 
 ### Software Prerequisites
+
 - **Container Platform**: Docker, Kubernetes, or similar container orchestration
 - **Database System**: PostgreSQL, MySQL, or compatible database
 - **Web Server**: Nginx, Apache, or compatible web server/proxy
 - **SSL/TLS**: Valid SSL certificates for secure communications
 
 ### Operational Requirements
+
 - **System Administration**: Skilled administrators for deployment and maintenance
 - **Monitoring Tools**: Infrastructure and application monitoring systems
 - **Backup Systems**: Regular backup and disaster recovery procedures
@@ -65,6 +73,7 @@ Deploy individual Vantage components separately:
 ## Architecture Components
 
 ### Core Platform Services
+
 - **API Server**: RESTful API for all platform operations
 - **Web Interface**: User-facing web application
 - **Database**: Persistent storage for configuration and metadata
@@ -72,12 +81,14 @@ Deploy individual Vantage components separately:
 - **File Storage**: Storage for job files, logs, and user data
 
 ### Cluster Management
+
 - **Cluster Controllers**: Manage and monitor compute clusters
 - **Agent Communications**: Secure communication with cluster agents
 - **Resource Discovery**: Automatic discovery of available resources
 - **Job Scheduling**: Intelligent job placement and execution
 
 ### Integration Services
+
 - **Authentication**: User authentication and authorization
 - **API Gateway**: Single entry point for all API requests
 - **Logging Service**: Centralized logging and audit trails
@@ -86,24 +97,28 @@ Deploy individual Vantage components separately:
 ## Security Considerations
 
 ### Network Security
+
 - **Firewall Configuration**: Restrict access to required ports and services
 - **VPN Access**: Secure remote access for administrators
 - **Network Segmentation**: Isolate Vantage components from other systems
 - **SSL/TLS Encryption**: Encrypt all communications
 
 ### Data Protection
+
 - **Database Encryption**: Encrypt sensitive data at rest
 - **Backup Encryption**: Encrypt all backup data
 - **Key Management**: Secure storage and rotation of encryption keys
 - **Data Classification**: Classify and handle data based on sensitivity
 
 ### Access Control
+
 - **Multi-Factor Authentication**: Strong authentication for administrative access
 - **Role-Based Access Control**: Granular permissions and role assignments
 - **API Security**: Secure API endpoints with proper authentication
 - **Audit Logging**: Comprehensive logging of all access and operations
 
 ### Compliance and Governance
+
 - **Regulatory Compliance**: Meet industry-specific compliance requirements
 - **Data Retention**: Implement appropriate data retention policies
 - **Privacy Controls**: Ensure user privacy and data protection
@@ -112,21 +127,27 @@ Deploy individual Vantage components separately:
 ## Deployment Models
 
 ### Container-Based Deployment
+
 Deploy using Docker containers:
+
 - **Docker Compose**: Simple multi-container deployment
 - **Docker Swarm**: Container orchestration with Docker Swarm
 - **Kubernetes**: Enterprise-grade container orchestration
 - **OpenShift**: Red Hat's Kubernetes platform
 
 ### Virtual Machine Deployment
+
 Deploy on virtual machines:
+
 - **VMware vSphere**: VMware virtualization platform
 - **Hyper-V**: Microsoft virtualization platform
 - **KVM/QEMU**: Open-source virtualization
 - **Cloud VMs**: Virtual machines on public cloud platforms
 
 ### Bare Metal Deployment
+
 Deploy directly on physical servers:
+
 - **Performance**: Maximum performance with no virtualization overhead
 - **Control**: Complete control over hardware and system configuration
 - **Security**: Enhanced security with no hypervisor layer
@@ -135,24 +156,28 @@ Deploy directly on physical servers:
 ## Getting Started
 
 ### Planning Phase
+
 1. **Requirements Assessment**: Define performance, security, and compliance requirements
 2. **Architecture Design**: Design the deployment architecture
 3. **Infrastructure Planning**: Plan hardware and network requirements
 4. **Security Planning**: Define security controls and procedures
 
 ### Preparation Phase
+
 1. **Infrastructure Setup**: Prepare servers, networking, and storage
 2. **Software Installation**: Install required software dependencies
 3. **Security Configuration**: Configure firewalls, SSL certificates, and access controls
 4. **Monitoring Setup**: Install and configure monitoring tools
 
 ### Deployment Phase
+
 1. **Component Installation**: Install and configure Vantage components
 2. **Integration Testing**: Test integration with existing systems
 3. **Performance Testing**: Validate performance under expected loads
 4. **Security Testing**: Conduct security testing and validation
 
 ### Production Phase
+
 1. **Go-Live**: Deploy to production environment
 2. **User Training**: Train administrators and end users
 3. **Monitoring**: Implement comprehensive monitoring and alerting

@@ -280,7 +280,7 @@ def troubleshoot_implicit_solver():
 *TITLE
 Simple LS-DYNA Implicit Test
 *CONTROL_IMPLICIT_GENERAL
-$#   imflag       dt0    imform      nsbs       igs     cnstn      form    zero_v
+$#   imflag       dt0    inform      nsbs       igs     cnstn      form    zero_v
          1       0.0         2         1         2         0         0         0
 *CONTROL_TERMINATION
 $#  endtim    endcyc     dtmin    endeng    endmas     nosol

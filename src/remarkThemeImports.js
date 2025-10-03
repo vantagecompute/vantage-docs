@@ -5,6 +5,23 @@ function remarkThemeImports() {
   return (tree, file) => {
     console.log('Processing file:', file.path || 'unknown');
     
+    // Check if imports already exist
+    let hasTabsImport = false;
+    let hasTabItemImport = false;
+    
+    visit(tree, 'mdxjsEsm', (node) => {
+      if (node.value) {
+        if (node.value.includes("import Tabs from '@theme/Tabs'") || 
+            node.value.includes('import Tabs from "@theme/Tabs"')) {
+          hasTabsImport = true;
+        }
+        if (node.value.includes("import TabItem from '@theme/TabItem'") || 
+            node.value.includes('import TabItem from "@theme/TabItem"')) {
+          hasTabItemImport = true;
+        }
+      }
+    });
+    
     // Add the imports at the beginning of the document
     const importsNode = {
       type: 'mdxjsEsm',
@@ -79,8 +96,8 @@ import TabItem from '@theme/TabItem';`,
       }
     });
 
-    // If file has tabs components, add imports at the beginning
-    if (hasTabsComponents) {
+    // If file has tabs components and doesn't already have imports, add them at the beginning
+    if (hasTabsComponents && !hasTabsImport && !hasTabItemImport) {
       tree.children.unshift(importsNode);
     }
   };

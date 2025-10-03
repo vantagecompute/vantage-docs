@@ -17,7 +17,6 @@ const config = {
   trailingSlash: false,
 
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
   onBrokenAnchors: 'warn',
   i18n: {
     defaultLocale: 'en',
@@ -44,6 +43,9 @@ const config = {
   markdown: {
     format: 'detect',
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn'
+    }
   },
 
   themes: ['@docusaurus/theme-mermaid'],
@@ -57,6 +59,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars-main.js'),
           rehypePlugins: [
             require('./src/rehypeTabsTransform.js'),
+            require('./src/rehypeLinkRewrite.js'),
             // [require('rehype-external-links').default, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
           ],
           routeBasePath: '/', // Make docs the root
@@ -70,6 +73,14 @@ const config = {
   ],
 
   plugins: [
+     [
+      '@docusaurus/plugin-ideal-image',
+      {
+        quality: 100,
+        sizes: [200, 500],
+        disableInDev: false,
+      },
+    ],
     [ 
       'docusaurus-plugin-llms',
       {
@@ -140,6 +151,7 @@ const config = {
         id: 'platform',
         path: 'docs-platform',
         routeBasePath: 'platform',
+        sidebarPath: './docs-platform/sidebar.js',
         // Let Docusaurus auto-generate the sidebar
       },
     ],
@@ -226,6 +238,7 @@ const config = {
         editUrl: 'https://github.com/vantagecompute/vantage-cli/edit/main/', // upstream!
         rehypePlugins: [
           require('./src/rehypeTabsTransform.js'),
+          require('./src/rehypeLinkRewrite.js'),
           // [require('rehype-external-links').default, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
         ],
         beforeDefaultRemarkPlugins: [
@@ -254,7 +267,7 @@ const config = {
   ],
 
   themeConfig: {
-    image: 'img/vantage-docs-social-card.jpg',
+    image: 'img/preview.png',
     
     // Algolia DocSearch Configuration - Styled like Algolia's own docs
     algolia: {
@@ -331,8 +344,8 @@ const config = {
           title: 'Community',
           items: [
             {
-              label: 'Slack Channel',
-              href: 'https://vantage.slack.com',
+              label: 'Slack Organization',
+              href: 'https://vantagecompute.slack.com',
             },
             {
               label: 'Support',

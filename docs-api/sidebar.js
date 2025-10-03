@@ -1,12 +1,13 @@
 /**
+ * API documentation sidebar configuration
  * Creating a sidebar enables you to:
- - create an ordered group of docs
- - render a "Next" and "Previous" navigation
- - automatically add "Edit this page" links
+ * - create an ordered group of docs
+ * - render a "Next" and "Previous" navigation
+ * - automatically add "Edit this page" links
  */
 
-module.exports = {
-  apiSidebar: [
+const sidebars = {
+  api: [
     {
       type: 'doc',
       id: 'index',
@@ -14,3 +15,5 @@ module.exports = {
     },
   ],
 };
+
+module.exports = sidebars;

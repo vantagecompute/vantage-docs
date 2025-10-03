@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+src/vantage_docs.egg-info/PKG-INFO
+src/vantage_docs.egg-info/SOURCES.txt
+src/vantage_docs.egg-info/dependency_links.txt
+src/vantage_docs.egg-info/requires.txt
+src/vantage_docs.egg-info/top_level.txt

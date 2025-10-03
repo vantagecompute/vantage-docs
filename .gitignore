@@ -25,3 +25,5 @@ yarn-error.log*
 
 # CDK assets
 cdk.out
+
+.cspell.out.json
