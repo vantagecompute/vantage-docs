@@ -29,12 +29,6 @@ jobs:
         with:
           submodules: recursive
 
-      # Remove this step if you want the platform site to use a pinned submodule commit.
-      - name: Update submodules to latest default branch
-        run: |
-          git submodule update --remote --init --recursive
-          git status
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22

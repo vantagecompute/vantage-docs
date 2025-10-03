@@ -14,9 +14,8 @@ default:
 [group("docusaurus")]
 install:
     @echo "📦 Installing Docusaurus dependencies..."
-    git fetch --recurse-submodules
-    git submodule update --force
-    git submodule update --remote --init --recursive --merge
+    git submodule sync --recursive
+    git -c protocol.version=2 submodule update --init --force --depth=1 --recursive
     yarn install
 
 # Start Docusaurus development server
