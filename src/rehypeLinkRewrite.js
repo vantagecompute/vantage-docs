@@ -13,6 +13,11 @@ function rehypeLinkRewrite() {
         const originalHref = node.properties.href;
         let newHref = originalHref;
         
+        // Skip rewriting for github.com links
+        if (typeof originalHref === 'string' && originalHref.includes('github.com')) {
+          return;
+        }
+        
         // Handle various patterns that need transformation
         if (typeof originalHref === 'string') {
           // Pattern 1: /vantage-cli/ -> /cli/

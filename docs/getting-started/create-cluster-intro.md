@@ -5,7 +5,7 @@ description: Create a Cluster
 
 Adding compute infrastructure in Vantage is a breeze. Choose your desired cloud provider and start running workloads.
 
-This tutorial will teach you how to create a slurm cluster on your local machine using the Vantage CLI and submit a batch script to the cluster.
+This tutorial will teach you how to create a slurm cluster on your local machine using the Vantage CLI.
 
 More information on [Deployment Applications](/cli/deployment-applications/).
 
@@ -177,11 +177,11 @@ Install [`microk8s`](https://microk8s.io/).
 sudo snap install microk8s --channel 1.29/stable --classic
 ```
 
-##### Configure ACLS
+##### Configure ACLS and `~/.kube` Perms
 
 ```bash
-sudo adduser $USER microk8s
-newgrp microk8s
+sudo usermod -a -G microk8s $USER
+sudo chown -f -R $USER ~/.kube
 ```
 
 ##### Initialize MicroK8S
