@@ -9,6 +9,11 @@
 const sidebars = {
   sdk: [
     {
+      type: 'link',
+      label: '← All documentation',
+      href: '/',
+    },
+    {
       type: 'doc',
       id: 'index',
       label: 'SDK Overview',

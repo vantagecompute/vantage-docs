@@ -220,7 +220,7 @@ export default function DocBreadcrumbs() {
               </BreadcrumbsItem>
             );
           })}
-          <DocumentationDropdown />
+          {/*<DocumentationDropdown />*/}
         </ul>
       </nav>
     </>

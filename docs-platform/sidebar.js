@@ -9,6 +9,11 @@
 const sidebars = {
   platform: [
     {
+      type: 'link',
+      label: '← All documentation',
+      href: '/',
+    },
+    {
       type: 'doc',
       id: 'index',
       label: 'Platform Overview',
