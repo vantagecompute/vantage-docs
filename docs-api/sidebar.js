@@ -9,6 +9,11 @@
 const sidebars = {
   api: [
     {
+      type: 'link',
+      label: '← All documentation',
+      href: '/',
+    },
+    {
       type: 'doc',
       id: 'index',
       label: 'API Overview',
