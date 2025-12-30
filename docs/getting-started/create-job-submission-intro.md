@@ -2,10 +2,9 @@
 title: Create a Job Submission
 description: Create your first Job Submission
 ---
+**Create a Job Submission and get insights on job performance in real time**
 
-##### Create a Job Submission and get insights on job performance in real time
-
-Follow along with the steps below to create a Job Script in the Vantage web ui!
+Follow along with the steps below to create a Job Script in the Vantage web UI!
 
 ## 1. Job Submission Dashboard
 
@@ -15,13 +14,13 @@ Navigate to the [Job Submission Dashboard](https://app.vantagecompute.ai/jobs/su
 
 ## 2. Create a Job Submission
 
-Select the "Create Job Submission" button in the upper right hand corner of the UI to open the Job Submission creation modal.
+Select the "Create Job Submission" button in the upper right-hand corner of the UI to open the Job Submission creation modal.
 
 ![create-job-submission-intro-01](./img/create-job-submission-intro-01.png)
 
 ### 2.1 Select Job Script, Cluster, and Partition
 
-Give your Job Submission a name and select an Job Script, Cluster, and a Partition, then click "Create".
+Give your Job Submission a name and select a Job Script, Cluster, and a Partition, then click "Create".
 
 ![create-job-submission-intro-02](./img/create-job-submission-intro-02.png)
 
@@ -32,9 +31,9 @@ observe the job state change as it moves through the queue.
 
 ![create-job-submission-intro-03](./img/create-job-submission-intro-03.png)
 
-### 2.2 Observe Job Submission Metrics
+### 2.3 Observe Job Submission Metrics
 
-Job Submission metrics provide near-realm-time job-level observability and diagnostics.
+Job Submission metrics provide near-real-time job-level observability and diagnostics.
 
 ![create-job-submission-intro-04](./img/create-job-submission-intro-04.png)
 
@@ -44,30 +43,30 @@ At this point you have successfully created a Job Submission and have covered th
 
 ### Clouds
 
-- [`Vantage Compute Partner Clouds`](/platform/)
-- [`Public Clouds`](/platform/)
-- [`On-Premises Clouds`](/platform/)
-- [`K8S Clouds`](/platform/)
+- [Vantage Compute Partner Clouds](/platform/)
+- [Public Clouds](/platform/)
+- [On-Premises Clouds](/platform/)
+- [K8S Clouds](/platform/)
 
 ### Clusters
 
-- [`Create a Cloud Cluster - AWS`](/platform/)
-- [`Create a Cloud Cluster - GCP`](/platform/)
-- [`Create a Cloud Cluster - AZURE`](/platform/)
+- [Create a Cloud Cluster - AWS](/platform/)
+- [Create a Cloud Cluster - GCP](/platform/)
+- [Create a Cloud Cluster - AZURE](/platform/)
 
 ### Federations
 
-- [`Federations`](/platform/)
+- [Federations](/platform/)
 
 ### Storage
 
-- [`Storage`](/platform/)
+- [Storage](/platform/)
 
 ### Licenses
 
-- [`Licenses`](/platform/)
+- [Licenses](/platform/)
 
 ### Support
 
-- [`Support Dashboard`](/platform/)
+- [Support Dashboard](/platform/)
 

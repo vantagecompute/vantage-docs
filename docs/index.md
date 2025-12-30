@@ -16,9 +16,9 @@ Deploy a slurm cluster, launch a notebook, and submit a job in < 5 minutes using
 
 Get started with Vantage in minutes:
 
-1. **[Sign Up](./getting-started/sign-up.md)** - Sign up, sign, in, create a Vantage organization
+1. **[Sign Up](./getting-started/sign-up.md)** - Sign up, sign in, create a Vantage organization
 2. **[Invite team members](./getting-started/invite-intro.md)** - Invite your colleagues
-3. **[Connect a Cluster](./getting-started/create-cluster-intro.md)** - Create a singlenode slurm cluster
+3. **[Connect a Cluster](./getting-started/create-cluster-intro.md)** - Create a single-node slurm cluster
 4. **[Launch a Notebook](./getting-started/notebook-intro.md)** - Access Jupyter notebooks in Vantage
 5. **[Submit Your First Job](./getting-started/create-job-submission-intro.md)** - Run computational workloads
 
@@ -70,7 +70,7 @@ REST API for building custom integrations and applications. Complete OpenAPI spe
 
 Software Development Kits for Python, JavaScript, and Go. Build powerful integrations with type-safe libraries and comprehensive examples.
 
-## Getting Started
+## Learn More
 
 ### New to HPC?
 
