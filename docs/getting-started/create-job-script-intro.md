@@ -3,9 +3,9 @@ title: Create a Job Script
 description: Create your first Job Script
 ---
 
-##### Job Scripts can be submitted to your new cluster, shared with your team, customized, cloned, templated, and more
+**Job Scripts can be submitted to your new cluster, shared with your team, customized, cloned, templated, and more.**
 
-Follow along with the steps below to create a Job Script in the Vantage web ui!
+Follow along with the steps below to create a Job Script in the Vantage web UI!
 
 ## 1. Job Script Dashboard
 
@@ -15,7 +15,7 @@ Navigate to the [Job Script Dashboard](https://app.vantagecompute.ai/jobs/script
 
 ## 2. Create a Job Script
 
-Select the "Create Job Script" button in the upper right hand corner of the UI to open the Job Script creation modal.
+Select the "Create Job Script" button in the upper right-hand corner of the UI to open the Job Script creation modal.
 
 ![create-job-script-intro-01](./img/create-job-script-intro-01.png)
 
@@ -23,11 +23,13 @@ Select the "Create Job Script" button in the upper right hand corner of the UI t
 
 Give your Job Script a name and select an entrypoint, then click "Create".
 
+The entrypoint file defines the commands that will be executed when the job runs.
+
 ![create-job-script-intro-02](./img/create-job-script-intro-02.png)
 
 ### 2.2 Edit Entrypoint File
 
-Select the entrypoint file to edit it. Add the following text and save.
+Select the entrypoint file to edit it. Add the following content and save.
 
 ```bash
 #!/bin/bash
@@ -42,4 +44,4 @@ At this point you have successfully created a Job Script and are ready to submit
 
 ### Next Steps
 
-- [`Create a Job Submission`](./create-job-submission-intro.md)
+- [Create a Job Submission](./create-job-submission-intro.md)

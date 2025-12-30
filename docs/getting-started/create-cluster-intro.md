@@ -1,23 +1,25 @@
 ---
 title: Create a Cluster
-description: Create a Cluster
+description: Add compute infrastructure to your Vantage organization
 ---
 
 Adding compute infrastructure in Vantage is a breeze. Choose your desired cloud provider and start running workloads.
 
-This tutorial will teach you how to create a slurm cluster on your local machine using the Vantage CLI.
+This tutorial walks through creating an **existing Slurm cluster on localhost**, using the Vantage web UI and the Vantage CLI together.
 
 More information on [Deployment Applications](/cli/deployment-applications/).
 
 :::note
 
-In this tutorial we create the cluster in the Vantage web ui, but clusters can a be created via the [`vantage-cli`](/cli), [`vantage-sdk`](/sdk), and [`vantage-api`](/api).
+In this tutorial, the cluster is created in the Vantage web UI and then connected using the Vantage CLI.
+
+Clusters can also be created via the [`vantage-cli`](/cli), [`vantage-sdk`](/sdk), and [`vantage-api`](/api).
 
 Please see the documentation for cluster creation in the respective sections:
 
 - **[Vantage CLI - Cluster Create](/cli/commands#cluster-management)**
-- **[Vantage SDK - Cluster Create](/cli/commands#cluster-management)**
-- **[Vantage API - Cluster Create](/cli/commands#cluster-management)**
+- **[Vantage SDK - Cluster Create](/sdk/api#clusters)**
+- **[Vantage API - Cluster Create](/api/)**
 
 :::
 
@@ -25,7 +27,7 @@ Please see the documentation for cluster creation in the respective sections:
 
 - 1 x Ubuntu 24.04 desktop or server
 - Access to the terminal of the machine with multipass
-- astral-uv - we will use this to install vantage-cli from pypi
+- [astral-uv](https://docs.astral.sh/) - we will use this to install vantage-cli from pypi
 
 ## 1. Access the Cluster Dashboard
 
@@ -35,34 +37,34 @@ Navigate to the "Clusters" dashboard to prepare your first compute resource.
 
 ## 2. Prepare a Cluster
 
-Select the "Prepare Cluster" button in the upper right hand corner.
+Select the "Prepare Cluster" button in the upper right-hand corner.
 
 ![create-cluster-intro-01](./img/create-cluster-intro-01.png)
 
-## 3. Existing == On-Premises == Localhost
+## 3. Select Cluster Type
 
 Give your cluster a name and choose the "Existing" cluster type from the dropdown, then click "Prepare" to create a Cluster entry in the Vantage platform.
+
+The "Existing" option is used for on-premises infrastructure or localhost deployments that you manage yourself.
 
 ![create-cluster-intro-02](./img/create-cluster-intro-02.png)
 
 ## 4. Cluster Created in Vantage
 
-You now have an entry in the Vantage database that represents your cluster, but as you will notice in the cluster detail
-view, there isn't anything connected yet.
+You now have an entry in the Vantage database that represents your cluster, but as you will notice in the cluster detail view, there isn't anything connected yet.
 
-This is because "Existing" clusters are infrastructure that you provide and connect to the Vantage platform.
+This is expected for "Existing" clusters, which represent infrastructure that you provide and connect to the Vantage platform.
 
-To deploy a minimal slurm cluster and connect it to Vantage, proceed to the next step.
+To deploy a minimal Slurm cluster and connect it to Vantage, proceed to the next step.
 
 ![create-cluster-intro-03](./img/create-cluster-intro-03.png)
 
 ## 5. Deploy a Slurm Cluster with Vantage CLI
 
-Vantage exposes the concept of "Deployment Applications". "Deployment Applications" are curated
-automation that Vantge uses to provision HPC clusters and other peripheral application infrastructure.
+Vantage exposes the concept of "Deployment Applications", which are curated automation that Vantage uses to provision HPC clusters and other peripheral application infrastructure.
 
-In this tutorial you will create slurm cluster by means of a "Deployment Application" on the "localhost" cloud. The
-"localhost" cloud supports `multipass`, `lxd`, and `microk8s` as infrastructre mediums.
+
+In this tutorial you will create a Slurm cluster by means of a "Deployment Application" on the "localhost" cloud. The "localhost" cloud supports `multipass`, `lxd`, and `microk8s` as infrastructure backends.
 
 Install the Vantage CLI and choose the appropriate "Deployment Application" for your desired "localhost" cloud.
 
@@ -90,7 +92,7 @@ uv venv && \
 
 Run the `vantage login` command to authenticate with the Vantage platform and acquire a token.
 
-This command returns a url that you need to enter into your browser to authenticate.
+This command returns a URL that you need to enter into your browser to authenticate.
 
 ```bash
 vantage login
@@ -113,7 +115,7 @@ sudo snap install multipass
 
 #### Create the `slurm-multipass-localhost` Deployment Application
 
-Now that the dependencies have been satisfied, create your slurm cluster using the
+Now that the dependencies have been satisfied, create your Slurm cluster using the
 `slurm-multipass-localhost` deployment application.
 
 The command format is:
@@ -153,7 +155,7 @@ juju bootstrap lxd
 
 #### Create the `slurm-lxd-localhost` Deployment Application
 
-Now that the dependencies have been satisfied, create your slurm cluster using the
+Now that the dependencies have been satisfied, create your Slurm cluster using the
 `slurm-lxd-localhost` deployment application.
 
 The command format is:
@@ -219,14 +221,14 @@ vantage app deployment slurm-microk8s-localhost create vantage-tutorial-cluster
 
 ## 6. Cluster Connected, Let's go
 
-Navigate back to the cluster detail view in the Vantage web ui and you will see the cluster status is now green and reads "Connected".
+Navigate back to the cluster detail view in the Vantage web UI and you will see the cluster status is now green and reads "Connected".
 You are now ready to begin using your cluster.
 
 ![create-cluster-intro-04](./img/create-cluster-intro-04.png)
 
 ### Next Steps
 
-- [`Launch a Notebook`](./notebook-intro.md)
-- [`Create a Job Script`](./create-job-script-intro.md)
-- [`Submit a Job`](./create-job-submission-intro.md)
-- [`Assign Access`](./teams-intro.md)
+- [Launch a Notebook](./notebook-intro.md)
+- [Create a Job Script](./create-job-script-intro.md)
+- [Submit a Job](./create-job-submission-intro.md)
+- [Assign Access](./teams-intro.md)

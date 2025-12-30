@@ -1,17 +1,17 @@
 ---
 title: Launch a Notebook
-description: Launch a Notebook
+description: Deploy a Jupyter Notebook on your Vantage cluster
 ---
 
-##### Launch a Jupyter Notebook on your new Cluster in seconds
+**Launch a Jupyter Notebook on your new Cluster in seconds**
 
-Building on the the previous section, [Create Your First Cluster](./create-cluster-intro.md),
-we will make use of our newly added cluster by deploying a a Jupyter Notebook on it.
+Building on the previous section, [Create Your First Cluster](./create-cluster-intro.md),
+we will make use of our newly added cluster by deploying a Jupyter Notebook on it.
 
 ## 1. Notebook Dashboard
 
 Navigate to the Notebook dashboard by selecting the [Notebooks](https://vantagecompute.ai/notebooks) navigation
-in the lefthand navbar.
+in the left-hand navbar.
 
 ![notebook-intro-00](./img/notebook-intro-00.png)
 
@@ -29,7 +29,7 @@ Complete the form by giving your notebook a name, selecting the cluster we just 
 
 Click the "Create Notebook" button to complete and submit the form.
 
-## 4. Login to your Notebook
+## 4. Open your Notebook
 
 Click the notebook we just created in the list to open it in the Vantage UI.
 
@@ -41,8 +41,12 @@ Welcome to your curated notebook development environment!
 
 ## 5. Summary
 
-At this point, you have a production grade, singlenode slurm cluster running in a virtual machine on your computer!
+At this point, you have a production-grade, single-node Slurm cluster running in a virtual machine on your computer!
 
 You can share your cluster with members of your organization by adding them to your [Team](/platform/teams/), submit [Job Scripts](/platform/jobs/tutorials), [Federate](/platform/federations) with other clusters,
 orchestrate [Job Template](/platform/jobs/tutorials/) workflows, and much more!
 
+## Next Steps
+
+- [Create a Job Script](./create-job-script-intro.md)
+- [Submit a Job](./create-job-submission-intro.md)

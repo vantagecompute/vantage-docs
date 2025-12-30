@@ -1,9 +1,9 @@
 ---
 title: Sign Up
-description: Sign Up
+description: Create your Vantage account and initialize your organization
 ---
 
-##### Getting started with Vantage is free and easy
+**Getting started with Vantage is free and easy**
 
 ## Account Creation
 
@@ -11,20 +11,21 @@ Follow along with the steps to create an account and sign in to the Vantage UI!
 
 ### 1. Sign Up
 
-Click the "Sign Up" button on the [Vantage Homepage](https://vantagecompute.ai) to get started!
+Click the **"Sign Up"** button on the [Vantage Homepage](https://vantagecompute.ai) to get started.
 
 ![sign-up-00](./img/sign-up-00.png)
 
 ### 2. Authenticate
 
-The "Sign Up" button will direct you to authenticate with your choice of SSO providers.
+The "Sign Up" button will direct you to authenticate using one of the supported SSO providers.
 
 ![sign-up-01](./img/sign-up-01.png)
 
 ### 3. Initialize your Organization
 
-Following successful authentication you will be presented with the organization creation form where you will
-be prompted to provide an organization name and optionally a logo.
+Following successful authentication you will be presented with the organization creation form.
+
+You will be prompted to provide an organization name and, optionally, a logo.
 
 ![sign-up-02](./img/sign-up-02.png)
 
