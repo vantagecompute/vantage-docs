@@ -1,40 +1,47 @@
 ---
 title: Sign Up
-description: Sign Up
+description: Create your Vantage account and organization
 ---
 
-##### Getting started with Vantage is free and easy
+## Overview
 
-## Account Creation
+Getting started with Vantage is free and easy. In this guide, you'll create your account, authenticate with your preferred identity provider, and set up your first organization.
 
-Follow along with the steps to create an account and sign in to the Vantage UI!
+## What You'll Learn
 
-### 1. Sign Up
+- How to sign up for a Vantage account
+- How to authenticate using SSO
+- How to create your organization
 
-Click the "Sign Up" button on the [Vantage Homepage](https://vantagecompute.ai) to get started!
+## Step 1: Sign Up
 
-![sign-up-00](./img/sign-up-00.png)
+Navigate to the [Vantage Homepage](https://vantagecompute.ai) and click the **Sign Up** button to begin the account creation process.
 
-### 2. Authenticate
+![Sign up page](./img/sign-up-00.png)
 
-The "Sign Up" button will direct you to authenticate with your choice of SSO providers.
+## Step 2: Authenticate
 
-![sign-up-01](./img/sign-up-01.png)
+Choose your preferred SSO provider to authenticate. Vantage supports multiple identity providers including Google, Microsoft, and GitHub.
 
-### 3. Initialize your Organization
+![SSO authentication options](./img/sign-up-01.png)
 
-Following successful authentication you will be presented with the organization creation form where you will
-be prompted to provide an organization name and optionally a logo.
+## Step 3: Create Your Organization
 
-![sign-up-02](./img/sign-up-02.png)
+After authentication, you'll be prompted to create an organization. Provide an organization name and optionally upload a logo to personalize your workspace.
 
-### 4. Happy Computing
+![Organization creation form](./img/sign-up-02.png)
 
-After creating your organization you will land in the Vantage platform home and are ready to begin!
+## Step 4: Welcome to Vantage
 
-![sign-up-03](./img/sign-up-03.png)
+Once your organization is created, you'll land on the Vantage platform home page where you can begin exploring features and setting up your first cluster.
+
+![Vantage platform home](./img/sign-up-03.png)
+
+## Summary
+
+You now have a Vantage account and organization ready to use. You're all set to start adding clusters, inviting team members, and running workloads.
 
 ## Next Steps
 
 - [Invite team members](./invite-intro.md)
-- [Connect your first cluster](./create-cluster-intro.md)
+- [Create your first cluster](./create-cluster-intro.md)

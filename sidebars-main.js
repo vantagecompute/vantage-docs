@@ -14,21 +14,9 @@ const sidebars = {
       label: 'Welcome to Vantage Compute Documentation',
     },
     {
-      type: 'category',
+      type: 'doc',
+      id: 'getting-started/index',
       label: 'Getting Started',
-      link: {
-        type: 'doc',
-        id: 'getting-started/index',
-      },
-      collapsed: false,
-      items: [
-        'getting-started/sign-up',
-        'getting-started/invite-intro',
-        'getting-started/create-cluster-intro',
-        'getting-started/notebook-intro',
-        'getting-started/create-job-script-intro',
-        'getting-started/create-job-submission-intro',
-      ],
     },
     {
       type: 'category',

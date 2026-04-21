@@ -1,103 +1,228 @@
 ---
 title: Welcome to Vantage Compute Documentation
-description: High Performance Computing platform for modern workloads
+description: The future compute layer for AI, HPC, and Quantum workloads
 ---
+
+# Vantage Compute Documentation
+
+**Virtually Limitless™ Compute** — Execute AI, HPC, and Quantum workloads across any environment with a unified platform for Slurm+Kubernetes orchestration.
+
+[Get Started](./getting-started/sign-up) · [Quick Start](#quick-start) · [Book a Demo](https://vantagecompute.ai/contact)
+
+## What is Vantage?
 
 Vantage is a comprehensive High Performance Computing platform that simplifies the deployment, management, and scaling of computational workloads across diverse infrastructure environments.
 
-## Quick Start
+With Vantage, you can:
 
-The goal of the quick start documentation is to guide a new user into the platform and help familiarize with a few of the core
-primitives of the Vantage platform.
+- Orchestrate Slurm and Kubernetes workloads from a single control plane
+- Launch notebooks, submit batch jobs, and scale simulations instantly
+- Connect to AWS, Azure, GCP, or bring your own infrastructure
+- Monitor GPU utilization and job performance in real-time
 
-These guides
+## Choose Your Path {#choose-your-path}
 
-Deploy a slurm cluster, launch a notebook, and submit a job in < 5 minutes using [`multipass`](https://canonical.com/multipass)
+<Tabs>
+<TabItem value="researcher" label="I'm a Researcher">
 
-Get started with Vantage in minutes:
+**Launch experiments instantly, no IT provisioning required.**
 
-1. **[Sign Up](./getting-started/sign-up.md)** - Sign up, sign, in, create a Vantage organization
-2. **[Invite team members](./getting-started/invite-intro.md)** - Invite your colleagues
-3. **[Connect a Cluster](./getting-started/create-cluster-intro.md)** - Create a singlenode slurm cluster
-4. **[Launch a Notebook](./getting-started/notebook-intro.md)** - Access Jupyter notebooks in Vantage
-5. **[Submit Your First Job](./getting-started/create-job-submission-intro.md)** - Run computational workloads
+- [Get started with Notebooks](./getting-started/notebook-intro)
+- [Submit your first job](./getting-started/create-job-submission-intro)
+- [Learn about storage](./platform/storage/)
 
-## Platform Overview
+</TabItem>
+<TabItem value="admin" label="I'm an Admin">
 
-### [Jobs](/platform/jobs)
+**Deploy and manage HPC infrastructure at scale.**
 
-Manage computational workloads with templates, scripts, and submissions. Create reusable job configurations and track execution across your infrastructure.
+- [Create a cluster](./getting-started/create-cluster-intro)
+- [Connect cloud providers](./platform/compute-providers/)
+- [Manage teams and permissions](./platform/teams/)
 
-### [Clusters](/platform/clusters)
+</TabItem>
+<TabItem value="developer" label="I'm a Developer">
 
-Deploy and manage HPC clusters across on-premises, cloud, and partner environments. Scale resources dynamically based on workload demands.
+**Automate and integrate with CLI, API, or SDK.**
 
-### [Storage](/platform/storage)
+- [Install the CLI](/cli)
+- [Explore the API](/api)
+- [Get started with the SDK](/sdk)
 
-Integrate with various storage solutions including cloud storage, on-premises systems, and distributed file systems for your computational data.
+</TabItem>
+</Tabs>
 
-### [Remote Desktops](/platform/remote-desktops)
+## Platform {#platform-overview}
 
-Access your computational environments through secure remote desktop connections with full GUI support.
+<div className="row">
+  <div className="col col--4 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header">
+        <h3>Jobs</h3>
+      </div>
+      <div className="card__body">
+        <p>Submit, monitor, and manage computational workloads with templates and real-time observability.</p>
+      </div>
+      <div className="card__footer">
+        <a href="./platform/jobs/" className="button button--secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--4 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header">
+        <h3>Clusters</h3>
+      </div>
+      <div className="card__body">
+        <p>Deploy across cloud, on-prem, or partner environments. Scale resources dynamically.</p>
+      </div>
+      <div className="card__footer">
+        <a href="./platform/clusters/" className="button button--secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--4 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header">
+        <h3>Notebooks</h3>
+      </div>
+      <div className="card__body">
+        <p>Interactive Jupyter environments in seconds. Access Slurm, start coding.</p>
+      </div>
+      <div className="card__footer">
+        <a href="./platform/notebooks/" className="button button--secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--4 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header">
+        <h3>Remote Desktops</h3>
+      </div>
+      <div className="card__body">
+        <p>Full GUI access to your compute environments with secure remote connections.</p>
+      </div>
+      <div className="card__footer">
+        <a href="./platform/remote-desktops/" className="button button--secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--4 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header">
+        <h3>Storage</h3>
+      </div>
+      <div className="card__body">
+        <p>Connect cloud and distributed file systems for your computational data.</p>
+      </div>
+      <div className="card__footer">
+        <a href="./platform/storage/" className="button button--secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--4 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header">
+        <h3>Teams</h3>
+      </div>
+      <div className="card__body">
+        <p>Collaborate with role-based access control and shared resources.</p>
+      </div>
+      <div className="card__footer">
+        <a href="./platform/teams/" className="button button--secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-### [Notebooks](/platform/notebooks)
+## Developer Tools {#developer-tools}
 
-Interactive development environments including Jupyter notebooks and VS Code integration for data science and research workflows.
+<div className="row">
+  <div className="col col--4 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header text--center">
+        <h3>CLI</h3>
+      </div>
+      <div className="card__body text--center">
+        <p>Command-line interface for automation and CI/CD integration.</p>
+      </div>
+      <div className="card__footer text--center">
+        <a href="/cli" className="button button--primary">Get Started</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--4 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header text--center">
+        <h3>API</h3>
+      </div>
+      <div className="card__body text--center">
+        <p>REST API with complete OpenAPI specification.</p>
+      </div>
+      <div className="card__footer text--center">
+        <a href="/api" className="button button--primary">Explore</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--4 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header text--center">
+        <h3>SDK</h3>
+      </div>
+      <div className="card__body text--center">
+        <p>Type-safe libraries for Python, JavaScript, and Go.</p>
+      </div>
+      <div className="card__footer text--center">
+        <a href="/sdk" className="button button--primary">Get Started</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-### [Compute Providers](/platform/compute-providers)
+## Need Help? {#need-help}
 
-Connect to diverse compute resources including AWS, Azure, GCP, and specialized HPC partners for optimal cost and performance.
+<div className="row">
+  <div className="col col--4 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header text--center">
+        <h3>Community</h3>
+      </div>
+      <div className="card__body text--center">
+        <p>Join our Slack community to connect with other users.</p>
+      </div>
+      <div className="card__footer text--center">
+        <a href="https://vantagecompute.slack.com" className="button button--secondary" target="_blank" rel="noopener noreferrer">Join Slack</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--4 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header text--center">
+        <h3>GitHub</h3>
+      </div>
+      <div className="card__body text--center">
+        <p>Contribute, report issues, and explore our open source projects.</p>
+      </div>
+      <div className="card__footer text--center">
+        <a href="https://github.com/vantagecompute" className="button button--secondary" target="_blank" rel="noopener noreferrer">View GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--4 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header text--center">
+        <h3>Book a Demo</h3>
+      </div>
+      <div className="card__body text--center">
+        <p>Get a personalized walkthrough from our team.</p>
+      </div>
+      <div className="card__footer text--center">
+        <a href="https://vantagecompute.ai/contact" className="button button--primary" target="_blank" rel="noopener noreferrer">Schedule Demo</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-### [Teams](/platform/teams)
+---
 
-Collaborate with team members through shared resources, role-based access control, and project management capabilities.
-
-### [Licenses](/platform/licenses)
-
-Manage commercial software licenses across your HPC infrastructure with support for FlexLM, RLM, LMX, and other license servers.
-
-## Developer Tools
-
-### [CLI](/cli)
-
-Command-line interface for automating tasks, managing resources, and integrating with CI/CD pipelines. Install once, control everything.
-
-### [API](/api)
-
-REST API for building custom integrations and applications. Complete OpenAPI specification with interactive documentation.
-
-### [SDK](/sdk)
-
-Software Development Kits for Python, JavaScript, and Go. Build powerful integrations with type-safe libraries and comprehensive examples.
-
-## Getting Started
-
-### New to HPC?
-
-- **[HPC Fundamentals](/platform/clusters/)** - Learn the basics
-- **[Best Practices](/platform/jobs/)** - Optimization strategies
-- **[Common Workflows](/platform/storage/)** - Typical use cases
-
-### Migrating to Vantage?
-
-- **[Migration Guide](/platform/compute-providers/)** - Bring your own infrastructure
-- **[Integration Options](/platform/clusters/)** - Connect existing systems
-- **[User Management](./getting-started/invite-intro.md)** - Team setup and permissions
-
-## Popular Use Cases
-
-- **Scientific Computing**: Run simulations, data analysis, and research workloads
-- **Machine Learning**: Train models on distributed computing infrastructure
-- **Engineering**: Execute CAD/CAE simulations and optimization studies
-- **Financial Modeling**: High-frequency trading and risk analysis
-- **Bioinformatics**: Genomic analysis and computational biology
-- **Weather Forecasting**: Atmospheric modeling and climate research
-
-## Support and Community
-
-- **Documentation**: Comprehensive guides and tutorials
-- **API Reference**: Complete API documentation for automation
-- **Community**: Join our community forums and discussions
-- **Support**: Enterprise support and professional services
-
-Ready to get started? Choose your path below based on your needs and experience level.
+Ready to get started? [Sign up for free](./getting-started/sign-up)

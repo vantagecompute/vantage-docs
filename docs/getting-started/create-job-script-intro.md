@@ -1,33 +1,43 @@
 ---
 title: Create a Job Script
-description: Create your first Job Script
+description: Define computational workloads with reusable job scripts
 ---
 
-##### Job Scripts can be submitted to your new cluster, shared with your team, customized, cloned, templated, and more
+## Overview
 
-Follow along with the steps below to create a Job Script in the Vantage web ui!
+Job Scripts define the workloads you want to run on your cluster. They can be submitted to your cluster, shared with your team, customized, cloned, and templated for different use cases.
 
-## 1. Job Script Dashboard
+## What You'll Learn
 
-Navigate to the [Job Script Dashboard](https://app.vantagecompute.ai/jobs/scripts) using the left side navbar.
+- How to navigate to the Job Scripts dashboard
+- How to create a new job script
+- How to write and save an entrypoint file
 
-![create-job-script-intro-00](./img/create-job-script-intro-00.png)
+## Prerequisites
 
-## 2. Create a Job Script
+- A connected cluster (see [Create a Cluster](./create-cluster-intro.md))
 
-Select the "Create Job Script" button in the upper right hand corner of the UI to open the Job Script creation modal.
+## Step 1: Access the Job Scripts Dashboard
 
-![create-job-script-intro-01](./img/create-job-script-intro-01.png)
+Navigate to the [Job Scripts section](https://app.vantagecompute.ai/jobs/scripts) in the Vantage web UI using the left sidebar.
 
-### 2.1 Select Entrypoint File
+![Job scripts dashboard](./img/create-job-script-intro-00.png)
 
-Give your Job Script a name and select an entrypoint, then click "Create".
+## Step 2: Create a Job Script
 
-![create-job-script-intro-02](./img/create-job-script-intro-02.png)
+Click the **Create Job Script** button in the upper right corner to open the job script creation form.
 
-### 2.2 Edit Entrypoint File
+![Create job script button](./img/create-job-script-intro-01.png)
 
-Select the entrypoint file to edit it. Add the following text and save.
+## Step 3: Select Entrypoint
+
+Provide a name for your job script and select an entrypoint file. Click **Create** to proceed.
+
+![Select entrypoint file](./img/create-job-script-intro-02.png)
+
+## Step 4: Edit Entrypoint File
+
+Click on the entrypoint file to open the editor. Add the following content and save:
 
 ```bash
 #!/bin/bash
@@ -36,10 +46,13 @@ Select the entrypoint file to edit it. Add the following text and save.
 sleep 60
 ```
 
-![create-job-script-intro-03](./img/create-job-script-intro-03.png)
+![Edit entrypoint file](./img/create-job-script-intro-03.png)
 
-At this point you have successfully created a Job Script and are ready to submit it to a cluster!
+## Summary
 
-### Next Steps
+Your job script is now saved and ready to be submitted to your cluster. Job scripts can be reused, modified, and shared with team members.
 
-- [`Create a Job Submission`](./create-job-submission-intro.md)
+## Next Steps
+
+- [Submit Your First Job](./create-job-submission-intro.md)
+- [Learn about Job Templates](https://docs.vantagecompute.ai/platform/jobs/tutorials/)
