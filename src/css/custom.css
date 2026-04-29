@@ -433,3 +433,14 @@ details summary[onclick]:hover {
   padding-top: 1rem !important;
 }
 
+/* Equal height cards on the landing page */
+.col--4 .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.col--4 .card__body {
+  flex: 1;
+}
+

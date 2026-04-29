@@ -1,84 +1,69 @@
 ---
 title: Create a Cluster
-description: Create a Cluster
+description: Deploy a Slurm cluster using the Vantage platform
 ---
 
-Adding compute infrastructure in Vantage is a breeze. Choose your desired cloud provider and start running workloads.
+## Overview
 
-This tutorial will teach you how to create a slurm cluster on your local machine using the Vantage CLI.
+Clusters are the foundation of your compute infrastructure in Vantage. This guide walks you through creating a cluster entry in Vantage and deploying a Slurm cluster on your local machine using the Vantage CLI.
 
-More information on [Deployment Applications](/cli/deployment-applications/).
+:::note Alternative Methods
 
-:::note
-
-In this tutorial we create the cluster in the Vantage web ui, but clusters can a be created via the [`vantage-cli`](/cli), [`vantage-sdk`](/sdk), and [`vantage-api`](/api).
-
-Please see the documentation for cluster creation in the respective sections:
-
-- **[Vantage CLI - Cluster Create](/cli/commands#cluster-management)**
-- **[Vantage SDK - Cluster Create](/cli/commands#cluster-management)**
-- **[Vantage API - Cluster Create](/cli/commands#cluster-management)**
+Clusters can also be created via the [Vantage CLI](https://docs.vantagecompute.ai/cli), [Vantage SDK](https://docs.vantagecompute.ai/sdk), and [Vantage API](https://docs.vantagecompute.ai/api). For more information, see the respective documentation sections.
 
 :::
 
-#### Prerequisites
+## What You'll Learn
 
-- 1 x Ubuntu 24.04 desktop or server
-- Access to the terminal of the machine with multipass
-- astral-uv - we will use this to install vantage-cli from pypi
+- How to create a cluster entry in the Vantage web UI
+- How to install the Vantage CLI
+- How to deploy a Slurm cluster using Deployment Applications
 
-## 1. Access the Cluster Dashboard
+## Prerequisites
 
-Navigate to the "Clusters" dashboard to prepare your first compute resource.
+- Ubuntu 24.04 desktop or server
+- [Multipass](https://canonical.com/multipass) installed
+- [UV package manager](https://docs.astral.sh/) installed
 
-![create-cluster-intro-00](./img/create-cluster-intro-00.png)
+## Step 1: Access the Cluster Dashboard
 
-## 2. Prepare a Cluster
+Navigate to the **Clusters** dashboard in the Vantage web UI to prepare your first compute resource.
 
-Select the "Prepare Cluster" button in the upper right hand corner.
+![Cluster dashboard](./img/create-cluster-intro-00.png)
 
-![create-cluster-intro-01](./img/create-cluster-intro-01.png)
+## Step 2: Prepare a Cluster
 
-## 3. Existing == On-Premises == Localhost
+Click the **Prepare Cluster** button in the upper right corner to begin creating a new cluster.
 
-Give your cluster a name and choose the "Existing" cluster type from the dropdown, then click "Prepare" to create a Cluster entry in the Vantage platform.
+![Prepare cluster button](./img/create-cluster-intro-01.png)
 
-![create-cluster-intro-02](./img/create-cluster-intro-02.png)
+## Step 3: Configure Cluster Details
 
-## 4. Cluster Created in Vantage
+Enter a name for your cluster and select **Existing** as the cluster type. This indicates you're connecting your own infrastructure. Click **Prepare** to create the cluster entry.
 
-You now have an entry in the Vantage database that represents your cluster, but as you will notice in the cluster detail
-view, there isn't anything connected yet.
+![Cluster configuration form](./img/create-cluster-intro-02.png)
 
-This is because "Existing" clusters are infrastructure that you provide and connect to the Vantage platform.
+## Step 4: View Cluster Details
 
-To deploy a minimal slurm cluster and connect it to Vantage, proceed to the next step.
+The cluster entry is now created in Vantage, but it's not yet connected. The cluster detail view shows its current status as not connected.
 
-![create-cluster-intro-03](./img/create-cluster-intro-03.png)
+![Cluster details (not connected)](./img/create-cluster-intro-03.png)
 
-## 5. Deploy a Slurm Cluster with Vantage CLI
+## Step 5: Install the Vantage CLI
 
-Vantage exposes the concept of "Deployment Applications". "Deployment Applications" are curated
-automation that Vantge uses to provision HPC clusters and other peripheral application infrastructure.
+To connect your cluster, you'll use Deployment Applications to provision a Slurm cluster. First, install the Vantage CLI.
 
-In this tutorial you will create slurm cluster by means of a "Deployment Application" on the "localhost" cloud. The
-"localhost" cloud supports `multipass`, `lxd`, and `microk8s` as infrastructre mediums.
+### Install UV
 
-Install the Vantage CLI and choose the appropriate "Deployment Application" for your desired "localhost" cloud.
-
-### Install Vantage CLI
-
-#### Install UV
-
-Install [`uv`](https://docs.astral.sh/).
+Install the UV package manager:
 
 ```bash
 sudo snap install astral-uv --classic
 ```
 
-#### Vantage CLI
+### Install Vantage CLI
 
-Install the [Vantage CLI](https://vantagecompute.github.io/vantage-cli).
+Create a virtual environment and install the Vantage CLI:
 
 ```bash
 uv venv && \
@@ -86,147 +71,70 @@ uv venv && \
     uv pip install vantage-cli
 ```
 
-#### Login with Vantage CLI
+### Login to Vantage
 
-Run the `vantage login` command to authenticate with the Vantage platform and acquire a token.
-
-This command returns a url that you need to enter into your browser to authenticate.
+Authenticate with the Vantage platform:
 
 ```bash
 vantage login
 ```
 
-Following successful authentication, you will be ready to create an actual HPC cluster and connect it to Vantage.
+This command provides a URL to open in your browser for authentication.
 
-### Install Dependencies and Create a Deployment Application
+## Step 6: Create a Slurm Cluster
+
+Choose your preferred infrastructure medium and run the corresponding command:
 
 <Tabs>
 <TabItem value="multipass" label="Multipass" default>
 
-#### Install Multipass
-
-Install [`multipass`](https://canonical.com/multipass).
+### Install Multipass
 
 ```bash
 sudo snap install multipass
 ```
 
-#### Create the `slurm-multipass-localhost` Deployment Application
-
-Now that the dependencies have been satisfied, create your slurm cluster using the
-`slurm-multipass-localhost` deployment application.
-
-The command format is:
-
-`vantage app deployment <deployment-application-name> create <vantage-cluster-name>`
-
-Using the cluster name (`vantage-tutorial-cluster`) from above, the command would be:
+### Create the Slurm Cluster
 
 ```bash
-vantage app deployment slurm-multipass-localhost create vantage-tutorial-cluster
+uv run vantage cluster create my-first-cluster --cloud localhost --app slurm-multipass-localhost
 ```
 
 </TabItem>
 <TabItem value="lxd" label="LXD">
 
-#### Install Juju and LXD
-
-Install [`lxd`](https://linuxcontainers.org/lxd/).
+### Install LXD and Juju
 
 ```bash
 sudo snap install lxd
 sudo lxd init --auto
 lxc network set lxdbr0 ipv6.nat false
-```
-
-Install [`juju`](https://canonical.com/juju/).
-
-```bash
 sudo snap install juju --channel 3/stable
-```
-
-Bootstrap a Juju controller on LXD.
-
-```bash
 juju bootstrap lxd
 ```
 
-#### Create the `slurm-lxd-localhost` Deployment Application
-
-Now that the dependencies have been satisfied, create your slurm cluster using the
-`slurm-lxd-localhost` deployment application.
-
-The command format is:
-
-`vantage app deployment <deployment-application-name> create <vantage-cluster-name>`
-
-Using the cluster name (`vantage-tutorial-cluster`) from above, the command would be:
+### Create the Slurm Cluster
 
 ```bash
-vantage app deployment slurm-lxd-localhost create vantage-tutorial-cluster
-```
-
-</TabItem>
-<TabItem value="microk8s" label="MicroK8S">
-
-#### Install and Configure MicroK8S
-
-Install [`microk8s`](https://microk8s.io/).
-
-```bash
-sudo snap install microk8s --channel 1.29/stable --classic
-```
-
-##### Configure ACLS and `~/.kube` Perms
-
-```bash
-sudo usermod -a -G microk8s $USER
-sudo chown -f -R $USER ~/.kube
-```
-
-##### Initialize MicroK8S
-
-###### Storage
-
-```bash
-sudo microk8s.enable hostpath-storage
-```
-
-###### DNS & Ingress
-
-```bash
-microk8s.enable dns
-microk8s.enable metallb:10.64.140.43-10.64.140.49
-```
-
-#### Create the `slurm-microk8s-localhost` Deployment Application
-
-Now that the dependencies have been satisfied, create your slurm cluster using the
-`slurm-microk8s-localhost` deployment application.
-
-The command format is:
-
-`vantage app deployment <deployment-application-name> create <vantage-cluster-name>`
-
-Using the cluster name (`vantage-tutorial-cluster`) from above, the command would be:
-
-```bash
-vantage app deployment slurm-microk8s-localhost create vantage-tutorial-cluster
+vantage app deployment slurm-lxd-localhost create my-first-cluster
 ```
 
 </TabItem>
 </Tabs>
 
-## 6. Cluster Connected, Let's go
+## Step 7: Verify Cluster Connection
 
-Navigate back to the cluster detail view in the Vantage web ui and you will see the cluster status is now green and reads "Connected".
-You are now ready to begin using your cluster.
+Return to the cluster detail view in the Vantage web UI. The cluster status will change to **Connected** when it's successfully linked to the platform.
 
-![create-cluster-intro-04](./img/create-cluster-intro-04.png)
+![Cluster connected successfully](./img/create-cluster-intro-04.png)
 
-### Next Steps
+## Summary
 
-- [`Launch a Notebook`](./notebook-intro.md)
-- [`Create a Job Script`](./create-job-script-intro.md)
-- [`Submit a Job`](./create-job-submission-intro.md)
-- [`Assign Access`](./teams-intro.md)
+Your cluster is now connected and ready for workloads. You can launch notebooks, submit jobs, and manage compute resources through the Vantage platform.
+
+## Next Steps
+
+- [Launch a Notebook](./notebook-intro.md)
+- [Create a Job Script](./create-job-script-intro.md)
+- [Submit Your First Job](./create-job-submission-intro.md)
+- [Manage Team Access](./teams-intro.md)

@@ -1,44 +1,52 @@
 ---
-title: Invite your Team
-sidebar_label: Invite your Team
+title: Invite Your Team
+description: Invite colleagues and manage permissions in your Vantage organization
 ---
 
-Invite your colleagues, manage permissions, and assign team membership in your Vantage organization.
+## Overview
 
-## 1. Navigate to the Users section
+Collaborate with your team by inviting colleagues to your Vantage organization. You can assign permissions to control access to clusters, jobs, and administrative features.
 
-Select the [Users](https://app.vantagecompute.ai/admin/users) navigation from the settings dropdown to navigate
-to the user management dashaboard.
+## What You'll Learn
 
-![invite-intro-00](./img/invite-intro-00.png)
+- How to navigate to user management
+- How to send team invitations
+- How to assign permissions to new members
 
-## 2. Click "New Invite"
+## Prerequisites
 
-Find the "New Invite" button in the upper right hand corner of the Users tab. Click the button to open the new invite form.
+- A Vantage account and organization
+- Admin or User Management permissions in your organization
 
-![invite-intro-01](./img/invite-intro-01.png)
+## Step 1: Navigate to Users
 
-## 3. Enter Invitee Email Address and Assign Permissions
+Go to the [Users page](https://app.vantagecompute.ai/admin/users) in the Vantage platform by selecting it from the settings dropdown menu.
 
-Complete the "New Invite" form by entering the invitee's email address and desired permissions group(s) and
-click the "Send Invite Request" button to initiate the invitation process.
+![Users page navigation](./img/invite-intro-00.png)
 
-![invite-intro-02](./img/invite-intro-02.png)
+## Step 2: Create New Invite
 
-## 4. Summary
+Click the **New Invite** button in the upper right corner of the Users page to open the invitation form.
 
-The invitee will receive an email from `invites@vantagecompute.ai`. The invitee should click the link in the email to
-join the Vantage organization.
+![New invite button](./img/invite-intro-01.png)
 
-### Go Deeper with Vantage Identity and Access Management
+## Step 3: Enter Invitee Details
 
-Vantage has advanced identity management capabilities.
+Complete the invitation form by entering the invitee's email address and selecting the appropriate permissions groups. Click **Send Invite Request** to send the invitation.
 
-Explore custom permission groups, teams, federated identity realms, multiple identity providers, SSO and more!
+![Invitation form](./img/invite-intro-02.png)
 
-- [`Identity and Access Management in Vantage`](/platform/iam/)
+## Summary
 
-### Next Steps
+The invitee will receive an email from `invites@vantagecompute.ai` with a link to join your organization. Once they accept, they'll have access based on the permissions you assigned.
 
-- [`Connect your First Cluster`](./create-cluster-intro.md)
-- [`Configure a Compute Provider`](/platform/compute-providers/)
+## Go Deeper
+
+Vantage offers advanced identity management capabilities including custom permission groups, teams, federated identity realms, multiple identity providers, and SSO integration.
+
+- [Identity and Access Management](https://docs.vantagecompute.ai/platform/iam/)
+
+## Next Steps
+
+- [Create your first cluster](./create-cluster-intro.md)
+- [Connect a compute provider](https://docs.vantagecompute.ai/platform/compute-providers/)
