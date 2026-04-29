@@ -97,7 +97,7 @@ sudo snap install multipass
 ### Create the Slurm Cluster
 
 ```bash
-vantage app deployment slurm-multipass-localhost create my-first-cluster
+uv run vantage cluster create my-first-cluster --cloud localhost --app slurm-multipass-localhost
 ```
 
 </TabItem>
@@ -117,26 +117,6 @@ juju bootstrap lxd
 
 ```bash
 vantage app deployment slurm-lxd-localhost create my-first-cluster
-```
-
-</TabItem>
-<TabItem value="microk8s" label="MicroK8S">
-
-### Install and Configure MicroK8S
-
-```bash
-sudo snap install microk8s --channel 1.29/stable --classic
-sudo usermod -a -G microk8s $USER
-sudo chown -f -R $USER ~/.kube
-microk8s.enable hostpath-storage
-microk8s.enable dns
-microk8s.enable metallb:10.64.140.43-10.64.140.49
-```
-
-### Create the Slurm Cluster
-
-```bash
-vantage app deployment slurm-microk8s-localhost create my-first-cluster
 ```
 
 </TabItem>
