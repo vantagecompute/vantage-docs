@@ -37,7 +37,7 @@ Click the **Prepare Cluster** button in the upper right corner to begin creating
 
 ![Prepare cluster button](./img/create-cluster-intro-01.png)
 
-## Step 3: Configure Cluster Settings
+## Step 3: Configure Cluster Details
 
 Enter a name for your cluster and select **Existing** as the cluster type. This indicates you're connecting your own infrastructure. Click **Prepare** to create the cluster entry.
 
