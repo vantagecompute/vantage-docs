@@ -1,0 +1,15 @@
+---
+title: "Reference"
+description: "Model fields and metadata."
+---
+
+# Reference
+
+Every model carries these fields beyond name and version.
+
+| Field | Description |
+|---|---|
+| Description | Free-text. Used in search and as preview text in the deploy wizard. |
+| Labels | Key/value tags. `framework=torch` and `owner=amelia` are the conventions. |
+| Custom properties | Same shape as labels; used for things like `approval=blessed` or `license=apache-2.0`. |
+| Artifact URI | The S3 location. Read-only; set at registration time. |

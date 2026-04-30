@@ -1,0 +1,17 @@
+---
+title: "Runtimes"
+description: "Pre-built training environments — framework + image + parallelism strategy."
+---
+
+# Runtimes
+
+Pre-built training environments — framework + image + parallelism strategy.
+
+A runtime is a pre-built training environment: framework + base image + parallelism strategy. Vantage ships several cluster-wide runtimes; admins can publish workspace-scoped ones too.
+
+| Runtime | Framework | Use it for |
+|---|---|---|
+| `torch-distributed` | PyTorch + torchrun | General-purpose multi-GPU PyTorch training. |
+| `deepspeed-zero3` | DeepSpeed | Memory-bound LLMs that need ZeRO-3 sharding. |
+| `mlx-distributed` | MLX | Apple-silicon training (where available). |
+| `huggingface-trainer` | Transformers | Standard HF Trainer with sensible defaults. |

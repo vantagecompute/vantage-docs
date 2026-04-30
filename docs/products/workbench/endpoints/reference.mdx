@@ -1,0 +1,21 @@
+---
+title: "Reference"
+description: "Endpoint URL pattern, auth, and key fields."
+---
+
+# Reference
+
+Endpoint URL pattern, auth, and key fields.
+
+## Reaching the endpoint
+
+The detail page header shows the URL. Auth is handled by your workspace's ingress — pass your Vantage API key as a bearer token. The full URL pattern is:
+
+```
+POST https://{workspace}.vantage.ai/v1/{endpoint-name}/infer
+Authorization: Bearer {your-api-key}
+```
+
+## Logs and metrics
+
+The **Logs** tab streams stdout/stderr from the inference container. The **Metrics** tab embeds a Grafana panel — request rate, p50/p99 latency, GPU utilization, replica count.

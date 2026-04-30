@@ -1,0 +1,28 @@
+---
+title: "Reference"
+description: "Training job fields, sub-job counters, and observability hooks."
+---
+
+# Reference
+
+Training job fields, sub-job counters, and observability hooks.
+
+## Wizard inputs
+
+| Field | Description |
+|---|---|
+| `runtime` | The pre-built training environment (framework + image + parallelism strategy). |
+| `sizing` | Number of nodes, CPU / memory / GPU per node, and processes-per-node. |
+| `initializers` | Optional pre-training fetch of a dataset and base model (S3, HuggingFace, PVC, or model registry). |
+| `overrides` | Optional custom command, args, and env to override the runtime's default entrypoint. |
+| `output_destination` | S3 bucket+prefix or PVC where final checkpoints are written. |
+| `ttl_success` | How long completed-success pods are retained for log retrieval (default 1d). |
+| `ttl_failure` | How long failed pods are retained for log retrieval (default 7d). |
+
+## Sub-job rollout
+
+Distributed jobs run as a master + workers fleet. The detail page shows per-sub-job counters — active, ready, succeeded, failed, suspended — so you can spot a stuck rank quickly.
+
+## Logs and observability
+
+The **Logs** tab streams from the trainer master pod by default; the dropdown lets you switch container (init, dataset-init, model-init, trainer) or rank. The **Observability** link drops you into a Grafana dashboard pre-filtered to this job's pods.

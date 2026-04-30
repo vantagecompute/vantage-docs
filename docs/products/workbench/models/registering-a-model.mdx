@@ -1,0 +1,24 @@
+---
+title: "Registering a model"
+description: "Pull a model from HuggingFace, a local path, or a URL into the Vantage registry."
+---
+
+# Registering a model
+
+Pull a model from HuggingFace, a local path, or a URL into the Vantage registry.
+
+Click <kbd>Register model</kbd>. Pick a source, set a name and version, optionally tag with labels and properties.
+
+## Source types
+
+| Source type | What you provide |
+|---|---|
+| **HuggingFace** | Repo ID (e.g. `mistralai/Mistral-7B-v0.3`), revision (default `main`), optional include/exclude glob patterns, optional auth token for gated models. |
+| **Local path** | An absolute path on the Vantage backend pod — typically used by automation, not humans. |
+| **URL** | A single HTTP(S) URL. Good for one-off weights or custom safetensors. |
+
+Registration runs as a background job. You'll see a progress bar in the dialog, and the model lands in the list with status Active when complete.
+
+:::info
+Storage destination defaults to your workspace's S3 bucket and the `models/{name}/{version}/` prefix. Override only if you need a custom layout.
+:::
