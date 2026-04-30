@@ -14,11 +14,11 @@ default:
 [group("docusaurus")]
 install:
     @echo ":package: Installing Docusaurus dependencies..."
-    git submodule sync --recursive
-    git -c protocol.version=2 submodule update --init --force --recursive
-    git submodule foreach --recursive 'git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" && git fetch origin'
-    git -c protocol.version=2 submodule update --remote --recursive
-    yarn install
+    git submodule sync --recursive
+    git -c protocol.version=2 submodule update --init --force --recursive
+    git submodule foreach --recursive 'git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" && git fetch origin'
+    git -c protocol.version=2 submodule update --remote --recursive
+    yarn install
 
 # Start Docusaurus development server
 [group("docusaurus")]
