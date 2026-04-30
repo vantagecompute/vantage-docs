@@ -1,0 +1,36 @@
+---
+title: Concepts
+description: Five mental models that show up across every Workbench tab.
+---
+
+# Concepts
+
+Five mental models that show up across every Workbench tab.
+
+## Workspace
+
+Your team's slice of the cluster. Workspaces hold quota (CPUs, memory, GPUs, storage), an RBAC scope, and a cost envelope. Resources you create in Workbench live inside one workspace at a time. The current workspace is shown in the top-right of the screen — switch with the workspace picker.
+
+## Compute profile
+
+A named bundle of *where* a workload runs: GPU vendor and count per node, instance type, autoscaling min/max, and a default cost rate. A single profile is reused by sessions, training jobs, sweeps, and endpoints — pick one once and the rest of the form auto-tunes around it.
+
+## Lifecycle
+
+Most resources move through the same set of phases:
+
+| Phase | Meaning |
+|---|---|
+| Pending | Provisioning compute, pulling images, mounting storage. |
+| Running | Healthy and accepting work. |
+| Succeeded | Finite job completed cleanly. Logs and artifacts persist. |
+| Stopped | Compute released. Storage retained. |
+| Failed | Last reconcile errored. Inspect **Activity** on the detail page. |
+
+## Cost
+
+Every active resource accumulates spend. Workbench shows three numbers: **$/hr** (the live burn rate), **accumulated** (since the resource started), and **idle %** (compute reserved but not running work). Idle spend is the most common preventable cost — sessions left open overnight are the usual culprit.
+
+## Observability
+
+Detail pages link out to Grafana dashboards scoped to that resource. Cluster-wide metrics live on the [Observability tab](./observability).
