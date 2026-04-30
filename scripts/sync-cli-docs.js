@@ -16,6 +16,11 @@ const SRC = path.resolve(__dirname, '..', 'external', 'vantage-cli', 'docusaurus
 const DST = path.resolve(__dirname, '..', 'docs', 'reference', 'cli');
 const BASE_PATH = process.argv[2] || '/reference/cli/';
 
+if (!BASE_PATH.endsWith('/')) {
+  console.error('[sync-cli-docs] base-path must end with /');
+  process.exit(1);
+}
+
 function rmrf(p) {
   if (fs.existsSync(p)) fs.rmSync(p, {recursive: true, force: true});
 }
