@@ -1,0 +1,44 @@
+/* src/components/AskAIButton/styles.module.css */
+.wrap { position: relative; display: inline-flex; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px 5px 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.spark { color: #c7d2fe; }
+
+.popover {
+  position: absolute; top: calc(100% + 6px); right: 0;
+  width: 280px;
+  background: #fff;
+  border: 1px solid var(--ink-100);
+  border-radius: 8px;
+  box-shadow: var(--shadow-pop);
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--ink-700);
+  z-index: 1000;
+}
+.popoverTitle { font-weight: 700; color: var(--ink-900); margin-bottom: 4px; }
+.popoverBody { line-height: 1.5; }
+
+[data-theme='dark'] .popover {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ink-100);
+  color: var(--ink-700);
+}

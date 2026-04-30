@@ -183,8 +183,9 @@ const config = {
         target: '_self'
       },
       items: [
+        {type: 'search', position: 'right'},
         {
-          type: 'search',
+          type: 'custom-askAI',
           position: 'right',
         },
       ],
