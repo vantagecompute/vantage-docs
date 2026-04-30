@@ -15,7 +15,7 @@ const sidebars = {
     },
     {
       type: 'doc',
-      id: 'getting-started/index',
+      id: 'get-started/index',
       label: 'Getting Started',
     },
     {
