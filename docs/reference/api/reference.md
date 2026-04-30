@@ -396,11 +396,11 @@ Official SDKs are available for:
 
 Download the complete OpenAPI 3.0 specification:
 
-- [OpenAPI Specification](/api/openapi)
+- [OpenAPI Specification](/reference/api/openapi)
 - [Swagger UI](https://api.vantage.omnivector.solutions/docs)
 
 ## Postman Collection
 
 Import our Postman collection for easy API testing:
 
-- [Download Collection](/api/postman)
+- [Download Collection](/reference/api/postman)

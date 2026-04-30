@@ -138,8 +138,8 @@ If you encounter issues during these tutorials:
 
 After completing these tutorials, consider exploring:
 
-- [Storage Tutorials](/platform/storage/tutorials/) for data management strategies
+- [Storage Tutorials](/products/storage/tutorials/) for data management strategies
 - [Licenses Tutorials](/platform/licenses/tutorials/) for software license management
 - ## Related Resources
 
-- [Notebooks Tutorials](/platform/notebooks/tutorials/) for interactive computing
+- [Notebooks Tutorials](/products/workbench/sessions/notebooks/tutorials/) for interactive computing

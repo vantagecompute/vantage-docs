@@ -8,7 +8,7 @@ This quickstart guide will help you build your first integration with the Vantag
 
 ## Prerequisites
 
-- [Installed](/sdk/installation) Vantage SDK for your preferred language
+- [Installed](/reference/sdk/installation) Vantage SDK for your preferred language
 - Vantage account with API access
 - At least one connected cluster
 
@@ -549,8 +549,8 @@ print(f"All {len(completed_jobs)} jobs completed!")
 
 Now that you've completed the quickstart:
 
-1. **[API Reference](/sdk/api)** - Explore all available methods and options
-2. **[Configuration](/sdk/configuration)** - Learn advanced configuration options
+1. **[API Reference](/reference/sdk/api)** - Explore all available methods and options
+2. **[Configuration](/reference/sdk/configuration)** - Learn advanced configuration options
 3. **[Examples](https://github.com/omnivector-solutions/vantage-sdk-examples)** - See more complex real-world examples
 
 ## Common Patterns

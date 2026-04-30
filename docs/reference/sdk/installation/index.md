@@ -329,7 +329,7 @@ npm uninstall @vantage/sdk && npm install @vantage/sdk
 
 - **[GitHub Issues](https://github.com/omnivector-solutions/vantage-sdk/issues)** - Report bugs
 - **[Stack Overflow](https://stackoverflow.com/questions/tagged/vantage-sdk)** - Community support
-- **[Documentation](/sdk/api)** - API reference
+- **[Documentation](/reference/sdk/api)** - API reference
 - **[Examples](https://github.com/omnivector-solutions/vantage-sdk-examples)** - Code samples
 
 ## Version Compatibility
@@ -341,6 +341,6 @@ npm uninstall @vantage/sdk && npm install @vantage/sdk
 
 ## Next Steps
 
-1. **[Configuration](/sdk/configuration)** - Configure the SDK for your environment
-2. **[Quickstart](/sdk/quickstart)** - Build your first integration
-3. **[API Reference](/sdk/api)** - Explore available methods
+1. **[Configuration](/reference/sdk/configuration)** - Configure the SDK for your environment
+2. **[Quickstart](/reference/sdk/quickstart)** - Build your first integration
+3. **[API Reference](/reference/sdk/api)** - Explore available methods

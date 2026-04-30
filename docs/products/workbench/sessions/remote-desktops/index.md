@@ -17,7 +17,7 @@ Windows-based remote desktops for specialized applications and workflows.
 
 ## Documentation Sections
 
-### [Tutorials](/platform/remote-desktops/tutorials/)
+### [Tutorials](/products/workbench/sessions/remote-desktops/tutorials/)
 
 Learn how to set up and use remote desktops.
 

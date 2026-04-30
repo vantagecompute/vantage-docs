@@ -18,6 +18,6 @@ Full-featured development environment with notebook support.
 
 ## Documentation Sections
 
-### [Tutorials](/platform/notebooks/tutorials/)
+### [Tutorials](/products/workbench/sessions/notebooks/tutorials/)
 
 Learn how to set up and use notebook environments.

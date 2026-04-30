@@ -118,7 +118,7 @@ Subscribe to our [GitHub releases](https://github.com/vantagecompute/vantage-doc
 
 ## Related Resources
 
-- [API Reference](/api/reference) - Human-readable endpoint documentation
-- [Quickstart Guide](/api/quickstart) - Get started with the API
-- [Authentication](/api/authentication) - API key and OAuth setup
-- [Postman Collection](/api/postman) - Ready-to-use API testing collection
+- [API Reference](/reference/api/reference) - Human-readable endpoint documentation
+- [Quickstart Guide](/reference/api/quickstart) - Get started with the API
+- [Authentication](/reference/api/authentication) - API key and OAuth setup
+- [Postman Collection](/reference/api/postman) - Ready-to-use API testing collection

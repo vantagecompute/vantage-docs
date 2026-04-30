@@ -225,13 +225,13 @@ X-RateLimit-Reset: 1642262400
 
 Now that you've made your first API calls, explore more advanced features:
 
-- [API Reference](/api/reference) - Complete endpoint documentation
-- [Authentication](/api/authentication) - Detailed auth setup
-- Check out the [OpenAPI specification](/api/openapi)
-- Import our [Postman collection](/api/postman)
+- [API Reference](/reference/api/reference) - Complete endpoint documentation
+- [Authentication](/reference/api/authentication) - Detailed auth setup
+- Check out the [OpenAPI specification](/reference/api/openapi)
+- Import our [Postman collection](/reference/api/postman)
 
 ## Need Help?
 
-- Check our [API Reference](/api/reference) for detailed endpoint documentation
+- Check our [API Reference](/reference/api/reference) for detailed endpoint documentation
 - Join our [community Discord](https://discord.gg/vantage)
 - Email support: [api-support@omnivector.solutions](mailto:api-support@omnivector.solutions)

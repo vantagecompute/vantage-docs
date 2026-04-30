@@ -326,6 +326,6 @@ To begin working with job scripts:
 
 ## Next Steps
 
-- [Create Job Scripts](/platform/jobs/tutorials/scripts/create-script) - Learn how to develop effective job scripts
-- [Share Job Scripts](/platform/jobs/tutorials/scripts/share-script) - Collaborate and share scripts with others
-- [Delete Job Scripts](/platform/jobs/tutorials/scripts/delete-script) - Manage script lifecycle and cleanup
+- [Create Job Scripts](/products/jobs/tutorials/scripts/create-script) - Learn how to develop effective job scripts
+- [Share Job Scripts](/products/jobs/tutorials/scripts/share-script) - Collaborate and share scripts with others
+- [Delete Job Scripts](/products/jobs/tutorials/scripts/delete-script) - Manage script lifecycle and cleanup

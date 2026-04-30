@@ -58,8 +58,8 @@ Job Submissions represent workloads that has been submitted to the scheduler.
 
 After completing these tutorials, consider exploring:
 
-- [Storage Tutorials](/platform/storage/tutorials/)
+- [Storage Tutorials](/products/storage/tutorials/)
 - [License Management Tutorials](/platform/licenses/tutorials/)
 - [Cluster Tutorials](/platform/clusters/)
-- [Notebooks Tutorials](/platform/notebooks/tutorials/)
+- [Notebooks Tutorials](/products/workbench/sessions/notebooks/tutorials/)
 

@@ -30,7 +30,7 @@ Access to specialized HPC storage through our partner network.
 
 ## Documentation Sections
 
-### [Tutorials](/platform/storage/tutorials/)
+### [Tutorials](/products/storage/tutorials/)
 
 Learn how to configure and use storage systems.
 

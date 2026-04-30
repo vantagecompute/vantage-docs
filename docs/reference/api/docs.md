@@ -9,17 +9,17 @@ Welcome to the Vantage API documentation hub. Here you'll find all the resources
 ## Quick Navigation
 
 ### Getting Started
-- **[Quickstart Guide](/api/quickstart)** - Get up and running in minutes
-- **[Authentication](/api/authentication)** - Set up API keys and OAuth
-- **[API Reference](/api/reference)** - Complete endpoint documentation
+- **[Quickstart Guide](/reference/api/quickstart)** - Get up and running in minutes
+- **[Authentication](/reference/api/authentication)** - Set up API keys and OAuth
+- **[API Reference](/reference/api/reference)** - Complete endpoint documentation
 
 ### Interactive Documentation
 - **[Swagger UI](https://api.vantage.omnivector.solutions/docs)** - Interactive API explorer
 - **[Redoc](https://api.vantage.omnivector.solutions/redoc)** - Clean documentation interface
 
 ### Development Resources
-- **[OpenAPI Specification](/api/openapi)** - Machine-readable API spec
-- **[Postman Collection](/api/postman)** - Ready-to-use API testing collection
+- **[OpenAPI Specification](/reference/api/openapi)** - Machine-readable API spec
+- **[Postman Collection](/reference/api/postman)** - Ready-to-use API testing collection
 - **[SDKs and Libraries](/sdk)** - Official client libraries
 
 ## API Overview
@@ -63,12 +63,12 @@ All responses are in JSON format with consistent error handling:
 
 ### OpenAPI 3.0
 Download our complete OpenAPI specification:
-- [OpenAPI Specification](/api/openapi)
+- [OpenAPI Specification](/reference/api/openapi)
 - [JSON format](https://api.vantage.omnivector.solutions/openapi.json)
 
 ### Postman
 Import our Postman collection for easy testing:
-- [Download collection](/api/postman)
+- [Download collection](/reference/api/postman)
 - [View in Postman web](https://postman.com/vantage-api)
 
 ### Insomnia

@@ -300,6 +300,6 @@ The Postman collection is updated regularly:
 ## Additional Resources
 
 - [Postman Learning Center](https://learning.postman.com/)
-- [Vantage API Documentation](/api/docs)
+- [Vantage API Documentation](/reference/api/docs)
 - [Support Forum](https://community.vantage.omnivector.solutions)
 - [Bug Reports](mailto:api-support@omnivector.solutions)

@@ -7,9 +7,9 @@ The Vantage Software Development Kit (SDK) provides comprehensive tools and libr
 
 ## Getting Started
 
-1. **[Installation](/sdk/installation)** - Install the SDK for your preferred language
-2. **[Configuration](/sdk/configuration)** - Configure authentication and endpoints
-3. **[Quickstart](/sdk/quickstart)** - Build your first integration in minutes
+1. **[Installation](/reference/sdk/installation)** - Install the SDK for your preferred language
+2. **[Configuration](/reference/sdk/configuration)** - Configure authentication and endpoints
+3. **[Quickstart](/reference/sdk/quickstart)** - Build your first integration in minutes
 
 ## Supported Languages
 
@@ -49,7 +49,7 @@ Direct HTTP/REST integration for any programming language with our OpenAPI speci
 
 ## Quick Reference
 
-- **[API Reference](/sdk/api)** - Complete API documentation
+- **[API Reference](/reference/sdk/api)** - Complete API documentation
 - **[Code Examples](https://github.com/omnivector-solutions/vantage-sdk-examples)** - Sample implementations
 - **[SDK on PyPI](https://pypi.org/project/vantage-sdk/)** - Python package installation
 

@@ -105,13 +105,13 @@ Explore techniques for:
 If you encounter issues during these tutorials:
 
 - Check the troubleshooting sections within each tutorial
-- Refer to the [Notebook Documentation](/platform/notebooks/) for detailed information
+- Refer to the [Notebook Documentation](/products/workbench/sessions/notebooks/) for detailed information
 - Contact support for additional assistance
 
 ## Next Steps
 
 After completing these tutorials, consider exploring:
 
-- [Jobs Tutorials](/platform/jobs/tutorials/) to learn about running computational workloads
-- [Storage Tutorials](/platform/storage/tutorials/) for data management strategies
-- [Remote Desktops Tutorials](/platform/remote-desktops/tutorials/) for alternative interactive environments
+- [Jobs Tutorials](/products/jobs/tutorials/) to learn about running computational workloads
+- [Storage Tutorials](/products/storage/tutorials/) for data management strategies
+- [Remote Desktops Tutorials](/products/workbench/sessions/remote-desktops/tutorials/) for alternative interactive environments

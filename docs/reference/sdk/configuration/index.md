@@ -547,6 +547,6 @@ client = VantageClient(
 
 ## Next Steps
 
-1. **[Quickstart](/sdk/quickstart)** - Build your first integration
-2. **[API Reference](/sdk/api)** - Explore available methods
+1. **[Quickstart](/reference/sdk/quickstart)** - Build your first integration
+2. **[API Reference](/reference/sdk/api)** - Explore available methods
 3. **[Examples](https://github.com/omnivector-solutions/vantage-sdk-examples)** - See real-world usage patterns

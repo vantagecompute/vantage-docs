@@ -407,6 +407,6 @@ To begin submitting jobs effectively:
 
 ## Next Steps
 
-- [Create Job Submissions](/platform/jobs/tutorials/submissions/create-submission) - Learn to submit jobs effectively
-<!-- - [Share Job Submissions](/platform/jobs/tutorials/submissions/share-submission) - Collaborate on job workflows -->
-- [Delete Job Submissions](/platform/jobs/tutorials/submissions/delete-submission) - Manage job lifecycle and cleanup
+- [Create Job Submissions](/products/jobs/tutorials/submissions/create-submission) - Learn to submit jobs effectively
+<!-- - [Share Job Submissions](/products/jobs/tutorials/submissions/share-submission) - Collaborate on job workflows -->
+- [Delete Job Submissions](/products/jobs/tutorials/submissions/delete-submission) - Manage job lifecycle and cleanup

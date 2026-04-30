@@ -121,6 +121,6 @@ If you encounter issues during these tutorials:
 
 After completing these tutorials, consider exploring:
 
-- [Notebooks Tutorials](/platform/notebooks/tutorials/) for alternative interactive computing
-- [Jobs Tutorials](/platform/jobs/tutorials/) for running batch computational workloads
+- [Notebooks Tutorials](/products/workbench/sessions/notebooks/tutorials/) for alternative interactive computing
+- [Jobs Tutorials](/products/jobs/tutorials/) for running batch computational workloads
 - [Teams Tutorials](/platform/teams/tutorials/) for managing user access and collaboration
