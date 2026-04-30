@@ -1,0 +1,28 @@
+---
+title: Compute Profiles
+description: The reusable shape of compute — GPU vendor, count, instance type, autoscaling bounds.
+---
+
+# Compute Profiles
+
+Compute profiles answer one question for every other Workbench tab: *where does this run?* A profile bundles GPU type, GPU count per node, instance class, and autoscaling bounds — the same name then shows up in Sessions, Endpoints, Training Jobs, and Sweeps.
+
+## Read-only by design
+
+Compute profiles are managed by **workspace admins**, not end users — they affect cost, capacity, and quotas. The Workbench UI is intentionally read-only here. To add or change a profile, talk to your admin or use the Vantage admin console.
+
+:::info
+Need a profile that doesn't exist? Common requests: an H100×8 profile for big training, a CPU-burst profile for data prep, a regional profile near a specific dataset. Open an admin ticket with the use case and the rough hours/month estimate.
+:::
+
+## Picking the right profile
+
+| Workload | Suggested profile shape |
+|---|---|
+| Notebook + light experimentation | 1× GPU (T4 / L4) or CPU-large; min=0 so it scales to zero when idle. |
+| Single-node training run | 1× A100/H100 with whatever max your budget allows. |
+| Distributed training | Multi-GPU profile (4× or 8× per node), node count set in the training-job sizing. |
+| LLM inference | Profile sized to fit the model; H100×1 for 7-13B, H100×4 for 70B. |
+| Heavy data prep / ETL | CPU-large with high memory; no GPU. |
+
+See [Reference](./reference) for every field on a compute profile.

@@ -1,0 +1,31 @@
+---
+title: Anatomy of a pipeline
+description: Steps, inputs, outputs, and conditions — the building blocks of a Vantage pipeline.
+---
+
+# Anatomy of a pipeline
+
+A pipeline is composed of four core elements:
+
+- **Definition** — the DAG itself. Authored in Python via the Vantage SDK and uploaded as a versioned artifact.
+- **Versions** — every upload of a definition file becomes a new pipeline version. Old versions stay runnable.
+- **Runs** — concrete invocations, each with parameters, a status, and per-step logs.
+- **Schedules** — cron-style triggers that kick off a run on a recurring basis.
+
+## The list view
+
+Each pipeline row shows the definition name, the latest version, when the last run finished, last run status, and the next scheduled run (if any).
+
+Click any pipeline to see all its versions, all runs, and the schedule list.
+
+## Run detail
+
+A run page shows the DAG visually — circles per step, lines per dependency, color-coded by status. Click any step to see its inputs, outputs, container image, and logs.
+
+## Common patterns
+
+| Pattern | What it looks like |
+|---|---|
+| Train + evaluate + register | Train job → eval task → conditional registration into the model catalog if accuracy passes a threshold. |
+| Nightly retrain | Cron schedule → ingest fresh data → train job → diff against last week's model → notify on regression. |
+| Data pipeline | Pull from sources → transform → write to feature store. No training step. |
