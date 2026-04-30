@@ -146,30 +146,22 @@ const config = {
   themeConfig: {
     image: 'img/preview.png',
     
-    // Algolia DocSearch Configuration - Styled like Algolia's own docs
     algolia: {
-      // Temporary demo configuration - replace with your actual index
       appId: 'MPYYYNENH9',
-      apiKey: '4eea2544feea2cf558be1ce57ff44db4',
+      apiKey: 'b3cadb2f7da0194ead335c3488237443',
       indexName: 'Vantage Compute Documentation Website Crawler',
-      
-      // Optional: see doc section below
-      contextualSearch: true,
-      
-      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl
-      replaceSearchResultPathname: {
-        from: '/docs/', // or as RegExp: /\/docs\//
-        to: '/',
-      },
-      
-      // Optional: Algolia search parameters
+
+      // Disabled: we have one locale/version, so contextual facet filters
+      // would silently return 0 results if the crawler didn't set them.
+      contextualSearch: false,
+
+      // Not needed: docs are served from root (routeBasePath: '/'),
+      // so crawler URLs already match the live site paths.
+      // replaceSearchResultPathname: { from: '/docs/', to: '/' },
+
       searchParameters: {},
-      
-      // Optional: path for search page that enabled by default (`false` to disable it)
       searchPagePath: 'search',
-      
-      // Limit search hotkeys to only Cmd+K (Mac) and Ctrl+K (Windows/Linux)
-      searchHotkeys: ['cmd+k', 'ctrl+k'],
+      searchHotkeys: ['ctrl+k', 'cmd+k'],
     },
     
     navbar: {
