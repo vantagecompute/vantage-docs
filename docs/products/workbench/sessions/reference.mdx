@@ -1,0 +1,22 @@
+---
+title: Reference
+description: Every Sessions field with its type, default, and constraint.
+---
+
+# Reference
+
+Field reference for the Sessions create/update API. Required fields are marked.
+
+| Field | Type | Default | Constraint / Notes |
+|---|---|---|---|
+| `name` | string | _(required)_ | DNS-1123 label: lowercase letters, digits, dashes; max 63 chars. |
+| `image` | string | _(required)_ | Container image reference. Presets: `jupyter-pytorch`, `jupyter-tensorflow`, `codeserver-python`, `rstudio`. |
+| `compute_profile` | string | workspace default | Must be a profile that exists in this workspace. |
+| `cpu` | string | profile default | Quantity (e.g. `2`, `4000m`). Override of profile's CPU. |
+| `memory` | string | profile default | Quantity (e.g. `8Gi`, `32Gi`). Override of profile's memory. |
+| `gpu_vendor` | enum | profile default | `nvidia.com/gpu`, `amd.com/gpu`, `habana.ai/gaudi`, or `none`. |
+| `gpu_count` | int | 0 | Whole number. Only non-zero on GPU-capable profiles. |
+| `workspace_volume` | object | new 5 GiB PVC | `{create: true, size: "5Gi"}` or `{claim: "existing-pvc-name"}`. |
+| `data_volumes` | object[] | `[]` | Each item: `{claim, mount_path, read_only}`. |
+| `configurations` | string[] | `[]` | List of named pod-defaults the admin published. |
+| `env` | object | `{}` | Map of env-var name → string value. |
