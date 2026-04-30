@@ -24,13 +24,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # vantage-cli is a private submodule whose .gitmodules URL is SSH.
+      # Rewrite SSH→HTTPS+PAT before checkout so actions/checkout can
+      # clone it without an SSH key on the runner.
+      - name: Configure git to fetch private vantage-cli over HTTPS+PAT
+        run: |
+          git config --global url."https://x-access-token:${{ secrets.VANTAGE_CLI_RO_GITHUB_PAT }}@github.com/".insteadOf "git@github.com:"
+          git config --global url."https://x-access-token:${{ secrets.VANTAGE_CLI_RO_GITHUB_PAT }}@github.com/".insteadOf "ssh://git@github.com/"
+
       - name: Checkout (with submodules)
         uses: actions/checkout@v4
         with:
           submodules: recursive
-          # vantage-cli is a private submodule; the default GITHUB_TOKEN
-          # only has access to this repo. A PAT with read access to
-          # vantagecompute/vantage-cli is required.
           token: ${{ secrets.VANTAGE_CLI_RO_GITHUB_PAT }}
 
       - uses: actions/setup-node@v4
