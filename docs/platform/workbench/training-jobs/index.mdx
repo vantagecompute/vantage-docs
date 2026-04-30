@@ -1,0 +1,21 @@
+---
+title: "Training Jobs"
+description: "Distributed training runs — the workhorse for serious model work."
+---
+
+# Training Jobs
+
+Distributed training runs — the workhorse for serious model work.
+
+Training jobs run finite, distributed training workloads on Vantage. They're built on Kubeflow Trainer under the hood, but you don't see any of that — you pick a runtime, a sizing, optional initializers for dataset and model, and where to put the output.
+
+## Runtimes
+
+A runtime is a pre-built training environment: framework + base image + parallelism strategy. Vantage ships several cluster-wide runtimes; admins can publish workspace-scoped ones too.
+
+## Next steps
+
+- [Runtimes](/platform/workbench/training-jobs/runtimes)
+- [Submitting a job](/platform/workbench/training-jobs/submitting-a-job)
+- [Lifecycle](/platform/workbench/training-jobs/lifecycle)
+- [Reference](/platform/workbench/training-jobs/reference)

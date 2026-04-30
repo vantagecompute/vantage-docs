@@ -1,0 +1,26 @@
+---
+title: Reference
+description: Every KPI definition and time-range option.
+---
+
+# Reference
+
+## KPI definitions
+
+| KPI | What it measures | Why it matters |
+|---|---|---|
+| Active sessions | Count of running notebook sessions, with delta vs yesterday. | Tracks interactive compute consumption and spot unexpected overnight sessions. |
+| Active endpoints | Count of live inference endpoints, with warm replicas called out. | Warm replicas cost money even with no traffic; cold ones have latency on first hit. |
+| Running training jobs | Count of in-progress training jobs + total GPU-hours consumed today. | Gives a real-time view of your cluster's training workload. |
+| Spend today | Burn rate vs your daily cost ceiling. | Early warning before you breach a budget threshold. |
+| Spend MTD | Month-to-date spend with an end-of-month forecast. | Capacity planning and finance reporting. |
+| Idle GPU hours | Paid-for GPU time where utilization stayed under 5%. | The most actionable waste metric — drive this toward zero. |
+
+## Time ranges
+
+| Range | Use case |
+|---|---|
+| `last 1h` | Catching active incidents in real time. |
+| `last 24h` | Daily standup, idle-GPU triage. |
+| `last 7d` | Spend forecast vs ceiling. |
+| `last 30d` | Capacity planning, MTD spend tracking. |

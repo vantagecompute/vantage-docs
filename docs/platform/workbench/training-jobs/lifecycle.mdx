@@ -1,0 +1,22 @@
+---
+title: "Lifecycle"
+description: "Pending → Running → Succeeded/Failed and the actions at each phase."
+---
+
+# Lifecycle
+
+Pending → Running → Succeeded/Failed and the actions at each phase.
+
+| Phase | Meaning |
+|---|---|
+| Pending | Initializers running, pods scheduling. |
+| Running | Trainer pods are up and at least one is making progress. |
+| Suspended | You hit <kbd>Suspend</kbd>. Pods removed, state preserved. |
+| Succeeded | All trainer ranks exited 0. Output destination has your checkpoints. |
+| Failed | One or more ranks errored. **Logs** tab + **Activity** page have the why. |
+
+Lifecycle actions: <kbd>Suspend</kbd>, <kbd>Resume</kbd>, <kbd>Retry</kbd> (clones the job and re-runs from scratch), <kbd>Delete</kbd>.
+
+:::warning
+If `active=N, ready<N` for more than ~5 minutes, one of the worker pods isn't passing its readiness probe. Check the pod's logs through the Logs tab's container dropdown.
+:::

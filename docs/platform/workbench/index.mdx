@@ -1,0 +1,23 @@
+---
+title: Workbench
+description: AI/ML workspace — sessions, models, endpoints, training, pipelines, sweeps.
+---
+
+# The Vantage AI Workbench
+
+Workbench is where you build, train, and serve machine-learning models on Vantage. It bundles eight tools — sessions, models, endpoints, training jobs, pipelines, sweeps, compute profiles, and observability — into one workspace, all sharing the same compute, storage, and cost envelope.
+
+:::info
+**Workbench replaces the Kubeflow dashboard.** Everything you'd reach through Kubeflow Notebooks, KServe, Trainer, Katib, and the Pipelines UI is here under native Vantage primitives — without the namespaces, CRDs, and Istio routes leaking through.
+:::
+
+## What you'll find inside
+
+- **[Sessions](/platform/workbench/sessions)** — Interactive notebook environments — Jupyter, VS Code, RStudio — pinned to GPU pools and your team's storage.
+- **[Models](/platform/workbench/models)** — Versioned model catalog. Pull from HuggingFace or your own training runs, then deploy to an endpoint.
+- **[Endpoints](/platform/workbench/endpoints)** — Inference services with autoscaling, canary rollouts, and authenticated URLs. Predictive or LLM.
+- **[Training Jobs](/platform/workbench/training-jobs)** — Distributed training on PyTorch, DeepSpeed, or MLX runtimes. Retry, suspend, resume.
+- **[Pipelines](/platform/workbench/pipelines)** — Multi-step DAGs that orchestrate ingestion, training, evaluation, and deployment.
+- **[Sweeps](/platform/workbench/sweeps)** — Hyperparameter search with Bayesian, grid, or random algorithms — tracked end-to-end.
+- **[Compute Profiles](/platform/workbench/compute-profiles)** — The reusable shape of your compute: GPU type, count, autoscaling bounds, instance class.
+- **[Observability](/platform/workbench/observability)** — Cluster-wide rollups of utilization, spend, idle GPU hours, and live alerts.

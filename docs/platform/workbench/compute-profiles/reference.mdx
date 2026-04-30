@@ -1,0 +1,18 @@
+---
+title: Reference
+description: Every field on a compute profile.
+---
+
+# Reference
+
+Compute profiles are managed by workspace admins. These are the fields you'll see on each profile.
+
+| Field | Description |
+|---|---|
+| Display name | What people see — e.g. `A100 × 4`. |
+| Internal name | Identifier passed to the backend — `a100-x4`. |
+| Instance type | The cloud SKU — `g5.48xlarge`, `Standard_ND96amsr_A100_v4`. |
+| GPU vendor | `nvidia.com/gpu`, `amd.com/gpu`, `habana.ai/gaudi`, or none. |
+| GPU count per node | Whole number; 0 for CPU-only profiles. |
+| Min / max nodes | Autoscaling bounds. Min 0 means scale-to-zero is allowed; max caps the blast radius. |
+| Default | Whether this profile is the workspace default. Exactly one default per workspace. |

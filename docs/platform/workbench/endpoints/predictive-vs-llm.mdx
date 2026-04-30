@@ -1,0 +1,15 @@
+---
+title: "Predictive vs LLM"
+description: "Two endpoint kinds, two tuning surfaces."
+---
+
+# Predictive vs LLM
+
+Two endpoint kinds, two tuning surfaces.
+
+Workbench distinguishes two endpoint *kinds*, because their tuning surfaces are different:
+
+| Kind | Best for | Knobs |
+|---|---|---|
+| **Predictive** | Sklearn / XGBoost / classical PyTorch / TF models. Single-input, fast inference. | Framework, runtime, protocol version (v1 / v2 / openai), shared memory. |
+| **LLM** | Generative models — chat, embeddings, completion. Long contexts, batching matters. | Tensor / pipeline / data parallelism, request batching, cache-aware routing. |

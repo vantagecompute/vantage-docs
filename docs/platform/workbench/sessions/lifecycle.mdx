@@ -1,0 +1,30 @@
+---
+title: Lifecycle
+description: How sessions move through Pending → Running → Stopped, and the actions you can take at each stage.
+---
+
+# Lifecycle
+
+From a row's overflow menu or from the detail page header:
+
+| Action | Effect |
+|---|---|
+| **Open** | Launch the notebook UI in a new browser tab. |
+| **Stop** | Release compute. Storage stays. `Start` reattaches the same volumes. |
+| **Start** | Boot a stopped session back up. |
+| **Edit** | Change CPU/memory/env. Some fields require a stop-then-start cycle. |
+| **Delete** | Tear down compute _and_ volumes. Irreversible — confirm twice. |
+
+## The detail page
+
+Click any row name to open it. The detail page is split into:
+
+- **Header** — name, status, the live `Open` URL, and lifecycle actions.
+- **Cost line** — $/hr, accumulated, GPU utilization. The orange "idle" badge appears when GPU util has stayed under 5% for over an hour.
+- **Spec** — image, compute profile, CPU/mem/GPU, mounts, configurations, env.
+- **Activity** — chronological log of phase transitions, conditions, and reconcile errors.
+- **Observability** — embedded Grafana panel scoped to this session.
+
+:::warning
+**Idle sessions cost money.** A 4×A100 session left open overnight is roughly $400. Workbench will surface an "idle" warning, but it's on you to stop sessions you're not actively using.
+:::

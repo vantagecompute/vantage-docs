@@ -1,0 +1,16 @@
+---
+title: "Deploying an endpoint"
+description: "Seven-step wizard from model selection to live URL."
+---
+
+# Deploying an endpoint
+
+Seven-step wizard from model selection to live URL.
+
+1. **Pick a kind** — Predictive or LLM.
+1. **Pick a model source** — from your registry, from HuggingFace, from S3, from a PVC, or a custom container image.
+1. **Pick a runtime** — Workbench filters runtimes by your kind and whether they need a GPU.
+1. **Set sizing** — CPU, memory, GPU, replica bounds (min/max), and the autoscaling metric (concurrency / RPS / CPU).
+1. **Pick a compute profile** — usually a GPU profile for LLMs and a smaller predictive box otherwise.
+1. **(LLM only) Configure parallelism** — tensor / pipeline / data sharding to fit the model on your GPUs.
+1. **Submit.** The endpoint goes Pending while images pull and pods schedule, then Running once at least one replica passes its readiness check.

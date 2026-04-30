@@ -59,7 +59,6 @@ const config = {
           sidebarPath: require.resolve('./sidebars-main.js'),
           rehypePlugins: [
             require('./src/rehypeTabsTransform.js'),
-            require('./src/rehypeLinkRewrite.js'),
             // [require('rehype-external-links').default, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
           ],
           routeBasePath: '/', // Make docs the root
@@ -113,155 +112,33 @@ const config = {
         customLLMFiles: [
           {
             filename: 'llms-vantage-api.txt',
-            includePatterns: ['docs-api/*.md', 'docs-api/**/*.md'],
+            includePatterns: ['docs/reference/api/*.md', 'docs/reference/api/**/*.md'],
             fullContent: true,
             title: 'Vantage API Documentation',
             description: 'Complete reference for Vantage API'
           },
           {
             filename: 'llms-vantage-cli.txt',
-            includePatterns: ['docs-cli/*.md', 'docs-cli/**/*.md'],
+            includePatterns: ['docs/reference/cli/*.md', 'docs/reference/cli/**/*.md'],
             fullContent: false,
             title: 'Vantage CLI Documentation',
             description: 'All Vantage CLI commands in a single file'
           },
           {
             filename: 'llms-vantage-sdk.txt',
-            includePatterns: ['docs-sdk/*.md', 'docs-sdk/**/*.md'],
+            includePatterns: ['docs/reference/sdk/*.md', 'docs/reference/sdk/**/*.md'],
             fullContent: false,
             title: 'Vantage SDK Documentation',
             description: 'All Vantage SDK references in a single file'
           },
           {
             filename: 'llms-vantage-platform.txt',
-            includePatterns: ['docs-platform/*.md', 'docs-platform/**/*.md', 'docs-platform-overview/*.md', 'docs-platform-overview/**/*.md'],
+            includePatterns: ['docs/platform/*.md', 'docs/platform/**/*.md'],
             fullContent: false,
             title: 'Vantage Platform Documentation',
             description: 'All Vantage Platform references in a single file'
           },
         ],
-      },
-    ],
-    // Platform overview is now handled by custom page at /src/pages/platform/index.js
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'platform',
-        path: 'docs-platform',
-        routeBasePath: 'platform',
-        sidebarPath: './docs-platform/sidebar.js',
-        // Let Docusaurus auto-generate the sidebar
-      },
-    ],
-    // Platform components are now handled by the main platform plugin above
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    //   {
-    //     id: 'platform-jobs',
-    //     path: 'docs-platform/jobs',
-    //     routeBasePath: 'platform/jobs',
-    //     sidebarPath: './docs-platform/jobs/sidebar.js',
-    //   },
-    // ],
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    //   {
-    //     id: 'platform-clusters',
-    //     path: 'docs-platform/clusters',
-    //     routeBasePath: 'platform/clusters',
-    //     sidebarPath: './docs-platform/clusters/sidebar.js',
-    //   },
-    // ],
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    //   {
-    //     id: 'platform-storage',
-    //     path: 'docs-platform/storage',
-    //     routeBasePath: 'platform/storage',
-    //     sidebarPath: './docs-platform/storage/sidebar.js',
-    //   },
-    // ],
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    //   {
-    //     id: 'platform-compute-providers',
-    //     path: 'docs-platform/compute-providers',
-    //     routeBasePath: 'platform/compute-providers',
-    //     sidebarPath: './docs-platform/compute-providers/sidebar.js',
-    //   },
-    // ],
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    //   {
-    //     id: 'platform-notebooks',
-    //     path: 'docs-platform/notebooks',
-    //     routeBasePath: 'platform/notebooks',
-    //     sidebarPath: './docs-platform/notebooks/sidebar.js',
-    //   },
-    // ],
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    //   {
-    //     id: 'platform-remote-desktops',
-    //     path: 'docs-platform/remote-desktops',
-    //     routeBasePath: 'platform/remote-desktops',
-    //     sidebarPath: './docs-platform/remote-desktops/sidebar.js',
-    //   },
-    // ],
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    //   {
-    //     id: 'platform-teams',
-    //     path: 'docs-platform/teams',
-    //     routeBasePath: 'platform/teams',
-    //     sidebarPath: './docs-platform/teams/sidebar.js',
-    //   },
-    // ],
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    //   {
-    //     id: 'platform-licenses',
-    //     path: 'docs-platform/licenses',
-    //     routeBasePath: 'platform/licenses',
-    //     sidebarPath: './docs-platform/licenses/sidebar.js',
-    //   },
-    // ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'cli',
-        path: 'external/vantage-cli/docusaurus/docs',
-        routeBasePath: 'cli',
-        sidebarPath: require.resolve('./external/vantage-cli/docusaurus/sidebars.ts'),
-        editUrl: 'https://github.com/vantagecompute/vantage-cli/edit/main/', // upstream!
-        rehypePlugins: [
-          require('./src/rehypeTabsTransform.js'),
-          require('./src/rehypeLinkRewrite.js'),
-          // [require('rehype-external-links').default, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
-        ],
-        beforeDefaultRemarkPlugins: [
-          require('./src/remarkThemeImports.js'),
-        ],
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'api',
-        path: 'docs-api',
-        routeBasePath: 'api',
-        sidebarPath: './docs-api/sidebar.js',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'sdk',
-        path: 'docs-sdk',
-        routeBasePath: 'sdk',
-        sidebarPath: './docs-sdk/sidebar.js',
       },
     ],
   ],
@@ -296,7 +173,7 @@ const config = {
     },
     
     navbar: {
-      title: "Vantage Compute Documentation",
+      title: "",
       logo: {
         alt: 'Vantage Compute Logo',
         src: 'https://vantage-compute-public-assets.s3.us-east-1.amazonaws.com/branding/vantage-logo-text-white-horz.png',
@@ -305,8 +182,9 @@ const config = {
         target: '_self'
       },
       items: [
+        {type: 'search', position: 'right'},
         {
-          type: 'search',
+          type: 'custom-askAI',
           position: 'right',
         },
       ],
@@ -329,14 +207,14 @@ const config = {
             },
             {
               label: 'Vantage CLI',
-              to: '/cli',
+              to: '/reference/cli',
             },
             {
               label: 'Vantage SDK',
-              to: '/sdk',
+              to: '/reference/sdk',
             },
             { label: 'Vantage API',
-              to: '/api',
+              to: '/reference/api',
             },
           ],
         },

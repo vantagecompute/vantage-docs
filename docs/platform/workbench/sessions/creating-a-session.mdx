@@ -1,0 +1,24 @@
+---
+title: Creating a session
+description: The four-section wizard that boots a JupyterLab, VS Code, or RStudio environment on a chosen compute profile.
+---
+
+# Creating a session
+
+Click `New session` in the top-right of the list. The wizard has four sections; only `Name` and `Image` are required.
+
+| Field | Required | What it does |
+|---|---|---|
+| `Name` | required | DNS-friendly identifier — lowercase letters, digits, dashes, max 63 chars. Becomes the session's URL slug. |
+| `Image` | required | The notebook stack. Pick a preset (Jupyter / VS Code / RStudio) or paste a custom image reference. |
+| `Compute profile` | optional | Where the session runs. Defaults to your workspace's default profile. |
+| `CPU / Memory` | optional | Override the profile's defaults. Use sizing presets (XS → XL) unless you have a specific request. |
+| `GPU` | optional | Vendor and count. Only profiles flagged GPU-capable will accept a non-zero count. |
+| `Workspace volume` | optional | Your home directory. Either create a new persistent volume (default 5 GiB) or mount an existing claim. |
+| `Data volumes` | optional | Additional mounts — datasets, scratch space, shared team caches. Each can be read-only. |
+| `Configurations` | optional | Pre-defined "pod defaults" your admin set up — env vars, secrets, init scripts. Toggle the ones you need. |
+| `Environment variables` | optional | Inline key/value pairs for things like `HF_TOKEN` or `WANDB_API_KEY`. |
+
+:::info
+Sessions inherit your workspace's secrets bundle automatically. Don't paste tokens into `env` if there's already a managed secret for it — your admin can show you the list.
+:::

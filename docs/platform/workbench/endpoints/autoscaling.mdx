@@ -1,0 +1,16 @@
+---
+title: "Autoscaling"
+description: "Replica bounds, autoscaling metrics, and scale-to-zero."
+---
+
+# Autoscaling
+
+Replica bounds, autoscaling metrics, and scale-to-zero.
+
+Endpoints scale between `min_replicas` and `max_replicas` based on a metric:
+
+- **concurrency** — number of in-flight requests per replica (good default for synchronous APIs).
+- **rps** — requests-per-second per replica.
+- **cpu** — CPU saturation as a percentage.
+
+Set `min_replicas` to 0 and turn on **scale to zero** for a development endpoint that costs nothing when idle. Cold-start latency goes up; the trade is yours.

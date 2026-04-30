@@ -1,0 +1,15 @@
+---
+title: "Submitting a job"
+description: "Six-step wizard: runtime, sizing, initializers, overrides, output, TTL."
+---
+
+# Submitting a job
+
+Six-step wizard: runtime, sizing, initializers, overrides, output, TTL.
+
+1. **Pick a runtime.** The wizard filters compute profiles to those compatible with the runtime's framework.
+1. **Set sizing.** Number of nodes, CPU / memory / GPU per node, and processes-per-node (usually `auto` = 1 per GPU).
+1. **Initializers (optional).** Tell Workbench to fetch a dataset and a base model *before* training starts — from S3, HuggingFace, a PVC, or your model registry. Cuts startup time and avoids cold pulls inside the training loop.
+1. **Trainer overrides (optional).** Custom command, args, env. Useful when the runtime's default entrypoint isn't quite right.
+1. **Output destination.** Where final checkpoints go — S3 bucket+prefix or a PVC. Defaults to `s3://{workspace}/trainjobs/{name}/`.
+1. **TTL.** How long the completed pods stick around for log retrieval. Defaults: 1d on success, 7d on failure.

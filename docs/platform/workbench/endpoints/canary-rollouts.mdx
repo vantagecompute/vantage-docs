@@ -1,0 +1,17 @@
+---
+title: "Canary rollouts"
+description: "Split traffic across endpoint versions; promote or rollback."
+---
+
+# Canary rollouts
+
+Split traffic across endpoint versions; promote or rollback.
+
+When you push a new version of an endpoint, Workbench can split traffic — say, 90% to the existing version, 10% to the new one. The detail page shows a live canary % and gives you two primary actions:
+
+- <kbd>Promote</kbd> — shift 100% to the new version. Old version drains and is removed.
+- <kbd>Rollback</kbd> — shift 100% back to the old version. New version is removed.
+
+:::tip
+Treat <kbd>Promote</kbd> as the only "deploy succeeded" signal. A canary that's been stable at 10% for an hour with no error spikes is your green light.
+:::

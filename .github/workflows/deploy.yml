@@ -39,6 +39,8 @@ jobs:
         run: sudo snap install just --classic
 
       - name: Build website
+        env:
+          GH_TOKEN: ${{ secrets.VANTAGE_CLI_RO_GITHUB_PAT }}
         run: just build
 
       - name: Configure Pages

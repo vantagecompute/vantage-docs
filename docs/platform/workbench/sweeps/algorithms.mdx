@@ -1,0 +1,48 @@
+---
+title: Algorithms
+description: Bayesian, grid, and random search — when to pick which.
+---
+
+# Algorithms
+
+Sweeps support three search strategies:
+
+| Algorithm | How it picks parameters | Best for |
+|---|---|---|
+| **Random** | Uniformly samples from the search space. | Quick first pass to map the landscape. |
+| **Grid** | Exhaustive cartesian product. | Small categorical spaces, reproducibility. |
+| **Bayesian** | Surrogate model picks the next trial's params from history. | Expensive trials, big spaces, when each run is worth the planning. |
+
+:::info
+Bayesian search beats random above ~20 trials with non-trivial cost-per-trial. For quick exploration on cheap models, random is faster end-to-end because it parallelizes perfectly.
+:::
+
+## Defining a search space
+
+Each parameter has a name, a type (`double`, `int`, `discrete`, `categorical`), and bounds or choices. Example:
+
+```yaml
+parameters:
+  learning_rate:  # log-scale double
+    type: double
+    min: 1e-5
+    max: 1e-1
+    scale: log
+  batch_size:     # discrete
+    type: discrete
+    values: [16, 32, 64, 128]
+  optimizer:      # categorical
+    type: categorical
+    values: [adamw, sgd]
+```
+
+## Objective
+
+Pick a metric your trials log (e.g. `val/loss`, `val/accuracy`) and a goal (**minimize** or **maximize**). Workbench reads the metric from each trial's MLflow / TensorBoard output.
+
+## Reading the detail page
+
+- **Best trial** — the current leader, with its parameters and metric.
+- **Trial table** — every trial, sortable by status, parameter, or objective. Click into any trial for its training-job detail.
+- **Parallel-coordinates chart** — every parameter on its own axis, lines colored by metric. Very effective for spotting which parameters drive the objective.
+- **Spend so far** — accumulated cost across all trials. Sweeps can get expensive quickly.

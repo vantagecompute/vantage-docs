@@ -1,0 +1,38 @@
+---
+title: Troubleshooting
+description: Common Workbench issues and how to resolve them.
+---
+
+# Troubleshooting
+
+## My session is stuck in Pending
+
+Three usual causes:
+
+1. **No node has the requested GPU.** Check the compute profile's max — if you're at the autoscaler ceiling, the request will queue. The session's **Activity** tab will say "FailedScheduling" if so.
+1. **Image pull is slow.** First-time pulls of large CUDA images can take 5+ minutes. Subsequent starts on the same node are instant.
+1. **PVC binding pending.** If you mounted a brand-new persistent volume, it has to be provisioned. Wait, or check storage status.
+
+## My endpoint is Running but my requests time out
+
+Confirm three things:
+
+1. You're hitting the right URL (the detail page header is canonical).
+1. Your Vantage API key is in `Authorization: Bearer …` — not as a query param.
+1. The model finished loading. The endpoint reports Running as soon as one replica is healthy, but big LLMs take a few minutes after that to load weights into GPU memory. The Logs tab will show "model ready" when the inference engine is actually serving.
+
+## Training job logs are empty
+
+By default the Logs tab streams the trainer master pod. If your master finished early but workers are still going, the master log will be quiet. Use the container/rank dropdown to switch.
+
+## Pipeline / Sweep limitations
+
+Both tabs are in **Preview**. Today:
+
+- Pipeline authoring is API-only (Vantage SDK). The UI shows runs and DAGs but doesn't let you author or upload definitions.
+- Sweep creation is API-only. The list and detail views work end-to-end.
+- Cost tiles on these tabs may be missing or stale; we're wiring billing into them.
+
+## Cost tiles read $0 or look wrong
+
+Workbench computes spend from compute profile rates × elapsed runtime. If your admin hasn't configured a rate for a profile, that profile's resources will read $0. This is a configuration issue, not a measurement bug — open an admin ticket.
