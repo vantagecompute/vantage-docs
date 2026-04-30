@@ -7,7 +7,6 @@ import clsx from 'clsx';
 import {ThemeClassNames} from '@docusaurus/theme-common';
 import {useSidebarBreadcrumbs} from '@docusaurus/plugin-content-docs/client';
 import {useHomePageRoute} from '@docusaurus/theme-common/internal';
-import {useLocation} from '@docusaurus/router';
 import Link from '@docusaurus/Link';
 import {translate} from '@docusaurus/Translate';
 import HomeBreadcrumbItem from '@theme/DocBreadcrumbs/Items/Home';
@@ -42,89 +41,8 @@ function BreadcrumbsItem({children, active}: {children: React.ReactNode, active:
 }
 
 export default function DocBreadcrumbs() {
-  const originalBreadcrumbs = useSidebarBreadcrumbs();
+  const breadcrumbs = useSidebarBreadcrumbs();
   const homePageRoute = useHomePageRoute();
-  const location = useLocation();
-  
-  // Function to enhance breadcrumbs with proper path context
-  const getEnhancedBreadcrumbs = () => {
-    const path = location.pathname;
-    
-    // If no original breadcrumbs, return null (this will happen on some pages)
-    if (!originalBreadcrumbs) {
-      return null;
-    }
-    
-    const enhanced = [...originalBreadcrumbs];
-    
-    // Platform section enhancement
-    if (path.startsWith('/platform/')) {
-      const sectionName = path.split('/')[2]; // e.g., 'clusters', 'jobs', etc.
-      
-      // Check if we need to add Platform as an intermediate breadcrumb
-      const hasPlatformBreadcrumb = enhanced.some(breadcrumb => 
-        breadcrumb.label === 'Platform' || breadcrumb.href === '/platform'
-      );
-      
-      if (!hasPlatformBreadcrumb) {
-        // Add Platform breadcrumb before the current page
-        enhanced.unshift({
-          type: 'link',
-          label: 'Platform',
-          href: '/platform',
-        });
-      }
-    }
-    
-    // CLI section enhancement
-    else if (path.startsWith('/cli/')) {
-      const hasCLIBreadcrumb = enhanced.some(breadcrumb => 
-        breadcrumb.label === 'CLI' || breadcrumb.href === '/cli'
-      );
-      
-      if (!hasCLIBreadcrumb) {
-        enhanced.unshift({
-          type: 'link',
-          label: 'CLI',
-          href: '/cli',
-        });
-      }
-    }
-    
-    // API section enhancement
-    else if (path.startsWith('/api/')) {
-      const hasAPIBreadcrumb = enhanced.some(breadcrumb => 
-        breadcrumb.label === 'API' || breadcrumb.href === '/api'
-      );
-      
-      if (!hasAPIBreadcrumb) {
-        enhanced.unshift({
-          type: 'link',
-          label: 'API',
-          href: '/api',
-        });
-      }
-    }
-    
-    // SDK section enhancement
-    else if (path.startsWith('/sdk/')) {
-      const hasSDKBreadcrumb = enhanced.some(breadcrumb => 
-        breadcrumb.label === 'SDK' || breadcrumb.href === '/sdk'
-      );
-      
-      if (!hasSDKBreadcrumb) {
-        enhanced.unshift({
-          type: 'link',
-          label: 'SDK',
-          href: '/sdk',
-        });
-      }
-    }
-    
-    return enhanced;
-  };
-  
-  const breadcrumbs = getEnhancedBreadcrumbs();
   
   if (!breadcrumbs) {
     return null;
