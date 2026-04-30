@@ -45,10 +45,19 @@ function copyTree(src, dst) {
 
 function rewriteLinks(text, filePath) {
   let out = text;
-  // If this is the index.md, rewrite the root slug to the CLI base path.
-  // The upstream CLI repo uses slug: / which conflicts with our docs root.
+  // If this is the index.md, REMOVE the root slug line entirely so Docusaurus
+  // routes it by file position (docs/reference/cli/index.md → /reference/cli/).
+  // Also rewrite all ./relative links to absolute BASE_PATH-prefixed links,
+  // because Docusaurus resolves ./X on index pages against the parent directory
+  // (/reference/) rather than /reference/cli/ — which would produce 404s.
   if (filePath && path.basename(filePath) === 'index.md') {
-    out = out.replace(/^(slug:\s*)\/\s*$/m, `$1${BASE_PATH}`);
+    out = out.replace(/^slug:\s*\/\s*\n/m, '');
+    // Convert ./page-name to /reference/cli/page-name so links are unambiguous.
+    out = out.replace(/\]\(\.\/([a-zA-Z][^)]*)\)/g, (m, p1) => {
+      // Skip links that start with another dot (../../) or are anchor-only (#)
+      if (p1.startsWith('.') || p1.startsWith('#')) return m;
+      return `](${BASE_PATH}${p1})`;
+    });
   }
   // Old plugin used routeBasePath '/cli'. Rewrite to the new prefix.
   out = out

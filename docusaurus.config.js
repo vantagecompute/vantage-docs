@@ -59,7 +59,6 @@ const config = {
           sidebarPath: require.resolve('./sidebars-main.js'),
           rehypePlugins: [
             require('./src/rehypeTabsTransform.js'),
-            require('./src/rehypeLinkRewrite.js'),
             // [require('rehype-external-links').default, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
           ],
           routeBasePath: '/', // Make docs the root
@@ -113,28 +112,28 @@ const config = {
         customLLMFiles: [
           {
             filename: 'llms-vantage-api.txt',
-            includePatterns: ['docs-api/*.md', 'docs-api/**/*.md'],
+            includePatterns: ['docs/reference/api/*.md', 'docs/reference/api/**/*.md'],
             fullContent: true,
             title: 'Vantage API Documentation',
             description: 'Complete reference for Vantage API'
           },
           {
             filename: 'llms-vantage-cli.txt',
-            includePatterns: ['docs-cli/*.md', 'docs-cli/**/*.md'],
+            includePatterns: ['docs/reference/cli/*.md', 'docs/reference/cli/**/*.md'],
             fullContent: false,
             title: 'Vantage CLI Documentation',
             description: 'All Vantage CLI commands in a single file'
           },
           {
             filename: 'llms-vantage-sdk.txt',
-            includePatterns: ['docs-sdk/*.md', 'docs-sdk/**/*.md'],
+            includePatterns: ['docs/reference/sdk/*.md', 'docs/reference/sdk/**/*.md'],
             fullContent: false,
             title: 'Vantage SDK Documentation',
             description: 'All Vantage SDK references in a single file'
           },
           {
             filename: 'llms-vantage-platform.txt',
-            includePatterns: ['docs-platform/*.md', 'docs-platform/**/*.md', 'docs-platform-overview/*.md', 'docs-platform-overview/**/*.md'],
+            includePatterns: ['docs/platform/*.md', 'docs/platform/**/*.md', 'docs/products/*.md', 'docs/products/**/*.md'],
             fullContent: false,
             title: 'Vantage Platform Documentation',
             description: 'All Vantage Platform references in a single file'
