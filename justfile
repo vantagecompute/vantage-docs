@@ -22,6 +22,7 @@ install:
 [group("docusaurus")]
 dev: install
     @echo "🚀 Starting Docusaurus development server..."
+    node scripts/sync-cli-docs.js /reference/cli/
     yarn start
 
 # Start Docusaurus development server on specific port
@@ -34,7 +35,7 @@ dev-port port="3000": install
 [group("docusaurus")]
 build: install
     @echo "🏗️ Building Docusaurus for production..."
-    node scripts/transform-cli-links.js /cli/
+    node scripts/sync-cli-docs.js /reference/cli/
     yarn build
 
 # Serve built Docusaurus site locally
