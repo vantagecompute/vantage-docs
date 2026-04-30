@@ -1083,15 +1083,21 @@ details summary[onclick]:hover {
   --docsearch-primary-color: #818cf8;
 }
 
-/* Search button in navbar */
+/* ── Algolia search pill (CoreWeave-style rounded pill in navbar) ─ */
 .DocSearch-Button,
 button.DocSearch-Button {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  height: 34px !important;
+  min-width: 320px !important;
+  padding: 0 14px !important;
   background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 999px !important;
   color: var(--iris-100) !important;
-  border-radius: 6px !important;
-  padding: 6px 10px !important;
-  height: 32px !important;
+  font: inherit !important;
+  font-size: 13px !important;
 }
 
 .DocSearch-Button:hover {
@@ -1099,22 +1105,39 @@ button.DocSearch-Button {
   border-color: rgba(255, 255, 255, 0.24) !important;
 }
 
+.DocSearch-Button-Container {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex: 1;
+}
+
 .DocSearch-Button-Placeholder {
-  font-size: 13px !important;
+  flex: 1 !important;
+  text-align: left !important;
   color: var(--iris-100) !important;
+  font-weight: 400 !important;
 }
 
 .DocSearch-Button-Keys {
-  background: rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.10) !important;
   border-radius: 4px !important;
+  padding: 1px 6px !important;
 }
 
 .DocSearch-Button-Key {
   background: transparent !important;
   box-shadow: none !important;
-  color: var(--iris-100) !important;
+  color: #fff !important;
   font-family: var(--ifm-font-family-monospace) !important;
   font-size: 11px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 800px) {
+  .DocSearch-Button { min-width: 0 !important; padding: 0 10px !important; }
+  .DocSearch-Button-Placeholder { display: none !important; }
 }
 
 /* ── Page layout fixes ─────────────────────────────────────────────── */
