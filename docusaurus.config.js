@@ -133,7 +133,7 @@ const config = {
           },
           {
             filename: 'llms-vantage-platform.txt',
-            includePatterns: ['docs/platform/*.md', 'docs/platform/**/*.md', 'docs/products/*.md', 'docs/products/**/*.md'],
+            includePatterns: ['docs/platform/*.md', 'docs/platform/**/*.md'],
             fullContent: false,
             title: 'Vantage Platform Documentation',
             description: 'All Vantage Platform references in a single file'

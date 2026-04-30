@@ -1,0 +1,22 @@
+---
+title: "Endpoints"
+description: "Authenticated, autoscaling inference services."
+---
+
+# Endpoints
+
+Authenticated, autoscaling inference services.
+
+Endpoints serve a registered model behind an HTTP URL. They autoscale on traffic, support canary rollouts for safe updates, and can scale to zero when idle.
+
+## Predictive vs LLM
+
+Workbench distinguishes two endpoint *kinds*, because their tuning surfaces are different. Predictive endpoints are optimized for classical models with fast, single-input inference. LLM endpoints are built for generative models where batching, context length, and parallelism matter.
+
+## Next steps
+
+- [Predictive vs LLM](/platform/workbench/endpoints/predictive-vs-llm)
+- [Deploying an endpoint](/platform/workbench/endpoints/deploying)
+- [Autoscaling](/platform/workbench/endpoints/autoscaling)
+- [Canary rollouts](/platform/workbench/endpoints/canary-rollouts)
+- [Reference](/platform/workbench/endpoints/reference)

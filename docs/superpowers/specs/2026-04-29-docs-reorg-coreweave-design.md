@@ -242,7 +242,7 @@ The CLI is externally maintained at `external/vantage-cli/` and rebuilds from up
 1. `rm -rf docs/reference/cli/`
 2. Copy `external/vantage-cli/docusaurus/docs/**/*.{md,mdx}` → `docs/reference/cli/`
 3. Rewrite intra-CLI links from `/cli/...` → `/reference/cli/...`
-4. Rewrite cross-section links to other Vantage docs from absolute paths to the new IA paths (e.g., `/platform/jobs/...` → `/products/jobs/...`).
+4. Rewrite cross-section links to other Vantage docs from absolute paths to the new IA paths (e.g., `/platform/jobs/...` → `/platform/jobs/...`).
 5. Generate a `_category_.json` so the sidebar autogenerator picks up the right title.
 
 **`docs/reference/cli/` is added to `.gitignore`** — generated, never committed.
@@ -256,8 +256,8 @@ The existing `scripts/transform-cli-links.js` already does step 3 for the old pl
    - `git mv docs/getting-started docs/get-started`
    - `git mv docs-platform/jobs docs/products/jobs`
    - `git mv docs-platform/storage docs/products/storage`
-   - `git mv docs-platform/notebooks docs/products/workbench/sessions/notebooks`
-   - `git mv docs-platform/remote-desktops docs/products/workbench/sessions/remote-desktops`
+   - `git mv docs-platform/notebooks docs/platform/workbench/sessions/notebooks`
+   - `git mv docs-platform/remote-desktops docs/platform/workbench/sessions/remote-desktops`
    - `git mv docs-platform/clusters docs/platform/clusters`  *(name preserved)*
    - `git mv docs-platform/compute-providers docs/platform/compute-providers`
    - `git mv docs-platform/federations docs/platform/federations`
@@ -267,17 +267,17 @@ The existing `scripts/transform-cli-links.js` already does step 3 for the old pl
    - `git mv docs-sdk docs/reference/sdk`
    - `git mv docs-api docs/reference/api`
    - Delete now-empty `docs-platform/`.
-3. **Convert `Workbench User Guide.html` to MDX** under `docs/products/workbench/`:
+3. **Convert `Workbench User Guide.html` to MDX** under `docs/platform/workbench/`:
    - One `.mdx` per `<section id="...">` in the source HTML, named per the directory layout above.
    - Inline mock UI shots become `<details>` collapsibles preserving the `mini-tbl` markup.
    - PREVIEW callouts use the existing admonition styles (`<Admonition type="caution" title="Preview">...`).
    - Section-header decorative SVGs become a `<ProductIcon name="...">` MDX component (small new component) so they don't bloat each page.
 4. **Add new content stubs**: `concepts/*`, `changelog.md`, `support.md`, `glossary.md`, plus `index.md` stubs in each empty Diátaxis subfolder.
 5. **Run a one-shot link rewrite script** over all moved markdown:
-   - `/platform/jobs/...` → `/products/jobs/...`
-   - `/platform/storage/...` → `/products/storage/...`
-   - `/platform/notebooks/...` → `/products/workbench/sessions/notebooks/...`
-   - `/platform/remote-desktops/...` → `/products/workbench/sessions/remote-desktops/...`
+   - `/platform/jobs/...` → `/platform/jobs/...`
+   - `/platform/storage/...` → `/platform/storage/...`
+   - `/platform/notebooks/...` → `/platform/workbench/sessions/notebooks/...`
+   - `/platform/remote-desktops/...` → `/platform/workbench/sessions/remote-desktops/...`
    - `/platform/{clusters,compute-providers,federations,iam,teams,licenses}/...` → unchanged (still under `/platform/...`)
    - `/cli/...` → `/reference/cli/...`
    - `/sdk/...` → `/reference/sdk/...`

@@ -65,11 +65,9 @@ function rewriteLinks(text, filePath) {
     .replace(/\(\/cli\//g, `(${BASE_PATH}`)
     .replace(/href="\/vantage-cli\//g, `href="${BASE_PATH}`)
     .replace(/href="\/cli\//g, `href="${BASE_PATH}`)
-    // Cross-section links to other Vantage docs (old paths):
-    .replace(/\(\/platform\/jobs\//g, '(/products/jobs/')
-    .replace(/\(\/platform\/storage\//g, '(/products/storage/')
-    .replace(/\(\/platform\/notebooks\//g, '(/products/workbench/sessions/notebooks/')
-    .replace(/\(\/platform\/remote-desktops\//g, '(/products/workbench/sessions/remote-desktops/')
+    // Cross-section links to other Vantage docs:
+    .replace(/\(\/platform\/notebooks\//g, '(/platform/workbench/sessions/notebooks/')
+    .replace(/\(\/platform\/remote-desktops\//g, '(/platform/workbench/sessions/remote-desktops/')
     .replace(/\(\/sdk\//g, '(/reference/sdk/')
     .replace(/\(\/api\//g, '(/reference/api/');
   return out;

@@ -21,7 +21,7 @@
 - `scripts/migrate-doc-links.js` — one-shot link rewrite over all moved markdown (delete after run)
 - `docs/concepts/{index,workspaces,jobs-and-pipelines,compute-and-clusters,teams-and-iam}.md`
 - `docs/changelog.md`, `docs/support.md`, `docs/glossary.md`
-- `docs/products/workbench/**` — ~25 MDX files converted from `Workbench User Guide.html`
+- `docs/platform/workbench/**` — ~25 MDX files converted from `Workbench User Guide.html`
 - `src/components/AskAIButton/{index.tsx,styles.module.css}`
 - `src/components/CopyMcpServerButton/{index.tsx,styles.module.css}`
 - `src/components/FloatingAskWidget/{index.tsx,styles.module.css}`
@@ -40,10 +40,10 @@
 
 ### Renamed / Moved (`git mv`)
 - `docs/getting-started/` → `docs/get-started/`
-- `docs-platform/jobs/` → `docs/products/jobs/`
-- `docs-platform/storage/` → `docs/products/storage/`
-- `docs-platform/notebooks/` → `docs/products/workbench/sessions/notebooks/`
-- `docs-platform/remote-desktops/` → `docs/products/workbench/sessions/remote-desktops/`
+- `docs-platform/jobs/` → `docs/platform/jobs/`
+- `docs-platform/storage/` → `docs/platform/storage/`
+- `docs-platform/notebooks/` → `docs/platform/workbench/sessions/notebooks/`
+- `docs-platform/remote-desktops/` → `docs/platform/workbench/sessions/remote-desktops/`
 - `docs-platform/{clusters,compute-providers,federations,iam,teams,licenses}/` → `docs/platform/<same>/`
 - `docs-sdk/` → `docs/reference/sdk/`
 - `docs-api/` → `docs/reference/api/`
@@ -112,10 +112,10 @@ function rewriteLinks(text) {
     .replace(/href="\/vantage-cli\//g, `href="${BASE_PATH}`)
     .replace(/href="\/cli\//g, `href="${BASE_PATH}`)
     // Cross-section links to other Vantage docs (old paths):
-    .replace(/\(\/platform\/jobs\//g, '(/products/jobs/')
-    .replace(/\(\/platform\/storage\//g, '(/products/storage/')
-    .replace(/\(\/platform\/notebooks\//g, '(/products/workbench/sessions/notebooks/')
-    .replace(/\(\/platform\/remote-desktops\//g, '(/products/workbench/sessions/remote-desktops/')
+    .replace(/\(\/platform\/jobs\//g, '(/platform/jobs/')
+    .replace(/\(\/platform\/storage\//g, '(/platform/storage/')
+    .replace(/\(\/platform\/notebooks\//g, '(/platform/workbench/sessions/notebooks/')
+    .replace(/\(\/platform\/remote-desktops\//g, '(/platform/workbench/sessions/remote-desktops/')
     .replace(/\(\/sdk\//g, '(/reference/sdk/')
     .replace(/\(\/api\//g, '(/reference/api/');
 }
@@ -264,8 +264,8 @@ git commit -m "docs: rename getting-started to get-started for CoreWeave-shaped 
 ### Task 5: Move products (jobs, storage)
 
 **Files:**
-- Rename: `docs-platform/jobs/` → `docs/products/jobs/`
-- Rename: `docs-platform/storage/` → `docs/products/storage/`
+- Rename: `docs-platform/jobs/` → `docs/platform/jobs/`
+- Rename: `docs-platform/storage/` → `docs/platform/storage/`
 
 - [ ] **Step 1: Create the parent directory**
 
@@ -283,7 +283,7 @@ git mv docs-platform/storage docs/products/storage
 - [ ] **Step 3: Delete now-stale per-folder sidebar.js files**
 
 ```bash
-rm -f docs/products/jobs/sidebar.js docs/products/storage/sidebar.js
+rm -f docs/platform/jobs/sidebar.js docs/platform/storage/sidebar.js
 ```
 
 (The new unified sidebar lives at `sidebars-main.js`. Per-folder sidebar files are no longer used.)
@@ -300,27 +300,27 @@ git commit -m "docs: lift jobs and storage to products/ branch"
 ### Task 6: Move notebooks + remote-desktops under Workbench → Sessions
 
 **Files:**
-- Rename: `docs-platform/notebooks/` → `docs/products/workbench/sessions/notebooks/`
-- Rename: `docs-platform/remote-desktops/` → `docs/products/workbench/sessions/remote-desktops/`
+- Rename: `docs-platform/notebooks/` → `docs/platform/workbench/sessions/notebooks/`
+- Rename: `docs-platform/remote-desktops/` → `docs/platform/workbench/sessions/remote-desktops/`
 
 - [ ] **Step 1: Create the parent path**
 
 ```bash
-mkdir -p docs/products/workbench/sessions
+mkdir -p docs/platform/workbench/sessions
 ```
 
 - [ ] **Step 2: Move**
 
 ```bash
-git mv docs-platform/notebooks docs/products/workbench/sessions/notebooks
-git mv docs-platform/remote-desktops docs/products/workbench/sessions/remote-desktops
+git mv docs-platform/notebooks docs/platform/workbench/sessions/notebooks
+git mv docs-platform/remote-desktops docs/platform/workbench/sessions/remote-desktops
 ```
 
 - [ ] **Step 3: Delete stale sidebar.js**
 
 ```bash
-rm -f docs/products/workbench/sessions/notebooks/sidebar.js
-rm -f docs/products/workbench/sessions/remote-desktops/sidebar.js
+rm -f docs/platform/workbench/sessions/notebooks/sidebar.js
+rm -f docs/platform/workbench/sessions/remote-desktops/sidebar.js
 ```
 
 - [ ] **Step 4: Commit**
@@ -614,10 +614,10 @@ git commit -m "docs: add changelog/support/glossary top-level stubs"
 For products following the Diátaxis shape (`jobs`, `storage`, all `platform/<area>/`), add a placeholder `index.md` to any empty `tutorials/`, `how-to-guides/`, or `reference/` directory so the sidebar autogenerator picks them up.
 
 **Files:**
-- Create as needed: `docs/products/storage/{tutorials,how-to-guides,reference}/index.md`
+- Create as needed: `docs/platform/storage/{tutorials,how-to-guides,reference}/index.md`
 - Create as needed: `docs/platform/{clusters,compute-providers,federations,iam,teams,licenses}/{tutorials,how-to-guides,reference}/index.md`
 
-(Skip directories that already have content. `docs/products/jobs/` already has all three branches populated.)
+(Skip directories that already have content. `docs/platform/jobs/` already has all three branches populated.)
 
 - [ ] **Step 1: Identify empty branches**
 
@@ -677,16 +677,16 @@ git commit -m "docs: stub empty Diátaxis subfolders so the sidebar tree is cons
 
 ## Phase 4: Workbench MDX conversion
 
-The source is `Workbench User Guide.html` (extract from the design bundle if missing — see plan header). It has 14 `<section id="...">` blocks. Each becomes one or more `.mdx` files under `docs/products/workbench/`.
+The source is `Workbench User Guide.html` (extract from the design bundle if missing — see plan header). It has 14 `<section id="...">` blocks. Each becomes one or more `.mdx` files under `docs/platform/workbench/`.
 
 ### Task 12: Workbench root pages — overview / quickstart / concepts / shortcuts / troubleshooting
 
 **Files:**
-- Create: `docs/products/workbench/index.mdx`
-- Create: `docs/products/workbench/get-started.mdx`
-- Create: `docs/products/workbench/concepts.mdx`
-- Create: `docs/products/workbench/shortcuts.mdx`
-- Create: `docs/products/workbench/troubleshooting.mdx`
+- Create: `docs/platform/workbench/index.mdx`
+- Create: `docs/platform/workbench/get-started.mdx`
+- Create: `docs/platform/workbench/concepts.mdx`
+- Create: `docs/platform/workbench/shortcuts.mdx`
+- Create: `docs/platform/workbench/troubleshooting.mdx`
 
 For each file: lift the prose verbatim from the matching `<section>` in the source HTML and convert HTML → MDX:
 
@@ -711,7 +711,7 @@ Conversion rules (apply to every section):
 9. Drop `<svg>` icon markup; replace section-header SVGs with `<ProductIcon name="<tool>"/>` once that component exists (Task 21)
 10. Drop `<div class="shot">…</div>` mock UI shots — they reference design-system classes we don't expose to MDX
 
-- [ ] **Step 1: Write `docs/products/workbench/index.mdx`**
+- [ ] **Step 1: Write `docs/platform/workbench/index.mdx`**
 
 ```mdx
 ---
@@ -756,7 +756,7 @@ description: <one-line summary>
 npx docusaurus build --no-minify 2>&1 | tail -5
 ```
 
-Expected: `[SUCCESS] Generated static files in "build".` Visit `/products/workbench`, `/products/workbench/get-started`, etc., in the build output to confirm.
+Expected: `[SUCCESS] Generated static files in "build".` Visit `/products/workbench`, `/platform/workbench/get-started`, etc., in the build output to confirm.
 
 - [ ] **Step 4: Commit**
 
@@ -770,10 +770,10 @@ git commit -m "docs: convert Workbench overview/quickstart/concepts/shortcuts/tr
 ### Task 13: Sessions branch
 
 **Files:**
-- Create: `docs/products/workbench/sessions/index.mdx`
-- Create: `docs/products/workbench/sessions/creating-a-session.mdx`
-- Create: `docs/products/workbench/sessions/lifecycle.mdx`
-- Create: `docs/products/workbench/sessions/reference.mdx`
+- Create: `docs/platform/workbench/sessions/index.mdx`
+- Create: `docs/platform/workbench/sessions/creating-a-session.mdx`
+- Create: `docs/platform/workbench/sessions/lifecycle.mdx`
+- Create: `docs/platform/workbench/sessions/reference.mdx`
 
 The source is `<section id="sessions">` in the User Guide. It has these subsections (all under one `<h2>`):
 
@@ -850,7 +850,7 @@ npx docusaurus build --no-minify 2>&1 | tail -5
 - [ ] **Step 6: Commit**
 
 ```bash
-git add docs/products/workbench/sessions
+git add docs/platform/workbench/sessions
 git commit -m "docs: convert Workbench Sessions section from design HTML"
 ```
 
@@ -859,9 +859,9 @@ git commit -m "docs: convert Workbench Sessions section from design HTML"
 ### Task 14: Tools batch 1 — Models, Endpoints, Training Jobs
 
 **Files:**
-- Create: `docs/products/workbench/models/{index,registering-a-model,reference}.mdx`
-- Create: `docs/products/workbench/endpoints/{index,predictive-vs-llm,deploying,autoscaling,canary-rollouts,reference}.mdx`
-- Create: `docs/products/workbench/training-jobs/{index,runtimes,submitting-a-job,lifecycle,reference}.mdx`
+- Create: `docs/platform/workbench/models/{index,registering-a-model,reference}.mdx`
+- Create: `docs/platform/workbench/endpoints/{index,predictive-vs-llm,deploying,autoscaling,canary-rollouts,reference}.mdx`
+- Create: `docs/platform/workbench/training-jobs/{index,runtimes,submitting-a-job,lifecycle,reference}.mdx`
 
 Source: `<section id="models">`, `<section id="endpoints">`, `<section id="training-jobs">`. Apply the same conversion rules from Task 12.
 
@@ -897,7 +897,7 @@ npx docusaurus build --no-minify 2>&1 | tail -5
 - [ ] **Step 5: Commit**
 
 ```bash
-git add docs/products/workbench/{models,endpoints,training-jobs}
+git add docs/platform/workbench/{models,endpoints,training-jobs}
 git commit -m "docs: convert Workbench Models, Endpoints, Training Jobs from design HTML"
 ```
 
@@ -906,10 +906,10 @@ git commit -m "docs: convert Workbench Models, Endpoints, Training Jobs from des
 ### Task 15: Tools batch 2 — Pipelines, Sweeps, Compute Profiles, Observability
 
 **Files:**
-- Create: `docs/products/workbench/pipelines/{index,anatomy}.mdx`
-- Create: `docs/products/workbench/sweeps/{index,algorithms}.mdx`
-- Create: `docs/products/workbench/compute-profiles/{index,reference}.mdx`
-- Create: `docs/products/workbench/observability/{index,reference}.mdx`
+- Create: `docs/platform/workbench/pipelines/{index,anatomy}.mdx`
+- Create: `docs/platform/workbench/sweeps/{index,algorithms}.mdx`
+- Create: `docs/platform/workbench/compute-profiles/{index,reference}.mdx`
+- Create: `docs/platform/workbench/observability/{index,reference}.mdx`
 
 Source: `<section id="pipelines">`, `<section id="sweeps">`, `<section id="compute-profiles">`, `<section id="observability">`.
 
@@ -960,7 +960,7 @@ npx docusaurus build --no-minify 2>&1 | tail -5
 - [ ] **Step 6: Commit**
 
 ```bash
-git add docs/products/workbench/{pipelines,sweeps,compute-profiles,observability}
+git add docs/platform/workbench/{pipelines,sweeps,compute-profiles,observability}
 git commit -m "docs: convert Workbench Pipelines/Sweeps/Compute-Profiles/Observability from design HTML"
 ```
 
@@ -988,20 +988,20 @@ const ROOT = path.resolve(__dirname, '..', 'docs');
 
 // Order matters: rewrite the more-specific paths first.
 const RULES = [
-  [/\(\/platform\/notebooks\//g,        '(/products/workbench/sessions/notebooks/'],
-  [/\(\/platform\/remote-desktops\//g,  '(/products/workbench/sessions/remote-desktops/'],
-  [/\(\/platform\/jobs\//g,             '(/products/jobs/'],
-  [/\(\/platform\/storage\//g,          '(/products/storage/'],
+  [/\(\/platform\/notebooks\//g,        '(/platform/workbench/sessions/notebooks/'],
+  [/\(\/platform\/remote-desktops\//g,  '(/platform/workbench/sessions/remote-desktops/'],
+  [/\(\/platform\/jobs\//g,             '(/platform/jobs/'],
+  [/\(\/platform\/storage\//g,          '(/platform/storage/'],
   [/\(\/platform\/(?=clusters|compute-providers|federations|iam|teams|licenses)/g, '(/platform/'],
   [/\(\/getting-started\//g,            '(/get-started/'],
   [/\(\/cli\//g,                        '(/reference/cli/'],
   [/\(\/sdk\//g,                        '(/reference/sdk/'],
   [/\(\/api\//g,                        '(/reference/api/'],
   // href= form (HTML-in-MDX)
-  [/href="\/platform\/notebooks\//g,        'href="/products/workbench/sessions/notebooks/'],
-  [/href="\/platform\/remote-desktops\//g,  'href="/products/workbench/sessions/remote-desktops/'],
-  [/href="\/platform\/jobs\//g,             'href="/products/jobs/'],
-  [/href="\/platform\/storage\//g,          'href="/products/storage/'],
+  [/href="\/platform\/notebooks\//g,        'href="/platform/workbench/sessions/notebooks/'],
+  [/href="\/platform\/remote-desktops\//g,  'href="/platform/workbench/sessions/remote-desktops/'],
+  [/href="\/platform\/jobs\//g,             'href="/platform/jobs/'],
+  [/href="\/platform\/storage\//g,          'href="/platform/storage/'],
   [/href="\/getting-started\//g,            'href="/get-started/'],
   [/href="\/cli\//g,                        'href="/reference/cli/'],
   [/href="\/sdk\//g,                        'href="/reference/sdk/'],
@@ -2020,7 +2020,7 @@ Append to `src/css/custom.css`:
 npx docusaurus build --no-minify 2>&1 | tail -3
 ```
 
-Open any doc page in the build (e.g., `build/products/workbench/index.html`) — confirm the page header shows the title + description on the left, the Copy MCP button on the right, and the body H1 is not duplicated.
+Open any doc page in the build (e.g., `build/platform/workbench/index.html`) — confirm the page header shows the title + description on the left, the Copy MCP button on the right, and the body H1 is not duplicated.
 
 - [ ] **Step 5: Commit**
 

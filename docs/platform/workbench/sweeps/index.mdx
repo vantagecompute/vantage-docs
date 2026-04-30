@@ -1,0 +1,14 @@
+---
+title: Sweeps
+description: Hyperparameter search — Bayesian, grid, or random.
+---
+
+# Sweeps
+
+:::caution[Preview]
+The Sweeps tab is in early access. List and detail views work end-to-end, but sweep creation is API-only (Vantage SDK). See [troubleshooting](/platform/workbench/troubleshooting) for the known limitations.
+:::
+
+A sweep is a hyperparameter-search experiment that runs many *trials* — each trial is one TrainJob with one specific parameter combination. Sweeps track the metric you're optimizing across all trials and surface the best one.
+
+See [Algorithms](/platform/workbench/sweeps/algorithms) for the supported search strategies.

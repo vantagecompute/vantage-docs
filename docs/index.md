@@ -29,7 +29,7 @@ With Vantage, you can:
 
 - [Get started with Notebooks](/get-started/notebook-intro)
 - [Submit your first job](/get-started/create-job-submission-intro)
-- [Learn about storage](/products/storage)
+- [Learn about storage](/platform/storage)
 
 </TabItem>
 <TabItem value="admin" label="I'm an Admin">
@@ -64,7 +64,7 @@ With Vantage, you can:
         <p>Submit, monitor, and manage computational workloads with templates and real-time observability.</p>
       </div>
       <div className="card__footer">
-        <a href="/products/jobs" className="button button--secondary">Learn More</a>
+        <a href="/platform/jobs" className="button button--secondary">Learn More</a>
       </div>
     </div>
   </div>
@@ -90,7 +90,7 @@ With Vantage, you can:
         <p>Interactive Jupyter environments in seconds. Access Slurm, start coding.</p>
       </div>
       <div className="card__footer">
-        <a href="/products/workbench/sessions/notebooks" className="button button--secondary">Learn More</a>
+        <a href="/platform/workbench/sessions/notebooks" className="button button--secondary">Learn More</a>
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@ With Vantage, you can:
         <p>Full GUI access to your compute environments with secure remote connections.</p>
       </div>
       <div className="card__footer">
-        <a href="/products/workbench/sessions/remote-desktops" className="button button--secondary">Learn More</a>
+        <a href="/platform/workbench/sessions/remote-desktops" className="button button--secondary">Learn More</a>
       </div>
     </div>
   </div>
@@ -116,7 +116,7 @@ With Vantage, you can:
         <p>Connect cloud and distributed file systems for your computational data.</p>
       </div>
       <div className="card__footer">
-        <a href="/products/storage" className="button button--secondary">Learn More</a>
+        <a href="/platform/storage" className="button button--secondary">Learn More</a>
       </div>
     </div>
   </div>

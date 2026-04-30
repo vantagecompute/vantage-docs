@@ -355,7 +355,7 @@ You're ready to run computational workloads, collaborate with your team, and exp
 
 - [Interactive Notebooks](/get-started/notebook-intro) — Start coding immediately
 - [Job Submissions](/get-started/create-job-submission-intro) — Run experiments at scale
-- [Storage Solutions](/products/storage) — Manage your research data
+- [Storage Solutions](/platform/storage) — Manage your research data
 
 </TabItem>
 <TabItem value="admin" label="I'm an Admin">
