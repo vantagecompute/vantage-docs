@@ -1,11 +1,11 @@
 ---
 title: Create a Cluster
-description: Deploy a Slurm cluster using the Vantage platform
+description: Deploy a Slurm or Slurm on Kubernetes cluster using the Vantage platform
 ---
 
 ## Overview
 
-Clusters are the foundation of your compute infrastructure in Vantage. This guide walks you through creating a cluster entry in Vantage and deploying a Slurm cluster on your local machine using the Vantage CLI.
+Clusters are the compute environments where jobs run in Vantage. This guide walks you through creating a cluster using the Vantage web UI. Two cluster types are supported: **Slurm** (traditional HPC) and **Slurm on Kubernetes** (Slurm deployed on an existing K8s cluster).
 
 :::note Alternative Methods
 
@@ -15,122 +15,123 @@ Clusters can also be created via the [Vantage CLI](https://docs.vantagecompute.a
 
 ## What You'll Learn
 
-- How to create a cluster entry in the Vantage web UI
-- How to install the Vantage CLI
-- How to deploy a Slurm cluster using Deployment Applications
+- How to navigate to the Clusters dashboard
+- How to create a Slurm cluster or a Slurm on Kubernetes cluster
 
 ## Prerequisites
 
-- Ubuntu 24.04 desktop or server
-- [Multipass](https://canonical.com/multipass) installed
-- [UV package manager](https://docs.astral.sh/) installed
+- A Vantage account and organization ([Sign Up](./sign-up.md))
+- A configured [Cloud Account](./create-cloud.md) — required before creating a cluster
 
 ## Step 1: Access the Cluster Dashboard
 
-Navigate to the **Clusters** dashboard in the Vantage web UI to prepare your first compute resource.
+Click the **Clusters** icon in the left navigation sidebar. The Clusters list page shows all existing clusters with columns for **Name**, **Type** (SLURM or SLURM ON K8S), **Status**, **Provider**, **Owner**, and **Actions**.
 
 ![Cluster dashboard](./img/create-cluster-intro-00.png)
 
 ## Step 2: Prepare a Cluster
 
-Click the **Prepare Cluster** button in the upper right corner to begin creating a new cluster.
+Click the **+ Prepare Cluster** button in the top-right corner. A multi-step wizard opens titled **"Choose Cluster Type"**.
 
 ![Prepare cluster button](./img/create-cluster-intro-01.png)
 
-## Step 3: Configure Cluster Details
+## Step 3: Choose a Cluster Type and Configure
 
-Enter a name for your cluster and select **Existing** as the cluster type. This indicates you're connecting your own infrastructure. Click **Prepare** to create the cluster entry.
-
-![Cluster configuration form](./img/create-cluster-intro-02.png)
-
-## Step 4: View Cluster Details
-
-The cluster entry is now created in Vantage, but it's not yet connected. The cluster detail view shows its current status as not connected.
-
-![Cluster details (not connected)](./img/create-cluster-intro-03.png)
-
-## Step 5: Install the Vantage CLI
-
-To connect your cluster, you'll use Deployment Applications to provision a Slurm cluster. First, install the Vantage CLI.
-
-### Install UV
-
-Install the UV package manager:
-
-```bash
-sudo snap install astral-uv --classic
-```
-
-### Install Vantage CLI
-
-Create a virtual environment and install the Vantage CLI:
-
-```bash
-uv venv && \
-    source .venv/bin/activate && \
-    uv pip install vantage-cli
-```
-
-### Login to Vantage
-
-Authenticate with the Vantage platform:
-
-```bash
-vantage login
-```
-
-This command provides a URL to open in your browser for authentication.
-
-## Step 6: Create a Slurm Cluster
-
-Choose your preferred infrastructure medium and run the corresponding command:
+Select the type of cluster you want to create:
 
 <Tabs>
-<TabItem value="multipass" label="Multipass" default>
+<TabItem value="slurm" label="Slurm" default>
 
-### Install Multipass
+Traditional HPC workload manager. Configure compute partitions, submit batch jobs, and manage node pools.
 
-```bash
-sudo snap install multipass
-```
+Click the **Slurm** card and then click **Continue**.
 
-### Create the Slurm Cluster
+### Configure Cluster Details
 
-```bash
-uv run vantage cluster create my-first-cluster --cloud localhost --app slurm-multipass-localhost
-```
+| Field | Required | Notes |
+|---|---|---|
+| Cluster Name | No | Max 27 characters |
+| Cluster Description | No | Max 255 characters |
+| Cloud Account | Yes | Select from your configured cloud accounts |
+
+The remaining steps depend on the **Cloud Account** type selected:
+
+**LXD or On-Premises accounts** — No additional fields appear. Click **Create Cluster** to finish. The wizard completes in 2 steps.
+
+**Cloud provider accounts (e.g., AWS)** — A notice appears: *"Cloud clusters are deployed in AWS and scale automatically to the size of the workloads submitted to them."* Additional fields appear:
+
+| Field | Required | Notes |
+|---|---|---|
+| Region | Yes | Select your cloud region |
+| Head Node Machine Type | Yes | Select a region first, then click **Select Head Node** to choose a machine type |
+| SSH Key Name | Yes | Select a cloud account and region first |
+
+**Advanced Options** (expand to configure custom networking — leave empty to use cloud defaults):
+
+| Field | Required | Notes |
+|---|---|---|
+| VPC ID | No | Select a Cloud Account and region first |
+| Head Node Subnet ID | Yes, if VPC selected | Select a VPC first |
+| Compute Node Subnet ID | No | Select a VPC first |
+
+Click **Proceed to Select Partitions** to continue. Configure your Slurm partitions, then click **Create Cluster**.
 
 </TabItem>
-<TabItem value="lxd" label="LXD">
+<TabItem value="k8s" label="Slurm on Kubernetes">
 
-### Install LXD and Juju
+Deploy a Slurm HPC cluster on top of an existing Kubernetes cluster. Manage node groups and partitions via VDeployer.
 
-```bash
-sudo snap install lxd
-sudo lxd init --auto
-lxc network set lxdbr0 ipv6.nat false
-sudo snap install juju --channel 3/stable
-juju bootstrap lxd
-```
+Click the **Slurm on Kubernetes** card and then click **Continue**. This path has 4 steps: Choose Type → Select K8s Cluster → Configure → Creating.
 
-### Create the Slurm Cluster
+### Step 2 — Select K8s Cluster
 
-```bash
-vantage app deployment slurm-lxd-localhost create my-first-cluster
-```
+A grid of available Kubernetes clusters is shown, with each cluster's name and cloud provider type. Click a cluster card to select it (it will show a highlighted border), then click **Configure Slurm Cluster**.
+
+### Step 3 — Configure
+
+**Cluster Name section:**
+
+| Field | Notes |
+|---|---|
+| Slurm Cluster Name | Enter a name for the Slurm cluster |
+| Parent K8s Cluster | Pre-filled from the previous step (read-only) |
+
+**Node Groups section:**
+
+Two node group types are pre-configured — **Control Plane** and **Compute Group**:
+
+| Field | Default | Options |
+|---|---|---|
+| Name | — | Enter a name for the node group |
+| Profile | Medium (Control Plane) / Small (Compute) | Small (4 vCPU / 8 GiB), Medium (8 vCPU / 16 GiB), Large (16 vCPU / 32 GiB) |
+| Max Nodes | 1 (Control Plane) / 10 (Compute) | Maximum number of nodes |
+
+Click **+ Add Compute Group** to add additional compute node groups.
+
+**Partitions section:**
+
+| Field | Default | Notes |
+|---|---|---|
+| Partition Name | "compute" | Name for the Slurm partition |
+| Node Group | — | Select from the compute groups defined above |
+| Default | Enabled | Whether this is the default partition |
+
+Click **+ Add Partition** to add additional partitions.
+
+Click **Create Slurm Cluster** to begin provisioning.
 
 </TabItem>
 </Tabs>
 
-## Step 7: Verify Cluster Connection
+## Step 4: Verify Cluster Status
 
-Return to the cluster detail view in the Vantage web UI. The cluster status will change to **Connected** when it's successfully linked to the platform.
+Return to the Clusters list page. The cluster status shows **"preparing"** while provisioning, then transitions to **"ready"** when complete.
 
 ![Cluster connected successfully](./img/create-cluster-intro-04.png)
 
 ## Summary
 
-Your cluster is now connected and ready for workloads. You can launch notebooks, submit jobs, and manage compute resources through the Vantage platform.
+Your cluster is now ready for workloads. You can launch notebooks, submit jobs, and manage compute resources through the Vantage platform.
 
 ## Next Steps
 
