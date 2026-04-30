@@ -3,7 +3,7 @@ id: user-hosted
 title: User-Hosted License Servers
 sidebar_position: 3
 description: Self-managed license server deployment and integration with Vantage Compute clusters.
-slug: /user-hosted
+slug: /platform/licenses/user-hosted
 ---
 
 User-hosted license servers allow organizations to maintain complete control over their license infrastructure while integrating seamlessly with Vantage Compute clusters. This approach is ideal for organizations with existing license management investments, specific compliance requirements, or the need for custom configurations.
@@ -296,4 +296,4 @@ To implement user-hosted license server integration:
 4. **Pilot Testing**: Start with non-critical applications
 5. **Full Deployment**: Roll out to production workloads
 
-For detailed implementation guidance, see our [License Management How-To Guides](how-to-guides) or contact Vantage support for technical assistance.
+For detailed implementation guidance, see our [License Management How-To Guides](/platform/licenses/how-to-guides) or contact Vantage support for technical assistance.

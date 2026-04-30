@@ -208,14 +208,14 @@ const config = {
             },
             {
               label: 'Vantage CLI',
-              to: '/cli',
+              to: '/reference/cli',
             },
             {
               label: 'Vantage SDK',
-              to: '/sdk',
+              to: '/reference/sdk',
             },
             { label: 'Vantage API',
-              to: '/api',
+              to: '/reference/api',
             },
           ],
         },

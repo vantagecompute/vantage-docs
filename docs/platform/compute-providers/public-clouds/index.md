@@ -3,7 +3,7 @@ id: public-clouds
 title: Public Cloud Providers
 sidebar_position: 1
 description: Deploy and manage Vantage clusters across major public cloud providers.
-slug: /public-clouds
+slug: /platform/compute-providers/public-clouds
 ---
 
 Vantage supports deployment across all major public cloud providers, offering seamless integration with native cloud services and optimized performance for high-performance computing workloads.

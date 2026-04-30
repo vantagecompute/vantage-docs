@@ -3,7 +3,7 @@ id: on-premises
 sidebar_position: 1
 title: Self Hosted Introduction
 description: Introduction to self-hosting Vantage Compute in your own environment.
-slug: /self-hosted
+slug: /platform/compute-providers/on-premises
 ---
 
 Deploy and manage your own instance of Vantage Compute in your environment for complete control, customization, and data sovereignty.

@@ -20,7 +20,7 @@ Welcome to the Vantage API documentation hub. Here you'll find all the resources
 ### Development Resources
 - **[OpenAPI Specification](/reference/api/openapi)** - Machine-readable API spec
 - **[Postman Collection](/reference/api/postman)** - Ready-to-use API testing collection
-- **[SDKs and Libraries](/sdk)** - Official client libraries
+- **[SDKs and Libraries](/reference/sdk)** - Official client libraries
 
 ## API Overview
 

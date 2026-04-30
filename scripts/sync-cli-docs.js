@@ -43,9 +43,15 @@ function copyTree(src, dst) {
   }
 }
 
-function rewriteLinks(text) {
+function rewriteLinks(text, filePath) {
+  let out = text;
+  // If this is the index.md, rewrite the root slug to the CLI base path.
+  // The upstream CLI repo uses slug: / which conflicts with our docs root.
+  if (filePath && path.basename(filePath) === 'index.md') {
+    out = out.replace(/^(slug:\s*)\/\s*$/m, `$1${BASE_PATH}`);
+  }
   // Old plugin used routeBasePath '/cli'. Rewrite to the new prefix.
-  return text
+  out = out
     .replace(/\(\/vantage-cli\//g, `(${BASE_PATH}`)
     .replace(/\(\/cli\//g, `(${BASE_PATH}`)
     .replace(/href="\/vantage-cli\//g, `href="${BASE_PATH}`)
@@ -57,12 +63,13 @@ function rewriteLinks(text) {
     .replace(/\(\/platform\/remote-desktops\//g, '(/products/workbench/sessions/remote-desktops/')
     .replace(/\(\/sdk\//g, '(/reference/sdk/')
     .replace(/\(\/api\//g, '(/reference/api/');
+  return out;
 }
 
 function processFile(p) {
   if (!/\.(md|mdx)$/.test(p)) return;
   const text = fs.readFileSync(p, 'utf8');
-  const next = rewriteLinks(text);
+  const next = rewriteLinks(text, p);
   if (next !== text) fs.writeFileSync(p, next);
 }
 

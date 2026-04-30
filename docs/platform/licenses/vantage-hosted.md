@@ -3,7 +3,7 @@ id: vantage-hosted
 title: Vantage-Hosted License Servers
 sidebar_position: 2
 description: Fully managed license server deployment and management through Vantage Compute.
-slug: /vantage-hosted
+slug: /platform/licenses/vantage-hosted
 ---
 
 Vantage-hosted license servers provide a fully managed solution where Vantage Compute handles the deployment, configuration, and maintenance of your license infrastructure. This approach offers maximum convenience and reliability with minimal administrative overhead.
@@ -162,4 +162,4 @@ To implement Vantage-hosted license servers:
 4. **Implementation**: Execute migration plan with Vantage support
 5. **Optimization**: Ongoing optimization and support
 
-For detailed implementation guidance, see our [License Management How-To Guides](how-to-guides/) or contact Vantage support for personalized assistance.
+For detailed implementation guidance, see our [License Management How-To Guides](/platform/licenses/how-to-guides) or contact Vantage support for personalized assistance.

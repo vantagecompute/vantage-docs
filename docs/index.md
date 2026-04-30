@@ -7,7 +7,7 @@ description: The future compute layer for AI, HPC, and Quantum workloads
 
 **Virtually Limitless™ Compute** — Execute AI, HPC, and Quantum workloads across any environment with a unified platform for Slurm+Kubernetes orchestration.
 
-[Get Started](./getting-started/sign-up) · [Quick Start](#quick-start) · [Book a Demo](https://vantagecompute.ai/contact)
+[Get Started](/get-started/sign-up) · [Quick Start](#quick-start) · [Book a Demo](https://vantagecompute.ai/contact)
 
 ## What is Vantage?
 
@@ -27,27 +27,27 @@ With Vantage, you can:
 
 **Launch experiments instantly, no IT provisioning required.**
 
-- [Get started with Notebooks](./getting-started/notebook-intro)
-- [Submit your first job](./getting-started/create-job-submission-intro)
-- [Learn about storage](./platform/storage/)
+- [Get started with Notebooks](/get-started/notebook-intro)
+- [Submit your first job](/get-started/create-job-submission-intro)
+- [Learn about storage](/products/storage)
 
 </TabItem>
 <TabItem value="admin" label="I'm an Admin">
 
 **Deploy and manage HPC infrastructure at scale.**
 
-- [Create a cluster](./getting-started/create-cluster-intro)
-- [Connect cloud providers](./platform/compute-providers/)
-- [Manage teams and permissions](./platform/teams/)
+- [Create a cluster](/get-started/create-cluster-intro)
+- [Connect cloud providers](/platform/compute-providers)
+- [Manage teams and permissions](/platform/teams)
 
 </TabItem>
 <TabItem value="developer" label="I'm a Developer">
 
 **Automate and integrate with CLI, API, or SDK.**
 
-- [Install the CLI](/cli)
-- [Explore the API](/api)
-- [Get started with the SDK](/sdk)
+- [Install the CLI](/reference/cli)
+- [Explore the API](/reference/api)
+- [Get started with the SDK](/reference/sdk)
 
 </TabItem>
 </Tabs>
@@ -64,7 +64,7 @@ With Vantage, you can:
         <p>Submit, monitor, and manage computational workloads with templates and real-time observability.</p>
       </div>
       <div className="card__footer">
-        <a href="./platform/jobs/" className="button button--secondary">Learn More</a>
+        <a href="/products/jobs" className="button button--secondary">Learn More</a>
       </div>
     </div>
   </div>
@@ -90,7 +90,7 @@ With Vantage, you can:
         <p>Interactive Jupyter environments in seconds. Access Slurm, start coding.</p>
       </div>
       <div className="card__footer">
-        <a href="./platform/notebooks/" className="button button--secondary">Learn More</a>
+        <a href="/products/workbench/sessions/notebooks" className="button button--secondary">Learn More</a>
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@ With Vantage, you can:
         <p>Full GUI access to your compute environments with secure remote connections.</p>
       </div>
       <div className="card__footer">
-        <a href="./platform/remote-desktops/" className="button button--secondary">Learn More</a>
+        <a href="/products/workbench/sessions/remote-desktops" className="button button--secondary">Learn More</a>
       </div>
     </div>
   </div>
@@ -116,7 +116,7 @@ With Vantage, you can:
         <p>Connect cloud and distributed file systems for your computational data.</p>
       </div>
       <div className="card__footer">
-        <a href="./platform/storage/" className="button button--secondary">Learn More</a>
+        <a href="/products/storage" className="button button--secondary">Learn More</a>
       </div>
     </div>
   </div>
@@ -147,7 +147,7 @@ With Vantage, you can:
         <p>Command-line interface for automation and CI/CD integration.</p>
       </div>
       <div className="card__footer text--center">
-        <a href="/cli" className="button button--primary">Get Started</a>
+        <a href="/reference/cli" className="button button--primary">Get Started</a>
       </div>
     </div>
   </div>
@@ -160,7 +160,7 @@ With Vantage, you can:
         <p>REST API with complete OpenAPI specification.</p>
       </div>
       <div className="card__footer text--center">
-        <a href="/api" className="button button--primary">Explore</a>
+        <a href="/reference/api" className="button button--primary">Explore</a>
       </div>
     </div>
   </div>
@@ -173,7 +173,7 @@ With Vantage, you can:
         <p>Type-safe libraries for Python, JavaScript, and Go.</p>
       </div>
       <div className="card__footer text--center">
-        <a href="/sdk" className="button button--primary">Get Started</a>
+        <a href="/reference/sdk" className="button button--primary">Get Started</a>
       </div>
     </div>
   </div>
@@ -225,4 +225,4 @@ With Vantage, you can:
 
 ---
 
-Ready to get started? [Sign up for free](./getting-started/sign-up)
+Ready to get started? [Sign up for free](/get-started/sign-up)

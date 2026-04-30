@@ -116,7 +116,7 @@ HTTP status codes indicate success or failure:
 
 Official SDKs available for popular languages:
 
-- **[Python SDK](/sdk)** - Full-featured Python library
+- **[Python SDK](/reference/sdk)** - Full-featured Python library
 - **[JavaScript SDK](https://www.npmjs.com/package/@vantage/sdk)** - Node.js and browser support
 - **[Go SDK](https://github.com/omnivector-solutions/vantage-go)** - Native Go client
 

@@ -353,23 +353,23 @@ You're ready to run computational workloads, collaborate with your team, and exp
 <Tabs>
 <TabItem value="researcher" label="I'm a Researcher">
 
-- [Interactive Notebooks](./notebook-intro.md) — Start coding immediately
-- [Job Submissions](./create-job-submission-intro.md) — Run experiments at scale
-- [Storage Solutions](./platform/storage/) — Manage your research data
+- [Interactive Notebooks](/get-started/notebook-intro) — Start coding immediately
+- [Job Submissions](/get-started/create-job-submission-intro) — Run experiments at scale
+- [Storage Solutions](/products/storage) — Manage your research data
 
 </TabItem>
 <TabItem value="admin" label="I'm an Admin">
 
-- [Cluster Management](./platform/clusters/) — Advanced cluster configuration
-- [Compute Providers](./platform/compute-providers/) — Connect AWS, Azure, GCP
-- [License Management](./platform/licenses/) — Configure license servers
+- [Cluster Management](/platform/clusters) — Advanced cluster configuration
+- [Compute Providers](/platform/compute-providers) — Connect AWS, Azure, GCP
+- [License Management](/platform/licenses) — Configure license servers
 
 </TabItem>
 <TabItem value="developer" label="I'm a Developer">
 
-- [CLI Installation](/cli) — Automate tasks from the command line
-- [API Reference](/api) — Build custom integrations
-- [SDK Documentation](/sdk) — Type-safe libraries for your applications
+- [CLI Installation](/reference/cli) — Automate tasks from the command line
+- [API Reference](/reference/api) — Build custom integrations
+- [SDK Documentation](/reference/sdk) — Type-safe libraries for your applications
 
 </TabItem>
 </Tabs>
