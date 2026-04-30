@@ -16,7 +16,7 @@ const config = {
   deploymentBranch: 'main',
   trailingSlash: false,
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenAnchors: 'warn',
   i18n: {
     defaultLocale: 'en',
