@@ -301,12 +301,70 @@ The existing `scripts/transform-cli-links.js` already does step 3 for the old pl
 | Workbench MDX conversion drops content | Medium | Diff each section's `<h*>` and `<p>` count against the source HTML |
 | Sidebar gets too long | Low | Use Docusaurus' `collapsed: true` on PRODUCTS and PLATFORM categories by default |
 
+## Page-header chrome (CoreWeave-shaped layout shell)
+
+The reorg adopts CoreWeave's chrome layout for top-of-page elements. Implemented as **non-functional placeholders** in this spec — full implementations land in separate specs (see Out of scope).
+
+### Navbar (top of every page)
+
+```
+┌──────────────────────────────────────────────────────────────────────────┐
+│  [Vantage logo]   [🔍 Search Vantage docs...  ⌘K]  [✨ Ask AI]   [☀/🌙] │
+└──────────────────────────────────────────────────────────────────────────┘
+```
+
+- **Search pill** — restyled `DocSearch-Button` (Algolia is already wired up). Rounded full-radius pill, ink-50 background, 320px min-width, ⌘K indicator on the right. Replaces the current navbar search variant. Existing Algolia config in `themeConfig.algolia` is unchanged.
+- **"Ask AI" button** — pill button with a sparkle icon, sits to the right of search. **Placeholder behavior:** clicking opens a small popover with "Coming soon — the docs AI is being trained." No backend call. Implemented as `src/components/AskAIButton/`. The button exists so the layout is committed; wiring lands in spec B.
+- **Theme toggle** — unchanged from current; just repositioned to the far right.
+- The current centered "Vantage Compute Documentation" navbar title is removed; the logo on the left replaces it.
+
+### Doc-page header (above the H1 of every doc)
+
+```
+┌──────────────────────────────────────────────────────────────────────────┐
+│  Vantage Documentation                              [📋 Copy MCP Server ▾]│
+│  Learn how to deploy, manage, and observe your workloads on Vantage.      │
+└──────────────────────────────────────────────────────────────────────────┘
+```
+
+- **"Copy MCP Server" button** — secondary button, right-aligned with the page title row. Has a split chevron for a dropdown listing per-section MCP server configs (eventually). **Placeholder behavior:** clipboard-copies a stub string `# Vantage Docs MCP server — coming soon` and shows a "Copied (preview)" toast. Implemented as `src/components/CopyMcpServerButton/`. The actual server URL lands in spec C.
+- The title + subtitle row uses doc front-matter `title` + `description` (already present on most pages).
+- Implemented by **swizzling `@theme/DocItem/Layout`** (or wrapping it via `@theme-original/DocItem/Layout`) so every doc page automatically gets the header without per-page MDX additions.
+
+### Floating chat prompt (bottom-right of viewport)
+
+```
+                                         ┌──────────────────────────────┐
+                                         │ Ask a question...      ⌘I ↑  │
+                                         └──────────────────────────────┘
+```
+
+- Always-visible compact pill, bottom-right, ~480px wide, with a soft drop shadow and a circular send button on the right. Iris-200 send-button background.
+- **Placeholder behavior:** clicking the pill expands it slightly and shows the same "Coming soon" message as the Ask AI popover. Submitting does nothing. Implemented as `src/components/FloatingAskWidget/` mounted in a Docusaurus root layout swizzle (`src/theme/Root.js`).
+- Hidden on `< 768px` to avoid overlapping mobile content.
+
+### Component locations
+
+| Component | Path | Purpose |
+|---|---|---|
+| `AskAIButton` | `src/components/AskAIButton/index.tsx` | Navbar "Ask AI" pill (placeholder) |
+| `CopyMcpServerButton` | `src/components/CopyMcpServerButton/index.tsx` | Doc-page-header copy button (placeholder) |
+| `FloatingAskWidget` | `src/components/FloatingAskWidget/index.tsx` | Bottom-right floating prompt (placeholder) |
+| `DocItem/Layout` swizzle | `src/theme/DocItem/Layout/index.tsx` | Renders the page header (title + Copy MCP) above standard content |
+| `Root.js` swizzle | `src/theme/Root.js` | Mounts `FloatingAskWidget` site-wide |
+
+### Styling
+
+All four pieces use existing tokens from `src/css/custom.css` — iris/ink palette, JetBrains Mono for the kbd hints, Inter for everything else. No new design tokens. Component-scoped styles via `*.module.css` next to each component.
+
 ## Out of scope (future work)
 
 - Building the AI Workbench *app* itself. This spec covers only the documentation for it.
 - Migrating older platform docs into the new Diátaxis shape where they don't have one. Stubs are accepted for now.
-- Top-nav primary categories. Sidebar carries IA; navbar stays minimal (search + theme toggle + brand).
+- Top-nav primary categories. Sidebar carries IA; navbar stays minimal (logo + search + Ask AI + theme).
 - Algolia DocSearch index facets aligned to the new IA.
+- **Spec B — Ask AI docs agent:** Claude-powered Q&A over the docs corpus, retrieval strategy, hosting, auth, rate limits. Powers the "Ask AI" navbar button and the floating widget once written.
+- **Spec C — Vantage Docs MCP server:** server build, hosting, exposed tools (`search_docs`, `read_doc`), config-snippet format. Powers the "Copy MCP Server" button once written.
 
 ## Acceptance criteria
 
