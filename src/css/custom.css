@@ -1204,3 +1204,11 @@ article {
   border-top: 0;
   margin-top: 0;
 }
+
+/* DocItem layout renders the H1 from frontmatter; hide the markdown body's
+   first H1 to avoid duplication. */
+.theme-doc-markdown article > div > header > h1:first-child,
+.theme-doc-markdown > article > h1:first-of-type,
+.markdown > h1:first-child {
+  display: none;
+}
