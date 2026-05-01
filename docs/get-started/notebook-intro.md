@@ -21,13 +21,13 @@ Notebooks provide an interactive development environment for data science and re
 
 Navigate to the [Notebooks section](https://app.vantagecompute.ai/notebooks) in the Vantage web UI using the left sidebar navigation.
 
-![Notebook dashboard](./img/notebook-intro-00.png)
+![Notebook dashboard](./img/notebook-intro/notebook-intro-00.png)
 
 ## Step 2: Create a Notebook
 
 Click the **Create Notebook** button in the upper right corner to open the notebook creation form.
 
-![Create notebook button](./img/notebook-intro-01.png)
+![Create notebook button](./img/notebook-intro/notebook-intro-01.png)
 
 ## Step 3: Configure Notebook Resources
 
@@ -39,19 +39,19 @@ Complete the form by providing:
 
 Click **Create Notebook** to submit the form.
 
-![Notebook configuration form](./img/notebook-intro-02.png)
+![Notebook configuration form](./img/notebook-intro/notebook-intro-02.png)
 
 ## Step 4: Access Your Notebook
 
 Click on your newly created notebook in the list to open it in the Vantage web UI.
 
-![Notebook list view](./img/notebook-intro-03.png)
+![Notebook list view](./img/notebook-intro/notebook-intro-03.png)
 
 ## Step 5: Start Coding
 
 Your notebook environment is ready. You can now write and execute code directly in your browser.
 
-![Jupyter Notebook interface](./img/notebook-intro-04.png)
+![Jupyter Notebook interface](./img/notebook-intro/notebook-intro-04.png)
 
 ## Summary
 
