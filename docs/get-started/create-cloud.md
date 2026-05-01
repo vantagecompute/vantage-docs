@@ -27,13 +27,13 @@ Cloud Accounts can also be managed via the [Vantage CLI](https://docs.vantagecom
 
 From any page, click the **Settings** icon (gear) in the bottom-left navigation sidebar. A pop-up menu appears with options including **Cloud Accounts**.
 
-![Settings menu](./img/create-cloud-00.png)
+![Settings menu](./img/create-cloud/create-cloud-00.png)
 
 ## Step 2: Click "Cloud Accounts"
 
 Click **Cloud Accounts** from the Settings menu. You will be taken to the Cloud Accounts page at `/admin/cloud-accounts`, which lists all existing accounts with columns for **Provider**, **Name**, and **Actions**. You can search for accounts by name using the search bar.
 
-![Cloud Accounts page](./img/create-cloud-01.png)
+![Cloud Accounts page](./img/create-cloud/create-cloud-01.png)
 
 ## Step 3: Click "+ Create Cloud Account"
 
@@ -46,7 +46,7 @@ Click the **+ Create Cloud Account** button in the top-right corner. A dropdown 
 - **LXD**
 - **On-Premises**
 
-![Provider dropdown](./img/create-cloud-02.png)
+![Provider dropdown](./img/create-cloud/create-cloud-02.png)
 
 ## Step 4: Select a Provider and Fill in the Form
 
@@ -80,6 +80,8 @@ Click **Create Cloud Account** to finish.
 
 </TabItem>
 <TabItem value="aws" label="AWS">
+
+> Amazon Web Services provides on-demand cloud compute with a broad instance catalog spanning CPU and GPU types, global regions, and deep integrations with IAM, VPC, and S3 — ideal for scalable HPC, ML training, and data-intensive workloads.
 
 AWS requires Vantage to have role-based access to your account. Two setup methods are available:
 
@@ -144,7 +146,7 @@ Click **Create Cloud Account** to finish.
 </TabItem>
 </Tabs>
 
-![Cloud Account creation form](./img/create-cloud-03.png)
+![Cloud Account creation form](./img/create-cloud/create-cloud-03.png)
 
 ## Summary
 

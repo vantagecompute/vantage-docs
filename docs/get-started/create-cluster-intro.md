@@ -27,13 +27,13 @@ Clusters can also be created via the [Vantage CLI](https://docs.vantagecompute.a
 
 Click the **Clusters** icon in the left navigation sidebar. The Clusters list page shows all existing clusters with columns for **Name**, **Type** (SLURM or SLURM ON K8S), **Status**, **Provider**, **Owner**, and **Actions**.
 
-![Cluster dashboard](./img/create-cluster-intro-00.png)
+![Cluster dashboard](./img/create-cluster-intro/create-cluster-intro-00.png)
 
 ## Step 2: Prepare a Cluster
 
 Click the **+ Prepare Cluster** button in the top-right corner. A multi-step wizard opens titled **"Choose Cluster Type"**.
 
-![Prepare cluster button](./img/create-cluster-intro-01.png)
+![Prepare cluster button](./img/create-cluster-intro/create-cluster-intro-01.png)
 
 ## Step 3: Choose a Cluster Type and Configure
 
@@ -127,7 +127,7 @@ Click **Create Slurm Cluster** to begin provisioning.
 
 Return to the Clusters list page. The cluster status shows **"preparing"** while provisioning, then transitions to **"ready"** when complete.
 
-![Cluster connected successfully](./img/create-cluster-intro-04.png)
+![Cluster connected successfully](./img/create-cluster-intro/create-cluster-intro-04.png)
 
 ## Summary
 
