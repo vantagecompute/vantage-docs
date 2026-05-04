@@ -22,19 +22,19 @@ Collaborate with your team by inviting colleagues to your Vantage organization. 
 
 Go to the [Users page](https://app.vantagecompute.ai/admin/users) in the Vantage platform by selecting it from the settings dropdown menu.
 
-![Users page navigation](./img/invite-intro-00.png)
+![Users page navigation](./img/invite-intro/invite-intro-00.png)
 
 ## Step 2: Create New Invite
 
 Click the **New Invite** button in the upper right corner of the Users page to open the invitation form.
 
-![New invite button](./img/invite-intro-01.png)
+![New invite button](./img/invite-intro/invite-intro-01.png)
 
 ## Step 3: Enter Invitee Details
 
 Complete the invitation form by entering the invitee's email address and selecting the appropriate permissions groups. Click **Send Invite Request** to send the invitation.
 
-![Invitation form](./img/invite-intro-02.png)
+![Invitation form](./img/invite-intro/invite-intro-02.png)
 
 ## Summary
 
