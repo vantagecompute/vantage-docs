@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 export default function AskAIButton(): React.JSX.Element {
   const [open, setOpen] = useState(false);
   return (
-    <div className={styles.wrap}>
+    <div className={styles.wrap} data-navbar-ask-ai>
       <button
         type="button"
         className={styles.btn}
