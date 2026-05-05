@@ -84,7 +84,7 @@ Job statuses progress through: **Pending → Running → Completed** (or **Faile
 
 You've submitted your first job to a Vantage-connected cluster. You now have the full foundation: cloud account, cluster, job script, and job submission with monitoring.
 
-## Go Deeper
+## Next Steps
 
 - [Cloud Clusters - AWS](https://docs.vantagecompute.ai/platform/compute-providers/)
 - [Cloud Clusters - GCP](https://docs.vantagecompute.ai/platform/compute-providers/)
@@ -93,9 +93,6 @@ You've submitted your first job to a Vantage-connected cluster. You now have the
 - [Storage Solutions](https://docs.vantagecompute.ai/platform/storage/)
 - [License Management](https://docs.vantagecompute.ai/platform/licenses/)
 - [Cluster Federations](https://docs.vantagecompute.ai/platform/federations/)
-
-## Next Steps
-
 - [Learn about Jobs](https://docs.vantagecompute.ai/platform/jobs/)
 - [Explore Job Templates](https://docs.vantagecompute.ai/platform/jobs/tutorials/)
 - [Connect a Cloud Provider](https://docs.vantagecompute.ai/platform/compute-providers/)

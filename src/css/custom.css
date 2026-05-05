@@ -1497,14 +1497,15 @@ article {
 
 /* ── Sidebar section labels (Products / Platform / Reference / About) ─ */
 .sidebar-section-label {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--ink-400);
-  padding: 14px 12px 6px;
+  padding: 14px 0 6px;
   margin-top: 8px;
   border-top: 1px solid var(--ink-100);
+  text-align: left;
 }
 .menu > .menu__list > li:first-child .sidebar-section-label,
 .theme-doc-sidebar-menu > li:first-child .sidebar-section-label {

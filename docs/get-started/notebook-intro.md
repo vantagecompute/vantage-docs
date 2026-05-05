@@ -1,70 +1,88 @@
 ---
 title: Launch a Notebook
-description: Deploy a Jupyter Notebook on your Vantage cluster
+description: Launch a JupyterLab, VS Code, or RStudio session on Vantage compute
 ---
 
 ## Overview
 
-Notebooks provide an interactive development environment for data science and research. In this guide, you'll launch a Jupyter Notebook on your cluster and start coding immediately.
+Vantage Workbench Sessions provide interactive notebook and IDE environments (JupyterLab, VS Code, RStudio) running on managed compute infrastructure. In this guide, you'll launch a notebook session and start coding.
+
+:::note Alternative Methods
+
+Workbench Sessions can also be created via the [Vantage CLI](https://docs.vantagecompute.ai/cli), [Vantage SDK](https://docs.vantagecompute.ai/sdk), and [Vantage API](https://docs.vantagecompute.ai/api). For more information, see the respective documentation sections.
+
+:::
 
 ## What You'll Learn
 
-- How to navigate to the Notebooks dashboard
-- How to create a new notebook
-- How to configure and access your notebook environment
+- How to navigate to the Workbench Sessions page
+- How to configure and launch a new session
+- How to access your running notebook environment
 
 ## Prerequisites
 
-- A connected cluster (see [Create a Cluster](./create-cluster-intro.md))
+- A Vantage account with access to a workspace
 
-## Step 1: Access the Notebook Dashboard
+## Step 1: Navigate to Workbench
 
-Navigate to the [Notebooks section](https://app.vantagecompute.ai/notebooks) in the Vantage web UI using the left sidebar navigation.
+Log in to [Vantage](https://app.vantagecompute.ai/) and click the **Workbench** icon in the left sidebar (the connected nodes icon, 4th from the top).
 
-![Notebook dashboard](./img/notebook-intro/notebook-intro-00.png)
+![Workbench navigation](./img/notebook-intro/notebook-intro-01-workbench.png)
 
-## Step 2: Create a Notebook
+## Step 2: Open Sessions
 
-Click the **Create Notebook** button in the upper right corner to open the notebook creation form.
+In the Workbench left sidebar, under the **Workspace** section, click **Sessions**.
 
-![Create notebook button](./img/notebook-intro/notebook-intro-01.png)
+![Sessions page](./img/notebook-intro/notebook-intro-02-sessions.png)
 
-## Step 3: Configure Notebook Resources
+## Step 3: Create a New Session
 
-Complete the form by providing:
+Click the **"+ New session"** button in the top-right corner of the Sessions page.
 
-- **Name**: Enter a name for your notebook (e.g., `my-notebook`)
-- **Cluster**: Select `my-first-cluster`
-- **Partition**: Select the appropriate partition (e.g., `compute`)
+A dialog titled **"New Workbench Session"** will appear with configuration options.
 
-Click **Create Notebook** to submit the form.
+![New session modal](./img/notebook-intro/notebook-intro-04-modal.png)
 
-![Notebook configuration form](./img/notebook-intro/notebook-intro-02.png)
+## Step 4: Configure the Session
 
-## Step 4: Access Your Notebook
+Fill in the session form with your desired settings:
 
-Click on your newly created notebook in the list to open it in the Vantage web UI.
+| Field | Required | Notes |
+|---|---|---|
+| Session Name | Yes | Default: `my-session` |
+| Preset | No | Pre-configured environment preset if available |
+| Compute Pool | No | Defaults to "Server default" |
+| CPU | No | Number of CPU cores (default: `0.5`, e.g., `0.5`, `2`, `500m`) |
+| Memory | No | RAM allocation (default: `1Gi`, e.g., `1Gi`, `4Gi`) |
+| GPU Count | No | Number of GPUs (default: `0` for CPU-only) |
 
-![Notebook list view](./img/notebook-intro/notebook-intro-03.png)
+For advanced configuration, click **"Advanced Options"** to reveal additional fields:
 
-## Step 5: Start Coding
+| Field | Required | Notes |
+|---|---|---|
+| Custom Image | No | Override the preset with a specific Docker image URI |
+| GPU Type | No | Specify the Kubernetes GPU resource name (e.g., `nvidia.com/gpu`) |
+| Workspace Size | No | Persistent storage volume size (default: `10Gi`) |
+| Mount /dev/shm | No | Recommended for ML workloads (checked by default) |
 
-Your notebook environment is ready. You can now write and execute code directly in your browser.
+## Step 5: Launch the Session
 
-![Jupyter Notebook interface](./img/notebook-intro/notebook-intro-04.png)
+Click **"Launch session"** to provision your environment. The dialog will close and your session will appear in the list with a "Starting" status.
+
+## Step 6: Access Your Notebook
+
+Wait for the session status to change to **"Running"**, then click the **Open** button on the session card. Your notebook environment (JupyterLab, VS Code, or RStudio) will open in your browser.
+
+> **Note:** If your session remains in "Starting" status for more than 5 minutes or fails to launch, check session logs by clicking the session card, or contact support for assistance.
 
 ## Summary
 
-You have a production-grade Jupyter Notebook running on your Slurm cluster. You can share your cluster with team members, submit batch jobs, federate with other clusters, and more.
-
-## Go Deeper
-
-- [Notebooks Documentation](https://docs.vantagecompute.ai/platform/notebooks/)
-- [Storage Solutions](https://docs.vantagecompute.ai/platform/storage/)
-- [Job Templates](https://docs.vantagecompute.ai/platform/jobs/tutorials/)
+You have a production-grade notebook environment running on Vantage compute. You can create multiple sessions, share access with team members, and manage resources directly from the Workbench interface.
 
 ## Next Steps
 
-- [Create a Job Script](./create-job-script-intro.md)
-- [Submit Your First Job](./create-job-submission-intro.md)
-- [Manage Team Access](./teams-intro.md)
+- [Workbench Sessions Documentation](https://docs.vantagecompute.ai/platform/sessions/)
+- [Compute Profiles](https://docs.vantagecompute.ai/platform/compute-profiles/)
+- [Training Jobs](https://docs.vantagecompute.ai/platform/training/)
+- [Submit a Job](./create-job-submission-intro.md)
+- [Invite Team Members](./invite-intro.md)

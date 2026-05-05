@@ -138,4 +138,4 @@ Your cluster is now ready for workloads. You can launch notebooks, submit jobs, 
 - [Launch a Notebook](./notebook-intro.md)
 - [Create a Job Script](./create-job-script-intro.md)
 - [Submit Your First Job](./create-job-submission-intro.md)
-- [Manage Team Access](./teams-intro.md)
+- [Invite Team Members](./invite-intro.md)
