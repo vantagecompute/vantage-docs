@@ -24,8 +24,8 @@
 }
 
 .active .btn {
-  background: var(--ifm-color-primary-lightest, #e6f0ff);
-  border-color: var(--ifm-color-primary, #3578e5);
+  background: var(--ifm-color-emphasis-100, #f0f0f0);
+  border-color: var(--ifm-color-emphasis-300, #ccc);
 }
 
 .spark {
