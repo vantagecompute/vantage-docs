@@ -1,11 +1,12 @@
 // src/components/ChatSidePanel/index.tsx
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from './styles.module.css';
 import { useChatContext } from '@site/src/context/ChatContext';
 
 export default function ChatSidePanel(): React.JSX.Element {
   const { isOpen, toggleChat, chat } = useChatContext();
   const { messages, input, handleInputChange, handleSubmit, isLoading, error, reload } = chat;
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -13,6 +14,22 @@ export default function ChatSidePanel(): React.JSX.Element {
       handleSubmit(e);
     }
   };
+
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape' && isOpen) {
+        toggleChat();
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, toggleChat]);
 
   return (
     <div className={`${styles.wrap} ${isOpen ? styles.open : ''}`}>
@@ -39,7 +56,7 @@ export default function ChatSidePanel(): React.JSX.Element {
         </div>
       )}
 
-      <div className={styles.messages}>
+      <div className={styles.messages} aria-live="polite">
         {messages.length === 0 ? (
           <div className={styles.emptyState}>
             Ask a question about Vantage Compute...
@@ -50,20 +67,23 @@ export default function ChatSidePanel(): React.JSX.Element {
               key={m.id}
               className={`${styles.message} ${m.role === 'user' ? styles.userMessage : styles.assistantMessage}`}>
               {m.content}
-              {m.role === 'assistant' && m.content === '' && isLoading && (
-                <div className={styles.loadingDots}>
-                  <span className={styles.dot} />
-                  <span className={styles.dot} />
-                  <span className={styles.dot} />
-                </div>
-              )}
             </div>
           ))
+        )}
+        {isLoading && (
+          <div className={`${styles.message} ${styles.assistantMessage}`}>
+            <div className={styles.loadingDots}>
+              <span className={styles.dot} />
+              <span className={styles.dot} />
+              <span className={styles.dot} />
+            </div>
+          </div>
         )}
       </div>
 
       <form className={styles.inputArea} onSubmit={onSubmit}>
         <input
+          ref={inputRef}
           className={styles.input}
           value={input}
           placeholder="Ask a question..."
