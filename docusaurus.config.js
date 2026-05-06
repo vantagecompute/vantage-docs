@@ -150,6 +150,7 @@ const config = {
       appId: 'MPYYYNENH9',
       apiKey: 'b3cadb2f7da0194ead335c3488237443',
       indexName: 'Vantage Compute Documentation Website Crawler',
+      insights: true,
 
       // Disabled: we have one locale/version, so contextual facet filters
       // would silently return 0 results if the crawler didn't set them.

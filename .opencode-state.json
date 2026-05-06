@@ -1,0 +1,60 @@
+{
+  "tasks": [
+    {
+      "id": "task-2",
+      "description": "Create ChatContext (ChatProvider)",
+      "status": "completed",
+      "assigned_to": "worker-1",
+      "claimed_at": null,
+      "completed_at": "2026-05-06T12:00:00Z",
+      "attempts": 1
+    },
+    {
+      "id": "task-3",
+      "description": "Create ChatSidePanel Component",
+      "status": "completed",
+      "assigned_to": "worker-1",
+      "claimed_at": "2026-05-06T17:10:22.477056+00:00",
+      "completed_at": "2026-05-06T17:11:07.621739+00:00",
+      "attempts": 1
+    },
+    {
+      "id": "task-4",
+      "description": "Update AskAIButton to Use ChatContext",
+      "status": "completed",
+      "assigned_to": "worker-1",
+      "claimed_at": "2026-05-06T17:21:26.026713+00:00",
+      "completed_at": "2026-05-06T17:21:26.026732+00:00",
+      "attempts": 1
+    },
+     {
+      "id": "task-5",
+      "description": "Update FloatingAskWidget to Use ChatContext",
+      "status": "completed",
+      "assigned_to": "worker-1",
+      "claimed_at": "2026-05-06T17:25:00.000000+00:00",
+      "completed_at": "2026-05-06T17:25:30.000000+00:00",
+      "attempts": 1
+    },
+     {
+       "id": "task-6",
+       "description": "Update Root.js to Wire Up ChatProvider",
+       "status": "completed",
+       "assigned_to": "worker-1",
+       "claimed_at": "2026-05-06T17:35:00.000000+00:00",
+       "completed_at": "2026-05-06T17:36:00.000000+00:00",
+       "attempts": 1
+     },
+      {
+        "id": "task-7",
+        "description": "Add Global Keyboard Shortcut (⌘I / Ctrl+I)",
+        "status": "completed",
+        "assigned_to": "worker-1",
+        "claimed_at": "2026-05-06T17:40:00.000000+00:00",
+        "completed_at": "2026-05-06T18:30:00.000000+00:00",
+        "attempts": 1
+      }
+   ],
+  "project_status": "in_progress",
+  "heartbeat": "2026-05-06T18:30:00.000000000+00:00"
+}
