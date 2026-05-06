@@ -1,76 +1,46 @@
 /* src/components/FloatingAskWidget/styles.module.css */
+
 .wrap {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  z-index: 200;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
+  z-index: 90;
 }
-
-@media (max-width: 768px) { .wrap { display: none; } }
 
 .bar {
   display: flex;
   align-items: center;
   gap: 8px;
-  width: 480px;
-  max-width: calc(100vw - 48px);
-  padding: 8px 8px 8px 16px;
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ink-200);
+  padding: 10px 18px;
+  border: 1px solid var(--ifm-color-emphasis-300, #ccc);
   border-radius: 999px;
-  box-shadow: var(--shadow-pop);
+  background: var(--ifm-background-color, #fff);
+  color: var(--ifm-font-color-base, #1a1a1a);
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
 }
 
-.input {
-  flex: 1;
-  border: 0;
-  background: transparent;
-  outline: none;
-  font: inherit;
-  font-size: 14px;
-  color: var(--ink-900);
+.bar:hover {
+  background: var(--ifm-color-emphasis-100, #f0f0f0);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
-.input::placeholder { color: var(--ink-400); }
+
+.active .bar {
+  background: var(--ifm-color-primary-lightest, #e6f0ff);
+  border-color: var(--ifm-color-primary, #3578e5);
+}
+
+.text {
+  font-weight: 500;
+}
 
 .kbd {
-  background: var(--ink-50);
-  color: var(--ink-400);
-  border: 1px solid var(--ink-100);
-  border-radius: 4px;
-  padding: 1px 6px;
   font-size: 11px;
-  font-family: var(--ifm-font-family-monospace);
-}
-
-.send {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border: 0;
-  border-radius: 50%;
-  background: var(--iris-500);
-  color: #fff;
-  cursor: pointer;
-  transition: background .15s;
-}
-.send:hover { background: var(--iris-600); }
-
-.hint {
-  background: var(--ink-900);
-  color: #fff;
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  box-shadow: var(--shadow-pop);
-}
-
-[data-theme='dark'] .bar {
-  background: var(--ifm-background-surface-color);
-  border-color: var(--ink-200);
+  padding: 2px 6px;
+  border: 1px solid var(--ifm-color-emphasis-300, #ccc);
+  border-radius: 4px;
+  background: var(--ifm-color-emphasis-100, #f0f0f0);
+  font-family: inherit;
 }
