@@ -78,14 +78,11 @@ From the Teams page you can search existing teams by name, description, or owner
 
 Invited users receive an email and join your organization with the permissions you assigned. Use teams to further segment access — grouping users and granting them access to specific clusters and tool-specific roles.
 
-## Go Deeper
+## Next Steps
 
 Vantage offers advanced identity management including custom permission groups, federated identity realms, multiple identity providers, and SSO integration.
 
 - [Identity and Access Management](https://docs.vantagecompute.ai/platform/iam/)
 - [Teams](https://docs.vantagecompute.ai/platform/teams/)
-
-## Next Steps
-
 - [Create your first cluster](./create-cluster-intro.md)
 - [Connect a compute provider](https://docs.vantagecompute.ai/platform/compute-providers/)
