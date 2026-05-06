@@ -45,6 +45,10 @@
   font-family: inherit;
 }
 
+.rotated {
+  transform: rotate(180deg);
+}
+
 @media (max-width: 768px) {
   .wrap {
     display: none;
