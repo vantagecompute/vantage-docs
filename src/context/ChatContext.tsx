@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { useChat } from '@ai-sdk/react';
 import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
 
@@ -35,6 +35,17 @@ export function ChatProvider({ children }: { children: React.ReactNode }): React
   const toggleChat = useCallback(() => {
     setIsOpen((o) => !o);
   }, []);
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'i') {
+        e.preventDefault();
+        toggleChat();
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [toggleChat]);
 
   return (
     <ChatContext.Provider value={{ isOpen, toggleChat, chat }}>
