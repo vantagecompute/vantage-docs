@@ -5,27 +5,32 @@
   align-items: center;
 }
 
+/* Ghost pill — sits naturally on the iris-700 navbar */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 6px 14px;
-  border: 1px solid var(--ifm-color-emphasis-300, #ccc);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
-  background: var(--ifm-background-color, #fff);
-  color: var(--ifm-font-color-base, #1a1a1a);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
   font-size: 14px;
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s;
 }
 
 .btn:hover {
-  background: var(--ifm-color-emphasis-100, #f0f0f0);
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.55);
 }
 
+/* Active: solid white fill + iris text + glow ring — clearly selected */
 .active .btn {
-  background: var(--ifm-color-emphasis-100, #f0f0f0);
-  border-color: var(--ifm-color-emphasis-300, #ccc);
+  background: #ffffff;
+  border-color: rgba(255, 255, 255, 0.9);
+  color: var(--ifm-color-primary-darkest, #312e81);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
 }
 
 .spark {

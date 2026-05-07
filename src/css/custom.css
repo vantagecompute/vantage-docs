@@ -401,6 +401,12 @@ article table td code {
   color: var(--ink-300);
 }
 
+/* Tab lists should have no left padding (override .markdown ul) */
+.markdown .tabs {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
 /* ── Admonitions → callouts ─────────────────────────────────────────── */
 .theme-admonition,
 .alert {
@@ -1200,7 +1206,7 @@ button.DocSearch-Button {
 
 /* Medium: hide AskAI, shrink search pill */
 @media (max-width: 1050px) {
-  [data-navbar-ask-ai] { display: none !important; }
+  .navbar__items [data-navbar-ask-ai] { display: none !important; }
 
   .DocSearch-Button {
     min-width: 180px !important;
@@ -1519,4 +1525,20 @@ article {
 .markdown > header > h1,
 .theme-doc-markdown > article > h1:first-of-type {
   display: none;
+}
+
+
+/* Chat sidebar — push layout (navbar excluded) */
+.main-wrapper {
+  transition: margin-right 0.3s ease-in-out;
+}
+
+body.chat-open .main-wrapper {
+  margin-right: 400px;
+}
+
+@media (max-width: 480px) {
+  body.chat-open .main-wrapper {
+    margin-right: 0;
+  }
 }

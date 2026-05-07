@@ -3,14 +3,14 @@ import React from 'react';
 import styles from './styles.module.css';
 import { useChatContext } from '@site/src/context/ChatContext';
 
-export default function AskAIButton(): React.JSX.Element {
+export default function AskAIButton({ onClick }: { onClick?: () => void } = {}): React.JSX.Element {
   const { isOpen, toggleChat } = useChatContext();
   return (
     <div className={`${styles.wrap} ${isOpen ? styles.active : ''}`} data-navbar-ask-ai>
       <button
         type="button"
         className={styles.btn}
-        onClick={toggleChat}
+        onClick={onClick ?? toggleChat}
         aria-expanded={isOpen}
         aria-haspopup="dialog">
         <svg

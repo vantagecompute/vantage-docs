@@ -2,9 +2,9 @@
 
 .wrap {
   position: fixed;
-  top: 0;
+  top: var(--ifm-navbar-height);
   right: 0;
-  height: 100vh;
+  height: calc(100dvh - var(--ifm-navbar-height));
   width: 400px;
   background: var(--ifm-background-surface-color, #ffffff);
   box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
@@ -43,10 +43,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 4px;
 }
 
 .closeBtn:hover {
   color: var(--ifm-font-color-base, #1a1a1a);
+}
+
+.closeBtn:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  border-radius: 4px;
 }
 
 .messages {
@@ -75,7 +81,7 @@
   border-radius: 12px;
   font-size: 14px;
   line-height: 1.5;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .userMessage {
@@ -94,8 +100,8 @@
 
 .errorBanner {
   padding: 10px 20px;
-  background: var(--ifm-color-danger-lightest, #ffe6e6);
-  color: var(--ifm-color-danger-dark, #cc0000);
+  background: var(--rose-50, #fff1f2);
+  color: var(--rose-600, #be123c);
   font-size: 13px;
   display: flex;
   align-items: center;
@@ -104,7 +110,7 @@
 }
 
 .retryBtn {
-  background: var(--ifm-color-danger-dark, #cc0000);
+  background: var(--rose-600, #be123c);
   color: #fff;
   border: none;
   padding: 4px 10px;
@@ -129,6 +135,12 @@
   font-size: 14px;
   background: var(--ifm-background-color, #fff);
   color: var(--ifm-font-color-base, #1a1a1a);
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px rgba(80, 70, 229, 0.15);
 }
 
 .input:disabled {
@@ -142,14 +154,14 @@
   padding: 8px 16px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.15s;
 }
 
 .sendBtn:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
@@ -167,16 +179,20 @@
   animation: blink 1.4s infinite both;
 }
 
-.dot:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.dot:nth-child(3) {
-  animation-delay: 0.4s;
-}
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
 
 @keyframes blink {
-  0% { opacity: 0.2; }
-  20% { opacity: 1; }
+  0%   { opacity: 0.2; }
+  20%  { opacity: 1; }
   100% { opacity: 0.2; }
+}
+
+@media (max-width: 996px) {
+  .wrap {
+    top: 0;
+    height: 100dvh;
+    width: 100%;
+    z-index: var(--ifm-z-index-overlay, 400);
+  }
 }
