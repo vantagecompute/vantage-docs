@@ -19,7 +19,7 @@ export default function FloatingAskWidget(): React.JSX.Element {
         onClick={toggleChat}
         aria-label="Ask AI">
         <span className={styles.text}>Ask AI</span>
-        <kbd className={styles.kbd}>⌘I</kbd>
+        <kbd className={styles.kbd}>Ctrl+I</kbd>
         <svg
           width="14"
           height="14"
