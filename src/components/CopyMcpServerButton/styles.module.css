@@ -1,4 +1,9 @@
 /* src/components/CopyMcpServerButton/styles.module.css */
+.wrap {
+  position: relative;
+  display: inline-block;
+}
+
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 7px 8px 7px 14px;
@@ -29,11 +34,99 @@
   border-left: 1px solid var(--ink-100);
   height: 16px;
   width: auto;
+  transition: transform .15s;
 }
 .btn:hover .chev { color: var(--iris-600); }
+.chevOpen { transform: rotate(180deg); }
 
 [data-theme='dark'] .btn {
   background: var(--ifm-background-surface-color);
   border-color: var(--ink-200);
   color: var(--ink-900);
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 220px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ink-200);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.10);
+  padding: 4px;
+  z-index: 999;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--ink-800);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  text-align: left;
+  transition: background .1s, color .1s;
+}
+
+.item:hover {
+  background: var(--iris-50);
+  color: var(--iris-700);
+}
+
+.item:hover .itemIcon { color: var(--iris-600); }
+
+.itemIcon {
+  color: var(--ink-400);
+  flex-shrink: 0;
+  margin-top: 1px;
+  align-self: flex-start;
+}
+
+.itemText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.itemLabel {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.itemDesc {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ink-400);
+  line-height: 1.3;
+}
+
+.item:hover .itemDesc {
+  color: var(--iris-500);
+}
+
+.divider {
+  height: 1px;
+  background: var(--ink-100);
+  margin: 4px 6px;
+}
+
+[data-theme='dark'] .dropdown {
+  box-shadow: 0 4px 16px rgba(0,0,0,.3);
+}
+
+[data-theme='dark'] .item:hover {
+  background: rgba(255,255,255,.06);
+  color: var(--iris-400);
 }

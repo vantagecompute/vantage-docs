@@ -1,16 +1,17 @@
 // src/components/AskAIButton/index.tsx
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './styles.module.css';
+import { useChatContext } from '@site/src/context/ChatContext';
 
-export default function AskAIButton(): React.JSX.Element {
-  const [open, setOpen] = useState(false);
+export default function AskAIButton({ onClick }: { onClick?: () => void } = {}): React.JSX.Element {
+  const { isOpen, toggleChat } = useChatContext();
   return (
-    <div className={styles.wrap} data-navbar-ask-ai>
+    <div className={`${styles.wrap} ${isOpen ? styles.active : ''}`} data-navbar-ask-ai>
       <button
         type="button"
         className={styles.btn}
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
+        onClick={onClick ?? toggleChat}
+        aria-expanded={isOpen}
         aria-haspopup="dialog">
         <svg
           className={styles.spark}
@@ -24,14 +25,6 @@ export default function AskAIButton(): React.JSX.Element {
         </svg>
         <span>Ask AI</span>
       </button>
-      {open && (
-        <div className={styles.popover} role="dialog">
-          <div className={styles.popoverTitle}>Coming soon</div>
-          <div className={styles.popoverBody}>
-            The docs AI is being trained. Check back soon — or use the search box for now.
-          </div>
-        </div>
-      )}
     </div>
   );
 }
