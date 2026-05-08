@@ -1,0 +1,30 @@
+---
+title: Creating a Job Script
+description: Walk through the Create Script dialog, upload files, and use the built-in editor.
+---
+
+# Creating a Job Script
+
+Click `Create Script` in the top-right of the script list. You'll get a dialog with a few fields:
+
+- **Name** — required. Unique within your organization, max 255 characters.
+- **Description** — optional. A short summary of what the script does, max 255 characters.
+- **File upload** — optional. Drop or browse for files, up to 5 MB each.
+
+After creation, you land on the script detail page where you'll see your script's files in a table.
+
+## Entrypoint vs support files
+
+Every script has exactly one **entrypoint** — the file Slurm executes when the job runs. It must be `.py` or `.sh` and contains `#SBATCH` directives (resource requests, time limits) plus the executable code. When you submit the script, Vantage passes the entrypoint to `sbatch` on the cluster.
+
+**Support files** are everything else your entrypoint needs to run — config files, Python modules, input data, helper scripts. There's no limit on how many you can add. At runtime, Vantage places all files in the same working directory on the cluster node, so the entrypoint can reference support files by their filename using a relative path.
+
+If you don't upload an entrypoint file during creation, one is auto-created — a blank file named after your script (`.py` for Python or `.sh` for shell).
+
+## Built-in editor
+
+Click the pencil icon on any file row to open the built-in editor — syntax highlighting, minimap, line numbers, the works. Hit **Save** when you're done. Unsaved changes trigger a navigation warning.
+
+## Add support files
+
+Click **Add Support File** below the file table, give it a name, and upload the file (max 5 MB). Repeat for as many support files as you need. To update an existing one, click the file row and re-upload.

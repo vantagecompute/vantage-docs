@@ -1,0 +1,16 @@
+---
+title: Script Catalog
+description: Pre-built job scripts that work out of the box on Vantage cloud clusters.
+---
+
+# Script Catalog
+
+The Script Catalog is a library of pre-built job scripts that work out of the box on Vantage clusters. Good for getting started fast with common HPC workloads without writing Slurm from scratch.
+
+Browse available scripts in a grid view — each entry shows an icon, name, and description. Use the search bar to filter by name or keyword.
+
+Click any entry to open its detail page, which includes a full markdown description and an **Import Script** button. Importing creates a new Job Script in your script library with the entrypoint file and all support files. Once imported, the script behaves like any other script — you can edit, clone, submit, archive, or delete it.
+
+:::warning
+Catalog scripts assume a shared `/nfs` folder available on all cluster nodes. If your cluster doesn't have this mount, you may need to modify the imported script before submission.
+:::

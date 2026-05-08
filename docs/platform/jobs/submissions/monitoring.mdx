@@ -1,0 +1,63 @@
+---
+title: Monitoring Submissions
+description: Track job status, view resource metrics, inspect logs, and review Slurm job info.
+---
+
+# Monitoring Submissions
+
+The submission detail page tells you everything about a running job: where it is in the pipeline, what resources it's using, and what Slurm thinks of it.
+
+The detail page has five tabs.
+
+## Overview tab
+
+Key details displayed:
+
+- **Job Submission ID** — copyable
+- **Owner** — clickable user preview
+- **Script** — clickable preview
+- **Cluster** — clickable preview
+- **Created** — timestamp
+- **Last Updated** — timestamp
+- **Slurm Job ID**
+- **Slurm Job State**
+- **Description**
+
+Actions: **Re-Submit**, **Delete**, **Edit**.
+
+Abnormal statuses (REJECTED, ABORTED) display a banner with the report message.
+
+## Job Metrics tab
+
+Available after approximately 5 data points have been collected.
+
+**Charts:**
+
+- CPU utilization, CPU frequency
+- Memory RSS, Memory Virtual
+- GPU utilization, GPU memory
+- Disk read, Disk write
+- Page faults
+
+**Controls:**
+
+- **Live data toggle** — Since start / Last 3 hours / 30 min / 5 min
+- **Date range picker**
+- **Sample rate selector** — 10 seconds / 1 minute / 10 minutes / 1 hour
+- **Per-node filtering**
+
+Data refreshes in real-time for active jobs.
+
+## Progress tab
+
+Table of stage transitions through the submission pipeline, from creation to finalization.
+
+Each row shows stage name, status, and timestamp.
+
+## Sbatch Arguments tab
+
+Table listing all sbatch arguments passed at submission, including the auto-generated `--partition` flag.
+
+## Slurm Job Info tab
+
+Available after the submission reaches Slurm. Displays a searchable JSON tree viewer showing the raw `scontrol show job` output. Use it to debug scheduling decisions, resource allocations, or Slurm-level error messages.

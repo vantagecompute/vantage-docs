@@ -94,5 +94,5 @@ You've submitted your first job to a Vantage-connected cluster. You now have the
 - [License Management](https://docs.vantagecompute.ai/platform/licenses/)
 - [Cluster Federations](https://docs.vantagecompute.ai/platform/federations/)
 - [Learn about Jobs](https://docs.vantagecompute.ai/platform/jobs/)
-- [Explore Job Templates](https://docs.vantagecompute.ai/platform/jobs/tutorials/)
+- [Explore Job Templates](/platform/jobs/templates)
 - [Connect a Cloud Provider](https://docs.vantagecompute.ai/platform/compute-providers/)
