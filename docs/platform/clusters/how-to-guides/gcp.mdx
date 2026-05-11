@@ -1,0 +1,40 @@
+---
+title: GCP
+description: Create Slurm and Kubernetes clusters on Google Cloud Platform.
+---
+
+# GCP
+
+Create HPC or Kubernetes clusters on Google Cloud Platform.
+
+## Prerequisites
+
+A GCP cloud account configured in Vantage — go to **Admin > Cloud Accounts** to add one.
+
+## Create a Slurm cluster
+
+1. **Open Clusters** — Click **Compute** in the left nav, then click <kbd>Prepare Cluster</kbd>.
+
+1. **Choose type** — Select **Slurm** and click **Continue**.
+
+1. **Configure the cluster:**
+   - Enter a **Cluster Name** (max 27 characters, must be unique).
+   - Select your **GCP Cloud Account**. The provider is detected automatically.
+
+1. **Submit** — Click <kbd>Prepare Cluster</kbd>. GCP Slurm clusters use Vantage-managed defaults for node configuration and networking. The cluster connects once provisioning completes.
+
+:::info
+Partition configuration for GCP Slurm clusters is managed post-creation from the **Partitions** tab on the cluster detail page.
+:::
+
+## Create a Kubernetes cluster
+
+1. **Open Clusters** — Click **Compute**, then <kbd>Prepare Cluster</kbd>.
+
+1. **Choose type** — Select **Kubernetes** and click **Continue**.
+
+1. **Configure the cluster:**
+   - Enter a **Cluster Name** and optionally a **Description**.
+   - Select your **GCP Cloud Account**.
+
+1. **Submit** — Click <kbd>Prepare Cluster</kbd>. GCP Kubernetes clusters use cloud-managed defaults for node sizing and networking. Review your project's regional quota before submitting.

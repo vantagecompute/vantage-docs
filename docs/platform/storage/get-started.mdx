@@ -1,0 +1,40 @@
+---
+title: Get started with Storage
+description: Create your first Persistent Volume Claim on a Kubernetes cluster.
+sidebar_position: 1
+---
+
+# Get started with Storage
+
+Create a Persistent Volume Claim (PVC) on a Kubernetes cluster in under a minute.
+
+## Before you begin
+
+You need a Kubernetes cluster in **Connected** state. Storage is only available for Kubernetes clusters — Slurm clusters manage their own storage separately.
+
+## Create a PVC
+
+1. **Open Storage** — Go to **Compute**, select your Kubernetes cluster, then click the **Storage** tab.
+
+1. **Switch to the PVC tab** — The three tabs (PVC, NFS, CephFS) correspond to the storage types available on this cluster. Start on **PVC**.
+
+1. **Click <kbd>Create PVC</kbd>** — The Create PVC modal opens.
+
+1. **Fill in the details:**
+   - **Name** — A DNS-compatible name (lowercase letters, numbers, and hyphens).
+   - **Namespace** — The Kubernetes namespace this PVC belongs to.
+   - **Size** — Enter a value and choose a unit (Ki, Mi, Gi, Ti).
+   - **Storage Class** — Choose from the classes available on your cluster.
+   - **Access Mode** — Select how the volume is accessed. Available modes depend on the storage class.
+
+1. **Click <kbd>Create</kbd>** — The PVC appears in the list. Status moves to **Bound** once the cluster provisions it.
+
+:::tip
+PVCs are namespace-scoped. If your job and your PVC are in different namespaces, the job can't mount it directly — use NFS or CephFS to bridge across namespaces.
+:::
+
+## Next steps
+
+- [Concepts](/platform/storage/concepts) — Understand storage types, access modes, and when to use each
+- [Create an NFS mount](/platform/storage/how-to-guides/nfs) — Share storage across namespaces
+- [Create a CephFS mount](/platform/storage/how-to-guides/cephfs) — Attach a CephFS filesystem

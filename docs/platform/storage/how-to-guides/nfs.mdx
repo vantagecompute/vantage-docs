@@ -1,0 +1,49 @@
+---
+title: NFS
+description: Mount an external NFS server or expose an existing PVC as an NFS share.
+---
+
+# NFS
+
+NFS mounts give you two options: connect to an NFS server that already exists outside Vantage, or expose an existing PVC as an NFS share so it can be mounted from any namespace.
+
+## Prerequisites
+
+A Kubernetes cluster in **Connected** state.
+
+For **internal** NFS: an existing PVC on the cluster to use as the backing store.
+
+## Create an NFS mount
+
+1. **Open Storage** — Go to **Compute**, select your Kubernetes cluster, then click the **Storage** tab.
+
+1. **Select the NFS tab** — Click **NFS** at the top of the Storage page.
+
+1. **Click <kbd>Create NFS</kbd>**.
+
+1. **Select a namespace** — Choose the namespace this NFS mount will be available in.
+
+1. **Enter a name** — Lowercase letters, numbers, and hyphens.
+
+1. **Choose a source mode:**
+
+   **External** — Mount an NFS server running outside Vantage:
+   - **NFS Server** — Hostname or IP address of the NFS server.
+   - **NFS Share Path** — Absolute path to the exported share (e.g. `/exports/data`).
+
+   **Internal** — Expose an existing PVC as an NFS share:
+   - **Source Namespace** — The namespace where the source PVC lives (can differ from the target namespace).
+   - **Source PVC** — Select the PVC to export.
+
+1. **Set capacity** — Enter the size of the share (e.g. `100Gi`). For external sources, this is informational; for internal sources it should match the backing PVC.
+
+1. **Advanced options** *(optional)*:
+   - **Access Modes** — Default is ReadWriteMany. Uncheck modes your workloads don't need.
+   - **Read Only** — Force all mounts of this share to be read-only.
+   - **Mount Options** — Additional NFS mount flags, one per line. Defaults: `nfsvers=4.1`, `hard`, `nointr`.
+
+1. **Click <kbd>Create</kbd>**.
+
+:::tip
+Internal NFS is the simplest way to share a PVC across namespaces. Create the PVC in one namespace, then create an internal NFS mount targeting it — pods in any namespace can mount the NFS share.
+:::

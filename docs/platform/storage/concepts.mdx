@@ -1,0 +1,53 @@
+---
+title: Storage concepts
+description: Storage types, namespaces, access modes, and storage classes in Vantage.
+sidebar_position: 2
+---
+
+# Storage concepts
+
+## Storage types
+
+Vantage exposes three storage primitives on Kubernetes clusters, each suited to a different use case.
+
+| Type | What it is | Best for |
+|---|---|---|
+| **PVC** | A Persistent Volume Claim backed by a storage class on the cluster | Single-namespace workloads that need durable block or file storage |
+| **NFS** | A network file share — either an external NFS server or a PVC exposed over NFS | Sharing data across namespaces or mounting the same volume in multiple pods simultaneously |
+| **CephFS** | A CephFS filesystem — from an internal PVC, an external Ceph cluster, or a system storage class | High-throughput parallel access across many nodes |
+
+## Namespaces
+
+All storage objects are namespace-scoped. A PVC created in `team-a` is invisible to pods in `team-b`. To share data across namespace boundaries, use NFS (with a PVC as the source) or CephFS — both can be mounted by pods in any namespace.
+
+## Access modes
+
+Access modes control how many nodes can mount a volume simultaneously and whether they can write.
+
+| Mode | Meaning |
+|---|---|
+| **ReadWriteOnce** | One node at a time, read-write |
+| **ReadOnlyMany** | Any number of nodes, read-only |
+| **ReadWriteMany** | Any number of nodes, read-write |
+| **ReadWriteOncePod** | One pod at a time, read-write (stricter than ReadWriteOnce) |
+
+Not all access modes are supported by every storage class. The UI filters available modes based on the class you select.
+
+## Storage classes
+
+Storage classes define the provisioner, performance tier, and reclaim policy for a PVC. Vantage reads the available storage classes directly from your cluster — what you see in the UI is what your cluster supports. Your cluster administrator controls which classes are available.
+
+## NFS source modes
+
+When creating an NFS mount, you choose how the share is sourced:
+
+- **External** — Point to an existing NFS server (hostname or IP) and share path. Vantage creates a PersistentVolume backed by that server. Nothing is provisioned on the cluster.
+- **Internal** — Select an existing PVC on the cluster. Vantage deploys an NFS server pod that exports that PVC, making it mountable from any namespace.
+
+## CephFS source modes
+
+| Mode | How it connects |
+|---|---|
+| **Internal** | Backed by an existing PVC on the cluster |
+| **External** | Connects to a standalone Ceph cluster using monitor addresses and client credentials |
+| **System** | Uses a storage class to provision through a cluster-level Ceph integration (admin configuration required) |

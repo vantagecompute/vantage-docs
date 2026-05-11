@@ -1,0 +1,42 @@
+---
+title: PVCs
+description: Create and manage Persistent Volume Claims on a Kubernetes cluster.
+---
+
+# PVCs
+
+Persistent Volume Claims (PVCs) are the standard way to request durable storage on a Kubernetes cluster. You specify the size and access mode; the cluster's storage class provisions the volume automatically.
+
+## Prerequisites
+
+A Kubernetes cluster in **Connected** state with at least one storage class configured.
+
+## Create a PVC
+
+1. **Open Storage** — Go to **Compute**, select your Kubernetes cluster, then click the **Storage** tab.
+
+1. **Select the PVC tab** — Click **PVC** at the top of the Storage page.
+
+1. **Click <kbd>Create PVC</kbd>**.
+
+1. **Configure the volume:**
+   - **Name** — Lowercase letters, numbers, and hyphens only (DNS-1123 format).
+   - **Namespace** — The namespace the PVC will live in. Pods in other namespaces cannot mount it directly.
+   - **Size** — Enter a number and choose a unit: Ki, Mi, Gi, or Ti.
+   - **Storage Class** — Select from the classes available on your cluster.
+   - **Access Mode** — Choose how pods access the volume. Options depend on the selected storage class:
+     - **ReadWriteOnce** — One node at a time, read-write.
+     - **ReadOnlyMany** — Any number of nodes, read-only.
+     - **ReadWriteMany** — Any number of nodes, read-write.
+     - **ReadWriteOncePod** — One pod at a time, read-write.
+   - **Labels** *(optional)* — Add key-value labels for workload identification or selection.
+
+1. **Click <kbd>Create</kbd>** — The PVC appears in the list. It moves to **Bound** once provisioned.
+
+:::tip
+If you need to share a PVC across namespaces or mount it from multiple pods simultaneously, create an NFS mount sourced from this PVC instead.
+:::
+
+## Filter by namespace
+
+Use the namespace selector at the top of the Storage page to show PVCs for a specific namespace. The filter applies across the PVC, NFS, and CephFS tabs.

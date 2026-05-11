@@ -1,0 +1,40 @@
+---
+title: Partner clusters
+description: Create clusters through Vantage's partner network — atNorth, BuzzHPC, Cudo Compute, and Responsible Compute.
+---
+
+# Partner clusters
+
+Vantage partners give you access to specialized HPC infrastructure without managing cloud accounts yourself.
+The wizard flow is the same as public cloud clusters — the difference is the cloud account type.
+
+## Prerequisites
+
+A partner cloud account configured in Vantage — go to **Admin > Cloud Accounts** and select the partner provider.
+Contact the partner or your Vantage account team to get the credentials needed for account setup.
+
+## Create a cluster
+
+1. **Open Clusters** — Click **Compute** in the left nav, then click <kbd>Prepare Cluster</kbd>.
+
+1. **Choose type** — Select **Slurm** or **Kubernetes**, then click **Continue**.
+
+1. **Configure the cluster:**
+   - Enter a **Cluster Name** (max 27 characters).
+   - Select your **partner cloud account**. The provider is detected automatically.
+
+1. **Submit** — Click <kbd>Prepare Cluster</kbd>. The cluster connects once the partner infrastructure is provisioned.
+
+## Supported partners
+
+| Partner | Specialization |
+|---|---|
+| atNorth | Sustainable HPC — geothermal and hydroelectric-powered data centers in Iceland and Sweden |
+| BuzzHPC | High-performance bare-metal and GPU infrastructure |
+| Cudo Compute | Distributed computing marketplace — access underutilized compute globally |
+| Responsible Compute | Green computing with a focus on renewable energy sourcing |
+
+:::info
+Partner cluster availability and supported regions depend on your agreement with the partner.
+Contact your Vantage account team if a partner option is not visible in the cloud account selector.
+:::

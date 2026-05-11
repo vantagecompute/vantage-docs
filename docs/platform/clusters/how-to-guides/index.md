@@ -1,10 +1,14 @@
 ---
 title: How-to guides
-description: how-to-guides for Clusters.
+description: Step-by-step guides for connecting and creating clusters on every supported provider.
 ---
 
-# Clusters — How-to guides
+# How-to guides
 
-:::info Coming soon
-This section is empty for now. Task-oriented recipes are being written; expect them in the next docs pass.
-:::
+Step-by-step guides for connecting clusters on every supported provider.
+
+- [AWS](/platform/clusters/how-to-guides/aws) — Slurm and Kubernetes on Amazon Web Services
+- [Azure](/platform/clusters/how-to-guides/azure) — Slurm and Kubernetes on Microsoft Azure
+- [GCP](/platform/clusters/how-to-guides/gcp) — Slurm and Kubernetes on Google Cloud Platform
+- [On-premises](/platform/clusters/how-to-guides/on-premises) — Connect an existing on-site cluster via agent
+- [Partner clusters](/platform/clusters/how-to-guides/partner-clusters) — atNorth, BuzzHPC, Cudo Compute, Responsible Compute

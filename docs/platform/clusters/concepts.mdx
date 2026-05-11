@@ -1,0 +1,47 @@
+---
+title: Concepts
+description: Four mental models that show up across every Clusters view.
+sidebar_position: 2
+---
+
+# Concepts
+
+Four mental models that show up across every Clusters view.
+
+## Cluster types
+
+Vantage supports three cluster types. The choice determines the scheduler, the detail tabs, and which workloads you can run.
+
+| Type | Scheduler | Best for |
+|---|---|---|
+| Slurm | Slurm (batch jobs) | Traditional HPC — simulations, MPI workloads, batch pipelines |
+| Kubernetes | Kubernetes | Workbench sessions, ML training, containerized apps |
+| Slurm on Kubernetes | Slurm inside K8s | HPC workloads on cloud-native, auto-scaled infrastructure |
+
+Slurm and Slurm-on-Kubernetes clusters appear under the **Slurm** list in the sidebar.
+Kubernetes clusters appear under **Kubernetes**.
+
+## Partitions
+
+Partitions are job queues on a Slurm cluster — your admin sets them up.
+Each partition targets a pool of nodes and applies rules: max run time, allowed users, priority class.
+When you submit a job, you name a partition and Slurm places it on a qualifying node.
+
+You manage them on the **Partitions** tab of any Slurm cluster detail page.
+Cloud Slurm clusters let you create partitions with auto-scaling node counts directly from the UI.
+
+## Node groups
+
+Node groups are the Kubernetes equivalent of Slurm partitions: a pool of identically-sized machines that K8s scales up and down automatically.
+You define the minimum and maximum size when you create the group; Vantage handles provisioning through the cloud provider.
+
+Each node group is a billing unit — you pay for every provisioned node, even if it isn't running a workload.
+
+## Cost and scaling
+
+Every provisioned node accumulates spend, regardless of utilization.
+Cloud clusters with autoscaling can scale down to zero idle nodes — but only if the node group minimum is set to zero.
+
+:::tip
+The **Monitoring** tab on every cluster detail page shows live utilization and accumulated cost. Check it after your first job run to catch over-provisioned node groups before the charges add up.
+:::

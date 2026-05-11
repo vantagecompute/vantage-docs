@@ -1,0 +1,23 @@
+---
+title: Get started
+description: From an empty workspace to a connected cluster in under five minutes.
+sidebar_position: 1
+---
+
+# Quickstart
+
+From an empty workspace to a connected cluster in under five minutes.
+
+1. **Open Clusters** — From the left nav, click **Compute**. The sidebar shows **Slurm** and **Kubernetes** lists. Both are empty until you connect or create a cluster.
+
+1. **Start the wizard** — Click <kbd>Prepare Cluster</kbd> in the top-right corner. A three-step wizard opens.
+
+1. **Choose a cluster type** — Pick **Slurm** for traditional HPC batch workloads, **Kubernetes** for ML and containerized workloads, or **Slurm on Kubernetes** to run a Slurm scheduler inside an existing K8s cluster. If you're not sure, start with **Slurm**.
+
+1. **Configure the cluster** — Enter a name, then pick a cloud provider and cloud account (for cloud-provisioned clusters). For on-premises clusters, the wizard shows an agent installation command — run it on your infrastructure and Vantage connects automatically.
+
+1. **Finish and explore** — Click <kbd>Prepare Cluster</kbd> to submit. Once the cluster connects, click its row to open the detail view: **Overview**, **Nodes**, **Partitions**, **Queue**, **Configuration**, and **Monitoring**.
+
+:::tip
+Cloud cluster nodes bill while running — even idle ones. Set the maximum node count for each partition conservatively during setup. You can raise it when you're ready to run jobs.
+:::
