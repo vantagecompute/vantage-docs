@@ -1,0 +1,37 @@
+---
+title: Concepts
+description: Key mental models for the Jobs section — scripts, templates, submissions, and the relationships between them.
+---
+
+# Concepts
+
+Four mental models that show up across the Jobs section — whether you're working with scripts, templates, submissions, or the catalog.
+
+## The pipeline
+
+Jobs flow through three stages. A **Template** is your reusable blueprint — it defines what to run with placeholders for things like dataset paths or cluster config. When you render a template, Vantage fills in those placeholders and produces a concrete **Script** — a Slurm batch file ready for submission. Submit that script to a cluster, and it becomes a **Submission** — a running (or queued, or completed) workload.
+
+Each stage links back to its parent: a rendered Script knows which Template it came from, and a Submission knows which Script it was created from.
+
+## Script files
+
+A Job Script has one **entrypoint** — a `.py` or `.sh` file with `#SBATCH` directives and executable code — plus any number of **support files** (configs, Python modules, input data) the entrypoint references at runtime.
+
+| File type | Description |
+|-----------|-------------|
+| Entrypoint | `.py` or `.sh` — the file Slurm executes |
+| Support | Any auxiliary file the entrypoint needs |
+
+## Archive vs Delete
+
+Archive hides it, delete wipes it.
+
+**Archive** removes a resource from your default view but keeps everything intact — data, references, everything. You can still find archived items by filtering. Use archive for scripts or templates you don't need day-to-day but want to keep around.
+
+**Delete** is permanent. It removes the resource and breaks its links to related objects. For example, deleting a script severs the connection from its submissions — those submissions still exist but lose their parent script reference.
+
+## Statuses
+
+A submission moves through a few states. `CREATED` means it's queued and waiting to be dispatched to the cluster. `SUBMITTED` means Slurm has picked it up and is running (or scheduling) it. `DONE` means it completed successfully. `REJECTED` means Slurm couldn't accept the script — likely a syntax error or bad parameter. `ABORTED` means something went wrong during processing.
+
+Submissions that stay queued longer than expected may indicate a busy cluster — check your cluster's utilization or pick a different partition.

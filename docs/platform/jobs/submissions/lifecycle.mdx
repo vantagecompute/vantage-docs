@@ -1,0 +1,30 @@
+---
+title: Submission Lifecycle
+description: Queued, running, done — and the actions available at each stage.
+---
+
+# Submission Lifecycle
+
+A submission moves from queued to running to done — or hits an error along the way. Here's what each status means and what you can do at each stage.
+
+| Status | Meaning |
+|--------|---------|
+| CREATED | Queued and waiting to be dispatched to the cluster. |
+| SUBMITTED | Handed off to Slurm. The cluster picks it up based on partition availability. |
+| DONE | Script ran to completion and exited successfully. |
+| REJECTED | Slurm refused the script — check the report message for syntax or parameter errors. |
+| ABORTED | Something went wrong during processing. The report message has details. |
+
+| Action | CREATED | SUBMITTED | DONE | REJECTED | ABORTED |
+|--------|---------|-----------|------|----------|---------|
+| Re-Submit | — | — | Yes | Yes | Yes |
+| Edit | Yes | Yes | Yes | Yes | Yes |
+| Delete | Yes | — | Yes | Yes | Yes |
+
+- **Re-Submit**: Creates a new submission from the same script. Only available for terminal states.
+- **Edit**: Name and description editable at any time from the detail page.
+- **Delete**: Not available while actively running on cluster (SUBMITTED).
+
+:::warning
+Jobs in SUBMITTED status are waiting for scheduling by Slurm. If the cluster is busy, your job may wait — check cluster utilization before submitting. Idle queue time still accrues cost if you're reserving full nodes.
+:::

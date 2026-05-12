@@ -1,0 +1,18 @@
+---
+title: Using Templates
+description: Render a template to generate a concrete job script.
+---
+
+# Using Templates
+
+**Render Template to Script** is accessible from the template list row's action menu or the template detail page.
+
+The render dialog asks for a name for the new script (required), a description (optional), parameter values pre-filled from the template defaults, and which template file becomes the entrypoint.
+
+Click **Render** — Vantage processes the Jinja2 templates, creates a new Job Script, and takes you to the new script's detail page, ready to submit.
+
+The generated script preserves a link to its parent template, shown in the script detail page as **Parent Template**.
+
+:::warning
+Templates do not auto-update already-rendered scripts. Changes to a template only apply when you render it again to produce an updated copy.
+:::

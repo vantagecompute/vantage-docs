@@ -1,0 +1,36 @@
+---
+title: Submissions Reference
+description: Submission fields, status enums, metrics fields, and API endpoints.
+---
+
+# Submissions Reference
+
+## Submission fields
+
+**ID** — Unique numeric identifier
+**Name** — Display name
+**Description** — Optional summary
+**Owner** — Creator's email
+**Cluster** — Target cluster
+**Job Script** — Parent script ID
+**Script data** — Script name and details
+**Status** — `CREATED` / `SUBMITTED` / `DONE` / `REJECTED` / `ABORTED`
+**Slurm Job ID** — Slurm job ID
+**Slurm Job State** — Slurm state (`PENDING`, `RUNNING`, etc.)
+**Slurm Job Info** — Raw JSON from `scontrol show job`
+**Sbatch Arguments** — Flags passed at submission
+**Report Message** — Error details for rejected or aborted jobs
+**Created at** — ISO 8601 timestamp
+**Updated at** — ISO 8601 timestamp
+
+## Progress stages
+
+The submission progresses through these stages: creating the job, sending it to the cluster, submitting to Slurm, running on Slurm, and finalizing.
+
+## Metrics fields
+
+CPU utilization, CPU frequency, CPU time, memory RSS, memory virtual, GPU utilization, GPU memory, disk read, disk write, page faults
+
+## Sample rates
+
+10 seconds, 1 minute, 10 minutes, 1 hour — adjust in the Job Metrics tab.

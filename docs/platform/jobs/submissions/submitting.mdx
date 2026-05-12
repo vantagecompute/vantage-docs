@@ -1,0 +1,42 @@
+---
+title: Submitting a Job
+description: Submit a job script to a cluster with partition selection, advanced sbatch arguments, and cost preview.
+---
+
+# Submitting a Job
+
+## Opening the submit dialog
+
+The submit dialog is accessible from:
+
+- The **action menu** on a script row in the Job Scripts list
+- The **Actions button** on a script detail page
+- The **Submit Script** button on the Submissions page
+
+## Dialog fields
+
+The submit dialog walks you through five fields; the submission name, script, cluster, and partition are all required. Description is optional.
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| Submission Name | Yes | Pre-filled from script name; editable |
+| Job Script | Yes | Pre-filled if submitting from a script; searchable select otherwise |
+| Cluster | Yes | Searchable dropdown of available clusters |
+| Partition | Yes | Populates after cluster selection; multi-select with one default pre-selected |
+| Description | No | Free text notes about this run |
+
+**Hourly Price** updates as you change cluster and partition selections, so you can see the cost before you submit.
+
+:::tip
+Pick a partition with available capacity — the status column shows queue depth.
+:::
+
+## Advanced options
+
+The **Advanced Options** section is collapsible:
+
+- **Sbatch Arguments**: Add `--flag=value` arguments. The partition selection auto-generates a `--partition` argument. Additional arguments supplement or override `#SBATCH` directives in the script file.
+
+## Submit
+
+Click **Submit** to dispatch. Vantage redirects you to the Submissions list, where the new submission shows status `CREATED`.

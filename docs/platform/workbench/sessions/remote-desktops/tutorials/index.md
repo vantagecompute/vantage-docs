@@ -122,5 +122,5 @@ If you encounter issues during these tutorials:
 After completing these tutorials, consider exploring:
 
 - [Notebooks Tutorials](/platform/workbench/sessions/notebooks/tutorials/) for alternative interactive computing
-- [Jobs Tutorials](/platform/jobs/tutorials/) for running batch computational workloads
+- [Jobs](/platform/jobs/) for running batch computational workloads
 - [Teams Tutorials](/platform/teams/tutorials/) for managing user access and collaboration

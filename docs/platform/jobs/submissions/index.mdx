@@ -1,0 +1,23 @@
+---
+title: Job Submissions
+description: Submissions are your jobs in flight — submitted scripts linked to a cluster, partition, and a Slurm job.
+---
+
+# Job Submissions
+
+Submissions are your jobs in flight. When you submit a script, it becomes a submission — linked to a cluster, a partition, and a running (or queued) Slurm job.
+
+You can track its status, watch resource metrics (CPU, memory, GPU, disk I/O), read logs, and inspect Slurm details — all from the submission detail page.
+
+## Lifecycle actions
+
+- **Re-submit** — create a fresh run from the same script. Available for finished jobs (DONE, REJECTED, ABORTED).
+- **Edit** — change name and description at any time.
+- **Delete** — remove the submission. Not available while the job is running (SUBMITTED).
+
+## Next steps
+
+- [Submitting a Job](/platform/jobs/submissions/submitting) — walk through the submit dialog: pick a cluster and partition, review the hourly cost, and dispatch your script.
+- [Monitoring Submissions](/platform/jobs/submissions/monitoring) — track status in real time, view CPU/GPU metrics, browse logs, and inspect Slurm job info.
+- [Submission Lifecycle](/platform/jobs/submissions/lifecycle) — what each status means, which actions are available at each stage, and how Slurm states map to Vantage statuses.
+- [Submissions Reference](/platform/jobs/submissions/reference) — all submission fields, status enums, metrics, and API endpoints.

@@ -1,0 +1,33 @@
+---
+title: Get started
+description: From a fresh workspace to a completed job in under five minutes.
+---
+
+# Quickstart
+
+Five minutes, one job.
+
+1. **Open Jobs** — From the left nav, click **Jobs**. The secondary sidebar lists Scripts, Templates, and Submissions.
+1. **Create a Script** — Go to **Scripts** and click **Create Script**. Give it a name and click create. An empty entrypoint file is auto-created.
+1. **Write the script** — Click the edit icon on the entrypoint file row. Paste in a simple Slurm script:
+
+   ```bash
+   #!/usr/bin/env bash
+   #SBATCH --job-name=hello
+   #SBATCH --output=hello.%j.out
+   #SBATCH --time=00:05:00
+   #SBATCH --ntasks=1
+   #SBATCH --cpus-per-task=1
+
+   echo "Hello from $(hostname)"
+   sleep 30
+   ```
+
+   Click **Save**.
+
+1. **Submit it** — From the script's action menu (`···`), click **Submit Script**. Pick a cluster and a partition (partitions are job queues on a cluster — your admin sets them up), then click **Submit**. You're redirected to the Submissions list.
+1. **Watch it run** — The status moves from queued to running to done. Click the row to see logs, metrics, and Slurm job info.
+
+:::tip
+**The list refreshes every 5 seconds** — no need to reload the page. Submissions update in place so you can watch progress live.
+:::

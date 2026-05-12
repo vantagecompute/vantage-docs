@@ -1,0 +1,25 @@
+---
+title: Templates Reference
+description: Template fields, variable schema, and file types.
+---
+
+# Templates Reference
+
+## Template Fields
+
+**ID** — Unique numeric identifier
+**Name** — Display name (max 255 chars)
+**Identifier** — Optional unique friendly name (max 255 chars)
+**Description** — Optional summary (max 255 chars)
+**Owner** — Creator's email
+**Created at** — ISO 8601 timestamp
+**Updated at** — ISO 8601 timestamp
+**Archived** — Whether hidden from default view
+**Cloned from** — Source template ID, if cloned
+**Variables** — Name/value pairs (JSON-serializable)
+**Template files** — Files rendered into the script
+**Workflow files** — Scripts for interactive variable gathering
+
+## Template Variable
+
+Each variable has a **name** (string key used in Jinja2 syntax like `{{ name }}`) and a **value** (any JSON-serializable default).

@@ -1,0 +1,38 @@
+---
+title: Job Scripts Reference
+description: Script fields and file fields reference.
+---
+
+# Job Scripts Reference
+
+## Script fields
+
+**ID** — Unique numeric identifier.
+
+**Name** — Display name (max 255 chars). Unique within your org.
+
+**Description** — Optional summary (max 255 chars).
+
+**Owner** — Email of the creator.
+
+**Created at** — ISO 8601 timestamp.
+
+**Updated at** — ISO 8601 timestamp.
+
+**Archived** — Whether the script is hidden from the default view.
+
+**Cloned from** — Source script ID, if cloned.
+
+**Parent template** — Template ID, if rendered from a template.
+
+**Files** — Array of script files (entrypoint + support).
+
+## File fields
+
+**Filename** — File name.
+
+**Type** — `Entrypoint` or `Support`.
+
+**Parent ID** — Script ID this file belongs to.
+
+**Created at** / **Updated at** — ISO 8601 timestamps.

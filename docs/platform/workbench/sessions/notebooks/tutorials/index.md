@@ -112,6 +112,6 @@ If you encounter issues during these tutorials:
 
 After completing these tutorials, consider exploring:
 
-- [Jobs Tutorials](/platform/jobs/tutorials/) to learn about running computational workloads
+- [Jobs](/platform/jobs/) to learn about running computational workloads
 - [Storage Tutorials](/platform/storage/tutorials/) for data management strategies
 - [Remote Desktops Tutorials](/platform/workbench/sessions/remote-desktops/tutorials/) for alternative interactive environments

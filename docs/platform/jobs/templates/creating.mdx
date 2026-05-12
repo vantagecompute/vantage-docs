@@ -1,0 +1,32 @@
+---
+title: Creating a Job Script Template
+description: Create parameterized templates with variables, entrypoint files, and support files.
+---
+
+# Creating a Job Script Template
+
+Open the template list and click **New Template**. The dialog asks for three things:
+
+- **Name** (required, up to 255 characters) — what you'll recognize the template by
+- **Identifier** (optional, up to 255 characters) — a unique friendly name for quick access and filtering. Validated live for uniqueness within your org.
+- **Description** (optional, up to 255 characters) — what this template is for
+
+## Template Variables
+
+Click **Add Variable** to define a variable. Each variable has a **Name** (the key used in Jinja2 templates, e.g. `{{ my_var }}`) and a **Value** (the default). Supports any JSON-serializable value.
+
+## File Types
+
+**Entrypoint Template** (`.py.j2` or `.sh.j2`): Rendered into the script entrypoint. Uses Jinja2 syntax.
+
+**Support Template**: Rendered into a support file. Any filename or extension.
+
+**Workflow Script**: An optional script the render dialog runs to guide users through variable values interactively. For example, a workflow script can validate user input or compute derived variable values before rendering.
+
+:::tip
+Jinja2 syntax uses `{{ variable_name }}` to insert values and `{% for ... %}` for logic. If you know Python templates, you already know Jinja2.
+:::
+
+If no entrypoint file is uploaded, a blank `entrypoint.py.j2` is auto-created.
+
+After creation, you land on the template detail page.
