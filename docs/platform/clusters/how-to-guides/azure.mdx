@@ -1,0 +1,40 @@
+---
+title: Azure
+description: Create Slurm and Kubernetes clusters on Microsoft Azure.
+---
+
+# Azure
+
+Create HPC or Kubernetes clusters on Microsoft Azure.
+
+## Prerequisites
+
+An Azure cloud account configured in Vantage — go to **Admin > Cloud Accounts** to add one.
+
+## Create a Slurm cluster
+
+1. **Open Clusters** — Click **Compute** in the left nav, then click <kbd>Prepare Cluster</kbd>.
+
+1. **Choose type** — Select **Slurm** and click **Continue**.
+
+1. **Configure the cluster:**
+   - Enter a **Cluster Name** (max 27 characters, must be unique).
+   - Select your **Azure Cloud Account**. The provider is detected automatically.
+
+1. **Submit** — Click <kbd>Prepare Cluster</kbd>. Azure Slurm clusters use Vantage-managed defaults for node configuration and networking. The cluster connects once provisioning completes.
+
+:::info
+Partition configuration for Azure Slurm clusters is managed post-creation from the **Partitions** tab on the cluster detail page.
+:::
+
+## Create a Kubernetes cluster
+
+1. **Open Clusters** — Click **Compute**, then <kbd>Prepare Cluster</kbd>.
+
+1. **Choose type** — Select **Kubernetes** and click **Continue**.
+
+1. **Configure the cluster:**
+   - Enter a **Cluster Name** and optionally a **Description**.
+   - Select your **Azure Cloud Account**.
+
+1. **Submit** — Click <kbd>Prepare Cluster</kbd>. Azure Kubernetes clusters use cloud-managed defaults for node sizing and networking. Review your cloud account's regional quota before submitting.

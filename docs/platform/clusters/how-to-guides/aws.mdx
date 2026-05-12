@@ -1,0 +1,59 @@
+---
+title: AWS
+description: Create Slurm and Kubernetes clusters on Amazon Web Services.
+---
+
+# AWS
+
+Create HPC or Kubernetes clusters on Amazon Web Services.
+
+## Prerequisites
+
+- An AWS cloud account configured in Vantage — go to **Admin > Cloud Accounts** to add one.
+- For Slurm clusters: an SSH key pair created in the target AWS region. Vantage uses the key pair name to provision cluster nodes — it never receives the private key.
+
+## Create a Slurm cluster
+
+1. **Open Clusters** — Click **Compute** in the left nav, then click <kbd>Prepare Cluster</kbd>.
+
+1. **Choose type** — Select **Slurm** and click **Continue**.
+
+1. **Configure the cluster:**
+   - Enter a **Cluster Name** (max 27 characters, must be unique).
+   - Select your **AWS Cloud Account**. The provider is detected automatically.
+   - Pick a **Region** — the dropdown loads after you select the cloud account.
+   - The **Head Node Machine Type** auto-fills a default — click **Select Head Node** to browse by vCPU, GPU, and price.
+   - Select an **SSH Key Name** — the list loads after you pick a region. If it's empty, create a key pair in the AWS EC2 console first.
+
+1. **Networking (optional)** — Click **Advanced Options** to pin the cluster to a specific **VPC**, **Head Node Subnet**, and **Compute Node Subnet**. Leave these empty to use AWS-managed defaults.
+
+1. **Set partitions** — A default partition named `compute` is pre-filled. For each partition:
+   - Give it a **Partition Name**.
+   - Click **Select Compute Node** to choose the instance type for worker nodes.
+   - Set the **Maximum node count** — Vantage scales up to this limit when jobs are waiting.
+   - Click **Add Partition** to create additional partitions for different workload types (e.g., a GPU partition alongside a CPU partition).
+
+1. **Submit** — Click <kbd>Prepare Cluster</kbd>. AWS provisioning typically takes a few minutes.
+
+:::tip
+Start with a low max node count per partition — you can raise it later from the **Partitions** tab on the cluster detail page. Idle provisioned nodes bill at full rate.
+:::
+
+## Create a Kubernetes cluster
+
+1. **Open Clusters** — Click **Compute**, then <kbd>Prepare Cluster</kbd>.
+
+1. **Choose type** — Select **Kubernetes** and click **Continue**.
+
+1. **Configure the cluster:**
+   - Enter a **Cluster Name** and optionally a **Description**.
+   - Select your **AWS Cloud Account**.
+   - Pick a **Control Plane Instance Type** for the cluster management nodes.
+   - Set the **Max ASG Size** — the ceiling for the worker auto-scaling group.
+   - Set **Worker vCPUs** and **Worker Memory (GiB)** to define the shape of each worker node.
+
+1. **Submit** — Click <kbd>Prepare Cluster</kbd>. Kubernetes provisioning typically takes 10–15 minutes.
+
+:::tip
+After the cluster connects, visit the **Node Groups** tab to add more node groups for different workload shapes — for example, a GPU node group for Workbench training jobs.
+:::

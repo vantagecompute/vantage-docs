@@ -1,68 +1,23 @@
 ---
-id: index
 title: Clusters
-description: High Performance Computing cluster management with Vantage
+description: Connect and manage the compute infrastructure behind every job and Workbench session.
 ---
 
-Vantage enables you to manage High Performance Computing clusters across multiple environments - from on-premises infrastructure to public clouds and partner networks.
+# Clusters
 
-## Getting Started
+Clusters is where you connect, create, and manage the compute infrastructure that runs every Vantage job and Workbench session.
 
-- **[Cluster Tutorials](/platform/clusters/tutorials/)** - Step-by-step cluster setup guides
-- **[How-to Guides](/platform/clusters/how-to-guides/charmed-hpc-integration)** - Specific implementation guides
+[Get started](/platform/clusters/get-started) · [Concepts](/platform/clusters/concepts)
 
+## What you'll find inside
 
-## Deployment Options
+- **Slurm clusters** — Traditional HPC batch scheduler. Browse nodes and partitions (job queues), inspect the live queue, and view cluster configuration.
+- **Kubernetes clusters** — Platform cluster for Workbench sessions, ML training, and containerized workloads. Manage node groups, namespaces, and storage.
+- **Slurm on Kubernetes** — A Slurm scheduler running on top of an existing Kubernetes cluster — HPC scheduling on cloud-native infrastructure.
+- **Monitoring** — Per-cluster Grafana dashboards surfaced directly from the cluster detail page.
 
-### On-Premises Clusters
+## Next steps
 
-Deploy and manage clusters on your own infrastructure with full control over hardware and configuration.
-
-### Public Cloud Clusters
-
-Leverage cloud providers for scalable, on-demand cluster resources:
-
-- **AWS** - Amazon Web Services integration
-- **Azure** - Microsoft Azure support  
-- **GCP** - Google Cloud Platform deployment
-
-### Vantage Partner Clusters
-
-Access specialized HPC resources through our partner network:
-
-- **AtNorth** - Sustainable computing solutions
-- **BuzzHPC** - High-performance infrastructure
-- **Cudo Compute** - Distributed computing platform
-- **Responsible Compute** - Green computing initiatives
-
-## Key Features
-
-- **Multi-cloud Support**: Deploy across different cloud providers
-- **Hybrid Infrastructure**: Combine on-premises and cloud resources
-- **Auto-scaling**: Dynamically adjust cluster capacity
-- **InfiniBand Support**: High-speed interconnects for HPC workloads
-- **Container Orchestration**: Kubernetes integration for modern workloads
-
-## Documentation Sections
-
-### [Tutorials](/platform/clusters/tutorials/)
-
-Learn how to create and manage clusters:
-
-- On-premise cluster deployment
-- Public cloud cluster setup
-- Partner network integration
-
-### [How-to Guides](/platform/clusters/how-to-guides/charmed-hpc-integration)
-
-Specific implementation guidance:
-
-- Charmed HPC integration
-- Advanced cluster configurations
-
-
-Technical specifications and API documentation:
-
-- Cluster configuration options
-- Networking requirements
-- Performance optimization
+- [Quickstart](/platform/clusters/get-started) — Connect your first cluster in minutes
+- [Concepts](/platform/clusters/concepts) — Cluster types, partitions, and node groups explained
+- [How-to guides](/platform/clusters/how-to-guides) — Add clusters on AWS, GCP, or on-premises

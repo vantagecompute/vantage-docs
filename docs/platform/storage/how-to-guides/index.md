@@ -1,10 +1,12 @@
 ---
 title: How-to guides
-description: how-to-guides for Storage.
+description: Step-by-step guides for creating PVCs, NFS mounts, and CephFS mounts.
 ---
 
-# Storage — How-to guides
+# How-to guides
 
-:::info Coming soon
-This section is empty for now. Task-oriented recipes are being written; expect them in the next docs pass.
-:::
+Step-by-step guides for the three storage types on Kubernetes clusters.
+
+- [PVCs](/platform/storage/how-to-guides/pvcs) — Create a Persistent Volume Claim
+- [NFS](/platform/storage/how-to-guides/nfs) — Mount an external NFS server or expose a PVC as an NFS share
+- [CephFS](/platform/storage/how-to-guides/cephfs) — Attach a CephFS filesystem (internal, external, or system)

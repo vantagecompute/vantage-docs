@@ -1,0 +1,32 @@
+---
+title: On-premises
+description: Connect an existing on-site cluster to Vantage via agent.
+---
+
+# On-premises
+
+Connect an existing on-site cluster — your own hardware or a private data center — to Vantage.
+
+## How it works
+
+On-premises clusters connect to Vantage through a lightweight agent deployed on your infrastructure.
+The agent runs on your cluster's head node, phones home to Vantage, and from that point your cluster appears in the Clusters list like any cloud cluster.
+Jobs submitted through Vantage are scheduled by your existing Slurm scheduler — nothing changes on the cluster side.
+
+## Connect your cluster
+
+On-premises cluster setup requires coordination with Vantage to ensure the agent is deployed correctly for your specific infrastructure.
+
+1. **Create a support task** — Reach out to Vantage support and describe your cluster setup (head node OS, Slurm version, network configuration).
+A support engineer will provide the exact agent installation command for your environment.
+
+1. **Install the Vantage agent** — Run the installation command on your cluster's head node.
+The agent establishes an outbound connection to Vantage — no inbound firewall rules required.
+
+1. **Watch it connect** — Go to **Compute > Slurm** in Vantage. Your cluster appears and flips to **Connected** once the agent is reporting.
+
+1. **Explore the detail page** — Click the cluster row to open the detail view. The **Nodes**, **Partitions**, **Queue**, and **Configuration** tabs pull live data from your scheduler.
+
+:::tip
+The agent only needs outbound HTTPS access to Vantage servers. If your cluster is behind a firewall, check that outbound port 443 is not blocked.
+:::

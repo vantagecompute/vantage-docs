@@ -1,0 +1,55 @@
+---
+title: CephFS
+description: Attach a CephFS filesystem from an internal PVC, an external Ceph cluster, or a system storage class.
+---
+
+# CephFS
+
+CephFS mounts connect your Kubernetes workloads to a Ceph distributed filesystem. Vantage supports three source modes depending on where your Ceph storage lives.
+
+## Prerequisites
+
+A Kubernetes cluster in **Connected** state.
+
+Additional prerequisites depend on the source mode — see below.
+
+## Create a CephFS mount
+
+1. **Open Storage** — Go to **Compute**, select your Kubernetes cluster, then click the **Storage** tab.
+
+1. **Select the CephFS tab** — Click **CephFS** at the top of the Storage page.
+
+1. **Click <kbd>Create CephFS</kbd>**.
+
+1. **Select a namespace** — Choose the namespace this mount will be available in.
+
+1. **Enter a name** — Lowercase letters, numbers, and hyphens.
+
+1. **Choose a source mode** and fill in the required fields:
+
+   **Internal** — Backed by an existing PVC on the cluster:
+   - **Source Namespace** — The namespace of the backing PVC.
+   - **Source PVC** — Select the PVC.
+
+   **External** — Connects directly to a standalone Ceph cluster:
+   - **Ceph Monitors** — One `host:port` address per line (e.g. `ceph-mon.example.com:6789`).
+   - **Client Name** — The Ceph client identity (e.g. `admin`).
+   - **Client Key** — The client's CephX authentication key. Click the eye icon to reveal.
+   - **Filesystem Name** — The name of the CephFS filesystem to mount.
+   - **Root Path** — The path within the filesystem to mount as root (e.g. `/`).
+
+   **System** — Uses a cluster-level Ceph integration managed by your cluster administrator:
+   - **System Type** — Choose `cephfs` (filesystem) or `cephnfs` (NFS gateway backed by Ceph).
+   - **Storage Class** — Select the storage class that corresponds to the system Ceph integration.
+
+1. **Advanced options** *(optional)*:
+   - **Access Modes** — Control read/write access. Default is ReadWriteMany.
+   - **Read Only** — Force read-only access.
+   - **Mount Options** — Additional mount flags, one per line.
+   - **Config** — Raw JSON for additional CephFS CSI driver configuration.
+
+1. **Click <kbd>Create</kbd>**.
+
+:::info
+The **System** source mode requires cluster-level Ceph configuration by a cluster administrator. If you don't see the storage class you need, contact your cluster admin.
+:::
