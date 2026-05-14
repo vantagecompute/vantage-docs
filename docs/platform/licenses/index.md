@@ -1,97 +1,32 @@
 ---
-id: index
 title: Licenses
-description: License server management and integration with Vantage
+description: Connect commercial software license servers so Vantage clusters can check out licenses at job time.
 ---
 
-Vantage provides comprehensive license management capabilities for commercial software used in High Performance Computing environments. Manage license servers, monitor usage, and optimize license allocation across your organization.
+# Licenses
 
-## Supported License Delivery Models
+Licenses is where you connect and manage your commercial software license servers — FlexLM, RLM, LMX, and others — so Vantage clusters can check out licenses when jobs need them.
 
-- **[Vantage Hosted](/platform/licenses/vantage-hosted)**: Vantage managed license servers.
-- **[User Hosted](/platform/licenses/user-hosted)**: User managed license servers.
+[Get started](/platform/licenses/get-started) · [Concepts](/platform/licenses/concepts)
 
-## Getting Started
+## Hosting models
 
-- **[License Server Setup](/platform/licenses/how-to-guides/)** - Configure license servers for your applications
-- **[Monitoring and Management](/platform/licenses/how-to-guides/flexlm/monitoring)** - Track license usage and performance
-- **[High Availability](/platform/licenses/how-to-guides/flexlm/high-availability)** - Ensure license server reliability
+| Model | Who manages it | Best for |
+|---|---|---|
+| [Vantage-hosted](/platform/licenses/vantage-hosted) | Vantage deploys and maintains the license server | Teams that want zero admin overhead; automatic HA and monitoring |
+| [User-hosted](/platform/licenses/user-hosted) | You run the license server on your own infrastructure | Organizations with existing license setups, compliance requirements, or custom configurations |
 
-## Supported License Servers
+## Supported license servers
 
-### FlexLM
+- **FlexLM** — Industry-standard floating license management for engineering and scientific applications.
+- **RLM** — Modern license management with web-based administration.
+- **LMX** — Cloud-ready license management from X-Formation.
+- **LS-DYNA** — Specialized licensing for simulation software.
+- **DSLS** — Dassault Systemes license server management.
+- **OLicense** — Enterprise license management with advanced analytics.
 
-Industry-standard license management for engineering and scientific applications:
+## Next steps
 
-- **[User-Managed Setup](/platform/licenses/how-to-guides/flexlm/server-setup)** - Deploy on your own infrastructure
-- **[Vantage-Managed Setup](/platform/licenses/how-to-guides/flexlm/vantage-managed-server-setup)** - Fully managed service with CLI automation
-
-### RLM (Reprise License Manager)
-
-Modern license management for ISVs and enterprise applications:
-
-- **[User-Managed Setup](/platform/licenses/how-to-guides/rlm/server-setup)** - Self-hosted deployment
-- **[Vantage-Managed Setup](/platform/licenses/how-to-guides/rlm/vantage-managed-server-setup)** - Cloud-native managed service
-
-### LMX
-
-Cross-platform license management solution:
-
-- **[User-Managed Setup](/platform/licenses/how-to-guides/lmx/server-setup)** - Traditional deployment
-- **[Vantage-Managed Setup](/platform/licenses/how-to-guides/lmx/vantage-managed-server-setup)** - Modern cloud deployment
-
-### LS-DYNA
-
-Specialized licensing for simulation and engineering software:
-
-- **[User-Managed Setup](/platform/licenses/how-to-guides/ls-dyna/user-managed-server-setup)** - HPC-optimized deployment
-- **[Vantage-Managed Setup](/platform/licenses/how-to-guides/ls-dyna/vantage-managed-server-setup)** - Integrated with job scheduling
-
-### DSLS
-
-Multi-application license management:
-
-- **[User-Managed Setup](/platform/licenses/how-to-guides/dsls/server-setup)** - Centralized license control
-- **[Vantage-Managed Setup](/platform/licenses/how-to-guides/dsls/vantage-managed-server-setup)** - Automated scaling and optimization
-
-### OLicense
-
-Next-generation cloud-native license management:
-
-- **[User-Managed Setup](/platform/licenses/how-to-guides/olicense/server-setup)** - API-first deployment
-- **[Vantage-Managed Setup](/platform/licenses/how-to-guides/olicense/vantage-managed-server-setup)** - AI-powered optimization
-
-## Key Features
-
-- **Multi-Server Support**: Manage different license server types
-- **CLI Automation**: Infrastructure-as-code deployment with Vantage CLI
-- **Real-time Monitoring**: Track license usage and availability
-- **High Availability**: Redundant server configurations
-- **Cost Optimization**: AI-powered license allocation and usage optimization
-- **Integration**: Seamless integration with HPC job schedulers
-
-## Documentation Sections
-
-### [How-to Guides](/platform/licenses/how-to-guides/)
-
-Comprehensive setup and management guides:
-
-- Server setup for all supported license types
-- Monitoring and alerting configuration
-- High availability and disaster recovery
-- Troubleshooting common issues
-
-### [Tutorials](/platform/licenses/tutorials/)
-
-Step-by-step learning materials:
-
-- Basic license server configuration
-- Advanced deployment scenarios
-- Integration with HPC workflows
-
-
-Technical specifications and API documentation:
-
-- License server APIs
-- Configuration parameters
-- Performance optimization guidelines
+- [Quickstart](/platform/licenses/get-started) — Connect a license server in under five minutes
+- [Concepts](/platform/licenses/concepts) — How licenses integrate with jobs
+- [How-to guides](/platform/licenses/how-to-guides) — Step-by-step setup for each license server type

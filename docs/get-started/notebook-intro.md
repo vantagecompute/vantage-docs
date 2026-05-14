@@ -25,7 +25,7 @@ Workbench Sessions can also be created via the [Vantage CLI](https://docs.vantag
 
 ## Step 1: Navigate to Workbench
 
-Log in to [Vantage](https://app.vantagecompute.ai/) and click the **Workbench** icon in the left sidebar (the connected nodes icon, 4th from the top).
+Log in to [Vantage](https://app.vantagecompute.ai/) and click the **Workbench** icon in the left sidebar (4th from the top).
 
 ![Workbench navigation](./img/notebook-intro/notebook-intro-01-workbench.png)
 
@@ -51,7 +51,7 @@ Fill in the session form with your desired settings:
 |---|---|---|
 | Session Name | Yes | Default: `my-session` |
 | Preset | No | Pre-configured environment preset if available |
-| Compute Pool | No | Defaults to "Server default" |
+| Compute Profile | No | Defaults to your workspace's default profile |
 | CPU | No | Number of CPU cores (default: `0.5`, e.g., `0.5`, `2`, `500m`) |
 | Memory | No | RAM allocation (default: `1Gi`, e.g., `1Gi`, `4Gi`) |
 | GPU Count | No | Number of GPUs (default: `0` for CPU-only) |

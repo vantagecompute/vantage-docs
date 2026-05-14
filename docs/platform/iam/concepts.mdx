@@ -1,0 +1,41 @@
+---
+title: Concepts
+description: Four mental models behind IAM in Vantage.
+---
+
+# Concepts
+
+Four mental models behind IAM in Vantage.
+
+## Permission groups
+
+A permission group is a named set of permissions. Instead of assigning individual permissions to each user, you assign groups. Users can belong to multiple groups — their effective permissions are the union of all groups they're in.
+
+Vantage ships with these built-in groups:
+
+| Group | What members can do |
+|---|---|
+| Regular User | Standard platform access |
+| Full Admin | Full platform administration |
+| Cluster Admin | Manage clusters |
+| Jobs Admin | Manage jobs and scripts |
+| Licenses Admin | Manage software licenses |
+| Notebook Admin | Manage notebook environments |
+| Team Admin | Manage teams |
+
+## Authentication
+
+Vantage supports two authentication methods for the web UI:
+
+- **OAuth** — Sign in with Google or GitHub. This is the default for new organizations.
+- **Federated identity (SSO)** — Connect your own identity provider via OIDC or SAML. Configuration is done through the Admin panel and requires provider details (issuer URL, client ID, client secret).
+
+For programmatic access, users generate **API keys** from their profile settings.
+
+## Users and teams
+
+IAM controls what users can do across the platform. Teams control which resources they can access. They work together: a user with **Jobs Admin** permissions can access a specific cluster only if their team has access to it.
+
+## SCIM provisioning
+
+Vantage supports SCIM (System for Cross-domain Identity Management) for automated user provisioning and deprovisioning. When SCIM is configured, user accounts and group memberships are synced from your identity provider — no manual invitation needed.

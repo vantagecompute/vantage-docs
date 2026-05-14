@@ -1,0 +1,23 @@
+---
+title: Get started
+description: Create a compute federation from the CLI in under two minutes.
+sidebar_position: 1
+---
+
+# Quickstart
+
+Create a compute federation from the CLI in under two minutes.
+
+1. **Install the Vantage CLI** — Follow the [CLI installation guide](/reference/cli/installation) if you haven't already.
+
+1. **Log in** — Run `vantage login` and authenticate with your Vantage credentials.
+
+1. **Create the federation** — Run `vantage cluster federation create my-federation --description "My first federation"`. The name must be unique across your organization.
+
+1. **List your federations** — Run `vantage cluster federation list` to confirm the federation was created. It appears in the list with its name and description.
+
+1. **Add clusters** — Federations link clusters together. Use the cluster create or update commands to associate clusters with the federation.
+
+:::tip
+Federations are useful for distributing workloads across clusters in different regions or providers. A job submitted to a federation is routed to an available cluster within it.
+:::
