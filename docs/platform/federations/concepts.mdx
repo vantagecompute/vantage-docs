@@ -1,0 +1,28 @@
+---
+title: Concepts
+description: Three mental models behind compute federations in Vantage.
+sidebar_position: 2
+---
+
+# Concepts
+
+Three mental models behind compute federations in Vantage.
+
+## Federation as a cluster group
+
+A federation groups multiple clusters into a single logical compute pool. Workloads submitted to the federation can run on any cluster within it. The federation doesn't replace individual cluster management — each cluster keeps its own partitions, node groups, and configuration.
+
+## Workload routing
+
+When a job targets a federation instead of a specific cluster, Vantage routes it to an available cluster within the federation. Routing considers cluster capacity, partition availability, and job requirements. If no cluster can accept the job, it waits in the federation queue.
+
+## Use cases
+
+| Scenario | Why use a federation |
+|---|---|
+| Multi-region deployments | Run jobs in the closest region automatically |
+| Burst to cloud | Keep a small on-prem cluster and burst to cloud clusters during peak demand |
+| Provider diversity | Spread workloads across AWS, Azure, and GCP clusters for resilience |
+| Gradual migration | Move workloads from an old cluster to a new one incrementally |
+
+Federations are managed entirely through the Vantage CLI. See the [CLI reference](/reference/cli/commands#cluster-federation) for all commands.

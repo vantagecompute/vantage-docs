@@ -1,25 +1,12 @@
 ---
 title: Remote Desktops
-description: Remote desktop solutions for High Performance Computing with Vantage
+description: Remote desktop access to Vantage compute resources.
 ---
 
-Vantage provides secure remote desktop access to your HPC resources. Connect to your computational environments from anywhere with high-performance virtual desktops.
-
-## Desktop Types
-
-### Linux Desktops
-
-Access Linux-based computational environments with full GUI support.
-
-### Windows Desktops
-
-Windows-based remote desktops for specialized applications and workflows.
+Vantage provides remote desktop sessions (X2Go/Linux) for interactive GUI access to your compute resources. Launch a desktop session from the Workbench and connect from anywhere.
 
 ## Documentation Sections
 
 ### [Tutorials](/platform/workbench/sessions/remote-desktops/tutorials/)
 
-Learn how to set up and use remote desktops.
-
-
-Technical specifications and configuration options.
+Learn how to set up and use remote desktop environments.

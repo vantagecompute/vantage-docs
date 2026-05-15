@@ -1,0 +1,39 @@
+---
+title: Concepts
+description: Four mental models behind license management in Vantage.
+---
+
+# Concepts
+
+Four mental models behind license management in Vantage.
+
+## Hosting models
+
+Vantage supports two ways to run license servers.
+
+| Model | Who provisions | Who maintains | Best for |
+|---|---|---|---|
+| Vantage-hosted | Vantage | Vantage (automatic updates, monitoring, HA) | Zero-admin, teams without dedicated license infrastructure |
+| User-hosted | You | You | Compliance requirements, existing license setups, custom configs |
+
+Both models work identically from the job's perspective — Vantage checks out a license before the job starts and releases it when it finishes.
+
+## License checkout lifecycle
+
+When a job with license requirements is submitted, Vantage checks license availability before the job enters the cluster queue. If licenses are available, the job proceeds. If not, the job waits. This prevents jobs from starting on a compute node only to fail because no license is free.
+
+| Phase | What happens |
+|---|---|
+| Job submitted | Vantage reads the license feature from the job config |
+| Pre-check | Vantage pings the license server for the required feature |
+| License available | Job proceeds to the cluster queue |
+| License unavailable | Job waits; retries at intervals until a license frees up or the job times out |
+| Job completes | Vantage releases the license back to the pool |
+
+## High availability
+
+License servers can be configured in HA pairs. If the primary server goes down, Vantage fails over to the secondary automatically. HA setup varies by license server type — see the how-to guides for [FlexLM](/platform/licenses/how-to-guides/flexlm/high-availability), [RLM](/platform/licenses/how-to-guides/rlm/high-availability), and others.
+
+## Monitoring
+
+The **Licenses** page shows live usage per server: total licenses, checked-out count, and available count. Historical usage data helps with capacity planning — see the how-to guides for monitoring setup per vendor.

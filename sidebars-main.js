@@ -47,6 +47,68 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Compute providers',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'platform/compute-providers/index'},
+      items: [
+        {type: 'doc', id: 'platform/compute-providers/get-started'},
+        {type: 'doc', id: 'platform/compute-providers/concepts'},
+        {
+          type: 'category',
+          label: 'Public clouds',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform/compute-providers/public-clouds/index'},
+          items: [
+            {type: 'doc', id: 'platform/compute-providers/public-clouds/aws'},
+            {type: 'doc', id: 'platform/compute-providers/public-clouds/azure'},
+            {type: 'doc', id: 'platform/compute-providers/public-clouds/gcp'},
+            {type: 'doc', id: 'platform/compute-providers/public-clouds/cudo-compute'},
+          ],
+        },
+        {type: 'doc', id: 'platform/compute-providers/on-premises/index'},
+        {
+          type: 'category',
+          label: 'Vantage partners',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform/compute-providers/vantage-partners/index'},
+          items: [
+            {type: 'doc', id: 'platform/compute-providers/vantage-partners/atnorth/index'},
+            {type: 'doc', id: 'platform/compute-providers/vantage-partners/buzz-hpc/index'},
+            {type: 'doc', id: 'platform/compute-providers/vantage-partners/responsible-compute/index'},
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Clusters',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'platform/clusters/index'},
+      items: [
+        {type: 'doc', id: 'platform/clusters/get-started'},
+        {type: 'doc', id: 'platform/clusters/concepts'},
+        {
+          type: 'category',
+          label: 'How-to guides',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform/clusters/how-to-guides/index'},
+          items: [
+            {type: 'doc', id: 'platform/clusters/how-to-guides/aws'},
+            {type: 'doc', id: 'platform/clusters/how-to-guides/azure'},
+            {type: 'doc', id: 'platform/clusters/how-to-guides/gcp'},
+            {type: 'doc', id: 'platform/clusters/how-to-guides/on-premises'},
+            {type: 'doc', id: 'platform/clusters/how-to-guides/partner-clusters'},
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Jobs',
       collapsible: true,
       collapsed: true,
@@ -57,6 +119,8 @@ module.exports = {
         {
           type: 'category',
           label: 'Scripts',
+          collapsible: true,
+          collapsed: true,
           link: {type: 'doc', id: 'platform/jobs/scripts/index'},
           items: [
             {type: 'doc', id: 'platform/jobs/scripts/creating'},
@@ -67,6 +131,8 @@ module.exports = {
         {
           type: 'category',
           label: 'Templates',
+          collapsible: true,
+          collapsed: true,
           link: {type: 'doc', id: 'platform/jobs/templates/index'},
           items: [
             {type: 'doc', id: 'platform/jobs/templates/creating'},
@@ -78,6 +144,8 @@ module.exports = {
         {
           type: 'category',
           label: 'Submissions',
+          collapsible: true,
+          collapsed: true,
           link: {type: 'doc', id: 'platform/jobs/submissions/index'},
           items: [
             {type: 'doc', id: 'platform/jobs/submissions/submitting'},
@@ -87,6 +155,129 @@ module.exports = {
           ],
         },
         {type: 'doc', id: 'platform/jobs/catalog/index'},
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Workbench',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'platform/workbench/index'},
+      items: [
+        {type: 'doc', id: 'platform/workbench/get-started'},
+        {type: 'doc', id: 'platform/workbench/concepts'},
+        {type: 'doc', id: 'platform/workbench/shortcuts'},
+        {type: 'doc', id: 'platform/workbench/troubleshooting'},
+        {
+          type: 'category',
+          label: 'Sessions',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform/workbench/sessions/index'},
+          items: [
+            {type: 'doc', id: 'platform/workbench/sessions/creating-a-session'},
+            {type: 'doc', id: 'platform/workbench/sessions/lifecycle'},
+            {type: 'doc', id: 'platform/workbench/sessions/reference'},
+            {
+              type: 'category',
+              label: 'Notebooks',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platform/workbench/sessions/notebooks/index'},
+              items: [
+                {type: 'doc', id: 'platform/workbench/sessions/notebooks/tutorials/tutorials'},
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Remote Desktops',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platform/workbench/sessions/remote-desktops/index'},
+              items: [
+                {type: 'doc', id: 'platform/workbench/sessions/remote-desktops/tutorials/tutorials'},
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Compute Profiles',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform/workbench/compute-profiles/index'},
+          items: [
+            {type: 'doc', id: 'platform/workbench/compute-profiles/reference'},
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Observability',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform/workbench/observability/index'},
+          items: [
+            {type: 'doc', id: 'platform/workbench/observability/reference'},
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Training Jobs',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform/workbench/training-jobs/index'},
+          items: [
+            {type: 'doc', id: 'platform/workbench/training-jobs/submitting-a-job'},
+            {type: 'doc', id: 'platform/workbench/training-jobs/lifecycle'},
+            {type: 'doc', id: 'platform/workbench/training-jobs/runtimes'},
+            {type: 'doc', id: 'platform/workbench/training-jobs/reference'},
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Pipelines',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform/workbench/pipelines/index'},
+          items: [
+            {type: 'doc', id: 'platform/workbench/pipelines/anatomy'},
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Sweeps',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform/workbench/sweeps/index'},
+          items: [
+            {type: 'doc', id: 'platform/workbench/sweeps/algorithms'},
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Models',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform/workbench/models/index'},
+          items: [
+            {type: 'doc', id: 'platform/workbench/models/registering-a-model'},
+            {type: 'doc', id: 'platform/workbench/models/reference'},
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Endpoints',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform/workbench/endpoints/index'},
+          items: [
+            {type: 'doc', id: 'platform/workbench/endpoints/deploying'},
+            {type: 'doc', id: 'platform/workbench/endpoints/autoscaling'},
+            {type: 'doc', id: 'platform/workbench/endpoints/canary-rollouts'},
+            {type: 'doc', id: 'platform/workbench/endpoints/predictive-vs-llm'},
+            {type: 'doc', id: 'platform/workbench/endpoints/reference'},
+          ],
+        },
       ],
     },
     {
@@ -101,6 +292,7 @@ module.exports = {
         {
           type: 'category',
           label: 'How-to guides',
+          collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'platform/storage/how-to-guides/index'},
           items: [

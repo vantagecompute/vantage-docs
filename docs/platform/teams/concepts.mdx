@@ -1,0 +1,32 @@
+---
+title: Concepts
+description: Four mental models behind Teams and IAM.
+---
+
+# Concepts
+
+Four mental models behind Teams and IAM.
+
+## Team as ownership boundary
+
+Every resource in Vantage — clusters, storage, jobs, sessions — belongs to exactly one team. Resources are private to that team unless you explicitly share them. When you leave a team, your personal resources remain; the team admin can reassign ownership.
+
+## Roles
+
+A role is a set of permissions bundled into one label. Vantage ships with three built-in roles:
+
+| Role | What members can do |
+|---|---|
+| Admin | Full control — manage members, change roles, access billing |
+| Engineer | Create and run workloads, manage their own resources |
+| Viewer | Read-only — see cluster status, jobs, and usage |
+
+Team admins can create custom roles with specific permission combinations.
+
+## Membership across teams
+
+A user can be a member of multiple teams simultaneously, potentially with different roles in each. The active team is shown in the top-right workspace picker. Resources are created in the active team — switch teams before creating a resource if you want it owned by a different group.
+
+## Resource visibility
+
+Team-scoped resources are invisible to other teams by default. To share a resource — for example, making a storage volume available to another team's jobs — you use the sharing controls on the resource detail page. Shared resources are read-only for the receiving team unless the owner grants write access.

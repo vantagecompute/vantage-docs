@@ -1,0 +1,23 @@
+---
+title: Get started
+description: Connect a license server to Vantage in under five minutes.
+sidebar_position: 1
+---
+
+# Quickstart
+
+Connect a license server to Vantage in under five minutes.
+
+1. **Pick a hosting model** — Choose [Vantage-hosted](/platform/licenses/vantage-hosted) (Vantage manages the server) or [User-hosted](/platform/licenses/user-hosted) (you run it on your infrastructure).
+
+1. **Set up the license server** — Follow the server-specific guide for your license type: [FlexLM](/platform/licenses/how-to-guides/flexlm/introduction), [RLM](/platform/licenses/how-to-guides/rlm/introduction), [LMX](/platform/licenses/how-to-guides/lmx/introduction), [LS-DYNA](/platform/licenses/how-to-guides/ls-dyna/introduction), [DSLS](/platform/licenses/how-to-guides/dsls/introduction), or [OLicense](/platform/licenses/how-to-guides/olicense/introduction).
+
+1. **Register it in Vantage** — In the left sidebar, click **Licenses**, then select **Configurations**. Click <kbd>Add License Server</kbd>. Enter the server details: type, hostname, port, and any required credentials.
+
+1. **Test the connection** — Vantage pings the server to verify it's reachable. If it fails, check firewall rules — license servers typically use specific ports per vendor.
+
+1. **Submit a job that uses it** — Configure your job script or template with the license feature name. Vantage checks out the license from the connected server before the job starts and releases it when the job completes.
+
+:::tip
+License checkout happens automatically — you don't need to add anything to your job script beyond the `#SBATCH` directives your application already requires. Vantage handles the checkout and release based on the license server configuration.
+:::

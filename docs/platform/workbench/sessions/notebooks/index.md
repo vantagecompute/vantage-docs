@@ -1,23 +1,25 @@
-np---
+---
 id: index
 title: Notebooks
-description: Jupyter and development notebooks for High Performance Computing with Vantage
+description: Jupyter, VS Code, and RStudio notebook environments on Vantage compute.
 ---
 
-Vantage provides integrated notebook environments for data science, research, and development workflows. Access Jupyter and other notebook platforms directly connected to your HPC resources.
+Vantage Workbench sessions provide JupyterLab, VS Code, and RStudio environments running on managed compute infrastructure. Launch a session, pick your compute profile, and start coding in minutes.
 
-## Notebook Types
+## Quickstart
 
-### Jupyter Notebooks
+See [Get started](/platform/workbench/get-started) for a five-minute walkthrough from a fresh workspace to a running notebook.
 
-Interactive Python, R, and multi-language notebook environments.
+## Session types
 
-### VS Code Notebooks
-
-Full-featured development environment with notebook support.
+| Type | Best for |
+|---|---|
+| JupyterLab | Interactive data science, research, and exploration |
+| VS Code | Full-featured development with notebook and extension support |
+| RStudio | R-based analysis and statistical computing |
 
 ## Documentation Sections
 
 ### [Tutorials](/platform/workbench/sessions/notebooks/tutorials/)
 
-Learn how to set up and use notebook environments.
+Walk through launching and configuring notebook environments.
