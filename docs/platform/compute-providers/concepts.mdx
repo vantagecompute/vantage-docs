@@ -1,0 +1,40 @@
+---
+title: Concepts
+description: Three mental models behind every cloud account in Vantage.
+sidebar_position: 2
+---
+
+# Concepts
+
+Three mental models that show up across every Compute Providers page.
+
+## Cloud account
+
+A cloud account is a named credential binding between Vantage and a compute provider.
+It stores only what Vantage needs to provision and deprovision resources — an IAM role ARN for AWS, a service principal for Azure, a service account key for GCP.
+One cloud account can back multiple clusters.
+
+## Providers
+
+Vantage supports six provider types:
+
+| Provider | What it's for |
+|---|---|
+| Amazon Web Services | Elastic cloud compute; spot instances, reserved capacity, global regions |
+| Microsoft Azure | Enterprise cloud; Active Directory integration, hybrid connectivity |
+| Google Cloud Platform | AI/ML-focused cloud; fast networking, preemptible VMs |
+| Cudo Compute | Cost-efficient GPU cloud; on-demand and reserved options |
+| LXD | System containers on your own infrastructure; fast, isolated Linux environments |
+| On-Premises | Your own data center; maximum control, data residency |
+
+## Validity
+
+Every cloud account has a validity state. Vantage checks that it can still reach the credentials on each use.
+
+An account becomes **invalid** when credentials change — the IAM role is deleted, a service principal expires, or permissions are revoked.
+Invalid accounts are flagged in the **Cloud Accounts** list.
+Clusters backed by an invalid account will fail to provision new nodes.
+
+:::tip
+For AWS, the IAM role ARN itself doesn't expire — but deleting the role or changing its trust policy will invalidate the account. Review IAM role permissions before making changes to your AWS account.
+:::

@@ -1,73 +1,36 @@
 ---
-id: compute-providers-public-clouds-aws
-title: Amazon Web Services (AWS)
-sidebar_position: 1
-description: Deploy and manage Vantage clusters on Amazon Web Services (AWS) cloud infrastructure.
+title: Amazon Web Services
+description: Connect your AWS account to Vantage using an IAM role ARN.
 ---
 
-# Amazon Web Services (AWS)
+# Amazon Web Services
 
-Amazon Web Services (AWS) is one of the leading cloud computing platforms, offering a comprehensive suite of infrastructure services that make it an excellent choice for high-performance computing workloads with Vantage.
+Connect your AWS account so Vantage can provision EC2-based clusters in your chosen region.
 
-## Overview
+## Credentials
 
-AWS provides the scalability, reliability, and performance needed for demanding computational workloads. With Vantage on AWS, you can:
+Vantage needs an **IAM Role ARN** — a role in your AWS account that grants Vantage permission to provision and deprovision compute resources.
+You create this role once; the ARN is what Vantage stores.
 
-- **Auto-scaling clusters**: Automatically scale compute resources based on workload demands
-- **Global availability**: Deploy clusters across multiple AWS regions worldwide
-- **Cost optimization**: Leverage spot instances and reserved capacity for cost-effective computing
-- **Enterprise security**: Benefit from AWS's robust security and compliance features
+## Setup methods
 
-## Key AWS Services for HPC
+Two paths are available in the **Create Cloud Account** dialog:
 
-### Compute Services
-- **Amazon EC2**: Virtual servers with various instance types optimized for compute, memory, or storage
-- **AWS Batch**: Fully managed batch computing service for running jobs at any scale
-- **Amazon ECS/EKS**: Container orchestration services for containerized workloads
+**Assisted Setup (recommended)** — Vantage walks you through deploying a CloudFormation stack in your AWS account.
+The stack creates the IAM role with the correct trust policy and permissions automatically.
+Click through to the AWS Console, deploy the stack, then return to finish.
 
-### Storage Services
-- **Amazon S3**: Object storage for data lakes, backups, and archival
-- **Amazon EFS**: Fully managed file system for shared storage across compute instances
-- **Amazon FSx**: High-performance file systems optimized for HPC workloads
+**Existing ARN Configuration** — Paste an IAM role ARN you've already created.
+Vantage validates it immediately — checking that the role exists, is accessible, and has the required permissions.
 
-### Networking
-- **Amazon VPC**: Isolated cloud resources with complete networking control
-- **AWS Direct Connect**: Dedicated network connection from your premises to AWS
+## Steps
 
-## Getting Started with AWS
+1. Go to **Admin** > **Cloud Accounts**.
+1. Click <kbd>Create Cloud Account</kbd> and select **AWS**.
+1. Enter an **Account name** and optional description.
+1. Choose a setup method. For Assisted Setup, click through to the AWS Console, deploy the stack, and return. For Existing ARN, paste the role ARN.
+1. Submit. Vantage validates and saves the account.
 
-To deploy Vantage clusters on AWS, you'll need:
-
-1. **AWS Account**: An active AWS account with appropriate permissions
-2. **IAM Roles**: Properly configured IAM roles for Vantage cluster management
-3. **Network Configuration**: VPC and subnet configuration for your clusters
-4. **Security Groups**: Network security rules for cluster communication
-
-## Instance Types for HPC
-
-AWS offers several instance families optimized for different HPC use cases:
-
-- **C6i/C6a**: Compute-optimized instances for CPU-intensive workloads
-- **M6i/M6a**: General-purpose instances with balanced compute, memory, and networking
-- **R6i/R6a**: Memory-optimized instances for memory-intensive applications
-- **Hpc6a**: Purpose-built for tightly coupled HPC workloads
-- **P4/G5**: GPU instances for AI, machine learning, and parallel computing
-
-## Cost Optimization
-
-Maximize your AWS investment with these strategies:
-
-- **Spot Instances**: Save up to 90% on compute costs for fault-tolerant workloads
-- **Reserved Instances**: Predictable workloads benefit from reserved capacity discounts
-- **Savings Plans**: Flexible pricing model for consistent usage patterns
-- **Auto Scaling**: Automatically adjust capacity to match demand
-
-## Next Steps
-
-- Create an AWS Account (see AWS documentation)
-- Configure IAM Roles (see AWS documentation)
-- Deploy Your First Cluster
-
----
-
-> **Ready to get started?** Check out our AWS cluster deployment guide for step-by-step instructions.
+:::tip
+Spot instances can cut EC2 costs by up to 90% for fault-tolerant workloads. Configure spot usage at the cluster level — the IAM role just needs permission to request spot capacity.
+:::
